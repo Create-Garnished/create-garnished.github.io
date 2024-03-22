@@ -21,23 +21,18 @@
         font-size:32px;
       }
 
-      .sidenav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        width: 10%;
+      .topnav {
         background-color: #141414;
-        position: fixed;
-        height: 100%;
-        overflow: auto;
-        color: #F4F4F4;
+        overflow: hidden;
       }
 
-      .sidenav li a {
-        display: block;
+      .topnav a {
+        float: left;
         color: #F4F4F4;
-        padding: 8px 16px;
+        text-align: center;
+        padding: 14px 16px;
         text-decoration: none;
+        font-size: 17px;
       }
 
       a:visited {
@@ -78,35 +73,10 @@
         display: block;
       }
 
-      .container {
-        position: relative;
-        text-align: center;
-        color: white;
-      }
-      
-      .centered {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .crop {
-        width: 200px;
-        height: 150px;
-        overflow: hidden;
-      }
-
-      .crop img {
-        width: 400px;
-        height: 300px;
-        margin: -75px 0 0 -100px;
-      }
-
     </style>
   </head>
   <body>
-    <div class="sidenav">
+    <div class="topnav">
       <ul>
         <li><a href="/index.html">Home</a></li>
         <li class="dropdown">
@@ -115,37 +85,6 @@
             <a href="/recipe_types/bulk_dyeing.html">Bulk Dyeing</a>
           </div>
         </li>
-      </ul>
-    </div>
-    
-    <div style="margin-left:10%;padding:1px 16px;">
-      <div class="container">
-        <div class="crop">
-          <img src="/images/mastic_blocks.png">
-        </div>
-        <div class="centered">Bulk Dyeing</div>
-      </div>
-      <p>You can utilize the many variants of Coloured Liquefied Mastic Resin to also recolour some of your items!</p>
-      <br>
-      <div style="display:inline-block;">
-        <h2>Bulk Red Dyeing</h2>
-        <p style="width:500px;">Utilizing the red variant of coloured liquefied mastic resin, you can redye some of your items red!</p>
-        <p style="width:500px;">Some of the items that can be redyed include:</p>
-        <ul>
-          <li>Shulker Boxes</li>
-          <li>Wool</li>
-          <li>Glass & Glass Panes</li>
-          <li>Candles</li>
-          <li>Mastic Resin</li>
-          <li>And other related items</li>
-        </ul>
-        <h4>Future Plans</h4>
-        <p style="width:500px;">There is integration planned for other mods that have dyeable objects, but there is no pre-determined update for this.</p>
-      </div>
-      <br>
-      <h2>Related Pages</h2>
-      <ul>
-        <li><a href="/assemblies/processes/mastic_resin.html">Mastic Resin</a></li>
       </ul>
     </div>
   </body>
