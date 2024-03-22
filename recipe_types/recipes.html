@@ -5,27 +5,33 @@
     <link rel="icon" type="image/x-icon" href="/icon.ico">
 
     <style>
-      .topnav {
-        background-color: #333;
+      .topnav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
         overflow: hidden;
+        background-color: #333;
       }
 
-      .topnav a {
+      .topnav li {
         float: left;
-        color: #f2f2f2;
+      }
+
+      .topnav li a {
+        display: block;
+        color: white;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
-        font-size: 17px;
       }
 
     </style>
   </head>
   <body>
-    <div class="topnav">
-      <a href="/index.html">Home</a>
-      <a href="/recipe_types/recipes.html">Recipe Types</a>
-    </div>
+    <ul class="topnav">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/recipe_types/recipes.html">Recipe Types</a></li>
+    </ul>
     <h1><center>Recipe Types</center></h1>
   </body>
 </html>
