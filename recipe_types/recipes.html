@@ -5,37 +5,31 @@
         <link rel="icon" type="image/x-icon" href="/icon.ico">
         
         <style>
-            body {
-                margin: 0px;
-                background-color: #141414;
-                color: #F4F4F4;
-            }
-
-            .topnav {
+            ul {
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
                 overflow: hidden;
-                background-color: black;
+                background-color: #333;
+                position: fixed;
+                top: 0;
+                width: 100%;
             }
 
-            .topnav li {
-                display: inline-block;
+            li {
+                float: left;
             }
 
-            .topnav li a {
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
                 padding: 14px 16px;
                 text-decoration: none;
-                display: block;
-                text-align: center;
             }
 
-            .topnav a:visited {
-                color: #F4F4F4;
-            }
-
-            .topnav a:hover {
-                color: #F4F4F4;
+            li a:hover {
+                background-color: black;
             }
         </style>
     </head>
@@ -45,11 +39,13 @@
             <li><a href="/recipe_types/recipes.html">Recipe Types</a></li>
         </ul>
 
-        <h1>Recipe Types</h1>
-        <h2>Bulk Dyeing</h2>
-        <p>Utilizing the many variations of coloured liquefied mastic resin alongside an Encased Fan, you can redye a multitude of items!</p>
-        <br>
-        <h2>Bulk Freezing</h2>
-        <p>Utilizing Powder Snow alongside an Encased Fan, you can freeze certain items!</p>
+        <div style="padding:20px;margin-top:30px;background-color:#1abc9c;height:1500px;">
+            <h1>Recipe Types</h1>
+            <h2>Bulk Dyeing</h2>
+            <p>Utilizing the many variations of coloured liquefied mastic resin alongside an Encased Fan, you can redye a multitude of items!</p>
+            <br>
+            <h2>Bulk Freezing</h2>
+            <p>Utilizing Powder Snow alongside an Encased Fan, you can freeze certain items!</p>
+        </div>        
     </body>
 </html>
