@@ -40,43 +40,66 @@
             }
 
             .topnav {
-                position: fixed;
-            
-            .topnav ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
                 overflow: hidden;
                 background-color: #0A0A0A;
-                top: 0;
-                width: 100%;
             }
 
-            .topnav ul li {
-                float: left;
-            }
-
-            .topnav ul li a {
-                display: block;
+            .topnav a {
                 color: #F4F4F4;
                 text-align: center;
                 padding: 14px 16px;
                 text-decoration: none;
+                font-size: 17px;
             }
 
-            .topnav ul li a:hover {
+            .topnav a:hover {
                 background-color: black;
+                color: white;
+            }
+
+            .dropdown {
+                float: left;
+                overflow: hidden;
+            }
+
+            .dropdown .dropbtn {
+                font-size: 17px;
+                border: none;
+                outline: none;
+                background-color: #0A0A0A;
+                color: #F4F4F4;
+                padding: 14px 16px;
+                margin: 0;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #0A0A0A;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0, 2);
+                z-index: 1;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
             }
         </style>
     </head>
     <body>
-        <ul class="topnav">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/recipe_types/recipes.html">Recipe Types</a></li>
-            <li style="float:right;"><a href="https://modrinth.com/mod/create-garnished" target="_blank">Modrinth</a></li>
-            <li style="float:right;"><a href="https://www.curseforge.com/minecraft/mc-mods/garnished" target="_blank">Curseforge</a></li>
-            <li style="float:right;"><a href="https://www.ko-fi.com/dakotapride" target="_blank">Ko-fi</a></li>
-        </ul>
+        <div class="topnav">
+            <a href="/index.html" style="float:left;">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Recipe Types<i class="fa fa-caret-down"></i></button>
+                <div class="dropdown-content">
+                    <a href="/recipe_types/bulk_dyeing">Bulk Dyeing</a>
+                    <a href="/recipe_types/bulk_freezing">Bulk Freezing</a>
+                </div>
+            </div>
+            <a href="https://modrinth.com/mod/create-garnished" target="_blank" style="float:right;">Modrinth</a>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/garnished" target="_blank" style="float:right;">Curseforge</a>
+            <a href="https://www.ko-fi.com/dakotapride" target="_blank" style="float:right;">Ko-fi</a></li>
+        </div>
 
         <div style="padding:20px;margin-top:30px;height:1500px;">
           <h1><center>Bulk Dyeing</center></h1>
