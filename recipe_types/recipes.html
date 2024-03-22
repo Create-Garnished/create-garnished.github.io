@@ -34,6 +34,19 @@
         color: #F4F4F4;
       }
 
+      .container {
+        position: relative;
+        text-align: center;
+        color: #F4F4F4;
+      }
+
+      .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
     </style>
   </head>
   <body>
@@ -41,6 +54,9 @@
       <a href="/index.html">Home</a>
       <a href="/recipe_types/recipes.html">Recipe Types</a>
     </div>
-    <h1><center>Recipe Types</center></h1>
+    <div class="container">
+      <img src="/images/recipe_types_header.png" style="width:100%">
+      <h1 class="centered">Recipe Types</h1>
+    </div>
   </body>
 </html>
