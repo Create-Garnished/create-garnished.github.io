@@ -52,11 +52,7 @@
                 width: 100%;
             }
 
-            .topnav li {
-                float: left;
-            }
-
-            .topnav li a {
+            .link li a {
                 display: block;
                 color: #F4F4F4;
                 text-align: center;
@@ -64,18 +60,18 @@
                 text-decoration: none;
             }
 
-            .topnav li a:hover {
+            .link a:hover {
                 background-color: black;
             }
         </style>
     </head>
     <body>
         <ul class="topnav">
-            <li class="topnav"><a href="/index.html">Home</a></li>
-            <li class="topnav"><a href="/recipe_types/recipes.html">Recipe Types</a></li>
-            <li class="topnav" style="float:right;"><a href="https://modrinth.com/mod/create-garnished" target="_blank">Modrinth</a></li>
-            <li class="topnav" style="float:right;"><a href="https://www.curseforge.com/minecraft/mc-mods/garnished" target="_blank">Curseforge</a></li>
-            <li class="topnav" style="float:right;"><a href="https://www.ko-fi.com/dakotapride" target="_blank">Ko-fi</a></li>
+            <li style="float:left;"><a href="/index.html" class="link">Home</a></li>
+            <li style="float:left;"><a href="/recipe_types/recipes.html" class="link">Recipe Types</a></li>
+            <li style="float:right;"><a href="https://modrinth.com/mod/create-garnished" target="_blank" class="link">Modrinth</a></li>
+            <li style="float:right;"><a href="https://www.curseforge.com/minecraft/mc-mods/garnished" target="_blank" class="link">Curseforge</a></li>
+            <li style="float:right;"><a href="https://www.ko-fi.com/dakotapride" target="_blank" class="link">Ko-fi</a></li>
         </ul>
 
         <div style="padding:20px;margin-top:30px;height:1500px;">
