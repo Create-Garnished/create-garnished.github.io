@@ -56,12 +56,50 @@
                 background-color: black;
                 color: white;
             }
+
+            .dropdown {
+                float: left;
+                overflow: hidden;
+            }
+
+            .dropdown .dropbtn {
+                font-size: 17px;
+                border: none;
+                outline: none;
+                background-color: #0A0A0A;
+                color: #F4F4F4;
+                padding: 14px 16px;
+                margin: 0;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #0A0A0A;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0, 2);
+                z-index: 1;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
         </style>
     </head>
     <body>
         <div class="topnav">
             <a href="/index.html" style="float:left;">Home</a>
-            <a href="/recipe_types/recipes.html" style="float:left;">Recipe Types</a>
+            <a href="/recipe_types/recipes.html" style="float:left;">
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="/recipe_types/bulk_dyeing">Bulk Dyeing</a>
+                        <a href="#">Link Numero Dos</a>
+                    </div>
+                </div>
+            </a>
             <a href="https://modrinth.com/mod/create-garnished" target="_blank" style="float:right;">Modrinth</a>
             <a href="https://www.curseforge.com/minecraft/mc-mods/garnished" target="_blank" style="float:right;">Curseforge</a>
             <a href="https://www.ko-fi.com/dakotapride" target="_blank" style="float:right;">Ko-fi</a></li>
