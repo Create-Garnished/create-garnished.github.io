@@ -135,6 +135,30 @@
 			::-webkit-scrollbar-thumb:hover {
   				background: gray; 
 			}
+
+			.collapsible {
+  				background-color: #02060C;
+  				color: white;
+  				cursor: pointer;
+  				padding: 18px;
+  				width: 400px;
+  				border: none;
+  				text-align: center;
+  				outline: none;
+  				font-size: 15px;
+			}
+
+			.active, .collapsible:hover {
+  				background-color: black;
+			}
+
+			.content {
+  				padding: 0 18px;
+  				max-height: 0;
+  				overflow: hidden;
+  				transition: max-height 0.2s ease-out;
+  				background-color: #1D232B;
+			}
         </style>
     </head>
     <body>
@@ -177,10 +201,13 @@
                     <p>...</p>
                 </div>
 			</div>
-			<hr style="clear:both;visibility:hidden;height:40px;">
-			<div style="display:inline-table;float:left;margin-left:300px;padding:14px 16px;">
-				<h2 id="history">History of Changes & Additions</h2>
-				<h4>v1.7.1</h4>
+		</div>
+		<hr style="clear:both;visibility:hidden;height:40px;">
+		<div>
+			<center>
+				<button class="collapsible">History of Changes & Additions - Changelog</button>
+				<div class="content" style="text-align:left;">
+					<h4>v1.7.1</h4>
 				<ul>
 					<li>Add EMI integration for Bulk Freezing recipes</li>
 					<ul>
@@ -195,8 +222,9 @@
                         <li>Alongside Bulk Dyeing recipes and JEI integration</li>
                     </ul>
                 </ul>
-			</div>
-        </div> 
+				</div>
+			</center>
+		</div>
 		<hr style="clear:both;visibility:hidden;height:40px;">
 		<p><center>The Create: Garnished mod and Create: Garnished wiki have been developed and designed by DakotaPrideModding</center></p>
 		<p><center><a href="https://github.com/DakotaPride/create-garnished" target="_blank">Create: Garnished Fabric Source Code</a></center></p>
@@ -217,6 +245,21 @@ toggle between hiding and showing the dropdown content */
 						myDropdown.classList.remove('show');
 					}
 				}
+			}
+
+			var coll = document.getElementsByClassName("collapsible");
+			var i;
+
+			for (i = 0; i < coll.length; i++) {
+				coll[i].addEventListener("click", function() {
+					this.classList.toggle("active");
+    				var content = this.nextElementSibling;
+    				if (content.style.maxHeight){
+      					content.style.maxHeight = null;
+    				} else {
+      					content.style.maxHeight = content.scrollHeight + "px";
+    				} 
+  				});
 			}
 		</script>
     </body>
