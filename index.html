@@ -725,11 +725,6 @@
 		<p><center><a href="https://github.com/DakotaPride/create-garnished/issues" target="_blank">Create: Garnished Issues Page</a></center></p>
 
 		<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-			function myFunction() {
-				document.getElementById("myDropdown").classList.toggle("show");
-			}
 
 // Close the dropdown if the user clicks outside of it
 			window.onclick = function(e) {
@@ -763,6 +758,10 @@ toggle between hiding and showing the dropdown content */
 			var sticky = navbar.offsetTop;
 
 			function myFunction() {
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+				document.getElementById("myDropdown").classList.toggle("show");
+				
   				if (window.pageYOffset >= sticky) {
     				navbar.classList.add("sticky")
   				} else {
