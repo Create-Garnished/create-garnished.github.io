@@ -163,6 +163,20 @@
   				transition: max-height 0.2s ease-out;
   				background-color: #1D232B;
 			}
+			
+			.stick-content {
+  				padding: 16px;
+			}
+
+			.sticky {
+  				position: fixed;
+  				top: 0;
+  				width: 100%;
+			}
+
+			.sticky + .sticky-content {
+  				padding-top: 60px;
+			}
         </style>
     </head>
     <body>
@@ -713,7 +727,7 @@
 		<script>
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-			function myFunction() {
+			function dropdownButton() {
 				document.getElementById("myDropdown").classList.toggle("show");
 			}
 
@@ -740,6 +754,20 @@ toggle between hiding and showing the dropdown content */
       					content.style.maxHeight = content.scrollHeight + "px";
     				} 
   				});
+			}
+
+			
+			window.onscroll = function() {myFunction()};
+
+			var navbar = document.getElementById("navbar");
+			var sticky = navbar.offsetTop;
+
+			function stickyNavigation() {
+  				if (window.pageYOffset >= sticky) {
+    				navbar.classList.add("sticky")
+  				} else {
+    				navbar.classList.remove("sticky");
+  				}
 			}
 		</script>
     </body>
