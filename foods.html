@@ -412,6 +412,22 @@ toggle between hiding and showing the dropdown content */
     				} 
   				});
 			}
+
+			
+			var coll = document.getElementsByClassName("search-collapsible");
+			var i;
+
+			for (i = 0; i < coll.length; i++) {
+				coll[i].addEventListener("click", function() {
+					this.classList.toggle("active");
+    				var searchcontent = this.nextElementSibling;
+    				if (searchcontent.style.maxHeight){
+      					searchcontent.style.maxHeight = null;
+    				} else {
+      					searchcontent.style.maxHeight = searchcontent.scrollHeight + "px";
+    				} 
+  				});
+			}
 		</script>
     </body>
 </html>
