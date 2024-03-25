@@ -249,7 +249,7 @@
 			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for a food..." title="Type a food's name">
 			<ul id="myUL">
 				<li>
-					<button class="search-collapsible">Ungarnished Cashew</button>
+					<button class="search-collapsible" onclick="dropdown()">Ungarnished Cashew</button>
 					<div class="search-content">
 						<ul>
 							<li>Nutrition: </li>
@@ -258,110 +258,110 @@
 						</ul>
 					</div>
 				</li>
-				<li><button class="search-collapsible">Garnished Cashew</button></li>
-				<li><button class="search-collapsible">Cashew covered in Cinder Flour</button></li>
-				<li><button class="search-collapsible">Cashew covered in Melted Cinder Flour</button></li>
-				<li><button class="search-collapsible">Cashew covered in Melted Cinder Flour with effect(s)</button></li>
-				<li><button class="search-collapsible">Sweetened Cashew</button></li>
-				<li><button class="search-collapsible">Chocolate Glazed Cashew</button></li>
-				<li><button class="search-collapsible">Honeyed Cashew</button></li>
-				<li><button class="search-collapsible">Ungarnished Walnut</button></li>
-				<li><button class="search-collapsible">Garnished Walnut</button></li>
-				<li><button class="search-collapsible">Walnut covered in Cinder Flour</button></li>
-				<li><button class="search-collapsible">Walnut covered in Melted Cinder Flour</button></li>
-				<li><button class="search-collapsible">Walnut covered in Melted Cinder Flour with effect(s)</button></li>
-				<li><button class="search-collapsible">Sweetened Walnut</button></li>
-				<li><button class="search-collapsible">Chocolate Glazed Walnut</button></li>
-				<li><button class="search-collapsible">Honeyed Walnut</button></li>
-				<li><button class="search-collapsible">Ungarnished Almond</button></li>
-				<li><button class="search-collapsible">Garnished Almond</button></li>
-				<li><button class="search-collapsible">Almond covered in Cinder Flour</button></li>
-				<li><button class="search-collapsible">Almond covered in Melted Cinder Flour</button></li>
-				<li><button class="search-collapsible">Almond covered in Melted Cinder Flour with effect(s)</button></li>
-				<li><button class="search-collapsible">Sweetened Almond</button></li>
-				<li><button class="search-collapsible">Chocolate Glazed Almond</button></li>
-				<li><button class="search-collapsible">Honeyed Almond</button></li>
-				<li><button class="search-collapsible">Ungarnished Pecan</button></li>
-				<li><button class="search-collapsible">Garnished Pecan</button></li>
-				<li><button class="search-collapsible">Pecan covered in Cinder Flour</button></li>
-				<li><button class="search-collapsible">Pecan covered in Melted Cinder Flour</button></li>
-				<li><button class="search-collapsible">Pecan covered in Melted Cinder Flour with effect(s)</button></li>
-				<li><button class="search-collapsible">Sweetened Pecan</button></li>
-				<li><button class="search-collapsible">Chocolate Glazed Pecan</button></li>
-				<li><button class="search-collapsible">Honeyed Pecan</button></li>
-				<li><button class="search-collapsible">Ungarnished Pistachio</button></li>
-				<li><button class="search-collapsible">Garnished Pistachio</button></li>
-				<li><button class="search-collapsible">Pistachio covered in Cinder Flour</button></li>
-				<li><button class="search-collapsible">Pistachio covered in Melted Cinder Flour</button></li>
-				<li><button class="search-collapsible">Pistachio covered in Melted Cinder Flour with effect(s)</button></li>
-				<li><button class="search-collapsible">Sweetened Pistachio</button></li>
-				<li><button class="search-collapsible">Chocolate Glazed Pistachio</button></li>
-				<li><button class="search-collapsible">Honeyed Pistachio</button></li>
-				<li><button class="search-collapsible">Ungarnished Macadamia</button></li>
-				<li><button class="search-collapsible">Garnished Macadamia</button></li>
-				<li><button class="search-collapsible">Macadamia covered in Cinder Flour</button></li>
-				<li><button class="search-collapsible">Macadamia covered in Melted Cinder Flour</button></li>
-				<li><button class="search-collapsible">Macadamia covered in Melted Cinder Flour with effect(s)</button></li>
-				<li><button class="search-collapsible">Sweetened Macadamia</button></li>
-				<li><button class="search-collapsible">Chocolate Glazed Macadamia</button></li>
-				<li><button class="search-collapsible">Honeyed Macadamia</button></li>
-				<li><button class="search-collapsible">Ungarnished Peanut</button></li>
-				<li><button class="search-collapsible">Garnished Peanut</button></li>
-				<li><button class="search-collapsible">Peanut covered in Cinder Flour</button></li>
-				<li><button class="search-collapsible">Peanut covered in Melted Cinder Flour</button></li>
-				<li><button class="search-collapsible">Peanut covered in Melted Cinder Flour with effect(s)</button></li>
-				<li><button class="search-collapsible">Sweetened Peanut</button></li>
-				<li><button class="search-collapsible">Chocolate Glazed Peanut</button></li>
-				<li><button class="search-collapsible">Honeyed Peanut</button></li>
-				<li><button class="search-collapsible">Ungarnished Hazelnut</button></li>
-				<li><button class="search-collapsible">Garnished Hazelnut</button></li>
-				<li><button class="search-collapsible">Hazelnut covered in Cinder Flour</button></li>
-				<li><button class="search-collapsible">Hazelnut covered in Melted Cinder Flour</button></li>
-				<li><button class="search-collapsible">Hazelnut covered in Melted Cinder Flour with effect(s)</button></li>
-				<li><button class="search-collapsible">Sweetened Hazelnut</button></li>
-				<li><button class="search-collapsible">Chocolate Glazed Hazelnut</button></li>
-				<li><button class="search-collapsible">Honeyed Hazelnut</button></li>
-				<li><button class="search-collapsible">Ungarnished Chestnut</button></li>
-				<li><button class="search-collapsible">Garnished Chestnut</button></li>
-				<li><button class="search-collapsible">Chestnut covered in Cinder Flour</button></li>
-				<li><button class="search-collapsible">Chestnut covered in Melted Cinder Flour</button></li>
-				<li><button class="search-collapsible">Chestnut covered in Melted Cinder Flour with effect(s)</button></li>
-				<li><button class="search-collapsible">Sweetened Chestnut</button></li>
-				<li><button class="search-collapsible">Chocolate Glazed Chestnut</button></li>
-				<li><button class="search-collapsible">Honeyed Chestnut</button></li>
-				<li><button class="search-collapsible">Nut Mix</button></li>
-				<li><button class="search-collapsible">Sweetened Nut Mix</button></li>
-				<li><button class="search-collapsible">Chocolate Glazed Nut Mix</button></li>
-				<li><button class="search-collapsible">Honeyed Nut Mix</button></li>
-				<li><button class="search-collapsible">Garnished Meal</button></li>
-				<li><button class="search-collapsible">Garnished Sweet Berries</button></li>
-				<li><button class="search-collapsible">Honeyed Sweet Berries</button></li>
-				<li><button class="search-collapsible">Salad</button></li>
-				<li><button class="search-collapsible">Phantom Steak</button></li>
-				<li><button class="search-collapsible">Bitter Almond</button></li>
-				<li><button class="search-collapsible">Almond Cheese</button></li>
-				<li><button class="search-collapsible">Cashew Apple</button></li>
-				<li><button class="search-collapsible">Brownie with Walnuts</button></li>
-				<li><button class="search-collapsible">Pecan Pie</button></li>
-				<li><button class="search-collapsible">Cashew Cookie</button></li>
-				<li><button class="search-collapsible">Peanut Oil and Cinder Sandwich</button></li>
-				<li><button class="search-collapsible">Tophet Brew</button></li>
-				<li><button class="search-collapsible">Grim Stew</button></li>
-				<li><button class="search-collapsible">Soul Khana</button></li>
-				<li><button class="search-collapsible">Spirited Concoction</button></li>
-				<li><button class="search-collapsible">Putrid Stew</button></li>
-				<li><button class="search-collapsible">Bowl of Nut Nachos</button></li>
-				<li><button class="search-collapsible">Cinder Shroom Roll</button></li>
-				<li><button class="search-collapsible">Wrapped Warped Tangle</button></li>
-				<li><button class="search-collapsible">Wrapped Crimson Tangle</button></li>
-				<li><button class="search-collapsible">Wrapped Sepia Tangle</button></li>
-				<li><button class="search-collapsible">Weeping Tangle</button></li>
-				<li><button class="search-collapsible">Blazing Delight</button></li>
-				<li><button class="search-collapsible">Nut Nacho</button></li>
-				<li><button class="search-collapsible">Senile Sweet from Blackstone</button></li>
-				<li><button class="search-collapsible">Senile Sweet from Basalt</button></li>
-				<li><button class="search-collapsible">Senile Sweet from Scoria</button></li>
-				<li><button class="search-collapsible">Senile Sweet from Scorchia</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Garnished Cashew</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Cashew covered in Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Cashew covered in Melted Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Cashew covered in Melted Cinder Flour with effect(s)</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Sweetened Cashew</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Chocolate Glazed Cashew</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Honeyed Cashew</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Ungarnished Walnut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Garnished Walnut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Walnut covered in Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Walnut covered in Melted Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Walnut covered in Melted Cinder Flour with effect(s)</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Sweetened Walnut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Chocolate Glazed Walnut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Honeyed Walnut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Ungarnished Almond</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Garnished Almond</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Almond covered in Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Almond covered in Melted Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Almond covered in Melted Cinder Flour with effect(s)</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Sweetened Almond</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Chocolate Glazed Almond</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Honeyed Almond</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Ungarnished Pecan</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Garnished Pecan</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Pecan covered in Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Pecan covered in Melted Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Pecan covered in Melted Cinder Flour with effect(s)</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Sweetened Pecan</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Chocolate Glazed Pecan</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Honeyed Pecan</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Ungarnished Pistachio</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Garnished Pistachio</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Pistachio covered in Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Pistachio covered in Melted Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Pistachio covered in Melted Cinder Flour with effect(s)</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Sweetened Pistachio</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Chocolate Glazed Pistachio</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Honeyed Pistachio</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Ungarnished Macadamia</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Garnished Macadamia</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Macadamia covered in Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Macadamia covered in Melted Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Macadamia covered in Melted Cinder Flour with effect(s)</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Sweetened Macadamia</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Chocolate Glazed Macadamia</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Honeyed Macadamia</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Ungarnished Peanut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Garnished Peanut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Peanut covered in Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Peanut covered in Melted Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Peanut covered in Melted Cinder Flour with effect(s)</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Sweetened Peanut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Chocolate Glazed Peanut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Honeyed Peanut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Ungarnished Hazelnut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Garnished Hazelnut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Hazelnut covered in Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Hazelnut covered in Melted Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Hazelnut covered in Melted Cinder Flour with effect(s)</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Sweetened Hazelnut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Chocolate Glazed Hazelnut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Honeyed Hazelnut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Ungarnished Chestnut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Garnished Chestnut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Chestnut covered in Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Chestnut covered in Melted Cinder Flour</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Chestnut covered in Melted Cinder Flour with effect(s)</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Sweetened Chestnut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Chocolate Glazed Chestnut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Honeyed Chestnut</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Nut Mix</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Sweetened Nut Mix</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Chocolate Glazed Nut Mix</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Honeyed Nut Mix</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Garnished Meal</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Garnished Sweet Berries</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Honeyed Sweet Berries</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Salad</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Phantom Steak</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Bitter Almond</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Almond Cheese</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Cashew Apple</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Brownie with Walnuts</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Pecan Pie</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Cashew Cookie</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Peanut Oil and Cinder Sandwich</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Tophet Brew</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Grim Stew</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Soul Khana</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Spirited Concoction</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Putrid Stew</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Bowl of Nut Nachos</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Cinder Shroom Roll</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Wrapped Warped Tangle</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Wrapped Crimson Tangle</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Wrapped Sepia Tangle</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Weeping Tangle</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Blazing Delight</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Nut Nacho</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Senile Sweet from Blackstone</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Senile Sweet from Basalt</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Senile Sweet from Scoria</button></li>
+				<li><button class="search-collapsible" onclick="dropdown()">Senile Sweet from Scorchia</button></li>
 			</ul>
         </div>
 		<hr style="clear:both;visibility:hidden;height:40px;">
@@ -373,7 +373,7 @@
 
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
-			function myFunction() {
+			function dropdown() {
 				document.getElementById("myDropdown").classList.toggle("show");
 			}
 
