@@ -163,6 +163,38 @@
   				transition: max-height 0.2s ease-out;
   				background-color: #1D232B;
 			}
+
+			#myInput {
+  				background-image: url('/css/searchicon.png');
+  				background-position: 10px 12px;
+  				background-repeat: no-repeat;
+  				width: 100%;
+  				font-size: 16px;
+  				padding: 12px 20px 12px 40px;
+  				border: 1px solid #ddd;
+  				margin-bottom: 12px;
+			}
+
+			#myUL {
+  				list-style-type: none;
+  				padding: 0;
+  				margin: 0;
+			}
+
+			#myUL li a {
+  				border: 1px solid #ddd;
+  				margin-top: -1px; /* Prevent double borders */
+  				background-color: #f6f6f6;
+  				padding: 12px;
+  				text-decoration: none;
+  				font-size: 18px;
+  				color: black;
+  				display: block
+			}
+
+			#myUL li a:hover:not(.header) {
+  				background-color: #eee;
+			}
         </style>
     </head>
     <body>
@@ -188,12 +220,14 @@
 					<a href="/recipe_types/bulk_freezing.html">Bulk Freezing</a>
 				</div>
 			</div>
+			
 			<a href="https://modrinth.com/mod/create-garnished" style="float:right;" target="_blank">Modrinth</a>
 			<a href="https://www.curseforge.com/minecraft/mc-mods/garnished" style="float:right;" target="_blank">Curseforge</a>
 			<a href="https://www.ko-fi.com/dakotapride" style="float:right;" target="_blank">Ko-fi</a>
 		</div>
 		<div style="padding:20px;margin-top:30px;">
-			<ul>
+			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for a food..." title="Type a food's name">
+			<ul id="myUL">
 				<li>Ungarnished Cashew</li>
 				<li>Garnished Cashew</li>
 				<li>Cashew covered in Cinder Flour</li>
@@ -312,6 +346,23 @@
 toggle between hiding and showing the dropdown content */
 			function myFunction() {
 				document.getElementById("myDropdown").classList.toggle("show");
+			}
+
+			function myFunction() {
+    			var input, filter, ul, li, a, i, txtValue;
+    			input = document.getElementById("myInput");
+    			filter = input.value.toUpperCase();
+    			ul = document.getElementById("myUL");
+    			li = ul.getElementsByTagName("li");
+    			for (i = 0; i < li.length; i++) {
+        			a = li[i].getElementsByTagName("a")[0];
+        			txtValue = a.textContent || a.innerText;
+        			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            			li[i].style.display = "";
+        			} else {
+            			li[i].style.display = "none";
+        			}
+    			}
 			}
 			
 // Close the dropdown if the user clicks outside of it
