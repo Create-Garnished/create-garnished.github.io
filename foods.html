@@ -177,11 +177,7 @@
 
 			#myUL {
   				list-style-type: none;
-  				padding: 0;
   				margin: 0;
-			}
-
-			#myUL li a {
   				border: 1px solid #ddd;
   				margin-top: -1px; /* Prevent double borders */
   				background-color: #f6f6f6;
@@ -190,10 +186,6 @@
   				font-size: 18px;
   				color: black;
   				display: block
-			}
-
-			#myUL li a:hover:not(.header) {
-  				background-color: #eee;
 			}
         </style>
     </head>
@@ -228,8 +220,8 @@
 		<div style="padding:20px;margin-top:30px;">
 			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for a food..." title="Type a food's name">
 			<ul id="myUL">
-				<li><a href="#ungarnished_cashew">Ungarnished Cashew</a></li>
-				<li><a href="#garnished_cashew">Garnished Cashew</a></li>
+				<li>Ungarnished Cashew</a></li>
+				<li>Garnished Cashew</li>
 				<li>Cashew covered in Cinder Flour</li>
 				<li>Cashew covered in Melted Cinder Flour</li>
 				<li>Cashew covered in Melted Cinder Flour with effect(s)</li>
@@ -355,13 +347,7 @@ toggle between hiding and showing the dropdown content */
     			ul = document.getElementById("myUL");
     			li = ul.getElementsByTagName("li");
     			for (i = 0; i < li.length; i++) {
-        			a = li[i].getElementsByTagName("a")[0];
-        			txtValue = a.textContent || a.innerText;
-        			if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            			li[i].style.display = "";
-        			} else {
-            			li[i].style.display = "none";
-        			}
+					li[i].style.display = "";
     			}
 			}
 			
