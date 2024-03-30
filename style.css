@@ -157,3 +157,54 @@
   				transition: max-height 0.2s ease-out;
   				background: rgba(29, 35, 43, 0.5;
 			}
+
+			.search-collapsible {
+				background-color: #02060C;
+				color: white;
+				cursor: pointer;
+				padding: 18px;
+				width: 400px;
+				border: none;
+				text-align: left;
+				outline: none;
+				font-size: 20px;
+			}
+
+			.active, .search-collapsible {
+				background-color: black;
+			}
+
+			.search-content {
+				padding: 0 18px;
+				max-height: 0;
+				overflow: hidden;
+				transition: max-height 0.2s ease-out;
+				background-color: #1D232B;
+			}
+
+			#myInput {
+  				background-position: 10px 12px;
+  				background-repeat: no-repeat;
+  				width: 40%;
+  				font-size: 16px;
+  				padding: 12px 20px 12px 10px;
+  				border: 1px solid #ddd;
+  				margin-bottom: 12px;
+			}
+
+			#myUL {
+  				list-style-type: none;
+  				padding: 0;
+  				margin: 0;
+			}
+
+			#listItem {
+  				border: 1px solid #ddd;
+  				margin-top: -1px; /* Prevent double borders */
+  				background-color: #f6f6f6;
+  				padding: 12px;
+  				text-decoration: none;
+  				font-size: 18px;
+  				color: black;
+  				display: block
+			}
