@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create: Garnished Wiki - Blog Post - Update v1.8</title>
+        <link rel="icon" type="image/x-icon" href="/icon.ico">
+        
+        <style>
+            body {
+                margin: 0px;
+				background-image: url('images/background1.png');
+				font-family: "Cabin", sans-serif;
+                color: white;
+            }
+
+            p {
+                font-size: 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            h3 {
+                font-size: 28px;
+            }
+
+            h4 {
+                font-size: 24px;
+            }
+
+            h5 {
+                font-size: 20px;
+            }
+
+            h6 {
+                font-size: 16px;
+            }
+
+			li {
+				font-size: 20px;
+			}
+
+			a:link {
+				color: white;
+  				text-decoration: none;
+			}
+
+			a:visited {
+				color: white;
+  				text-decoration: none;
+			}
+
+			a:hover {
+				color: white;
+  				text-decoration: none;
+			}
+
+            .navbar {
+                overflow: hidden;
+                background-color: #02060C;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .navbar a {
+                font-size: 16px;
+  				color: white;
+  				text-align: center;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            .dropdown {
+                float: left;
+                overflow: hidden;
+            }
+
+            .dropdown .dropbtn {
+                cursor: pointer;
+                font-size: 16px;
+		    	border: none;
+  				outline: none;
+  				color: white;
+  				padding: 14px 16px;
+  				background-color: inherit;
+  				font-family: inherit;
+  				margin: 0;
+			}
+
+			.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  				background-color: black;
+			}
+
+			.dropdown-content {
+				display: none;
+  				position: absolute;
+  				background-color: #161b22;
+  				min-width: 160px;
+  				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  				z-index: 1;
+			}
+
+			.dropdown-content a {
+  				float: none;
+  				color: white;
+  				padding: 12px 16px;
+  				text-decoration: none;
+  				display: block;
+  				text-align: left;
+			}
+
+			.dropdown-content a:hover {
+  				background-color: #1D232B;
+			}
+
+			.show {
+  				display: block;
+			}
+
+			/* width */
+			::-webkit-scrollbar {
+  				width: 15px;
+			}
+
+			/* Track */
+			::-webkit-scrollbar-track {
+  				background: #444444; 
+			}
+ 
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+ 		 		background: #666666; 
+			}
+
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+  				background: gray; 
+			}
+
+			.collapsible {
+  				background: rgba(2, 6, 12, 0.3);
+  				color: white;
+  				cursor: pointer;
+  				padding: 18px;
+  				width: 400px;
+  				border: none;
+  				text-align: center;
+  				outline: none;
+  				font-size: 15px;
+			}
+
+			.active, .collapsible:hover {
+  				background: rgba(2, 6, 12, 0.5);
+			}
+
+			.content {
+  				padding: 0 18px;
+  				max-height: 0;
+  				overflow: hidden;
+  				transition: max-height 0.2s ease-out;
+  				background: rgba(29, 35, 43, 0.5);
+			}
+        </style>
+    </head>
+    <body>
+		<div style="padding:20px;margin-top:0px;background-color:#02060C;overflow:hidden;background-image: url('/images/background.png');">
+			<center>
+				<img src="https://cdn.modrinth.com/data/6e2SlzR4/images/6c6a60c205ed08d04b4bbed6a7048670daa21000.png" width=700px;>
+				<br>
+				<p style="font-size:16px;"><i>Create: Garnished adds many new foods and items, expanding on the Create mod!</i></p>
+			</center>
+		</div>
+		<div class="navbar">
+			<a href="/index.html" style="float:left;">Home</a>
+			<a href="/integrations.html" style="float:left;">Integrations</a>
+            <a href="/hatchets.html" style="float:left;">Hatchet Interactions</a>
+            <a href="/fluid_interactions.html" style="float:left;">Fluid Interactions</a>
+            <a href="/foods.html" style="float:left;">Cookbook</a>
+			<div class="dropdown" style="float:left;">
+				<button class="dropbtn" onclick="myFunction()">Recipe Types
+					<i class="fa fa-caret-down"></i>
+				</button>
+				<div class="dropdown-content" id="myDropdown">
+					<a href="/recipe_types/bulk_dyeing.html">Bulk Dyeing</a>
+					<a href="/recipe_types/bulk_freezing.html">Bulk Freezing</a>
+				</div>
+			</div>
+			<a href="/blog.html" style="float:left;">Blog Posts</a>
+			<a href="https://modrinth.com/mod/create-garnished" style="float:right;" target="_blank">Modrinth</a>
+			<a href="https://www.curseforge.com/minecraft/mc-mods/garnished" style="float:right;" target="_blank">Curseforge</a>
+			<a href="https://www.ko-fi.com/dakotapride" style="float:right;" target="_blank">Ko-fi</a>
+		</div>
+		<hr style="clear:both;visibility:hidden;height:40px;">
+		<p><center>The Create: Garnished mod and Create: Garnished wiki have been developed and designed by DakotaPrideModding</center></p>
+		<p><center><a href="https://github.com/DakotaPride/create-garnished" target="_blank">Create: Garnished Fabric Source Code</a></center></p>
+		<p><center><a href="https://github.com/DakotaPride/create-garnished/issues" target="_blank">Create: Garnished Issues Page</a></center></p>
+
+        <script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+			function myFunction() {
+				document.getElementById("myDropdown").classList.toggle("show");
+			}
+
+// Close the dropdown if the user clicks outside of it
+			window.onclick = function(e) {
+				if (!e.target.matches('.dropbtn')) {
+					var myDropdown = document.getElementById("myDropdown");
+					if (myDropdown.classList.contains('show')) {
+						myDropdown.classList.remove('show');
+					}
+				}
+			}
+
+			var coll = document.getElementsByClassName("collapsible");
+			var i;
+
+			for (i = 0; i < coll.length; i++) {
+				coll[i].addEventListener("click", function() {
+					this.classList.toggle("active");
+    				var content = this.nextElementSibling;
+    				if (content.style.maxHeight){
+      					content.style.maxHeight = null;
+    				} else {
+      					content.style.maxHeight = content.scrollHeight + "px";
+    				} 
+  				});
+			}
+		</script>
+    </body>
+</html>
