@@ -126,24 +126,19 @@
 			}
 
 			.search-collapsible {
-				background: rgba(2, 6, 12, 0.5);
+				background: rgba(2, 6, 12, 0.3);
 				color: white;
 				cursor: pointer;
-				/* padding: 18px; */
-				width: 100%;
-                height: 60px;
+				padding: 18px;
+				width: 400px;
 				border: none;
-				text-align: center;
+				text-align: left;
 				outline: none;
 				font-size: 20px;
 			}
-            
-            .search-collapsible button {
-            	width:800px;
-            }
 
 			.active, .search-collapsible {
-				background: rgba(2, 6, 12, 1.0);
+				background: rgba(2, 6, 12, 0.5);
 			}
 
 			.search-content {
@@ -151,8 +146,7 @@
 				max-height: 0;
 				overflow: hidden;
 				transition: max-height 0.2s ease-out;
-				background: rgba(29, 35, 43, 1.0);
-				text-align: left;
+				background: rgba(29, 35, 43, 0.5);
 			}
 
 			.collapsible {
@@ -165,6 +159,10 @@
   				text-align: center;
   				outline: none;
   				font-size: 15px;
+			}
+
+			.active, .collapsible:hover {
+  				background: rgba(2, 6, 12, 0.5);
 			}
 
 			.content {
@@ -192,11 +190,20 @@
   				padding: 0;
   				margin: 0;
 			}
+
+			#listItem {
+  				border: 1px solid #ddd;
+  				margin-top: -1px; /* Prevent double borders */
+  				background-color: #232833;
+  				padding: 12px;
+  				text-decoration: none;
+  				font-size: 18px;
+  				color: white;
+  				display: block
+			}
         </style>
     </head>
     <body>
-		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 		<div style="padding:20px;margin-top:0px;background-color:#02060C;overflow:hidden;background-image: url('/images/background.png');">
 			<center>
 				<img src="https://cdn.modrinth.com/data/6e2SlzR4/images/6c6a60c205ed08d04b4bbed6a7048670daa21000.png" width=700px;>
@@ -228,52 +235,62 @@
 			<input type="text" id="myInput" onkeyup="searchBar()" placeholder="Search for a food..." title="Please enter the name of a food.">
 			<ul id="myUL">
 				<li>
-					<h4><img src="/images/item_icons/ungarnished/cashew.png"> Ungarnished Cashew</h4>
-					<div id="ungarnished-cashew">
-                        <p><strong>Rating: <ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon></strong></p>
-                        <p>Ungarnished Cashews provide 1 nutrition and 0.1 saturation (relative values) to the consumer.</p>
-                        <h5><strong>Other information</strong></h5>
-                        <p>This food provides Nausea upon consumption.</p>
-						<p>Can be obtained by breaking Nut Leaves or Cashew Leaves.</p>
-                    </div>
+					<button class="search-collapsible" id="ungarnished-cashew"><img src="/images/item_icons/ungarnished/cashew.png"> Ungarnished Cashew</button>
+					<div class="search-content"><br>
+						This food is not recommended for consumption.<br><br>
+						- Nutrition: 1<br>
+						- Saturation: 0.1<br>
+						- Provides Nausea upon consumption<br><br>
+						<div style="display:flex;">
+							<img src="/images/recipes/ungarnished/cashew.png">
+							<div style="width:200px;">
+								Ungarnished nuts can be obtained by breaking naturally generating Nut Leaves or the leaves variant of their specific type of nut.
+							</div>
+						</div>
+					</div>
 				</li>
 				<li>
-                    <h4><img src="/images/item_icons/garnished/cashew.png"> Garnished Cashew</h4>
-					<div id="garnished-cashew">
-                        <p><strong>Rating: <ion-icon name="star"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon></strong></p>
-                        <p>Garnished Cashews provide 4 nutrition and 0.2 saturation (relative values) to the consumer.</p>
-                        <h5><strong>Other information</strong></h5>
-						<p>Can be obtained by deploying a Garnish Compound onto an Ungarnished Cashew.</p>
-						<p>Can be obtained by spouting 250mb of Liquid Garnish onto an Ungarnished Cashew.</p>
-                    </div>
+					<button class="search-collapsible" id="garnished-cashew"><img src="/images/item_icons/garnished/cashew.png"> Garnished Cashew</button>
+					<div class="search-content"><br>
+						This food is an edible meal for consumption.<br><br>
+						- Nutrition: 4<br>
+						- Saturation: 0.2<br><br>
+						<div style="display:flex;">
+							<img src="/images/recipes/garnished/item_application/cashew.png">
+							<div style="width:200px;">
+								Garnished nuts can be obtained by deploying a Garnish Compound onto an ungarnished nut.
+							</div>
+							<img src="/images/recipes/garnished/spout/cashew.png">
+							<div style="width:200px;">
+								Garnished nuts can also be obtained by spouting 250mb of Liquid Garnish onto an ungarnished nut.
+							</div>
+						</div>
+					</div>
 				</li>
 				<li>
-                    <h4><img src="/images/item_icons/cinder_flour/cashew.png"> Garnished Cashew covered in Cinder Flour</h4>
-					<div id="cinder-flour-cashew">
-                        <p><strong>Rating: <ion-icon name="star"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon></strong></p>
-                        <p>Garnished Cashews provide 4 nutrition and 0.2 saturation (relative values) to the consumer.</p>
-                        <h5><strong>Other information</strong></h5>
-						<p>Can be obtained by deploying a piece of Cinder Flour onto a Garnished Cashew.</p>
-                    </div>
+					<button class="search-collapsible" id="cinder-flour-cashew"><img src="/images/item_icons/cinder_flour/cashew.png"> Cashew covered in Cinder Flour</button>
+					<div class="search-content"><br>
+						This food is an edible meal for consumption.<br><br>
+						- Nutrition: 4<br>
+						- Saturation: 0.2<br><br>
+					</div>
 				</li>
 				<li>
-                    <h4><img src="/images/item_icons/cinder_flour/melted/cashew.png"> Garnished Cashew covered in Melted Cinder Flour</h4>
-					<div id="melted-cinder-flour-cashew">
-                        <p><strong>Rating: <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon></strong></p>
-                        <p>Garnished Cashews provide 7 nutrition and 0.4 saturation (relative values) to the consumer.</p>
-                        <h5><strong>Other information</strong></h5>
-						<p>Can be obtained by mixing a Garnished Cashew covered in Cinder Flour with a piece of Nether Wart in a heated basin.</p>
-                    </div>
+					<button class="search-collapsible" id="melted-cinder-flour-cashew"><img src="/images/item_icons/cinder_flour/melted/cashew.png"> Cashew covered in Melted Cinder Flour</button>
+					<div class="search-content"><br>
+						This food is a great meal for consumption.<br><br>
+						- Nutrition: 7<br>
+						- Saturation: 0.4<br><br>
+					</div>
 				</li>
 				<li>
-                    <h4><img src="/images/item_icons/cinder_flour/melted/cashew.png"> Garnished Cashew covered in Melted Cinder Flour with effect(s)</h4>
-					<div id="melted-cinder-flour-cashew-with-effects">
-                        <p><strong>Rating: <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon></strong></p>
-                        <p>Garnished Cashews provide 7 nutrition and 0.4 saturation (relative values) to the consumer.</p>
-                        <h5><strong>Other information</strong></h5>
-						<p>This food provides Speed upon consumption.</p>
-						<p>Can be obtained by compacting a Garnished Cashew covered in Cinder Flour with 100mb of Lava, a piece of Nether Wart, a piece of Powdered Garnish, a Salt Compound, and 1 of (mostly) any mineral nugget - Iron, Gold, Zinc, Brass.</p>
-                    </div>
+					<button class="search-collapsible" id="melted-cinder-flour-cashew-with-effects"><img src="/images/item_icons/cinder_flour/melted/cashew.png"> Cashew covered in Melted Cinder Flour with effect(s)</button>
+					<div class="search-content"><br>
+						This food is a great meal for consumption.<br><br>
+						- Nutrition: 7<br>
+						- Saturation: 0.4<br>
+						- Provides Speed upon consumption<br><br>
+					</div>
 				</li>
 				<li>
 					<button class="search-collapsible" id="sweetened-cashew"><img src="/images/item_icons/sweetened/cashew.png"> Sweetened Cashew</button>
@@ -2073,14 +2090,14 @@ toggle between hiding and showing the dropdown content */
 			}
 
 			function searchBar() {
-    			var input, filter, ul, li, searchItem, i, txtValue;
+    			var input, filter, ul, li, button, i, txtValue;
 				input = document.getElementById("myInput");
     			filter = input.value.toUpperCase();
     			ul = document.getElementById("myUL");
     			li = ul.getElementsByTagName("li");
 				for (i = 0; i < li.length; i++) {
-        			searchItem = li[i].getElementsByTagName("h4")[0];
-        			txtValue = searchItem.textContent || searchItem.innerText;
+        			button = li[i].getElementsByTagName("button")[0];
+        			txtValue = button.textContent || button.innerText;
         			if (txtValue.toUpperCase().indexOf(filter) > -1) {
             			li[i].style.display = "";
         			} else {
