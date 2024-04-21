@@ -2079,19 +2079,18 @@ toggle between hiding and showing the dropdown content */
 			}
 
 			function searchBar() {
-    			var input, filter, ul, li, searchItem, i, txtValue, h4;
+    			var input, filter, ul, li, searchItem, i, txtValue;
 				input = document.getElementById("myInput");
     			filter = input.value.toUpperCase();
     			ul = document.getElementById("myUL");
     			li = ul.getElementsByTagName("li");
 				for (i = 0; i < li.length; i++) {
         			searchItem = li[i].getElementsByTagName("search-item")[0];
-					h4 = searchItem[i].getElementsByTagName("h4")[0];
         			txtValue = h4.textContent || h4.innerText;
         			if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            			searchItem[i].style.display = "";
+            			li[i].style.display = "";
         			} else {
-            			searchItem[i].style.display = "none";
+            			li[i].style.display = "none";
         			}
 				}
 			}
