@@ -2156,18 +2156,6 @@ toggle between hiding and showing the dropdown content */
     				} 
   				});
 			}
-
-			const sortList = list => [...list].sort((a, b) => {
-  				const A = a.textContent, B = b.textContent;
-  				return (A < B) ? -1 : (A > B) ? 1 : 0;
-			});
-
-
-			window.addEventListener("load", function() {
-  				const ul = document.getElementById("myUL");
-  				const list = ul.querySelectorAll("li");
-  				ul.append(...sortList(list));
-			})
 		</script>
     </body>
 </html>
