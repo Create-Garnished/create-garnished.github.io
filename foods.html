@@ -223,17 +223,6 @@
 		<div style="padding:20px;margin-top:30px;">
 			<input type="text" id="myInput" onkeyup="searchBar()" placeholder="Search for a food..." title="Please enter the name of a food.">
 			<ul id="myUL">
-				<li id="listItem">
-					<center>
-						<h4><img src="/images/item_icons/ungarnished/cashew.png"> Ungarnished Cashew</h4>
-					</center>
-					<p>
-						An Ungarnished Cashew can be obtained by breaking naturally generating Nut Leaves or Cashew Leaves.<br>
-						<h5>Food Information</h5><br>
-						Provides 1 nutrition and 0.1 saturation (relative values) to the consumer.<br>
-						Provides Nausea upon consumption<br>
-					</p>
-				</li>
 				<li>
 					<button class="search-collapsible" id="ungarnished-cashew"><img src="/images/item_icons/ungarnished/cashew.png"> Ungarnished Cashew</button>
 					<div class="search-content"><br>
@@ -2096,7 +2085,7 @@ toggle between hiding and showing the dropdown content */
     			ul = document.getElementById("myUL");
     			li = ul.getElementsByTagName("li");
 				for (i = 0; i < li.length; i++) {
-        			button = li[i].getElementById("listItem")[0];
+        			button = li[i].getElementsByTag("button")[0];
         			txtValue = button.textContent || button.innerText;
         			if (txtValue.toUpperCase().indexOf(filter) > -1) {
             			li[i].style.display = "";
