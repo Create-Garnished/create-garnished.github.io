@@ -226,45 +226,33 @@
 			<input type="text" id="myInput" onkeyup="searchBar()" placeholder="Search for a food..." title="Please enter the name of a food.">
 			<ul id="myUL">
 				<li>
-					<button class="search-collapsible" id="ungarnished-cashew"><img src="/images/item_icons/ungarnished/cashew.png"> Ungarnished Cashew</button>
-					<div class="search-content"><br>
-						This food is not recommended for consumption.<br><br>
-						- Nutrition: 1<br>
-						- Saturation: 0.1<br>
-						- Provides Nausea upon consumption<br><br>
-						<div style="display:flex;">
-							<img src="/images/recipes/ungarnished/cashew.png">
-							<div style="width:200px;">
-								Ungarnished nuts can be obtained by breaking naturally generating Nut Leaves or the leaves variant of their specific type of nut.
-							</div>
-						</div>
-					</div>
+					<search-item id="ungarnished-cashew">
+                    	<h4><img src="/images/item_icons/ungarnished/cashew.png"> Ungarnished Cashew</h4>
+                        <p><strong>Rating: 0 out of 5</strong></p>
+                        <p>Ungarnished Cashews provide 1 nutrition and 0.1 saturation (relative values) to the consumer.</p>
+                        <h5><strong>Other information</strong></h5>
+                        <p>This food provides Nausea upon consumption.</p>
+						<p>Can be obtained by breaking Nut Leaves or Cashew Leaves.</p>
+                    </search-item>
 				</li>
 				<li>
-					<button class="search-collapsible" id="garnished-cashew"><img src="/images/item_icons/garnished/cashew.png"> Garnished Cashew</button>
-					<div class="search-content"><br>
-						This food is an edible meal for consumption.<br><br>
-						- Nutrition: 4<br>
-						- Saturation: 0.2<br><br>
-						<div style="display:flex;">
-							<img src="/images/recipes/garnished/item_application/cashew.png">
-							<div style="width:200px;">
-								Garnished nuts can be obtained by deploying a Garnish Compound onto an ungarnished nut.
-							</div>
-							<img src="/images/recipes/garnished/spout/cashew.png">
-							<div style="width:200px;">
-								Garnished nuts can also be obtained by spouting 250mb of Liquid Garnish onto an ungarnished nut.
-							</div>
-						</div>
-					</div>
+					<search-item id="garnished-cashew">
+                    	<h4><img src="/images/item_icons/garnished/cashew.png"> Garnished Cashew</h4>
+                        <p><strong>Rating: 1 out of 5</strong></p>
+                        <p>Garnished Cashews provide 4 nutrition and 0.2 saturation (relative values) to the consumer.</p>
+                        <h5><strong>Other information</strong></h5>
+						<p>Can be obtained by deploying a Garnish Compound onto an Ungarnished Cashew.</p>
+						<p>Can be obtained by spouting 250mb of Liquid Garnish onto an Ungarnished Cashew.</p>
+                    </search-item>
 				</li>
 				<li>
-					<button class="search-collapsible" id="cinder-flour-cashew"><img src="/images/item_icons/cinder_flour/cashew.png"> Cashew covered in Cinder Flour</button>
-					<div class="search-content"><br>
-						This food is an edible meal for consumption.<br><br>
-						- Nutrition: 4<br>
-						- Saturation: 0.2<br><br>
-					</div>
+					<search-item id="cinder-flour-cashew">
+                    	<h4><img src="/images/item_icons/cinder_flour/cashew.png"> Garnished Cashew covered in Cinder Flour</h4>
+                        <p><strong>Rating: 1 out of 5</strong></p>
+                        <p>Garnished Cashews provide 4 nutrition and 0.2 saturation (relative values) to the consumer.</p>
+                        <h5><strong>Other information</strong></h5>
+						<p>Can be obtained by deploying a piece of Cinder Flour onto a Garnished Cashew.</p>
+                    </search-item>
 				</li>
 				<li>
 					<button class="search-collapsible" id="melted-cinder-flour-cashew"><img src="/images/item_icons/cinder_flour/melted/cashew.png"> Cashew covered in Melted Cinder Flour</button>
@@ -273,6 +261,13 @@
 						- Nutrition: 7<br>
 						- Saturation: 0.4<br><br>
 					</div>
+					<search-item id="melted-cinder-flour-cashew">
+                    	<h4><img src="/images/item_icons/cinder_flour/melted/cashew.png"> Garnished Cashew covered in Melted Cinder Flour</h4>
+                        <p><strong>Rating: 2 out of 5</strong></p>
+                        <p>Garnished Cashews provide 7 nutrition and 0.4 saturation (relative values) to the consumer.</p>
+                        <h5><strong>Other information</strong></h5>
+						<p>Can be obtained by mixing a Garnished Cashew covered in Cinder Flour with a piece of Nether Wart in a heated basin.</p>
+                    </search-item>
 				</li>
 				<li>
 					<button class="search-collapsible" id="melted-cinder-flour-cashew-with-effects"><img src="/images/item_icons/cinder_flour/melted/cashew.png"> Cashew covered in Melted Cinder Flour with effect(s)</button>
@@ -2087,7 +2082,7 @@ toggle between hiding and showing the dropdown content */
     			ul = document.getElementById("myUL");
     			li = ul.getElementsByTagName("li");
 				for (i = 0; i < li.length; i++) {
-        			button = li[i].getElementsByTagName("button")[0];
+        			button = li[i].getElementsByTagName("search-item")[0];
         			txtValue = button.textContent || button.innerText;
         			if (txtValue.toUpperCase().indexOf(filter) > -1) {
             			li[i].style.display = "";
