@@ -2079,14 +2079,15 @@ toggle between hiding and showing the dropdown content */
 			}
 
 			function searchBar() {
-    			var input, filter, ul, li, button, i, txtValue;
+    			var input, filter, ul, li, button, i, txtValue, h4;
 				input = document.getElementById("myInput");
     			filter = input.value.toUpperCase();
     			ul = document.getElementById("myUL");
     			li = ul.getElementsByTagName("li");
 				for (i = 0; i < li.length; i++) {
         			button = li[i].getElementsByTagName("search-item")[0];
-        			txtValue = button.textContent || button.innerText;
+					h4 = button[i].getElementsByTagName("h4")[0];
+        			txtValue = h4.textContent || h4.innerText;
         			if (txtValue.toUpperCase().indexOf(filter) > -1) {
             			li[i].style.display = "";
         			} else {
