@@ -2085,7 +2085,7 @@ toggle between hiding and showing the dropdown content */
     			ul = document.getElementById("myUL");
     			li = ul.getElementsByTagName("li");
 				for (i = 0; i < li.length; i++) {
-        			button = li[i].getElementsByTag("button")[0];
+        			button = li[i].getElementsByTagName("button")[0];
         			txtValue = button.textContent || button.innerText;
         			if (txtValue.toUpperCase().indexOf(filter) > -1) {
             			li[i].style.display = "";
