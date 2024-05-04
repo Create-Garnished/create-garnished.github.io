@@ -206,6 +206,33 @@
 			#colour-red {
 				color: #F2320C;
 			}
+
+			.tooltip {
+  				position: relative;
+  				display: inline-block;
+  				border-bottom: 1px dotted black;
+			}
+
+			.tooltip .tooltiptext {
+  				visibility: hidden;
+  				width: 120px;
+  				background-color: black;
+  				color: #fff;
+  				text-align: center;
+  				border-radius: 6px;
+  				padding: 5px 0;
+  
+  				/* Position the tooltip */
+  				position: absolute;
+  				z-index: 1;
+  				bottom: 100%;
+  				left: 50%;
+  				margin-left: -60px;
+			}
+
+			.tooltip:hover .tooltiptext {
+  				visibility: visible;
+			}
         </style>
     </head>
     <body>
@@ -244,7 +271,7 @@
 					<img class="blog-thumbnail" src="/images/blog/anniversary_update.png" alt="Update v1.8" width="640" height="360">
 					<div id="blog-ctx">
 						<h3>v1.8 - Refurbished</h3>
-						<h6 id="blog-subtitle"><span id="colour-light-blue">Update</span> | Unknown Date</h6>
+						<h6 id="blog-subtitle"><span id="colour-light-blue"><div class="tooltip">Update<div class="tooltiptext">Information Regarding a Release Version of Create: Garnished</div></div></span> | Unknown Date</h6>
 						<p>
 							Celebrate the 1-year anniversary of Create: Garnished with the v1.8 update!
 							Explore the vast wastelands of the End or the ever-expanding hellscape of the Nether, with new and improved content for all!
@@ -258,7 +285,7 @@
 					<img class="blog-thumbnail" src="/images/blog/mastic_resin_rework.png" alt="Mastic Resin Rework" width="640" height="360">
 					<div id="blog-ctx">
 						<h3>Future Mastic Resin Rework</h3>
-						<h6 id="blog-subtitle"><span id="colour-red">Developer Update</span> | May 5th, 2024</h6>
+						<h6 id="blog-subtitle"><span id="colour-red"><div class="tooltip">Developer Update<div class="tooltiptext">Information Regarding The Development Process And Future Systems in Create: Garnished</div></div></span> | May 5th, 2024</h6>
 						<p>
 							Read through the potential rework of a set of wonderfully colourful features, which has received varying opinions from the community throughout its existence.
 						</p>
