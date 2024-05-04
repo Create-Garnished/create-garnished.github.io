@@ -168,6 +168,29 @@
 			#myBtn:hover {
   				background-color: black;
 			}
+
+			.blog-body {
+				padding: 20px;
+				margin-top: 30px;
+			}
+
+			.blog-body #blog-item {
+				display: flex;
+				border: 5px;
+				width: 1200px;
+				text-align: left;
+			}
+
+			.blog-body .blog-thumbnail img {
+				border-radius: 5%;
+				float: left;
+				width: 640px;
+				height: 360px;
+			}
+
+			.blog-body #read-more a {
+				text-decoration: underline;
+			}
         </style>
     </head>
     <body>
@@ -200,10 +223,10 @@
 			<a href="https://www.curseforge.com/minecraft/mc-mods/garnished" style="float:right;" target="_blank">Curseforge</a>
 			<a href="https://www.ko-fi.com/dakotapride" style="float:right;" target="_blank">Ko-fi</a>
 		</div>
-		<div style="padding:20px;margin-top:30px;">
+		<div class="blog-body">
 			<center>
-				<div style="display:flex;border:5px;width:1200px;text-align:left;">
-					<img src="/images/blog/anniversary_update.png" alt="Update v1.8" width="640" height="360" style="border-radius:5%;float:left;">
+				<div id="blog-item">
+					<img class="blog-thumbnail" src="/images/blog/anniversary_update.png" alt="Update v1.8">
 					<div style="padding-left:15px;margin-top:5px;">
 						<h3>v1.8 - Refurbished</h3>
 						<h6 style="margin:0px;"><span style="color:#00FFEE;">Update</span> | Unknown Date</h6>
@@ -212,16 +235,16 @@
 							Explore the vast wastelands of the End or the ever-expanding hellscape of the Nether, with new and improved content for all!
 						</p>
 						<br><br>
-						<a href="/blog/version-1.8.html" style="text-decoration:underline;">Read more...</a>
+						<a id="read-more" href="/blog/version-1.8.html">Read more...</a>
 					</div>
 				</div>
-				<div style="display:flex;border:5px;width:1200px;text-align:left;">
-					<img src="/images/blog/mastic_resin_18.png" alt="Lorem Ipsum" width="600" height="400" style="border-radius:5%;float:left;">
+				<div id="blog-item">
+					<img class="blog-thumbnail" src="/images/blog/mastic_resin_18.png" alt="Lorem Ipsum">
 					<div>
 						<h3>Lorem Ipsum I</h3>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet justo donec enim diam vulputate ut. Molestie at elementum eu facilisis. Viverra ipsum nunc aliquet bibendum enim facilisis gravida neque.</p>
 						<br><br>
-						<a href="/blog/version-1.8.html">Read more...</a>
+						<a id="read-more" href="/blog/version-1.8.html">Read more...</a>
 					</div>
 				</div>
 			</center>
