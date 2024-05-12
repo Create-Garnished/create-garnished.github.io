@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <title>Create: Garnished Wiki</title>
         <link rel="icon" type="image/x-icon" href="/icon.ico">
-        
+
         <style>
-			:root {
-				color-scheme: dark;
-			}
-			
+            :root {
+                color-scheme: dark;
+            }
+
             body {
                 margin: 0px;
-				background-image: url('images/background1.png');
-				font-family: "Cabin", sans-serif;
+                background-image: url('images/background1.png');
+                font-family: "Cabin", sans-serif;
                 color: white;
             }
 
@@ -44,24 +45,24 @@
                 font-size: 16px;
             }
 
-			li {
-				font-size: 20px;
-			}
+            li {
+                font-size: 20px;
+            }
 
-			a:link {
-				color: white;
-  				text-decoration: none;
-			}
+            a:link {
+                color: white;
+                text-decoration: none;
+            }
 
-			a:visited {
-				color: white;
-  				text-decoration: none;
-			}
+            a:visited {
+                color: white;
+                text-decoration: none;
+            }
 
-			a:hover {
-				color: white;
-  				text-decoration: none;
-			}
+            a:hover {
+                color: white;
+                text-decoration: none;
+            }
 
             .navbar {
                 overflow: hidden;
@@ -71,8 +72,8 @@
 
             .navbar a {
                 font-size: 16px;
-  				color: white;
-  				text-align: center;
+                color: white;
+                text-align: center;
                 text-align: center;
                 padding: 14px 16px;
                 text-decoration: none;
@@ -80,8 +81,8 @@
 
             .navbar button {
                 font-size: 16px;
-  				color: white;
-  				text-align: center;
+                color: white;
+                text-align: center;
                 text-align: center;
                 padding: 14px 16px;
                 text-decoration: none;
@@ -95,1379 +96,1466 @@
             .dropdown .dropbtn {
                 cursor: pointer;
                 font-size: 16px;
-		    	border: none;
-  				outline: none;
-  				color: white;
-  				padding: 14px 16px;
-  				background-color: inherit;
-  				font-family: inherit;
-  				margin: 0;
-			}
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
 
-			.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-  				background-color: black;
-			}
+            .navbar a:hover,
+            .dropdown:hover .dropbtn,
+            .dropbtn:focus {
+                background-color: black;
+            }
 
-			.dropdown-content {
-				display: none;
-  				position: absolute;
-  				background-color: #161b22;
-  				min-width: 160px;
-  				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  				z-index: 1;
-			}
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #161b22;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
 
-			.dropdown-content a {
-  				float: none;
-  				color: white;
-  				padding: 12px 16px;
-  				text-decoration: none;
-  				display: block;
-  				text-align: left;
-			}
+            .dropdown-content a {
+                float: none;
+                color: white;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
 
-			.dropdown-content a:hover {
-  				background-color: #1D232B;
-			}
+            .dropdown-content a:hover {
+                background-color: #1D232B;
+            }
 
-			.show {
-  				display: block;
-			}
+            .show {
+                display: block;
+            }
 
-			.collapsible {
-  				background: rgba(2, 6, 12, 0.3);
-  				color: white;
-  				cursor: pointer;
-  				padding: 18px;
-  				width: 400px;
-  				border: none;
-  				text-align: center;
-  				outline: none;
-  				font-size: 15px;
-			}
+            .collapsible {
+                background: rgba(2, 6, 12, 0.3);
+                color: white;
+                cursor: pointer;
+                padding: 18px;
+                width: 400px;
+                border: none;
+                text-align: center;
+                outline: none;
+                font-size: 15px;
+            }
 
-			.active, .collapsible:hover {
-  				background: rgba(2, 6, 12, 0.5);
-			}
+            .active,
+            .collapsible:hover {
+                background: rgba(2, 6, 12, 0.5);
+            }
 
-			.content {
-  				padding: 0 560px;
-  				max-height: 0;
-  				overflow: hidden;
-  				transition: max-height 0.2s ease-out;
-  				background: rgba(29, 35, 43, 0.5);
-			}
+            .content {
+                padding: 0 560px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+                background: rgba(29, 35, 43, 0.5);
+            }
 
-			.rounded-image-25 {
-				border-radius: 25px;
-			}
+            .rounded-image-25 {
+                border-radius: 25px;
+            }
 
-			#myBtn {
-  				display: none;
-  				position: fixed;
-  				bottom: 20px;
-  				right: 30px;
-  				z-index: 99;
-  				font-size: 18px;
-  				border: none;
-  				outline: none;
-  				background-color: #02060C;
-  				color: white;
-  				cursor: pointer;
-  				padding: 15px;
-  				border-radius: 4px;
-			}
+            #myBtn {
+                display: none;
+                position: fixed;
+                bottom: 20px;
+                right: 30px;
+                z-index: 99;
+                font-size: 18px;
+                border: none;
+                outline: none;
+                background-color: #02060C;
+                color: white;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 4px;
+            }
 
-			#myBtn:hover {
-  				background-color: black;
-			}
+            #myBtn:hover {
+                background-color: black;
+            }
         </style>
     </head>
+
     <body>
-		<button onclick="topFunction()" id="myBtn">Jump to Top of Page</button>
-		
-		<div style="padding:20px;margin-top:0px;background-color:#02060C;overflow:hidden;background-image: url('/images/background.png');">
-			<center>
-				<img src="https://cdn.modrinth.com/data/6e2SlzR4/images/6c6a60c205ed08d04b4bbed6a7048670daa21000.png" width=700px;>
-				<br>
-				<p style="font-size:16px;"><i>"It Eats my Nuts" -DejojoTheAwsome</i></p>
-			</center>
-		</div>
-		<div class="navbar">
-			<a href="/index.html" style="float:left;">Home</a>
-			<a href="/integrations.html" style="float:left;">Integrations</a>
+        <button onclick="topFunction()" id="myBtn">Jump to Top of Page</button>
+
+        <div
+            style="padding:20px;margin-top:0px;background-color:#02060C;overflow:hidden;background-image: url('/images/background.png');">
+            <center>
+                <img src="https://cdn.modrinth.com/data/6e2SlzR4/images/6c6a60c205ed08d04b4bbed6a7048670daa21000.png"
+                    width=700px;>
+                <br>
+                <p style="font-size:16px;"><i>"It Eats my Nuts" -DejojoTheAwsome</i></p>
+            </center>
+        </div>
+        <div class="navbar">
+            <a href="/index.html" style="float:left;">Home</a>
+            <a href="/integrations.html" style="float:left;">Integrations</a>
             <a href="/hatchets.html" style="float:left;">Hatchet Interactions</a>
             <a href="/fluid_interactions.html" style="float:left;">Fluid Interactions</a>
             <a href="/foods.html" style="float:left;">Cookbook</a>
-			<div class="dropdown" style="float:left;">
-				<button class="dropbtn" onclick="myFunction()">Recipe Types
-					<i class="fa fa-caret-down"></i>
-				</button>
-				<div class="dropdown-content" id="myDropdown">
-					<a href="/recipe_types/bulk_dyeing.html">Bulk Dyeing</a>
-					<a href="/recipe_types/bulk_freezing.html">Bulk Freezing</a>
-				</div>
-			</div>
-			<a href="/blog.html" style="float:left;">Blog Posts</a>
-			<a href="https://modrinth.com/mod/create-garnished" style="float:right;" target="_blank">Modrinth</a>
-			<a href="https://www.curseforge.com/minecraft/mc-mods/garnished" style="float:right;" target="_blank">Curseforge</a>
-			<a href="https://www.ko-fi.com/dakotapride" style="float:right;" target="_blank">Ko-fi</a>
-		</div>
-		<div style="padding:20px;margin-top:30px;height:1500px;">
-			<center>
-				<div style="float:right;text-align:left;width:300px;padding-right:200px;">
-					<h3 id="updates_sidebar" title="Recent Blog Posts">Recent Blog Posts</h3>
-					<ul style="list-style-type:none;text-decoration:none;">
-					  	<li title="v1.8 - Refurbished, Celebrate the 1-year anniversary of Create: Garnished with the v1.8 update! Explore the..."><a href="/blog/version-1.8.html">v1.8 - Refurbished</a></li>
-				  	</ul>
-				</div>
-				<div style="float:left;width:1100px;">
-					<img class="rounded-image-25" src="/images/nut_trees.png" style="width:80%;">
-					<div style="width:800px;">
-						<p style="text-align:left;">While Create: Garnished doesn't just add nuts, you will most likely come across them and many of their related features during your playthrough.</p>
-						<p style="text-align:left;">There are currently 9 unique types of nuts: Cashews, Walnuts, Pecans, Almonds, Pistachios, Macadamias, Peanuts, Hazelnuts, and Chestnuts. Each of these nuts has similar uses and unique uses, which you'll encounter as you progress through the game. Some uses require mid to late-game items while others can be easily obtained during the early game.</p>
-						<p style="text-align:left;">But, of course, how do you obtain these nuts? By breaking the Nut Leaves that naturally generate on certain trees that are scattered across the Plains biomes of your world.</p>
-					</div>
-					<br>
-					<img class="rounded-image-25" src="/images/garnish_block.png" style="width:80%;">
-					<div style="width:800px;">
-						<p style="text-align:left;">As you may notice, if you consume these nuts in their natural state, you will become nauseated for a short time. You can avoid this by garnishing your nuts! To garnish your nuts, you will need to either spout 250mb of Liquid Garnish onto your nuts or deploy a Garnish Compound onto them.</p>
-						<p style="text-align:left;">You can make Liquid Garnish by mixing a piece of Sugar, (mostly) any kind of seed, and 250mb of Water in a heated basin. This will produce 250mb of Liquid Garnish, which is the exact amount that you need for 1 garnished nut. The alternative method, utilizing some Garnish Compound, requires you to have a full bucket of Liquid Garnish on hand.</p>
-						<p style="text-align:left;">This method requires you to compact 1 bucket of Liquid Garnish, a Salt Compound, and 2 Wheat in a regular basin. This will produce a Solidified Garnish Block, which can be crushed into a varying amount of Garnish Compound. However, some of these Garnish Compounds should be saved, as you can create more Solidified Garnish Blocks from them, allowing you to create a cycle of sorts for your factory.</p>
-					</div>
-					<br>
-					<img class="rounded-image-25" src="/images/salt_compound.png" style="width:80%;">
-					<div style="width:800px;">
-						<p style="text-align:left;">You might be wondering how you even obtain Salt Compound and let me tell you, it's quite simple!</p>
-						<p style="text-align:left;">First, you will need to obtain Limestone - this can be automated at a later point in time using Honey and Lava, but you don't need to worry about that just yet - and then either mill it or crush it, which will produce Crushed Salt Compound and has a small chance to produce a small amount of iron or zinc nuggets.</p>
-						<p style="text-align:left;">From here, you will need to create an assembly line with the following steps, in this order - Press a Crushed Salt Compound, then press it again, and finally, deploy a piece of Flint onto it. This will yield a singular Salt Compound, which can be used for a multitude of things, but again, no need to worry about that just yet, as you now have the opportunity to create a garnished nut factory - might I recommend buhgs... Peanuts, I mean Peanuts.</p>
-					</div>
-				</div>
-			</center>
-		</div>
-		<hr style="clear:both;visibility:hidden;height:40px;">
-		<div>
-			<center>
-				<button class="collapsible">History of Changes & Additions - Changelog</button>
-				<div class="content" style="text-align:left;width:100px;">
-					<br>
-					<h4 id="1.8">v1.8</h4>
-					<ul></ul>
-					<h4 id="1.7.5">v1.7.5</h4>
-					<ul>
-						<li>Fix Glass Bulk Dyeing recipes</li>
-						<li>Fix Glass Pane Bulk Dyeing recipes</li>
-					</ul>
-					<h4 id="1.7.4">v1.7.4</h4>
-					<ul>
-						<li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/52">Issue #52</a> (again)</li>
-						<ul>
-							<li>Allow for fluid interactions to not act odd</li>
-						</ul>
-					</ul>
-					<h4 id="1.7.3">v1.7.3</h4>
-					<ul>
-						<li>Fix missing entries in "#minecraft:water" fluid tag</li>
-					</ul>
-					<h4 id="1.7.2">v1.7.2</h4>
-					<ul>
-						<li>Fix more inconsistent tags</li>
-						<li>Add compiled crushed nut item tag</li>
-					</ul>
-					<h4 id="1.7.1">v1.7.1</h4>
-					<ul>
-						<li>Implement <a href="https://github.com/DakotaPride/create-garnished/issues/49">Issue #49</a></li>
-						<ul>
-							<li>Make hatchet enchantment drops better</li>
-							<ul>
-								<li>Convert previous hard-coded loot tables into standard data files</li>
-							</ul>
-						</ul>
-						<li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/51">Issue #51</a></li>
-						<li>Add EMI support as requested from <a href="https://github.com/DakotaPride/create-garnished/issues/52">Issue #52</a></li>
-						<li>Fix issue with Nut Slabs not being able to be used for certain recipes and other functions</li>
-						<li>Fix most inconsistent tags</li>
-					</ul>
-					<h4 id="1.7">v1.7</h4>
-					<ul>
-						<li>Add Raw Polar Bear Meat</li>
-						<li>Add Cooked Polar Bear Meat</li>
-						<li>Add Void Stroganoff</li>
-						<li>Add Frosted Dessert</li>
-						<li>Add Explorer's Concoction</li>
-						<li>Add Chilled Apple</li>
-						<li>Add Polar Bear Hide</li>
-						<li>Add Numbing Parchment</li>
-						<li>Add Frost</li>
-						<li>Add Polar Hide Scratch Paper</li>
-						<li>Add Bulk Freezing</li>
-						<ul>
-							<li>With JEI integration</li>
-						</ul>
-						<li>Add Bulk Dyeing</li>
-						<ul>
-							<li>With JEI integration</li>
-							<ul>
-								<li>Red Bulk Dyeing</li>
-								<li>Orange Bulk Dyeing</li>
-								<li>Yellow Bulk Dyeing</li>
-								<li>Green Bulk Dyeing</li>
-								<li>Blue Bulk Dyeing</li>
-								<li>Purple Bulk Dyeing</li>
-							</ul>
-						</ul>
-						<li>Add Mastic Resin Blocks into the creative mode tab</li>
-						<li>Update Create mod version to 0.5.1.f</li>
-					</ul>
-					<h4 id="1.6.3">v1.6.3</h4>
-					<ul>
-						<li>Allow for fluids to interact with each other via fluid pipes</li>
-					</ul>
-					<h4 id="1.6.2">v1.6.2</h4>
-					<ul>
-						<li>Fix Create: Crafts & Additions compat recipe</li>
-					</ul>
-					<h4 id="1.6.1">v1.6.1</h4>
-					<ul>
-						<li>Fix Mummification potions/arrows</li>
-						<li>Fix Mummification not providing the proper swiftness modifier</li>
-					</ul>
-					<h4 id="1.6">v1.6</h4>
-					<ul>
-						<li>Add Prickly Pear</li>
-						<li>Add Bamboo Clod</li>
-						<li>Add Thorn on a Stick</li>
-						<li>Add Nopalito Wrap</li>
-						<li>Add Nopalito Wrap Supreme</li>
-						<li>Add Sinopia Rock Sweet</li>
-						<li>Add Rosy Cocktail</li>
-						<li>Add Stew of the Damned</li>
-						<li>Add Prickly Stew</li>
-						<li>Add Overgrown Brew</li>
-						<li>Add Antique Swathe</li>
-						<li>Add Amber Remnant</li>
-						<li>Add Shattered Amber Remnant</li>
-						<li>Add Bristled Flour</li>
-						<li>Add Bristled Tortilla</li>
-						<li>Add Garnish Compound Block</li>
-						<li>Add Ethereal Compound Block</li>
-						<li>Add Salt Compound Block</li>
-						<li>Add Mulch Block</li>
-						<li>Add Mummification status effect</li>
-						<li>Add Prickly status effect</li>
-						<li>Add Ritualistic Stone world generation</li>
-						<ul>
-							<li>Generates similarly to Asurine, Veridium, Ochrum, and Crimsite</li>
-							<li>Can be found in desert biomes</li>
-						</ul>
-						<li>Fix Galvanic Haunting texture</li>
-						<li>Fix Volatile Dust texture</li>
-					</ul>
-					<h4 id="1.5.2-hotfix-1">v1.5.2-hotfix-1</h4>
-					<ul>
-						<li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/42">Issue #42</a></li>
-					</ul>
-					<h4 id="1.5.2">v1.5.2</h4>
-					<ul>
-						<li>Fix cracked nut tooltips</li>
-						<li>Fix missing Lustrous Pearl entry for loot tables</li>
-						<li>Fix Murky Jelly recipe</li>
-						<li>Redesign Carnotite textures</li>
-						<li>Redesign Abyssal Stone textures</li>
-						<li>Redesign Unstable Stone textures</li>
-						<li>Add smooth stone variants</li>
-						<ul>
-							<li>Smooth Carnotite</li>
-							<li>Smooth Abyssal Stone</li>
-							<li>Smooth Unstable Stone</li>
-						</ul>
-						<li>[TESTING] Add Ritualistic Stone and its variants</li>
-						<li>[TESTING] Add Prickly status effect</li>
-						<li>[TEMPORARY] Remove Ponder entries</li>
-					</ul>
-					<h4 id="1.5.1-hotfix-2">v1.5.1-hotfix-2</h4>
-					<ul>
-						<li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/40">Issue #40</a></li>
-					</ul>
-					<h4 id="1.5.1-hotfix-1">v1.5.1-hotfix-1</h4>
-					<ul>
-						<li>Fix improper tagging</li>
-						<li>Fix improper IDs being used in tags, recipes, etc.</li>
-					</ul>
-					<h4 id="1.5.1-beta">v1.5.1-beta</h4>
-					<ul>
-						<li>Fix odd fluid amounts in recipes</li>
-						<li>Fix lang errors</li>
-						<li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/38">Issue #38</a></li>
-						<li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/39">Issue #39</a></li>
-						<li>[TESTING/BETA] Add Ponder entries related to Cashew Mixture</li>
-					</ul>
-					<h4 id="1.5-beta">v1.5-beta</h4>
-					<ul>
-						<li>Add Nutty Melody</li>
-						<li>Add Dusty Regale</li>
-						<li>Add Muesli</li>
-						<li>Add Cackling Pie</li>
-						<li>Add Murky Jelly</li>
-						<li>Add Murky Macadamia Malice</li>
-						<li>Add Yam-O-Glow Puffs</li>
-						<li>Add Shining Dish</li>
-						<li>Add Dried Vermilion Kelp</li>
-						<li>Add Dried Dulse Kelp</li>
-						<li>Add Vermilion Stew</li>
-						<li>Add Vast Brew</li>
-						<li>Add Galvanic Haunting</li>
-						<li>Add Bewildered Pastry</li>
-						<li>Add Incendiary Stew</li>
-						<li>Add Vermilion Kelp</li>
-						<li>Add Dulse Kelp</li>
-						<li>Add Voltaic Sea Grass</li>
-						<li>Add Lustrous Pearl</li>
-						<li>Add Coral Wrapping</li>
-						<li>Add Dried Vermilion Kelp Block</li>
-						<li>Add Dried Dulse Kelp Block</li>
-						<li>Make tooltips for certain items more informational and helpful</li>
-						<ul>
-							<li>Bottled Apple Cider</li>
-							<li>Bitter Bottled Apple Cider</li>
-							<li>Cryptic Bottled Apple Cider</li>
-							<li>Bottled Peanut Oil</li>
-							<li>All Melted Cinder Flour with effect(s)</li>
-							<ul>
-								<li>Peanut</li>
-								<li>Walnut</li>
-								<li>Cashew</li>
-								<li>Pistachio</li>
-								<li>Pecan</li>
-								<li>Almond</li>
-								<li>Macadamia</li>
-								<li>Hazelnut</li>
-								<li>Chestnut</li>
-							</ul>
-						</ul>
-						<li>Remove tooltips for certain items</li>
-						<ul>
-							<li>Cashew Apple</li>
-						</ul>
-						<li>[TESTING/BETA] Add Ponder entries</li>
-					</ul>
-					<h4 id="1.4">v1.4</h4>
-					<ul>
-						<li>Add Chestnuts</li>
-						<ul>
-							<li>Cracked</li>
-							<li>Ungarnished</li>
-							<li>Garnished</li>
-							<li>Sweetened</li>
-							<li>Honeyed</li>
-							<li>Chocolate Glazed</li>
-							<li>Cinder Flour</li>
-							<li>Melted Cinder Flour</li>
-							<li>Melted Cinder Flour with Effect</li>
-						</ul>
-						<li>Add Walnut Gorge Cream Bowl</li>
-						<li>Add Cashew Sorbet Scoop</li>
-						<li>Add Cashew Sorbet Delight</li>
-						<li>Add Wheat Graze</li>
-						<li>Add Porkchop & Graze</li>
-						<li>Add Ghandercken</li>
-						<li>Add Fishy Surprise</li>
-						<li>Add Gloomy Gathering</li>
-						<li>Add Aching Tenebrous Clump</li>
-						<li>Add Raw Tenebrous Meat</li>
-						<li>Add Cooked Tenebrous Meat</li>
-						<li>Add advancements</li>
-						<ul>
-							<li>Welcome to Hell's Kitchen! - Consume every food from the Create: Garnished mod</li>
-						</ul>
-						<li>Fix Mud Pie not providing a bowl upon consumption</li>
-						<li>Fix certain foods not being marked as meat</li>
-						<ul>
-							<li>Phantom Steak</li>
-							<li>Phantom Burger</li>
-							<li>Phantom Patty</li>
-						</ul>
-						<li>Make Venerable Delicacies no longer considered "fast to consume"</li>
-						<li>Add Tenebrous Meat to Ancient City loot tables</li>
-						<li>Add chestnuts to potato cannon ammo files</li>
-						<li>Add related entries to HatchetUtils.getDrops()</li>
-						<ul>
-							<li>Make Warden drop Raw Tenebrous Meat with Ravaging</li>
-						</ul>
-						<li>Move advancements to a new advancements tab</li>
-					</ul>
-					<h4 id="1.3-hotfix-2">v1.3-hotfix-2</h4>
-					<ul>
-						<li>Fix liquid translations</li>
-					</ul>
-					<h4 id="1.3-hotfix-1">v1.3-hotfix-1</h4>
-					<ul>
-						<li>Fix Cashew Leaves loot table</li>
-						<ul>
-							<li>Was missing Cashew Apple</li>
-						</ul>
-					</ul>
-					<h4 id="1.3">v1.3</h4>
-					<ul>
-						<li>Add Slime Drops</li>
-						<ul>
-							<li>Regular/Standard</li>
-							<li>With coloured variants</li>
-							<ul>
-								<li>Red</li>
-								<li>Orange</li>
-								<li>Yellow</li>
-								<li>Green</li>
-								<li>Blue</li>
-								<li>Purple</li>
-							</ul>
-						</ul>
-						<li>Add Mastic Paste</li>
-						<ul>
-							<li>Regular/Standard</li>
-							<li>With coloured variants</li>
-							<ul>
-								<li>Red</li>
-								<li>Orange</li>
-								<li>Yellow</li>
-								<li>Green</li>
-								<li>Blue</li>
-								<li>Purple</li>
-							</ul>
-						</ul>
-						<li>Add Venerable Delicacies</li>
-						<ul>
-							<li>Red</li>
-							<li>Orange</li>
-							<li>Yellow</li>
-							<li>Green</li>
-							<li>Blue</li>
-							<li>Purple</li>
-						</ul>
-						<li>Add Galactic Cane</li>
-						<li>Add Coal Truffle</li>
-						<li>Add Merry Treat</li>
-						<li>Add Icy Mastic Chunk</li>
-						<li>Add Baklava</li>
-						<li>Add Sturdy Waffle</li>
-						<li>Add Venerable Dough</li>
-						<li>Add Mastic Resin</li>
-						<ul>
-							<li>Regular/Standard</li>
-							<li>With coloured variants</li>
-							<ul>
-								<li>Red</li>
-								<li>Orange</li>
-								<li>Yellow</li>
-								<li>Green</li>
-								<li>Blue</li>
-								<li>Purple</li>
-							</ul>
-						</ul>
-						<li>Add Liquefied Mastic Resin</li>
-						<ul>
-							<li>Regular/Standard</li>
-							<li>With coloured variants</li>
-							<ul>
-								<li>Red</li>
-								<li>Orange</li>
-								<li>Yellow</li>
-								<li>Green</li>
-								<li>Blue</li>
-								<li>Purple</li>
-							</ul>
-						</ul>
-						<li>Add Mastic Resin Block</li>
-						<ul>
-							<li>Regular/Standard</li>
-							<li>With coloured variants</li>
-							<ul>
-								<li>Red</li>
-								<li>Orange</li>
-								<li>Yellow</li>
-								<li>Green</li>
-								<li>Blue</li>
-								<li>Purple</li>
-							</ul>
-						</ul>
-						<li>Add Carnotite stone type</li>
-						<ul>
-							<li>Carnotite Stairs</li>
-							<li>Carnotite Slab</li>
-							<li>Carnotite Wall</li>
-							<li>Carnotite Bricks</li>
-							<li>Carnotite Brick Stairs</li>
-							<li>Carnotite Brick Slab</li>
-							<li>Carnotite Brick Wall</li>
-							<li>Polished Carnotite Stairs</li>
-							<li>Polished Carnotite Slab</li>
-							<li>Polished Carnotite Wall</li>
-							<li>Chiseled Carnotite</li>
-						</ul>
-						<li>Add Abyssal Stone stone type</li>
-						<ul>
-							<li>Abyssal Stone Stairs</li>
-							<li>Abyssal Stone Slab</li>
-							<li>Abyssal Stone Wall</li>
-							<li>Abyssal Stone Bricks</li>
-							<li>Abyssal Stone Brick Stairs</li>
-							<li>Abyssal Stone Brick Slab</li>
-							<li>Abyssal Stone Brick Wall</li>
-							<li>Polished Abyssal Stone Stairs</li>
-							<li>Polished Abyssal Stone Slab</li>
-							<li>Polished Abyssal Stone Wall</li>
-							<li>Chiseled Abyssal Stone</li>
-						</ul>
-						<li>Add Unstable Stone stone type</li>
-						<ul>
-							<li>Unstable Stone Stairs</li>
-							<li>Unstable Stone Slab</li>
-							<li>Unstable Stone Wall</li>
-							<li>Unstable Stone Bricks</li>
-							<li>Unstable Stone Brick Stairs</li>
-							<li>Unstable Stone Brick Slab</li>
-							<li>Unstable Stone Brick Wall</li>
-							<li>Polished Unstable Stone Stairs</li>
-							<li>Polished Unstable Stone Slab</li>
-							<li>Polished Unstable Stone Wall</li>
-							<li>Chiseled Unstable Stone</li>
-						</ul>
-						<li>Add more wood blocks & items</li>
-						<ul>
-							<li>Nut Boat</li>
-							<li>Nut Chest Boat</li>
-							<li>Nut Sign</li>
-							<li>Sepia Sign</li>
-							<li>Nut Button</li>
-							<li>Sepia Button</li>
-							<li>Nut Pressure Plate</li>
-							<li>Sepia Pressure Plate</li>
-							<li>Nut Fence</li>
-							<li>Sepia Fence</li>
-							<li>Nut Fence Gate</li>
-							<li>Sepia Fence Gate</li>
-							<li>Nut Hanging Sign</li>
-							<li>Sepia Hanging Sign</li>
-						</ul>
-						<li>Overhaul saturation and nutrition values</li>
-						<ul>
-							<li><a href="https://github.com/DakotaPride/create-garnished/wiki/v1.3-‐-Sugarcoated#-balancing-">All exact adjustments can be found here</a></li>
-						</ul>
-						<li>Update the nut wood type textures</li>
-						<li>Add integrated hatchets</li>
-						<ul>
-							<li>Only for 1.20.x versions</li>
-							<br>
-							<li>Deeper & Darker</li>
-							<li>Additional Additions</li>
-							<li>Create: Stuff and Additions</li>
-							<li>Mythic Upgrades</li>
-						</ul>
-						<li>Add built-in texture integration for Every Compat (Wood Good) and Quark</li>
-						<ul>
-							<li>Nut Chest + Trapped variant</li>
-							<li>Sepia Chest + Trapped variant</li>
-						</ul>
-					</ul>
-					<h4 id="1.2-hotfix-2">v1.2-hotfix-2</h4>
-					<ul>
-						<li>Fix certain recipes using "c:cheese" as an item instead of an item tag</li>
-						<ul>
-							<li>Wrapped Warped Tangle</li>
-							<li>Wrapped Crimson Tangle</li>
-							<li>Wrapped Sepia Tangle</li>
-							<li>Weeping Tangle</li>
-						</ul>
-						<li>Fix incorrect item tags on Fabric</li>
-						<ul>
-							<li>Replace "forge:tools/hatchets" with "c:tools/hatchets"</li>
-						</ul>
-						<li>Fix typo in stripped logs item tag</li>
-						<ul>
-							<li>Change "#garnished:stripped_nuts_logs" to "#garnished:stripped_nut_logs"</li>
-						</ul>
-					</ul>
-					<h4 id="1.2-hotfix-1">v1.2-hotfix-1</h4>
-					<ul>
-						<li>Fix Cashew Mixture recipe using peanuts instead of cashews</li>
-						<li>Add compatibility between Create: Garnished and Expanded Delight for Fabric</li>
-					</ul>
-					<h4 id="1.2">v1.2</h4>
-					<ul>
-						<li>Add Nut wood type</li>
-						<ul>
-							<li>Nut Log</li>
-							<li>Nut Wood</li>
-							<li>Stripped Nut Log</li>
-							<li>Stripped Nut Wood</li>
-							<li>Nut Stairs</li>
-							<li>Nut Slab</li>
-							<li>Nut Fence</li>
-							<li>Nut Fence Gate</li>
-							<li>Nut Door</li>
-							<li>Nut Trapdoor</li>
-						</ul>
-						<li>Fix Mud Pie stack size</li>
-						<li>Fix Stripped Sepia Stem not being able to be used for casing recipes</li>
-						<li>Fix Sepia-related items not being able to be cut using a Mechanical Saw</li>
-						<li>Fix certain items not being upright on belt or similar inventories</li>
-						<ul>
-							<li>Bottle of Ender Jelly</li>
-							<li>Chorus Cocktail</li>
-							<li>Cosmic Brew</li>
-							<li>Desolate Stew</li>
-							<li>Ethereal Concoction</li>
-							<li>Void Mixture</li>
-							<li>Chorus Cocktail</li>
-							<li>Illuminating Cocktail</li>
-							<li>Mud Pie</li>
-							<li>Molten Stew</li>
-							<li>Pecan Pie</li>
-						</ul>
-						<li>Fix unstrippable Sepia blocks</li>
-						<li>Fix hatchets not being able to strip Sepia blocks</li>
-						<li>Fix Void Mixture not providing the Cognate status effect</li>
-						<li>Fix the Cognate status effect not being provided for the correct amount of time</li>
-						<ul>
-							<li>Void Mixture</li>
-							<li>Desolate Stew</li>
-						</ul>
-						<li>Fix improper animations/sounds for certain items</li>
-						<ul>
-							<li>Illuminating Cocktail</li>
-							<li>Chorus Cocktail</li>
-						</ul>
-						<li>Fix Blindness potions not providing Blindness</li>
-						<li>Fix crash upon startup as a result of certain potion recipes</li>
-						<li>Fix Molten Stew not being craftable due to incorrect IDs</li>
-						<li>Fix Illuminating Cocktail providing the Cognate status effect</li>
-						<li>Fix Sepia Wart Block not being cut down when using a Mechanical Saw</li>
-						<li>Fix Sepia Planks being unusable on Large Water Wheels</li>
-					</ul>
-					<h4 id="1.1-hotfix">v1.1-hotfix</h4>
-					<ul>
-						<li>Fix several world generation-related features</li>
-						<li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/25">Issue #25</a></li>
-						<li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/27">Issue #27</a></li>
-						<li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/28">Issue #28</a></li>
-					</ul>
-					<h4 id="1.1">v1.1</h4>
-					<ul>
-						<li>Add Molten Remnant</li>
-						<li>Add Molten Stew</li>
-						<li>Add initial functionality for hatchet enchantments</li>
-						<ul>
-							<li>Allow for certain mobs to drop additional items if the player is utilizing the Ravaging enchantment</li>
-							<li>Allow for certain mobs to drop additional items if the player is utilizing the Salvaging enchantment</li>
-						</ul>
-						<li>Create initial ports to MC 1.18.x</li>
-						<li>Adjust Enflamed Mandible texture</li>
-					</ul>
-					<h4 id="1.0">v1.0</h4>
-					<ul>
-						<li>Add Bottle of Ender Jelly</li>
-						<li>Add Chorus Cocktail</li>
-						<li>Add Cosmic Stew</li>
-						<li>Add Desolate Brew</li>
-						<li>Add Ethereal Concoction</li>
-						<li>Add Void Mixture</li>
-						<li>Add Chorus Bowl</li>
-						<li>Add Chorus Cookie</li>
-						<li>Add Ender Jelly (non-bottled)</li>
-						<li>Add Mulch</li>
-						<li>Add Mud Pie</li>
-						<li>Add Chorus Tuft</li>
-						<li>Add Hollowed Chorus Fruit</li>
-						<li>Add Cosmic Powder</li>
-						<li>Add Void Dust</li>
-						<li>Add Ethereal Compound</li>
-						<li>Add Desolate Spread</li>
-						<ul>
-							<li>Can be used in a similar way to Bone Meal on End Stone</li>
-							<ul>
-								<li>Produces Barren Roots and Small Chorus Plants</li>
-							</ul>
-						</ul>
-						<li>Add Barren Roots</li>
-						<li>Add Small Chorus Plants</li>
-						<li>Add Garnished Nut Block</li>
-						<li>Add Ungarnished Nut Block</li>
-						<li>Add Block of Ender Jelly</li>
-						<li>Add Cognate status effect</li>
-						<ul>
-							<li>Allows the affected player to freely look at Endermen in the eyes without aggravating them. However, attacking endermen will still aggravate them</li>
-						</ul>
-						<li>Add Flagrant status effect</li>
-						<ul>
-							<li>Makes any endermen in the area aggressive towards the entity inflicted with this effect</li>
-						</ul>
-						<li>Add items for Nut Leaves</li>
-						<ul>
-							<li>Regular Nut Leaves</li>
-							<li>Cashew Nut Leaves</li>
-							<li>Walnut Nut Leaves</li>
-							<li>Almond Nut Leaves</li>
-							<li>Pecan Nut Leaves</li>
-							<li>Pistachio Nut Leaves</li>
-							<li>Macadamia Nut Leaves</li>
-							<li>Peanut Nut Leaves</li>
-							<li>Hazelnut Nut Leaves</li>
-						</ul>
-						<li>Add hatchets</li>
-						<ul>
-							<li>Netherite</li>
-							<li>Diamond</li>
-							<li>Iron</li>
-							<li>Gold</li>
-							<li>Stone</li>
-							<li>Wooden</li>
-						</ul>
-						<li>Add enchantments for hatchets</li>
-						<ul>
-							<li>Ravaging</li>
-							<ul>
-								<li>1 level</li>
-							</ul>
-							<li>Salvaging</li>
-							<ul>
-								<li>2 levels</li>
-							</ul>
-						</ul>
-						<li>Fix Blindness potion(s) translations</li>
-						<li>Add "#forge:mineable/hatchet" or "#c:mineable/hatchet" block tag</li>
-						<li>Add more Farmer's Delight items</li>
-						<ul>
-							<li>Glow Ink Roll</li>
-							<li>Glow Ink Roll Slice</li>
-						</ul>
-						<li>Remove certain Farmer's Delight recipes</li>
-						<ul>
-							<li>Cooking</li>
-							<ul>
-								<li>Bottled Bitter Apple Cider</li>
-								<li>Bottled Cryptic Apple Cider</li>
-								<li>Bottled Apple Cider</li>
-								<li>Bottled Peanut Oil</li>
-								<li>Bottled Fermented Cashew Mixture</li>
-								<li>Blazing Delight</li>
-								<li>Pecan Pie</li>
-								<li>Phantom Steak</li>
-							</ul>
-						</ul>
-						<li>Fix translation for Pecan Leaves</li>
-						<li>Fix <a href="https://www.github.com/dakotapride/create-garnished/issues/19" target="_blank">Issue #19</a></li>
-					</ul>
-					<h4 id="0.9">v0.9</h4>
-					<ul>
-						<li>Add Peanut and Cinder Sandwich</li>
-						<li>Add Tophet Brew</li>
-						<li>Add Grim Stew</li>
-						<li>Add Wrapped Warped Tangle</li>
-						<li>Add Wrapped Crimson Tangle</li>
-						<li>Add Wrapped Sepia Tangle</li>
-						<li>Add Weeping Tangle</li>
-						<li>Add Cinder Shroom Roll</li>
-						<li>Add Blazing Delight</li>
-						<li>Add Fermented Cashew Mixture</li>
-						<li>Add Putrid Stew</li>
-						<li>Add Soul Khana</li>
-						<li>Add Spirited Concoction</li>
-						<li>Add Nut Nachos</li>
-						<li>Add Bowl of Nut Nachos</li>
-						<li>Add Senile Sweet</li>
-						<ul>
-							<li>Blackstone</li>
-							<li>Basalt</li>
-							<li>Scoria</li>
-							<li>Scorchia</li>
-						</ul>
-						<li>Add Crushed Warped Fungus</li>
-						<li>Add Crushed Crimson Tangle</li>
-						<li>Add Crushed Sepia Tangle</li>
-						<li>Add Crushed Shroomlight</li>
-						<li>Add Brittle Dust</li>
-						<li>Add Senile Dust</li>
-						<li>Add Sepia Fungus</li>
-						<li>Add Soul Roots</li>
-						<li>Add Sepia wood type</li>
-						<ul>
-							<li>Sepia Stem</li>
-							<li>Sepia Hyphae</li>
-							<li>Stripped Sepia Stem</li>
-							<li>Stripped Sepia Hyphae</li>
-							<li>Sepia Stairs</li>
-							<li>Sepia Slab</li>
-							<li>Sepia Fence</li>
-							<li>Sepia Fence Gate</li>
-							<li>Sepia Door</li>
-							<li>Sepia Trapdoor</li>
-						</ul>
-						<li>Add Nut Flour</li>
-						<li>Add Senile Spread</li>
-						<ul>
-							<li>Can be used in a similar way to Bone Meal on Soul Sand & Soul Soil</li>
-							<ul>
-								<li>Produces Soul Roots, Sepia Fungus, and occasionally Crimson Roots</li>
-							</ul>
-						</ul>
-						<li>Add Spirited Resistance status effect</li>
-						<ul>
-							<li>Removes the Wither effect from the affected entity</li>
-							<li>Removes the Nausea effect from the affected entity</li>
-							<li>Removes the Blindness effect from the affected entity</li>
-							<li>Damages the attacker depending on the entity attacking</li>
-							<ul>
-								<li>Skeleton</li>
-								<li>Wither Skeleton</li>
-								<li>Wither</li>
-								<li>Ghast</li>
-							</ul>
-						</ul>
-						<li>Add Aversion status effect</li>
-						<ul>
-							<li>Provides Nausea 3 to the affected player if a <a href="https://github.com/DakotaPride/create-garnished/blob/15d95baeaefcb877af83e59a26f2dc3320866c00/src/main/resources/data/garnished/tags/items/aversion_foods.json" target="_blank">nut-like food</a> is consumed</li>
-						</ul>
-						<li>Add ammo types for Potato Cannon</li>
-						<ul>
-							<li>Chocolate glazed nuts</li>
-							<li>Honeyed nuts</li>
-							<li>Sweetened nuts</li>
-							<li>Melted cinder nuts</li>
-							<li>Garnished nuts</li>
-							<li>Ungarnished nuts</li>
-							<li>Nut mix</li>
-						</ul>
-						<li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/18" target="_blank">Issue #18</a></li>
-						<li>Fix Jade mod hover text</li>
-						<li>Adjust Salad stack size to 16</li>
-						<li>Make all pre-existing fluids to the "#create:bottomless/allow" fluid tag</li>
-						<li>Fix fluid interactions having odd requirements</li>
-						<li>Add advancements</li>
-						<ul>
-							<li>Raise a Glass! - Obtain Fermented Cashew Mixture</li>
-							<li>Dining in Hell - Obtain Tophet Brew</li>
-							<li>Could've Been Worse - Consume a <a href="https://github.com/DakotaPride/create-garnished/blob/15d95baeaefcb877af83e59a26f2dc3320866c00/src/main/resources/data/garnished/tags/items/aversion_foods.json">nut-like food</a> while being inflicted with the Aversion status effect</li>
-							<li>Stoned Desserts - Consume a any Senile Sweet</li>
-						</ul>
-					</ul>
-					<h4 id="0.8">v0.8</h4>
-					<ul>
-						<li>Add Almond Cheese</li>
-						<li>Fix several translations</li>
-						<ul>
-							<li>Regular Nut Leaves</li>
-							<li>Cashew Nut Leaves</li>
-							<li>Walnut Nut Leaves</li>
-							<li>Almond Nut Leaves</li>
-							<li>Pecan Nut Leaves</li>
-							<li>Pistachio Nut Leaves</li>
-							<li>Macadamia Nut Leaves</li>
-							<li>Peanut Nut Leaves</li>
-							<li>Hazelnut Nut Leaves</li>
-						</ul>
-						<li>Fix several loot tables</li>
-						<ul>
-							<li>Nut sapling-like blocks</li>
-						</ul>
-						<li>Remove certain recipes</li>
-						<ul>
-							<li>Emptying recipe utilizing regular peanuts</li>
-						</ul>
-						<li>Adjust nutrition and saturation values</li>
-						<ul>
-							<li>Salad values</li>
-							<li>Phantom Steak values</li>
-						</ul>
-						<li>Nut tree adjustments</li>
-						<ul>
-							<li>Adjust natural leaves formations</li>
-							<li>Adjust natural trunk formations</li>
-							<li>Nut trees no longer replace the block underneath with Rooted Dirt</li>
-						</ul>
-					</ul>
-					<h4 id="0.7.2">v0.7.2</h4>
-					<ul>
-						<li>Change nut tree leaves formations</li>
-						<ul>
-							<li>Done to avoid automation inconsistencies relating to the leaves</li>
-						</ul>
-						<li>Compacted Nut Sacks</li>
-						<ul>
-							<li>A small way of storing your nuts</li>
-						</ul>
-					</ul>
-					<h4 id="0.7.1">v0.7.1</h4>
-					<ul>
-						<li>Fix nut sapling-like blocks not growing</li>
-					</ul>
-					<h4 id="0.7">v0.7</h4>
-					<ul>
-						<li>Add Peanut Oil</li>
-						<ul>
-							<li>(Fluid) Peanut Oil</li>
-							<li>Bottled Peanut Oil</li>
-						</ul>
-						<li>Add Bitter Almonds</li>
-						<ul>
-							<li>Provides Poison</li>
-						</ul>
-						<li>Add Cashew Apples</li>
-						<ul>
-							<li>Has a 25% chance to provide Poison</li>
-						</ul>
-						<li>Add Cashew Cookies</li>
-						<li>Add Brownies with Walnuts</li>
-						<li>Add Pecan Pies</li>
-						<li>Add Bottled Bitter Apple Cider</li>
-						<li>Create initial ports to MC 1.20.x</li>
-						<li>Adjust Bottled Cryptic Apple Cider texture</li>
-						<li>Fix Nut Leaves loot tables (again)</li>
-						<ul>
-							<li>Make each variant provide the correct nut</li>
-						</ul>
-						<li>Adjust Salad recipe</li>
-						<ul>
-							<li>Remove Salt Compound from recipe</li>
-							<li>Add Garnished Pistachio as a requirement to the recipe</li>
-						</ul>
-						<li>Add Cookie alternative recipe using Macadamia nuts</li>
-						<li>Add emptying recipes</li>
-						<ul>
-							<li>Empty Apple Cider from Bottled Apple Cider into an Item Drain</li>
-							<li>Empty Peanut Oil from Bottled Peanut Oil into an Item Drain</li>
-							<li>Empty Peanut Oil from Peanuts into an Item Drain</li>
-						</ul>
-						<li>Fix Chocolate Glazed Nut Mix being missing from the "#garnished:nut_mix" item tag</li>
-						<li>Add advancements</li>
-						<ul>
-							<li>Don't be Mad - Obtain a Brownie with Walnuts</li>
-						</ul>
-					</ul>
-					<h4 id="0.6.1">v0.6.1</h4>
-					<ul>
-						<li>Fix multiple Nut Leaves issues</li>
-						<ul>
-							<li>Loot tables</li>
-							<li>Breaking speed</li>
-						</ul>
-						<li>Fix nut tree world generation</li>
-					</ul>
-					<h4 id="0.6">v0.6</h4>
-					<ul>
-						<li>Add Hazelnuts</li>
-						<ul>
-							<li>Cracked</li>
-							<li>Ungarnished</li>
-							<li>Garnished</li>
-							<li>Sweetened</li>
-							<li>Honeyed</li>
-							<li>Chocolate Glazed</li>
-							<li>Cinder Flour</li>
-							<li>Melted Cinder Flour</li>
-							<li>Melted Cinder Flour with Effect</li>
-						</ul>
-						<li>Add Phantom Steak</li>
-						<li>Add Powdered Garnish</li>
-						<li>Add alternative Chocolate recipe</li>
-						<ul>
-							<li>Utilizing Hazelnuts instead of Cocoa Beans</li>
-						</ul>
-						<li>Add Nut Leaves</li>
-						<ul>
-							<li>Regular Nut Leaves</li>
-							<li>Cashew Nut Leaves</li>
-							<li>Walnut Nut Leaves</li>
-							<li>Almond Nut Leaves</li>
-							<li>Pecan Nut Leaves</li>
-							<li>Pistachio Nut Leaves</li>
-							<li>Macadamia Nut Leaves</li>
-							<li>Peanut Nut Leaves</li>
-							<li>Hazelnut Nut Leaves</li>
-						</ul>
-						<li>Add transitional items for sequenced assembly recipes</li>
-						<ul>
-							<li>Unprocessed Salt Compound</li>
-							<li>Incomplete Phantom Steak</li>
-						</ul>
-						<li>Adjust Salt Compound recipe</li>
-						<ul>
-							<li>Convert the previous recipe to a sequenced assembly</li>
-						</ul>
-						<li>Remove nut crops</li>
-						<ul>
-							<li>Replace with a new system</li>
-						</ul>
-						<li>Add nut trees</li>
-						<ul>
-							<li>Naturally generating</li>
-							<li>Cashew</li>
-							<li>Walnut</li>
-							<li>Almond</li>
-							<li>Pecan</li>
-							<li>Pistachio</li>
-							<li>Macadamia</li>
-							<li>Peanut</li>
-							<li>Hazelnut</li>
-						</ul>
-						<li>Remove Nut Growth/Plant loot table</li>
-						<ul>
-							<li>Keep legacy Nut Growth block</li>
-						</ul>
-						<li>Adjust Crushed Salt recipe</li>
-						<ul>
-							<li>Requires limestone instead of general stone</li>
-						</ul>
-						<li>Fix salad recipe</li>
-						<ul>
-							<li>Replace "#garnished:salt_compound" with regular Salt Compound</li>
-						</ul>
-						<li>Adjust all Melted Cinder Flour nut with effects recipes</li>
-						<ul>
-							<li>Replace Water with Lava</li>
-							<li>Convert to compacting recipes</li>
-							<li>Replace Sugar with Salt Compound or Powdered Garnish</li>
-						</ul>
-						<li>Make both Solidified Garnish Blocks require Salt Compound</li>
-						<li>Adjust Garnish Compound recipe</li>
-						<ul>
-							<li>Decreased base yield from 5 to 4</li>
-							<li>Decreased secondary yield from 3 to 2</li>
-							<li>Decreased secondary output chance from 20% to 10%</li>
-						</ul>
-						<li>Remove overall Botany Pots compatibility</li>
-						<li>Fix mod icon</li>
-						<li>Fix fluid interactions</li>
-					</ul>
-					<h4 id="0.5">v0.5</h4>
-					<ul>
-						<li>Add Salad</li>
-						<li>Add Crushed Salt</li>
-						<li>Add Salt Compound</li>
-						<li>Fix fluid recipes</li>
-						<ul>
-							<li>Liquid Garnish heating requirement no longer has a typo</li>
-							<li>Apple Cider heating requirement no longer has a typo</li>
-						</ul>
-						<li>Fix Cracked Peanut recipe via milling</li>
-						<ul>
-							<li>Previously required almonds instead of the logical option, peanuts</li>
-						</ul>
-					</ul>
-					<h4 id="0.4.2">v0.4.2</h4>
-					<ul>
-						<li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/1">Issue #1</a></li>
-					</ul>
-					<h4 id="0.4.1">v0.4.1</h4>
-					<ul>
-						<li>Add Botany Pots integration</li>
-						<ul>
-							<li>Cashew</li>
-							<li>Walnut</li>
-							<li>Almond</li>
-							<li>Pecan</li>
-							<li>Pistachio</li>
-							<li>Macadamia</li>
-							<li>Peanut</li>
-						</ul>
-					</ul>
-					<h4 id="0.4">v0.4</h4>
-					<ul>
-						<li>Add Peanuts</li>
-						<ul>
-							<li>Cracked</li>
-							<li>Ungarnished</li>
-							<li>Garnished</li>
-							<li>Sweetened</li>
-							<li>Honeyed</li>
-							<li>Chocolate Glazed</li>
-							<li>Cinder Flour</li>
-							<li>Melted Cinder Flour</li>
-							<li>Melted Cinder Flour with Effect</li>
-						</ul>
-						<li>Adjust Garnish Compound recipe</li>
-						<ul>
-							<li>Lower processing time from 150 to 100</li>
-							<li>Increase base yield from 2 to 5</li>
-							<li>Increase secondary output chance from 15% to 20%</li>
-							<li>Increase secondary yield from 2 to 3</li>
-							<li>Remove third output entirely</li>
-						</ul>
-						<li>Add advancement</li>
-						<ul>
-							<li>It's a Buhg - Obtain any peanut</li>
-						</ul>
-					</ul>
-					<h4 id="0.3">v0.3</h4>
-					<ul>
-						<li>Add Solidified Garnish Block</li>
-						<li>Add Garnish Compound</li>
-						<ul>
-							<li>Allows for more efficient garnishing and automation</li>
-						</ul>
-						<li>Add Garnished Meal</li>
-						<li>Add Apple Cider</li>
-						<ul>
-							<li>(Fluid) Apple Cider</li>
-							<li>Bottled Apple Cider</li>
-							<li>Bottled Cryptic Apple Cider</li>
-							<ul>
-								<li>Provides a 50% chance for either Strength 3 or Slowness 3</li>
-							</ul>
-						</ul>
-						<li>Add Chocolate Glazed variant for nuts</li>
-						<ul>
-							<li>Cashew</li>
-							<li>Walnut</li>
-							<li>Almond</li>
-							<li>Pecan</li>
-							<li>Pistachio</li>
-							<li>Macadamia</li>
-						</ul>
-						<li>Fix nutrition and saturation values for certain foods</li>
-						<li>Adjusted required values for Liquid Garnish</li>
-						<ul>
-							<li>Instead of 333 milibuckets of Water, it instead requires 250 milibuckets of Water</li>
-						</ul>
-						<li>Add "Garnish Compound" deploying recipes</li>
-						<ul>
-							<li>Deploying a Garnish Compound onto an ungarnished nut will now provide its garnished variant</li>
-						</ul>
-						<li>Add "#garnished:chocolate_glazed_nuts" item tag</li>
-						<li>Add advancements</li>
-						<ul>
-							<li>Vast Wilderness - Obtain any ungarnished nut</li>
-							<li>Nutcracker! - Obtain any cracked nut</li>
-							<li>Chef's Kiss - Create Liquid Garnish</li>
-							<li>Garnishment - Obtain any garnished nut</li>
-							<li>Compounded! - Obtain Garnished Compound</li>
-							<li>Confectionary... Wait - Obtain any sweetened nut</li>
-							<li>Willy Wonka Expansion - Obtain any chocolate glazed nut</li>
-							<li>Ya Like Jazz? - Obtain any honeyed nut</li>
-							<li>Compacted Nuts - Obtain Nut Mix</li>
-							<li>Too Far Gone - Obtain a Garnished Meal</li>
-							<li>Who Needs Beacons Anyways? - Obtain any Melted Cinder Flour nut with an effect</li>
-							<li>Classical Drinks - Obtain Bottled Apple Cider</li>
-							<li>Gambling - Obtain Cryptic Apple Cider</li>
-						</ul>
-						<li>Improve the Liquid Garnish flowing texture</li>
-					</ul>
-					<h4 id="0.2.3">v0.2.3</h4>
-					<ul>
-						<li>Add Honeyed variant for nuts</li>
-						<ul>
-							<li>Cashew</li>
-							<li>Walnut</li>
-							<li>Almond</li>
-							<li>Pecan</li>
-							<li>Pistachio</li>
-							<li>Macadamia</li>
-						</ul>
-						<li>Fix Nut Growth/Plant world generation</li>
-						<li>Layout roadmap for the next coming versions</li>
-						<ul>
-							<li>Chocolate glazed nuts</li>
-							<li>Vanilla+ Items</li>
-							<ul>
-								<li>[SCRAPPED] Toasted Bread</li>
-								<li>Apple Cider</li>
-								<li>Garnished Meal</li>
-								<ul>
-									<li>Adjusted in later update</li>
-								</ul>
-							</ul>
-							<li>Advancements</li>
-						</ul>
-					</ul>
-					<h4 id="0.2.2">v0.2.2</h4>
-					<ul>
-						<li>Add Macadamias</li>
-						<ul>
-							<li>Cracked</li>
-							<li>Ungarnished</li>
-							<li>Garnished</li>
-							<li>Sweetened</li>
-							<li>Cinder Flour</li>
-							<li>Melted Cinder Flour</li>
-							<li>Melted Cinder Flour with Effect</li>
-						</ul>
-						<li>Add Honeyed Nut Mix</li>
-						<li>Fix crushing/milling recipes</li>
-						<ul>
-							<li>Almonds</li>
-							<li>Pistachios</li>
-						</ul>
-					</ul>
-					<h4 id="0.2.1">v0.2.1</h4>
-					<ul>
-						<li>Add Pistachios</li>
-						<ul>
-							<li>Cracked</li>
-							<li>Ungarnished</li>
-							<li>Garnished</li>
-							<li>Sweetened</li>
-							<li>Cinder Flour</li>
-							<li>Melted Cinder Flour</li>
-							<li>Melted Cinder Flour with Effect</li>
-						</ul>
-						<li>Add Honeyed Sweet Berries</li>
-						<li>Add Nut Mix</li>
-						<ul>
-							<li>Regular</li>
-							<li>Sweetened</li>
-						</ul>
-						<li>Added Nut Growth/Plant</li>
-						<ul>
-							<li>Drops varying nut types</li>
-						</ul>
-						<li>Remove Garnishment Templates</li>
-						<ul>
-							<li>Alongside the entire "template" system</li>
-						</ul>
-						<li>Remove Garnished Soil</li>
-						<li>Adjust Garnished Water</li>
-						<ul>
-							<li>Replaced with Liquid Garnish</li>
-							<li>Add bucket for replacement fluid</li>
-						</ul>
-						<li>Adjust recipes</li>
-						<ul>
-							<li>Cracked nuts can now be made by crushing/milling ungarnished nuts instead of just garnished nuts</li>
-							<li>Melted Cinder Flour nuts recipes now require Nether Wart and Water, as well as to be in a heated basin</li>
-							<li>Melted Cinder Flour nuts with effects recipes now require "metal" nuggets, Water, Nether Wart, and Sugar in a superheated basin</li>
-						</ul>
-						<li>Add new garnishing recipes</li>
-						<ul>
-							<li>Spout Liquid Garnish onto ungarnished nuts</li>
-						</ul>
-						<li>Fix nutrition and saturation values for certain foods</li>
-						<li>Add several item tags</li>
-						<ul>
-							<li>#garnished:berries</li>
-							<li>#garnished:cinder_nuts</li>
-							<li>#garnished:cracked_nuts</li>
-							<li>#garnished:garnished_foods</li>
-							<li>#garnished:melted_cinder_nuts</li>
-							<li>#garnished:melted_cinder_nuts_with_effects</li>
-							<li>#garnished:nut_mix</li>
-							<li>#garnished:nuts</li>
-							<li>#garnished:sweetened_nuts</li>
-							<li>#garnished:ungarnished_nuts</li>
-							<li>#garnished:unsweetened_nuts</li>
-						</ul>
-					</ul>
-					<h4 id="0.2">v0.2</h4>
-					<ul>
-						<li>Add Pecans</li>
-						<ul>
-							<li>Cracked</li>
-							<li>Ungarnished</li>
-							<li>Garnished</li>
-							<li>Sweetened</li>
-							<li>Cinder Flour</li>
-							<li>Melted Cinder Flour</li>
-							<li>Melted Cinder Flour with Effect</li>
-						</ul>
-						<li>Add Garnished Sweet Berries</li>
-						<li>Add Garnishment Templates</li>
-						<ul>
-							<li>Used to make different variants of nuts utilizing the Polymorph mod</li>
-						</ul>
-						<li>Fix translations</li>
-						<ul>
-							<li>Melted Cinder Flour nuts with effects had improper translations</li>
-						</ul>
-						<li>Create Forge port</li>
-						<li>Update Icon slightly</li>
-					</ul>
-					<h4 id="0.1">v0.1</h4>
-					<ul>
-						<li>Add Cashews, Walnuts, and Almonds</li>
-						<ul>
-							<li>Cracked</li>
-							<li>Ungarnished</li>
-							<li>Garnished</li>
-							<li>Sweetened</li>
-							<li>Cinder Flour</li>
-							<li>Melted Cinder Flour</li>
-							<li>Melted Cinder Flour with Effect</li>
-						</ul>
-						<li>Add Garnished Water + Garnished Water Bucket</li>
-						<li>Add Garnished Soil</li>
-					</ul>
-				</div>
-			</center>
-		</div>
-		<hr style="clear:both;visibility:hidden;height:40px;">
-		<center>
-			<div style="position:relative;color:white;">
-				<img src="/images/meet_the_developer_barebones.png" alt="Meet The Developer" style="width:1200px;">
-				<div style="position:absolute;top:8px;left:16px;padding-left:100px;width:800px;text-align:left;">
-					<h1 style="margin:0px;padding:0px;">Meet The Developer!</h1>
-					<p style="font-size:16px;margin:0px;padding:0px;">DakotaPride | They/Them | Developer, Texture Artist, & Concept Designer</p>
-    				<p>Hello! While most of you may already know who I am and what I do, I wanted to provide a short introduction for those who may not!</p>
-    				<p>I am a mod developer and texture artist for several projects, including but not limited to: Create: Garnished, Create: Framed, Hibernal Herbs, Happy Pride Moth!, Effective Regalia, and some others!</p>
-    				<p>I began modding all the way back in 2020 - I wonder why...<br>Even with some hiccups, I eventually improved and came to be much better at texture/model design and programming as a whole.</p>
-  				</div>
-			</div>
-		</center>
-		<br>
-		<hr style="clear:both;visibility:hidden;height:40px;">
-		<p><center>The Create: Garnished mod and Create: Garnished wiki have been developed and designed by DakotaPrideModding</center></p>
-		<p><center><a href="https://github.com/DakotaPride/create-garnished" target="_blank">Create: Garnished Fabric Source Code</a></center></p>
-		<p><center><a href="https://github.com/DakotaPride/create-garnished/issues" target="_blank">Create: Garnished Issues Page</a></center></p>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn" onclick="myFunction()">Recipe Types
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="/recipe_types/bulk_dyeing.html">Bulk Dyeing</a>
+                    <a href="/recipe_types/bulk_freezing.html">Bulk Freezing</a>
+                </div>
+            </div>
+            <a href="/blog.html" style="float:left;">Blog Posts</a>
+            <a href="https://modrinth.com/mod/create-garnished" style="float:right;" target="_blank">Modrinth</a>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/garnished" style="float:right;"
+                target="_blank">Curseforge</a>
+            <a href="https://www.ko-fi.com/dakotapride" style="float:right;" target="_blank">Ko-fi</a>
+        </div>
+        <div style="padding:20px;margin-top:30px;height:1500px;">
+            <center>
+                <div style="float:right;text-align:left;width:300px;padding-right:200px;">
+                    <h3 id="updates_sidebar" title="Recent Blog Posts">Recent Blog Posts</h3>
+                    <ul style="list-style-type:none;text-decoration:none;">
+                        <li
+                            title="v1.8 - Refurbished, Celebrate the 1-year anniversary of Create: Garnished with the v1.8 update! Explore the...">
+                            <a href="/blog/version-1.8.html">v1.8 - Refurbished</a></li>
+                    </ul>
+                </div>
+                <div style="float:left;width:1100px;">
+                    <img class="rounded-image-25" src="/images/nut_trees.png" style="width:80%;">
+                    <div style="width:800px;">
+                        <p style="text-align:left;">While Create: Garnished doesn't just add nuts, you will most likely
+                            come across them and many of their related features during your playthrough.</p>
+                        <p style="text-align:left;">There are currently 9 unique types of nuts: Cashews, Walnuts,
+                            Pecans, Almonds, Pistachios, Macadamias, Peanuts, Hazelnuts, and Chestnuts. Each of these
+                            nuts has similar uses and unique uses, which you'll encounter as you progress through the
+                            game. Some uses require mid to late-game items while others can be easily obtained during
+                            the early game.</p>
+                        <p style="text-align:left;">But, of course, how do you obtain these nuts? By breaking the Nut
+                            Leaves that naturally generate on certain trees that are scattered across the Plains biomes
+                            of your world.</p>
+                    </div>
+                    <br>
+                    <img class="rounded-image-25" src="/images/garnish_block.png" style="width:80%;">
+                    <div style="width:800px;">
+                        <p style="text-align:left;">As you may notice, if you consume these nuts in their natural state,
+                            you will become nauseated for a short time. You can avoid this by garnishing your nuts! To
+                            garnish your nuts, you will need to either spout 250mb of Liquid Garnish onto your nuts or
+                            deploy a Garnish Compound onto them.</p>
+                        <p style="text-align:left;">You can make Liquid Garnish by mixing a piece of Sugar, (mostly) any
+                            kind of seed, and 250mb of Water in a heated basin. This will produce 250mb of Liquid
+                            Garnish, which is the exact amount that you need for 1 garnished nut. The alternative
+                            method, utilizing some Garnish Compound, requires you to have a full bucket of Liquid
+                            Garnish on hand.</p>
+                        <p style="text-align:left;">This method requires you to compact 1 bucket of Liquid Garnish, a
+                            Salt Compound, and 2 Wheat in a regular basin. This will produce a Solidified Garnish Block,
+                            which can be crushed into a varying amount of Garnish Compound. However, some of these
+                            Garnish Compounds should be saved, as you can create more Solidified Garnish Blocks from
+                            them, allowing you to create a cycle of sorts for your factory.</p>
+                    </div>
+                    <br>
+                    <img class="rounded-image-25" src="/images/salt_compound.png" style="width:80%;">
+                    <div style="width:800px;">
+                        <p style="text-align:left;">You might be wondering how you even obtain Salt Compound and let me
+                            tell you, it's quite simple!</p>
+                        <p style="text-align:left;">First, you will need to obtain Limestone - this can be automated at
+                            a later point in time using Honey and Lava, but you don't need to worry about that just yet
+                            - and then either mill it or crush it, which will produce Crushed Salt Compound and has a
+                            small chance to produce a small amount of iron or zinc nuggets.</p>
+                        <p style="text-align:left;">From here, you will need to create an assembly line with the
+                            following steps, in this order - Press a Crushed Salt Compound, then press it again, and
+                            finally, deploy a piece of Flint onto it. This will yield a singular Salt Compound, which
+                            can be used for a multitude of things, but again, no need to worry about that just yet, as
+                            you now have the opportunity to create a garnished nut factory - might I recommend buhgs...
+                            Peanuts, I mean Peanuts.</p>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <hr style="clear:both;visibility:hidden;height:40px;">
+        <div>
+            <center>
+                <button class="collapsible">History of Changes & Additions - Changelog</button>
+                <div class="content" style="text-align:left;">
+                    <div style="width:100px;">
+                        <br>
+                        <h4 id="1.8">v1.8</h4>
+                        <ul></ul>
+                        <h4 id="1.7.5">v1.7.5</h4>
+                        <ul>
+                            <li>Fix Glass Bulk Dyeing recipes</li>
+                            <li>Fix Glass Pane Bulk Dyeing recipes</li>
+                        </ul>
+                        <h4 id="1.7.4">v1.7.4</h4>
+                        <ul>
+                            <li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/52">Issue #52</a>
+                                (again)</li>
+                            <ul>
+                                <li>Allow for fluid interactions to not act odd</li>
+                            </ul>
+                        </ul>
+                        <h4 id="1.7.3">v1.7.3</h4>
+                        <ul>
+                            <li>Fix missing entries in "#minecraft:water" fluid tag</li>
+                        </ul>
+                        <h4 id="1.7.2">v1.7.2</h4>
+                        <ul>
+                            <li>Fix more inconsistent tags</li>
+                            <li>Add compiled crushed nut item tag</li>
+                        </ul>
+                        <h4 id="1.7.1">v1.7.1</h4>
+                        <ul>
+                            <li>Implement <a href="https://github.com/DakotaPride/create-garnished/issues/49">Issue
+                                    #49</a></li>
+                            <ul>
+                                <li>Make hatchet enchantment drops better</li>
+                                <ul>
+                                    <li>Convert previous hard-coded loot tables into standard data files</li>
+                                </ul>
+                            </ul>
+                            <li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/51">Issue #51</a>
+                            </li>
+                            <li>Add EMI support as requested from <a
+                                    href="https://github.com/DakotaPride/create-garnished/issues/52">Issue
+                                    #52</a></li>
+                            <li>Fix issue with Nut Slabs not being able to be used for certain recipes and other
+                                functions</li>
+                            <li>Fix most inconsistent tags</li>
+                        </ul>
+                        <h4 id="1.7">v1.7</h4>
+                        <ul>
+                            <li>Add Raw Polar Bear Meat</li>
+                            <li>Add Cooked Polar Bear Meat</li>
+                            <li>Add Void Stroganoff</li>
+                            <li>Add Frosted Dessert</li>
+                            <li>Add Explorer's Concoction</li>
+                            <li>Add Chilled Apple</li>
+                            <li>Add Polar Bear Hide</li>
+                            <li>Add Numbing Parchment</li>
+                            <li>Add Frost</li>
+                            <li>Add Polar Hide Scratch Paper</li>
+                            <li>Add Bulk Freezing</li>
+                            <ul>
+                                <li>With JEI integration</li>
+                            </ul>
+                            <li>Add Bulk Dyeing</li>
+                            <ul>
+                                <li>With JEI integration</li>
+                                <ul>
+                                    <li>Red Bulk Dyeing</li>
+                                    <li>Orange Bulk Dyeing</li>
+                                    <li>Yellow Bulk Dyeing</li>
+                                    <li>Green Bulk Dyeing</li>
+                                    <li>Blue Bulk Dyeing</li>
+                                    <li>Purple Bulk Dyeing</li>
+                                </ul>
+                            </ul>
+                            <li>Add Mastic Resin Blocks into the creative mode tab</li>
+                            <li>Update Create mod version to 0.5.1.f</li>
+                        </ul>
+                        <h4 id="1.6.3">v1.6.3</h4>
+                        <ul>
+                            <li>Allow for fluids to interact with each other via fluid pipes</li>
+                        </ul>
+                        <h4 id="1.6.2">v1.6.2</h4>
+                        <ul>
+                            <li>Fix Create: Crafts & Additions compat recipe</li>
+                        </ul>
+                        <h4 id="1.6.1">v1.6.1</h4>
+                        <ul>
+                            <li>Fix Mummification potions/arrows</li>
+                            <li>Fix Mummification not providing the proper swiftness modifier</li>
+                        </ul>
+                        <h4 id="1.6">v1.6</h4>
+                        <ul>
+                            <li>Add Prickly Pear</li>
+                            <li>Add Bamboo Clod</li>
+                            <li>Add Thorn on a Stick</li>
+                            <li>Add Nopalito Wrap</li>
+                            <li>Add Nopalito Wrap Supreme</li>
+                            <li>Add Sinopia Rock Sweet</li>
+                            <li>Add Rosy Cocktail</li>
+                            <li>Add Stew of the Damned</li>
+                            <li>Add Prickly Stew</li>
+                            <li>Add Overgrown Brew</li>
+                            <li>Add Antique Swathe</li>
+                            <li>Add Amber Remnant</li>
+                            <li>Add Shattered Amber Remnant</li>
+                            <li>Add Bristled Flour</li>
+                            <li>Add Bristled Tortilla</li>
+                            <li>Add Garnish Compound Block</li>
+                            <li>Add Ethereal Compound Block</li>
+                            <li>Add Salt Compound Block</li>
+                            <li>Add Mulch Block</li>
+                            <li>Add Mummification status effect</li>
+                            <li>Add Prickly status effect</li>
+                            <li>Add Ritualistic Stone world generation</li>
+                            <ul>
+                                <li>Generates similarly to Asurine, Veridium, Ochrum, and Crimsite</li>
+                                <li>Can be found in desert biomes</li>
+                            </ul>
+                            <li>Fix Galvanic Haunting texture</li>
+                            <li>Fix Volatile Dust texture</li>
+                        </ul>
+                        <h4 id="1.5.2-hotfix-1">v1.5.2-hotfix-1</h4>
+                        <ul>
+                            <li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/42">Issue #42</a>
+                            </li>
+                        </ul>
+                        <h4 id="1.5.2">v1.5.2</h4>
+                        <ul>
+                            <li>Fix cracked nut tooltips</li>
+                            <li>Fix missing Lustrous Pearl entry for loot tables</li>
+                            <li>Fix Murky Jelly recipe</li>
+                            <li>Redesign Carnotite textures</li>
+                            <li>Redesign Abyssal Stone textures</li>
+                            <li>Redesign Unstable Stone textures</li>
+                            <li>Add smooth stone variants</li>
+                            <ul>
+                                <li>Smooth Carnotite</li>
+                                <li>Smooth Abyssal Stone</li>
+                                <li>Smooth Unstable Stone</li>
+                            </ul>
+                            <li>[TESTING] Add Ritualistic Stone and its variants</li>
+                            <li>[TESTING] Add Prickly status effect</li>
+                            <li>[TEMPORARY] Remove Ponder entries</li>
+                        </ul>
+                        <h4 id="1.5.1-hotfix-2">v1.5.1-hotfix-2</h4>
+                        <ul>
+                            <li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/40">Issue #40</a>
+                            </li>
+                        </ul>
+                        <h4 id="1.5.1-hotfix-1">v1.5.1-hotfix-1</h4>
+                        <ul>
+                            <li>Fix improper tagging</li>
+                            <li>Fix improper IDs being used in tags, recipes, etc.</li>
+                        </ul>
+                        <h4 id="1.5.1-beta">v1.5.1-beta</h4>
+                        <ul>
+                            <li>Fix odd fluid amounts in recipes</li>
+                            <li>Fix lang errors</li>
+                            <li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/38">Issue #38</a>
+                            </li>
+                            <li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/39">Issue #39</a>
+                            </li>
+                            <li>[TESTING/BETA] Add Ponder entries related to Cashew Mixture</li>
+                        </ul>
+                        <h4 id="1.5-beta">v1.5-beta</h4>
+                        <ul>
+                            <li>Add Nutty Melody</li>
+                            <li>Add Dusty Regale</li>
+                            <li>Add Muesli</li>
+                            <li>Add Cackling Pie</li>
+                            <li>Add Murky Jelly</li>
+                            <li>Add Murky Macadamia Malice</li>
+                            <li>Add Yam-O-Glow Puffs</li>
+                            <li>Add Shining Dish</li>
+                            <li>Add Dried Vermilion Kelp</li>
+                            <li>Add Dried Dulse Kelp</li>
+                            <li>Add Vermilion Stew</li>
+                            <li>Add Vast Brew</li>
+                            <li>Add Galvanic Haunting</li>
+                            <li>Add Bewildered Pastry</li>
+                            <li>Add Incendiary Stew</li>
+                            <li>Add Vermilion Kelp</li>
+                            <li>Add Dulse Kelp</li>
+                            <li>Add Voltaic Sea Grass</li>
+                            <li>Add Lustrous Pearl</li>
+                            <li>Add Coral Wrapping</li>
+                            <li>Add Dried Vermilion Kelp Block</li>
+                            <li>Add Dried Dulse Kelp Block</li>
+                            <li>Make tooltips for certain items more informational and helpful</li>
+                            <ul>
+                                <li>Bottled Apple Cider</li>
+                                <li>Bitter Bottled Apple Cider</li>
+                                <li>Cryptic Bottled Apple Cider</li>
+                                <li>Bottled Peanut Oil</li>
+                                <li>All Melted Cinder Flour with effect(s)</li>
+                                <ul>
+                                    <li>Peanut</li>
+                                    <li>Walnut</li>
+                                    <li>Cashew</li>
+                                    <li>Pistachio</li>
+                                    <li>Pecan</li>
+                                    <li>Almond</li>
+                                    <li>Macadamia</li>
+                                    <li>Hazelnut</li>
+                                    <li>Chestnut</li>
+                                </ul>
+                            </ul>
+                            <li>Remove tooltips for certain items</li>
+                            <ul>
+                                <li>Cashew Apple</li>
+                            </ul>
+                            <li>[TESTING/BETA] Add Ponder entries</li>
+                        </ul>
+                        <h4 id="1.4">v1.4</h4>
+                        <ul>
+                            <li>Add Chestnuts</li>
+                            <ul>
+                                <li>Cracked</li>
+                                <li>Ungarnished</li>
+                                <li>Garnished</li>
+                                <li>Sweetened</li>
+                                <li>Honeyed</li>
+                                <li>Chocolate Glazed</li>
+                                <li>Cinder Flour</li>
+                                <li>Melted Cinder Flour</li>
+                                <li>Melted Cinder Flour with Effect</li>
+                            </ul>
+                            <li>Add Walnut Gorge Cream Bowl</li>
+                            <li>Add Cashew Sorbet Scoop</li>
+                            <li>Add Cashew Sorbet Delight</li>
+                            <li>Add Wheat Graze</li>
+                            <li>Add Porkchop & Graze</li>
+                            <li>Add Ghandercken</li>
+                            <li>Add Fishy Surprise</li>
+                            <li>Add Gloomy Gathering</li>
+                            <li>Add Aching Tenebrous Clump</li>
+                            <li>Add Raw Tenebrous Meat</li>
+                            <li>Add Cooked Tenebrous Meat</li>
+                            <li>Add advancements</li>
+                            <ul>
+                                <li>Welcome to Hell's Kitchen! - Consume every food from the Create: Garnished mod</li>
+                            </ul>
+                            <li>Fix Mud Pie not providing a bowl upon consumption</li>
+                            <li>Fix certain foods not being marked as meat</li>
+                            <ul>
+                                <li>Phantom Steak</li>
+                                <li>Phantom Burger</li>
+                                <li>Phantom Patty</li>
+                            </ul>
+                            <li>Make Venerable Delicacies no longer considered "fast to consume"</li>
+                            <li>Add Tenebrous Meat to Ancient City loot tables</li>
+                            <li>Add chestnuts to potato cannon ammo files</li>
+                            <li>Add related entries to HatchetUtils.getDrops()</li>
+                            <ul>
+                                <li>Make Warden drop Raw Tenebrous Meat with Ravaging</li>
+                            </ul>
+                            <li>Move advancements to a new advancements tab</li>
+                        </ul>
+                        <h4 id="1.3-hotfix-2">v1.3-hotfix-2</h4>
+                        <ul>
+                            <li>Fix liquid translations</li>
+                        </ul>
+                        <h4 id="1.3-hotfix-1">v1.3-hotfix-1</h4>
+                        <ul>
+                            <li>Fix Cashew Leaves loot table</li>
+                            <ul>
+                                <li>Was missing Cashew Apple</li>
+                            </ul>
+                        </ul>
+                        <h4 id="1.3">v1.3</h4>
+                        <ul>
+                            <li>Add Slime Drops</li>
+                            <ul>
+                                <li>Regular/Standard</li>
+                                <li>With coloured variants</li>
+                                <ul>
+                                    <li>Red</li>
+                                    <li>Orange</li>
+                                    <li>Yellow</li>
+                                    <li>Green</li>
+                                    <li>Blue</li>
+                                    <li>Purple</li>
+                                </ul>
+                            </ul>
+                            <li>Add Mastic Paste</li>
+                            <ul>
+                                <li>Regular/Standard</li>
+                                <li>With coloured variants</li>
+                                <ul>
+                                    <li>Red</li>
+                                    <li>Orange</li>
+                                    <li>Yellow</li>
+                                    <li>Green</li>
+                                    <li>Blue</li>
+                                    <li>Purple</li>
+                                </ul>
+                            </ul>
+                            <li>Add Venerable Delicacies</li>
+                            <ul>
+                                <li>Red</li>
+                                <li>Orange</li>
+                                <li>Yellow</li>
+                                <li>Green</li>
+                                <li>Blue</li>
+                                <li>Purple</li>
+                            </ul>
+                            <li>Add Galactic Cane</li>
+                            <li>Add Coal Truffle</li>
+                            <li>Add Merry Treat</li>
+                            <li>Add Icy Mastic Chunk</li>
+                            <li>Add Baklava</li>
+                            <li>Add Sturdy Waffle</li>
+                            <li>Add Venerable Dough</li>
+                            <li>Add Mastic Resin</li>
+                            <ul>
+                                <li>Regular/Standard</li>
+                                <li>With coloured variants</li>
+                                <ul>
+                                    <li>Red</li>
+                                    <li>Orange</li>
+                                    <li>Yellow</li>
+                                    <li>Green</li>
+                                    <li>Blue</li>
+                                    <li>Purple</li>
+                                </ul>
+                            </ul>
+                            <li>Add Liquefied Mastic Resin</li>
+                            <ul>
+                                <li>Regular/Standard</li>
+                                <li>With coloured variants</li>
+                                <ul>
+                                    <li>Red</li>
+                                    <li>Orange</li>
+                                    <li>Yellow</li>
+                                    <li>Green</li>
+                                    <li>Blue</li>
+                                    <li>Purple</li>
+                                </ul>
+                            </ul>
+                            <li>Add Mastic Resin Block</li>
+                            <ul>
+                                <li>Regular/Standard</li>
+                                <li>With coloured variants</li>
+                                <ul>
+                                    <li>Red</li>
+                                    <li>Orange</li>
+                                    <li>Yellow</li>
+                                    <li>Green</li>
+                                    <li>Blue</li>
+                                    <li>Purple</li>
+                                </ul>
+                            </ul>
+                            <li>Add Carnotite stone type</li>
+                            <ul>
+                                <li>Carnotite Stairs</li>
+                                <li>Carnotite Slab</li>
+                                <li>Carnotite Wall</li>
+                                <li>Carnotite Bricks</li>
+                                <li>Carnotite Brick Stairs</li>
+                                <li>Carnotite Brick Slab</li>
+                                <li>Carnotite Brick Wall</li>
+                                <li>Polished Carnotite Stairs</li>
+                                <li>Polished Carnotite Slab</li>
+                                <li>Polished Carnotite Wall</li>
+                                <li>Chiseled Carnotite</li>
+                            </ul>
+                            <li>Add Abyssal Stone stone type</li>
+                            <ul>
+                                <li>Abyssal Stone Stairs</li>
+                                <li>Abyssal Stone Slab</li>
+                                <li>Abyssal Stone Wall</li>
+                                <li>Abyssal Stone Bricks</li>
+                                <li>Abyssal Stone Brick Stairs</li>
+                                <li>Abyssal Stone Brick Slab</li>
+                                <li>Abyssal Stone Brick Wall</li>
+                                <li>Polished Abyssal Stone Stairs</li>
+                                <li>Polished Abyssal Stone Slab</li>
+                                <li>Polished Abyssal Stone Wall</li>
+                                <li>Chiseled Abyssal Stone</li>
+                            </ul>
+                            <li>Add Unstable Stone stone type</li>
+                            <ul>
+                                <li>Unstable Stone Stairs</li>
+                                <li>Unstable Stone Slab</li>
+                                <li>Unstable Stone Wall</li>
+                                <li>Unstable Stone Bricks</li>
+                                <li>Unstable Stone Brick Stairs</li>
+                                <li>Unstable Stone Brick Slab</li>
+                                <li>Unstable Stone Brick Wall</li>
+                                <li>Polished Unstable Stone Stairs</li>
+                                <li>Polished Unstable Stone Slab</li>
+                                <li>Polished Unstable Stone Wall</li>
+                                <li>Chiseled Unstable Stone</li>
+                            </ul>
+                            <li>Add more wood blocks & items</li>
+                            <ul>
+                                <li>Nut Boat</li>
+                                <li>Nut Chest Boat</li>
+                                <li>Nut Sign</li>
+                                <li>Sepia Sign</li>
+                                <li>Nut Button</li>
+                                <li>Sepia Button</li>
+                                <li>Nut Pressure Plate</li>
+                                <li>Sepia Pressure Plate</li>
+                                <li>Nut Fence</li>
+                                <li>Sepia Fence</li>
+                                <li>Nut Fence Gate</li>
+                                <li>Sepia Fence Gate</li>
+                                <li>Nut Hanging Sign</li>
+                                <li>Sepia Hanging Sign</li>
+                            </ul>
+                            <li>Overhaul saturation and nutrition values</li>
+                            <ul>
+                                <li><a
+                                        href="https://github.com/DakotaPride/create-garnished/wiki/v1.3-‐-Sugarcoated#-balancing-">All
+                                        exact
+                                        adjustments can be found here</a></li>
+                            </ul>
+                            <li>Update the nut wood type textures</li>
+                            <li>Add integrated hatchets</li>
+                            <ul>
+                                <li>Only for 1.20.x versions</li>
+                                <br>
+                                <li>Deeper & Darker</li>
+                                <li>Additional Additions</li>
+                                <li>Create: Stuff and Additions</li>
+                                <li>Mythic Upgrades</li>
+                            </ul>
+                            <li>Add built-in texture integration for Every Compat (Wood Good) and Quark</li>
+                            <ul>
+                                <li>Nut Chest + Trapped variant</li>
+                                <li>Sepia Chest + Trapped variant</li>
+                            </ul>
+                        </ul>
+                        <h4 id="1.2-hotfix-2">v1.2-hotfix-2</h4>
+                        <ul>
+                            <li>Fix certain recipes using "c:cheese" as an item instead of an item tag</li>
+                            <ul>
+                                <li>Wrapped Warped Tangle</li>
+                                <li>Wrapped Crimson Tangle</li>
+                                <li>Wrapped Sepia Tangle</li>
+                                <li>Weeping Tangle</li>
+                            </ul>
+                            <li>Fix incorrect item tags on Fabric</li>
+                            <ul>
+                                <li>Replace "forge:tools/hatchets" with "c:tools/hatchets"</li>
+                            </ul>
+                            <li>Fix typo in stripped logs item tag</li>
+                            <ul>
+                                <li>Change "#garnished:stripped_nuts_logs" to "#garnished:stripped_nut_logs"</li>
+                            </ul>
+                        </ul>
+                        <h4 id="1.2-hotfix-1">v1.2-hotfix-1</h4>
+                        <ul>
+                            <li>Fix Cashew Mixture recipe using peanuts instead of cashews</li>
+                            <li>Add compatibility between Create: Garnished and Expanded Delight for Fabric</li>
+                        </ul>
+                        <h4 id="1.2">v1.2</h4>
+                        <ul>
+                            <li>Add Nut wood type</li>
+                            <ul>
+                                <li>Nut Log</li>
+                                <li>Nut Wood</li>
+                                <li>Stripped Nut Log</li>
+                                <li>Stripped Nut Wood</li>
+                                <li>Nut Stairs</li>
+                                <li>Nut Slab</li>
+                                <li>Nut Fence</li>
+                                <li>Nut Fence Gate</li>
+                                <li>Nut Door</li>
+                                <li>Nut Trapdoor</li>
+                            </ul>
+                            <li>Fix Mud Pie stack size</li>
+                            <li>Fix Stripped Sepia Stem not being able to be used for casing recipes</li>
+                            <li>Fix Sepia-related items not being able to be cut using a Mechanical Saw</li>
+                            <li>Fix certain items not being upright on belt or similar inventories</li>
+                            <ul>
+                                <li>Bottle of Ender Jelly</li>
+                                <li>Chorus Cocktail</li>
+                                <li>Cosmic Brew</li>
+                                <li>Desolate Stew</li>
+                                <li>Ethereal Concoction</li>
+                                <li>Void Mixture</li>
+                                <li>Chorus Cocktail</li>
+                                <li>Illuminating Cocktail</li>
+                                <li>Mud Pie</li>
+                                <li>Molten Stew</li>
+                                <li>Pecan Pie</li>
+                            </ul>
+                            <li>Fix unstrippable Sepia blocks</li>
+                            <li>Fix hatchets not being able to strip Sepia blocks</li>
+                            <li>Fix Void Mixture not providing the Cognate status effect</li>
+                            <li>Fix the Cognate status effect not being provided for the correct amount of time</li>
+                            <ul>
+                                <li>Void Mixture</li>
+                                <li>Desolate Stew</li>
+                            </ul>
+                            <li>Fix improper animations/sounds for certain items</li>
+                            <ul>
+                                <li>Illuminating Cocktail</li>
+                                <li>Chorus Cocktail</li>
+                            </ul>
+                            <li>Fix Blindness potions not providing Blindness</li>
+                            <li>Fix crash upon startup as a result of certain potion recipes</li>
+                            <li>Fix Molten Stew not being craftable due to incorrect IDs</li>
+                            <li>Fix Illuminating Cocktail providing the Cognate status effect</li>
+                            <li>Fix Sepia Wart Block not being cut down when using a Mechanical Saw</li>
+                            <li>Fix Sepia Planks being unusable on Large Water Wheels</li>
+                        </ul>
+                        <h4 id="1.1-hotfix">v1.1-hotfix</h4>
+                        <ul>
+                            <li>Fix several world generation-related features</li>
+                            <li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/25">Issue #25</a>
+                            </li>
+                            <li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/27">Issue #27</a>
+                            </li>
+                            <li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/28">Issue #28</a>
+                            </li>
+                        </ul>
+                        <h4 id="1.1">v1.1</h4>
+                        <ul>
+                            <li>Add Molten Remnant</li>
+                            <li>Add Molten Stew</li>
+                            <li>Add initial functionality for hatchet enchantments</li>
+                            <ul>
+                                <li>Allow for certain mobs to drop additional items if the player is utilizing the
+                                    Ravaging enchantment</li>
+                                <li>Allow for certain mobs to drop additional items if the player is utilizing the
+                                    Salvaging enchantment</li>
+                            </ul>
+                            <li>Create initial ports to MC 1.18.x</li>
+                            <li>Adjust Enflamed Mandible texture</li>
+                        </ul>
+                        <h4 id="1.0">v1.0</h4>
+                        <ul>
+                            <li>Add Bottle of Ender Jelly</li>
+                            <li>Add Chorus Cocktail</li>
+                            <li>Add Cosmic Stew</li>
+                            <li>Add Desolate Brew</li>
+                            <li>Add Ethereal Concoction</li>
+                            <li>Add Void Mixture</li>
+                            <li>Add Chorus Bowl</li>
+                            <li>Add Chorus Cookie</li>
+                            <li>Add Ender Jelly (non-bottled)</li>
+                            <li>Add Mulch</li>
+                            <li>Add Mud Pie</li>
+                            <li>Add Chorus Tuft</li>
+                            <li>Add Hollowed Chorus Fruit</li>
+                            <li>Add Cosmic Powder</li>
+                            <li>Add Void Dust</li>
+                            <li>Add Ethereal Compound</li>
+                            <li>Add Desolate Spread</li>
+                            <ul>
+                                <li>Can be used in a similar way to Bone Meal on End Stone</li>
+                                <ul>
+                                    <li>Produces Barren Roots and Small Chorus Plants</li>
+                                </ul>
+                            </ul>
+                            <li>Add Barren Roots</li>
+                            <li>Add Small Chorus Plants</li>
+                            <li>Add Garnished Nut Block</li>
+                            <li>Add Ungarnished Nut Block</li>
+                            <li>Add Block of Ender Jelly</li>
+                            <li>Add Cognate status effect</li>
+                            <ul>
+                                <li>Allows the affected player to freely look at Endermen in the eyes without
+                                    aggravating them. However,
+                                    attacking endermen will still aggravate them</li>
+                            </ul>
+                            <li>Add Flagrant status effect</li>
+                            <ul>
+                                <li>Makes any endermen in the area aggressive towards the entity inflicted with this
+                                    effect</li>
+                            </ul>
+                            <li>Add items for Nut Leaves</li>
+                            <ul>
+                                <li>Regular Nut Leaves</li>
+                                <li>Cashew Nut Leaves</li>
+                                <li>Walnut Nut Leaves</li>
+                                <li>Almond Nut Leaves</li>
+                                <li>Pecan Nut Leaves</li>
+                                <li>Pistachio Nut Leaves</li>
+                                <li>Macadamia Nut Leaves</li>
+                                <li>Peanut Nut Leaves</li>
+                                <li>Hazelnut Nut Leaves</li>
+                            </ul>
+                            <li>Add hatchets</li>
+                            <ul>
+                                <li>Netherite</li>
+                                <li>Diamond</li>
+                                <li>Iron</li>
+                                <li>Gold</li>
+                                <li>Stone</li>
+                                <li>Wooden</li>
+                            </ul>
+                            <li>Add enchantments for hatchets</li>
+                            <ul>
+                                <li>Ravaging</li>
+                                <ul>
+                                    <li>1 level</li>
+                                </ul>
+                                <li>Salvaging</li>
+                                <ul>
+                                    <li>2 levels</li>
+                                </ul>
+                            </ul>
+                            <li>Fix Blindness potion(s) translations</li>
+                            <li>Add "#forge:mineable/hatchet" or "#c:mineable/hatchet" block tag</li>
+                            <li>Add more Farmer's Delight items</li>
+                            <ul>
+                                <li>Glow Ink Roll</li>
+                                <li>Glow Ink Roll Slice</li>
+                            </ul>
+                            <li>Remove certain Farmer's Delight recipes</li>
+                            <ul>
+                                <li>Cooking</li>
+                                <ul>
+                                    <li>Bottled Bitter Apple Cider</li>
+                                    <li>Bottled Cryptic Apple Cider</li>
+                                    <li>Bottled Apple Cider</li>
+                                    <li>Bottled Peanut Oil</li>
+                                    <li>Bottled Fermented Cashew Mixture</li>
+                                    <li>Blazing Delight</li>
+                                    <li>Pecan Pie</li>
+                                    <li>Phantom Steak</li>
+                                </ul>
+                            </ul>
+                            <li>Fix translation for Pecan Leaves</li>
+                            <li>Fix <a href="https://www.github.com/dakotapride/create-garnished/issues/19"
+                                    target="_blank">Issue #19</a></li>
+                        </ul>
+                        <h4 id="0.9">v0.9</h4>
+                        <ul>
+                            <li>Add Peanut and Cinder Sandwich</li>
+                            <li>Add Tophet Brew</li>
+                            <li>Add Grim Stew</li>
+                            <li>Add Wrapped Warped Tangle</li>
+                            <li>Add Wrapped Crimson Tangle</li>
+                            <li>Add Wrapped Sepia Tangle</li>
+                            <li>Add Weeping Tangle</li>
+                            <li>Add Cinder Shroom Roll</li>
+                            <li>Add Blazing Delight</li>
+                            <li>Add Fermented Cashew Mixture</li>
+                            <li>Add Putrid Stew</li>
+                            <li>Add Soul Khana</li>
+                            <li>Add Spirited Concoction</li>
+                            <li>Add Nut Nachos</li>
+                            <li>Add Bowl of Nut Nachos</li>
+                            <li>Add Senile Sweet</li>
+                            <ul>
+                                <li>Blackstone</li>
+                                <li>Basalt</li>
+                                <li>Scoria</li>
+                                <li>Scorchia</li>
+                            </ul>
+                            <li>Add Crushed Warped Fungus</li>
+                            <li>Add Crushed Crimson Tangle</li>
+                            <li>Add Crushed Sepia Tangle</li>
+                            <li>Add Crushed Shroomlight</li>
+                            <li>Add Brittle Dust</li>
+                            <li>Add Senile Dust</li>
+                            <li>Add Sepia Fungus</li>
+                            <li>Add Soul Roots</li>
+                            <li>Add Sepia wood type</li>
+                            <ul>
+                                <li>Sepia Stem</li>
+                                <li>Sepia Hyphae</li>
+                                <li>Stripped Sepia Stem</li>
+                                <li>Stripped Sepia Hyphae</li>
+                                <li>Sepia Stairs</li>
+                                <li>Sepia Slab</li>
+                                <li>Sepia Fence</li>
+                                <li>Sepia Fence Gate</li>
+                                <li>Sepia Door</li>
+                                <li>Sepia Trapdoor</li>
+                            </ul>
+                            <li>Add Nut Flour</li>
+                            <li>Add Senile Spread</li>
+                            <ul>
+                                <li>Can be used in a similar way to Bone Meal on Soul Sand & Soul Soil</li>
+                                <ul>
+                                    <li>Produces Soul Roots, Sepia Fungus, and occasionally Crimson Roots</li>
+                                </ul>
+                            </ul>
+                            <li>Add Spirited Resistance status effect</li>
+                            <ul>
+                                <li>Removes the Wither effect from the affected entity</li>
+                                <li>Removes the Nausea effect from the affected entity</li>
+                                <li>Removes the Blindness effect from the affected entity</li>
+                                <li>Damages the attacker depending on the entity attacking</li>
+                                <ul>
+                                    <li>Skeleton</li>
+                                    <li>Wither Skeleton</li>
+                                    <li>Wither</li>
+                                    <li>Ghast</li>
+                                </ul>
+                            </ul>
+                            <li>Add Aversion status effect</li>
+                            <ul>
+                                <li>Provides Nausea 3 to the affected player if a <a
+                                        href="https://github.com/DakotaPride/create-garnished/blob/15d95baeaefcb877af83e59a26f2dc3320866c00/src/main/resources/data/garnished/tags/items/aversion_foods.json"
+                                        target="_blank">nut-like food</a> is consumed</li>
+                            </ul>
+                            <li>Add ammo types for Potato Cannon</li>
+                            <ul>
+                                <li>Chocolate glazed nuts</li>
+                                <li>Honeyed nuts</li>
+                                <li>Sweetened nuts</li>
+                                <li>Melted cinder nuts</li>
+                                <li>Garnished nuts</li>
+                                <li>Ungarnished nuts</li>
+                                <li>Nut mix</li>
+                            </ul>
+                            <li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/18"
+                                    target="_blank">Issue #18</a></li>
+                            <li>Fix Jade mod hover text</li>
+                            <li>Adjust Salad stack size to 16</li>
+                            <li>Make all pre-existing fluids to the "#create:bottomless/allow" fluid tag</li>
+                            <li>Fix fluid interactions having odd requirements</li>
+                            <li>Add advancements</li>
+                            <ul>
+                                <li>Raise a Glass! - Obtain Fermented Cashew Mixture</li>
+                                <li>Dining in Hell - Obtain Tophet Brew</li>
+                                <li>Could've Been Worse - Consume a <a
+                                        href="https://github.com/DakotaPride/create-garnished/blob/15d95baeaefcb877af83e59a26f2dc3320866c00/src/main/resources/data/garnished/tags/items/aversion_foods.json">nut-like
+                                        food</a> while being inflicted with the Aversion status effect</li>
+                                <li>Stoned Desserts - Consume a any Senile Sweet</li>
+                            </ul>
+                        </ul>
+                        <h4 id="0.8">v0.8</h4>
+                        <ul>
+                            <li>Add Almond Cheese</li>
+                            <li>Fix several translations</li>
+                            <ul>
+                                <li>Regular Nut Leaves</li>
+                                <li>Cashew Nut Leaves</li>
+                                <li>Walnut Nut Leaves</li>
+                                <li>Almond Nut Leaves</li>
+                                <li>Pecan Nut Leaves</li>
+                                <li>Pistachio Nut Leaves</li>
+                                <li>Macadamia Nut Leaves</li>
+                                <li>Peanut Nut Leaves</li>
+                                <li>Hazelnut Nut Leaves</li>
+                            </ul>
+                            <li>Fix several loot tables</li>
+                            <ul>
+                                <li>Nut sapling-like blocks</li>
+                            </ul>
+                            <li>Remove certain recipes</li>
+                            <ul>
+                                <li>Emptying recipe utilizing regular peanuts</li>
+                            </ul>
+                            <li>Adjust nutrition and saturation values</li>
+                            <ul>
+                                <li>Salad values</li>
+                                <li>Phantom Steak values</li>
+                            </ul>
+                            <li>Nut tree adjustments</li>
+                            <ul>
+                                <li>Adjust natural leaves formations</li>
+                                <li>Adjust natural trunk formations</li>
+                                <li>Nut trees no longer replace the block underneath with Rooted Dirt</li>
+                            </ul>
+                        </ul>
+                        <h4 id="0.7.2">v0.7.2</h4>
+                        <ul>
+                            <li>Change nut tree leaves formations</li>
+                            <ul>
+                                <li>Done to avoid automation inconsistencies relating to the leaves</li>
+                            </ul>
+                            <li>Compacted Nut Sacks</li>
+                            <ul>
+                                <li>A small way of storing your nuts</li>
+                            </ul>
+                        </ul>
+                        <h4 id="0.7.1">v0.7.1</h4>
+                        <ul>
+                            <li>Fix nut sapling-like blocks not growing</li>
+                        </ul>
+                        <h4 id="0.7">v0.7</h4>
+                        <ul>
+                            <li>Add Peanut Oil</li>
+                            <ul>
+                                <li>(Fluid) Peanut Oil</li>
+                                <li>Bottled Peanut Oil</li>
+                            </ul>
+                            <li>Add Bitter Almonds</li>
+                            <ul>
+                                <li>Provides Poison</li>
+                            </ul>
+                            <li>Add Cashew Apples</li>
+                            <ul>
+                                <li>Has a 25% chance to provide Poison</li>
+                            </ul>
+                            <li>Add Cashew Cookies</li>
+                            <li>Add Brownies with Walnuts</li>
+                            <li>Add Pecan Pies</li>
+                            <li>Add Bottled Bitter Apple Cider</li>
+                            <li>Create initial ports to MC 1.20.x</li>
+                            <li>Adjust Bottled Cryptic Apple Cider texture</li>
+                            <li>Fix Nut Leaves loot tables (again)</li>
+                            <ul>
+                                <li>Make each variant provide the correct nut</li>
+                            </ul>
+                            <li>Adjust Salad recipe</li>
+                            <ul>
+                                <li>Remove Salt Compound from recipe</li>
+                                <li>Add Garnished Pistachio as a requirement to the recipe</li>
+                            </ul>
+                            <li>Add Cookie alternative recipe using Macadamia nuts</li>
+                            <li>Add emptying recipes</li>
+                            <ul>
+                                <li>Empty Apple Cider from Bottled Apple Cider into an Item Drain</li>
+                                <li>Empty Peanut Oil from Bottled Peanut Oil into an Item Drain</li>
+                                <li>Empty Peanut Oil from Peanuts into an Item Drain</li>
+                            </ul>
+                            <li>Fix Chocolate Glazed Nut Mix being missing from the "#garnished:nut_mix" item tag</li>
+                            <li>Add advancements</li>
+                            <ul>
+                                <li>Don't be Mad - Obtain a Brownie with Walnuts</li>
+                            </ul>
+                        </ul>
+                        <h4 id="0.6.1">v0.6.1</h4>
+                        <ul>
+                            <li>Fix multiple Nut Leaves issues</li>
+                            <ul>
+                                <li>Loot tables</li>
+                                <li>Breaking speed</li>
+                            </ul>
+                            <li>Fix nut tree world generation</li>
+                        </ul>
+                        <h4 id="0.6">v0.6</h4>
+                        <ul>
+                            <li>Add Hazelnuts</li>
+                            <ul>
+                                <li>Cracked</li>
+                                <li>Ungarnished</li>
+                                <li>Garnished</li>
+                                <li>Sweetened</li>
+                                <li>Honeyed</li>
+                                <li>Chocolate Glazed</li>
+                                <li>Cinder Flour</li>
+                                <li>Melted Cinder Flour</li>
+                                <li>Melted Cinder Flour with Effect</li>
+                            </ul>
+                            <li>Add Phantom Steak</li>
+                            <li>Add Powdered Garnish</li>
+                            <li>Add alternative Chocolate recipe</li>
+                            <ul>
+                                <li>Utilizing Hazelnuts instead of Cocoa Beans</li>
+                            </ul>
+                            <li>Add Nut Leaves</li>
+                            <ul>
+                                <li>Regular Nut Leaves</li>
+                                <li>Cashew Nut Leaves</li>
+                                <li>Walnut Nut Leaves</li>
+                                <li>Almond Nut Leaves</li>
+                                <li>Pecan Nut Leaves</li>
+                                <li>Pistachio Nut Leaves</li>
+                                <li>Macadamia Nut Leaves</li>
+                                <li>Peanut Nut Leaves</li>
+                                <li>Hazelnut Nut Leaves</li>
+                            </ul>
+                            <li>Add transitional items for sequenced assembly recipes</li>
+                            <ul>
+                                <li>Unprocessed Salt Compound</li>
+                                <li>Incomplete Phantom Steak</li>
+                            </ul>
+                            <li>Adjust Salt Compound recipe</li>
+                            <ul>
+                                <li>Convert the previous recipe to a sequenced assembly</li>
+                            </ul>
+                            <li>Remove nut crops</li>
+                            <ul>
+                                <li>Replace with a new system</li>
+                            </ul>
+                            <li>Add nut trees</li>
+                            <ul>
+                                <li>Naturally generating</li>
+                                <li>Cashew</li>
+                                <li>Walnut</li>
+                                <li>Almond</li>
+                                <li>Pecan</li>
+                                <li>Pistachio</li>
+                                <li>Macadamia</li>
+                                <li>Peanut</li>
+                                <li>Hazelnut</li>
+                            </ul>
+                            <li>Remove Nut Growth/Plant loot table</li>
+                            <ul>
+                                <li>Keep legacy Nut Growth block</li>
+                            </ul>
+                            <li>Adjust Crushed Salt recipe</li>
+                            <ul>
+                                <li>Requires limestone instead of general stone</li>
+                            </ul>
+                            <li>Fix salad recipe</li>
+                            <ul>
+                                <li>Replace "#garnished:salt_compound" with regular Salt Compound</li>
+                            </ul>
+                            <li>Adjust all Melted Cinder Flour nut with effects recipes</li>
+                            <ul>
+                                <li>Replace Water with Lava</li>
+                                <li>Convert to compacting recipes</li>
+                                <li>Replace Sugar with Salt Compound or Powdered Garnish</li>
+                            </ul>
+                            <li>Make both Solidified Garnish Blocks require Salt Compound</li>
+                            <li>Adjust Garnish Compound recipe</li>
+                            <ul>
+                                <li>Decreased base yield from 5 to 4</li>
+                                <li>Decreased secondary yield from 3 to 2</li>
+                                <li>Decreased secondary output chance from 20% to 10%</li>
+                            </ul>
+                            <li>Remove overall Botany Pots compatibility</li>
+                            <li>Fix mod icon</li>
+                            <li>Fix fluid interactions</li>
+                        </ul>
+                        <h4 id="0.5">v0.5</h4>
+                        <ul>
+                            <li>Add Salad</li>
+                            <li>Add Crushed Salt</li>
+                            <li>Add Salt Compound</li>
+                            <li>Fix fluid recipes</li>
+                            <ul>
+                                <li>Liquid Garnish heating requirement no longer has a typo</li>
+                                <li>Apple Cider heating requirement no longer has a typo</li>
+                            </ul>
+                            <li>Fix Cracked Peanut recipe via milling</li>
+                            <ul>
+                                <li>Previously required almonds instead of the logical option, peanuts</li>
+                            </ul>
+                        </ul>
+                        <h4 id="0.4.2">v0.4.2</h4>
+                        <ul>
+                            <li>Fix <a href="https://github.com/DakotaPride/create-garnished/issues/1">Issue #1</a></li>
+                        </ul>
+                        <h4 id="0.4.1">v0.4.1</h4>
+                        <ul>
+                            <li>Add Botany Pots integration</li>
+                            <ul>
+                                <li>Cashew</li>
+                                <li>Walnut</li>
+                                <li>Almond</li>
+                                <li>Pecan</li>
+                                <li>Pistachio</li>
+                                <li>Macadamia</li>
+                                <li>Peanut</li>
+                            </ul>
+                        </ul>
+                        <h4 id="0.4">v0.4</h4>
+                        <ul>
+                            <li>Add Peanuts</li>
+                            <ul>
+                                <li>Cracked</li>
+                                <li>Ungarnished</li>
+                                <li>Garnished</li>
+                                <li>Sweetened</li>
+                                <li>Honeyed</li>
+                                <li>Chocolate Glazed</li>
+                                <li>Cinder Flour</li>
+                                <li>Melted Cinder Flour</li>
+                                <li>Melted Cinder Flour with Effect</li>
+                            </ul>
+                            <li>Adjust Garnish Compound recipe</li>
+                            <ul>
+                                <li>Lower processing time from 150 to 100</li>
+                                <li>Increase base yield from 2 to 5</li>
+                                <li>Increase secondary output chance from 15% to 20%</li>
+                                <li>Increase secondary yield from 2 to 3</li>
+                                <li>Remove third output entirely</li>
+                            </ul>
+                            <li>Add advancement</li>
+                            <ul>
+                                <li>It's a Buhg - Obtain any peanut</li>
+                            </ul>
+                        </ul>
+                        <h4 id="0.3">v0.3</h4>
+                        <ul>
+                            <li>Add Solidified Garnish Block</li>
+                            <li>Add Garnish Compound</li>
+                            <ul>
+                                <li>Allows for more efficient garnishing and automation</li>
+                            </ul>
+                            <li>Add Garnished Meal</li>
+                            <li>Add Apple Cider</li>
+                            <ul>
+                                <li>(Fluid) Apple Cider</li>
+                                <li>Bottled Apple Cider</li>
+                                <li>Bottled Cryptic Apple Cider</li>
+                                <ul>
+                                    <li>Provides a 50% chance for either Strength 3 or Slowness 3</li>
+                                </ul>
+                            </ul>
+                            <li>Add Chocolate Glazed variant for nuts</li>
+                            <ul>
+                                <li>Cashew</li>
+                                <li>Walnut</li>
+                                <li>Almond</li>
+                                <li>Pecan</li>
+                                <li>Pistachio</li>
+                                <li>Macadamia</li>
+                            </ul>
+                            <li>Fix nutrition and saturation values for certain foods</li>
+                            <li>Adjusted required values for Liquid Garnish</li>
+                            <ul>
+                                <li>Instead of 333 milibuckets of Water, it instead requires 250 milibuckets of Water
+                                </li>
+                            </ul>
+                            <li>Add "Garnish Compound" deploying recipes</li>
+                            <ul>
+                                <li>Deploying a Garnish Compound onto an ungarnished nut will now provide its garnished
+                                    variant</li>
+                            </ul>
+                            <li>Add "#garnished:chocolate_glazed_nuts" item tag</li>
+                            <li>Add advancements</li>
+                            <ul>
+                                <li>Vast Wilderness - Obtain any ungarnished nut</li>
+                                <li>Nutcracker! - Obtain any cracked nut</li>
+                                <li>Chef's Kiss - Create Liquid Garnish</li>
+                                <li>Garnishment - Obtain any garnished nut</li>
+                                <li>Compounded! - Obtain Garnished Compound</li>
+                                <li>Confectionary... Wait - Obtain any sweetened nut</li>
+                                <li>Willy Wonka Expansion - Obtain any chocolate glazed nut</li>
+                                <li>Ya Like Jazz? - Obtain any honeyed nut</li>
+                                <li>Compacted Nuts - Obtain Nut Mix</li>
+                                <li>Too Far Gone - Obtain a Garnished Meal</li>
+                                <li>Who Needs Beacons Anyways? - Obtain any Melted Cinder Flour nut with an effect</li>
+                                <li>Classical Drinks - Obtain Bottled Apple Cider</li>
+                                <li>Gambling - Obtain Cryptic Apple Cider</li>
+                            </ul>
+                            <li>Improve the Liquid Garnish flowing texture</li>
+                        </ul>
+                        <h4 id="0.2.3">v0.2.3</h4>
+                        <ul>
+                            <li>Add Honeyed variant for nuts</li>
+                            <ul>
+                                <li>Cashew</li>
+                                <li>Walnut</li>
+                                <li>Almond</li>
+                                <li>Pecan</li>
+                                <li>Pistachio</li>
+                                <li>Macadamia</li>
+                            </ul>
+                            <li>Fix Nut Growth/Plant world generation</li>
+                            <li>Layout roadmap for the next coming versions</li>
+                            <ul>
+                                <li>Chocolate glazed nuts</li>
+                                <li>Vanilla+ Items</li>
+                                <ul>
+                                    <li>[SCRAPPED] Toasted Bread</li>
+                                    <li>Apple Cider</li>
+                                    <li>Garnished Meal</li>
+                                    <ul>
+                                        <li>Adjusted in later update</li>
+                                    </ul>
+                                </ul>
+                                <li>Advancements</li>
+                            </ul>
+                        </ul>
+                        <h4 id="0.2.2">v0.2.2</h4>
+                        <ul>
+                            <li>Add Macadamias</li>
+                            <ul>
+                                <li>Cracked</li>
+                                <li>Ungarnished</li>
+                                <li>Garnished</li>
+                                <li>Sweetened</li>
+                                <li>Cinder Flour</li>
+                                <li>Melted Cinder Flour</li>
+                                <li>Melted Cinder Flour with Effect</li>
+                            </ul>
+                            <li>Add Honeyed Nut Mix</li>
+                            <li>Fix crushing/milling recipes</li>
+                            <ul>
+                                <li>Almonds</li>
+                                <li>Pistachios</li>
+                            </ul>
+                        </ul>
+                        <h4 id="0.2.1">v0.2.1</h4>
+                        <ul>
+                            <li>Add Pistachios</li>
+                            <ul>
+                                <li>Cracked</li>
+                                <li>Ungarnished</li>
+                                <li>Garnished</li>
+                                <li>Sweetened</li>
+                                <li>Cinder Flour</li>
+                                <li>Melted Cinder Flour</li>
+                                <li>Melted Cinder Flour with Effect</li>
+                            </ul>
+                            <li>Add Honeyed Sweet Berries</li>
+                            <li>Add Nut Mix</li>
+                            <ul>
+                                <li>Regular</li>
+                                <li>Sweetened</li>
+                            </ul>
+                            <li>Added Nut Growth/Plant</li>
+                            <ul>
+                                <li>Drops varying nut types</li>
+                            </ul>
+                            <li>Remove Garnishment Templates</li>
+                            <ul>
+                                <li>Alongside the entire "template" system</li>
+                            </ul>
+                            <li>Remove Garnished Soil</li>
+                            <li>Adjust Garnished Water</li>
+                            <ul>
+                                <li>Replaced with Liquid Garnish</li>
+                                <li>Add bucket for replacement fluid</li>
+                            </ul>
+                            <li>Adjust recipes</li>
+                            <ul>
+                                <li>Cracked nuts can now be made by crushing/milling ungarnished nuts instead of just
+                                    garnished nuts</li>
+                                <li>Melted Cinder Flour nuts recipes now require Nether Wart and Water, as well as to be
+                                    in a heated basin</li>
+                                <li>Melted Cinder Flour nuts with effects recipes now require "metal" nuggets, Water,
+                                    Nether Wart, and Sugar in
+                                    a superheated basin</li>
+                            </ul>
+                            <li>Add new garnishing recipes</li>
+                            <ul>
+                                <li>Spout Liquid Garnish onto ungarnished nuts</li>
+                            </ul>
+                            <li>Fix nutrition and saturation values for certain foods</li>
+                            <li>Add several item tags</li>
+                            <ul>
+                                <li>#garnished:berries</li>
+                                <li>#garnished:cinder_nuts</li>
+                                <li>#garnished:cracked_nuts</li>
+                                <li>#garnished:garnished_foods</li>
+                                <li>#garnished:melted_cinder_nuts</li>
+                                <li>#garnished:melted_cinder_nuts_with_effects</li>
+                                <li>#garnished:nut_mix</li>
+                                <li>#garnished:nuts</li>
+                                <li>#garnished:sweetened_nuts</li>
+                                <li>#garnished:ungarnished_nuts</li>
+                                <li>#garnished:unsweetened_nuts</li>
+                            </ul>
+                        </ul>
+                        <h4 id="0.2">v0.2</h4>
+                        <ul>
+                            <li>Add Pecans</li>
+                            <ul>
+                                <li>Cracked</li>
+                                <li>Ungarnished</li>
+                                <li>Garnished</li>
+                                <li>Sweetened</li>
+                                <li>Cinder Flour</li>
+                                <li>Melted Cinder Flour</li>
+                                <li>Melted Cinder Flour with Effect</li>
+                            </ul>
+                            <li>Add Garnished Sweet Berries</li>
+                            <li>Add Garnishment Templates</li>
+                            <ul>
+                                <li>Used to make different variants of nuts utilizing the Polymorph mod</li>
+                            </ul>
+                            <li>Fix translations</li>
+                            <ul>
+                                <li>Melted Cinder Flour nuts with effects had improper translations</li>
+                            </ul>
+                            <li>Create Forge port</li>
+                            <li>Update Icon slightly</li>
+                        </ul>
+                        <h4 id="0.1">v0.1</h4>
+                        <ul>
+                            <li>Add Cashews, Walnuts, and Almonds</li>
+                            <ul>
+                                <li>Cracked</li>
+                                <li>Ungarnished</li>
+                                <li>Garnished</li>
+                                <li>Sweetened</li>
+                                <li>Cinder Flour</li>
+                                <li>Melted Cinder Flour</li>
+                                <li>Melted Cinder Flour with Effect</li>
+                            </ul>
+                            <li>Add Garnished Water + Garnished Water Bucket</li>
+                            <li>Add Garnished Soil</li>
+                        </ul>
+                    </div>
+                </div>
+            </center>
+        </div>
+        <hr style="clear:both;visibility:hidden;height:40px;">
+        <center>
+            <div style="position:relative;color:white;">
+                <img src="/images/meet_the_developer_barebones.png" alt="Meet The Developer" style="width:1200px;">
+                <div style="position:absolute;top:8px;left:16px;padding-left:100px;width:800px;text-align:left;">
+                    <h1 style="margin:0px;padding:0px;">Meet The Developer!</h1>
+                    <p style="font-size:16px;margin:0px;padding:0px;">DakotaPride | They/Them | Developer, Texture
+                        Artist, & Concept Designer</p>
+                    <p>Hello! While most of you may already know who I am and what I do, I wanted to provide a short
+                        introduction for those who may not!</p>
+                    <p>I am a mod developer and texture artist for several projects, including but not limited to:
+                        Create: Garnished, Create: Framed, Hibernal Herbs, Happy Pride Moth!, Effective Regalia, and
+                        some others!</p>
+                    <p>I began modding all the way back in 2020 - I wonder why...<br>Even with some hiccups, I
+                        eventually improved and came to be much better at texture/model design and programming as a
+                        whole.</p>
+                </div>
+            </div>
+        </center>
+        <br>
+        <hr style="clear:both;visibility:hidden;height:40px;">
+        <p>
+            <center>The Create: Garnished mod and Create: Garnished wiki have been developed and designed by
+                DakotaPrideModding</center>
+        </p>
+        <p>
+            <center><a href="https://github.com/DakotaPride/create-garnished" target="_blank">Create: Garnished Fabric
+                    Source Code</a></center>
+        </p>
+        <p>
+            <center><a href="https://github.com/DakotaPride/create-garnished/issues" target="_blank">Create: Garnished
+                    Issues Page</a></center>
+        </p>
 
-		<script>
+        <script>
 
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-			function myFunction() {
-				document.getElementById("myDropdown").classList.toggle("show");
-			}
-			
-// Close the dropdown if the user clicks outside of it
-			window.onclick = function(e) {
-				if (!e.target.matches('.dropbtn')) {
-					var myDropdown = document.getElementById("myDropdown");
-					if (myDropdown.classList.contains('show')) {
-						myDropdown.classList.remove('show');
-					}
-				}
-			}
+            /* When the user clicks on the button, 
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
 
-			var coll = document.getElementsByClassName("collapsible");
-			var i;
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function (e) {
+                if (!e.target.matches('.dropbtn')) {
+                    var myDropdown = document.getElementById("myDropdown");
+                    if (myDropdown.classList.contains('show')) {
+                        myDropdown.classList.remove('show');
+                    }
+                }
+            }
 
-			for (i = 0; i < coll.length; i++) {
-				coll[i].addEventListener("click", function() {
-					this.classList.toggle("active");
-    				var content = this.nextElementSibling;
-    				if (content.style.maxHeight){
-      					content.style.maxHeight = null;
-    				} else {
-      					content.style.maxHeight = content.scrollHeight + "px";
-    				} 
-  				});
-			}
-			
-			// Get the button
-			let mybutton = document.getElementById("myBtn");
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
 
-			// When the user scrolls down 20px from the top of the document, show the button
-			window.onscroll = function() {scrollFunction()};
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            }
 
-			function scrollFunction() {
-  				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    				mybutton.style.display = "block";
-  				} else {
-    				mybutton.style.display = "none";
-  				}
-			}
+            // Get the button
+            let mybutton = document.getElementById("myBtn");
 
-			// When the user clicks on the button, scroll to the top of the document
-			function topFunction() {
-  				document.body.scrollTop = 0;
-  				document.documentElement.scrollTop = 0;
-			}
-		</script>
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function () { scrollFunction() };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
     </body>
+
 </html>
