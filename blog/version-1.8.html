@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <title>Create: Garnished Wiki - Blog Posts - Update v1.8</title>
         <link rel="icon" type="image/x-icon" href="/icon.ico">
-        
+
         <style>
-			:root {
-				color-scheme: dark;
-			}
-			
+            :root {
+                color-scheme: dark;
+            }
+
             body {
                 margin: 0px;
-				background-image: url('/images/background1.png');
-				font-family: "Cabin", sans-serif;
+                background-image: url('/images/background1.png');
+                font-family: "Cabin", sans-serif;
                 color: white;
             }
 
@@ -41,28 +42,28 @@
             }
 
             h6 {
-				margin: 10px 10px;
+                margin: 10px 10px;
                 font-size: 16px;
             }
 
-			li {
-				font-size: 20px;
-			}
+            li {
+                font-size: 20px;
+            }
 
-			a:link {
-				color: white;
-  				text-decoration: none;
-			}
+            a:link {
+                color: white;
+                text-decoration: none;
+            }
 
-			a:visited {
-				color: white;
-  				text-decoration: none;
-			}
+            a:visited {
+                color: white;
+                text-decoration: none;
+            }
 
-			a:hover {
-				color: white;
-  				text-decoration: none;
-			}
+            a:hover {
+                color: white;
+                text-decoration: none;
+            }
 
             .navbar {
                 overflow: hidden;
@@ -72,8 +73,8 @@
 
             .navbar a {
                 font-size: 16px;
-  				color: white;
-  				text-align: center;
+                color: white;
+                text-align: center;
                 text-align: center;
                 padding: 14px 16px;
                 text-decoration: none;
@@ -87,510 +88,699 @@
             .dropdown .dropbtn {
                 cursor: pointer;
                 font-size: 16px;
-		    	border: none;
-  				outline: none;
-  				color: white;
-  				padding: 14px 16px;
-  				background-color: inherit;
-  				font-family: inherit;
-  				margin: 0;
-			}
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
 
-			.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-  				background-color: black;
-			}
+            .navbar a:hover,
+            .dropdown:hover .dropbtn,
+            .dropbtn:focus {
+                background-color: black;
+            }
 
-			.dropdown-content {
-				display: none;
-  				position: absolute;
-  				background-color: #161b22;
-  				min-width: 160px;
-  				box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  				z-index: 1;
-			}
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #161b22;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
 
-			.dropdown-content a {
-  				float: none;
-  				color: white;
-  				padding: 12px 16px;
-  				text-decoration: none;
-  				display: block;
-  				text-align: left;
-			}
+            .dropdown-content a {
+                float: none;
+                color: white;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
 
-			.dropdown-content a:hover {
-  				background-color: #1D232B;
-			}
+            .dropdown-content a:hover {
+                background-color: #1D232B;
+            }
 
-			.show {
-  				display: block;
-			}
+            .show {
+                display: block;
+            }
 
-			.collapsible {
-  				background: rgba(2, 6, 12, 0.3);
-  				color: white;
-  				cursor: pointer;
-  				padding: 18px;
-  				width: 400px;
-  				border: none;
-  				text-align: center;
-  				outline: none;
-  				font-size: 15px;
-			}
+            .collapsible {
+                background: rgba(2, 6, 12, 0.3);
+                color: white;
+                cursor: pointer;
+                padding: 18px;
+                width: 400px;
+                border: none;
+                text-align: center;
+                outline: none;
+                font-size: 15px;
+            }
 
-			.active, .collapsible:hover {
-  				background: rgba(2, 6, 12, 0.5);
-			}
+            .active,
+            .collapsible:hover {
+                background: rgba(2, 6, 12, 0.5);
+            }
 
-			.content {
-  				padding: 0 18px;
-  				max-height: 0;
-  				overflow: hidden;
-  				transition: max-height 0.2s ease-out;
-  				background: rgba(29, 35, 43, 0.5);
-			}
+            .content {
+                padding: 0 18px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+                background: rgba(29, 35, 43, 0.5);
+            }
 
-			div.gallery {
-  				margin: 5px;
-  				border: 1px solid #ccc;
-  				float: left;
-  				width: 180px;
-			}
+            div.gallery {
+                margin: 5px;
+                border: 1px solid #ccc;
+                float: left;
+                width: 180px;
+            }
 
-			div.gallery:hover {
-  				border: 1px solid #777;
-			}
+            div.gallery:hover {
+                border: 1px solid #777;
+            }
 
-			div.gallery img {
-  				width: 100%;
-  				height: auto;
-			}
+            div.gallery img {
+                width: 100%;
+                height: auto;
+            }
 
-			div.desc {
-  				padding: 15px;
-  				text-align: center;
-			}
+            div.desc {
+                padding: 15px;
+                text-align: center;
+            }
 
-			.img-comp-container {
-  				position: relative;
-  				height: 360px; /*should be the same height as the images*/
-			}
+            .img-comp-container {
+                position: relative;
+                height: 360px;
+                /*should be the same height as the images*/
+            }
 
-			.img-comp-img {
-  				position: absolute;
-  				width: auto;
-  				height: auto;
-  				overflow:hidden;
-			}
+            .img-comp-img {
+                position: absolute;
+                width: auto;
+                height: auto;
+                overflow: hidden;
+            }
 
-			.img-comp-img img {
-  				display:block;
-  				vertical-align:middle;
-			}
+            .img-comp-img img {
+                display: block;
+                vertical-align: middle;
+            }
 
-			.img-comp-slider {
-  				position: absolute;
-  				z-index:9;
-  				cursor: ew-resize;
-  				/*set the appearance of the slider:*/
-  				width: 40px;
-  				height: 40px;
-  				background-color: white;
-  				opacity: 0.7;
-  				border-radius: 50%;
-			}
+            .img-comp-slider {
+                position: absolute;
+                z-index: 9;
+                cursor: ew-resize;
+                /*set the appearance of the slider:*/
+                width: 40px;
+                height: 40px;
+                background-color: white;
+                opacity: 0.7;
+                border-radius: 50%;
+            }
 
-			.blog {
-				width: 800px;
-				padding-top: 0px;
-			}
+            .blog {
+                width: 800px;
+                padding-top: 0px;
+            }
 
-			.blog .segment-title {
-				text-align: left;
-			}
+            .blog .segment-title {
+                text-align: left;
+            }
 
-			.blog .segment {
-				text-align: left;
-				font-size: 20px;
-			}
+            .blog .segment {
+                text-align: left;
+                font-size: 20px;
+            }
 
-			.blog .img-desc {
-				font-size: 16px;
-			}
+            .blog .img-desc {
+                font-size: 16px;
+            }
 
-			.blog img {
-				border-radius: 5%;
-				width: 90%
-			}
+            .blog img {
+                border-radius: 5%;
+                width: 90%
+            }
 
-			#myBtn {
-  				display: none;
-  				position: fixed;
-  				bottom: 20px;
-  				right: 30px;
-  				z-index: 99;
-  				font-size: 18px;
-  				border: none;
-  				outline: none;
-  				background-color: #02060C;
-  				color: white;
-  				cursor: pointer;
-  				padding: 15px;
-  				border-radius: 4px;
-			}
+            #myBtn {
+                display: none;
+                position: fixed;
+                bottom: 20px;
+                right: 30px;
+                z-index: 99;
+                font-size: 18px;
+                border: none;
+                outline: none;
+                background-color: #02060C;
+                color: white;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 4px;
+            }
 
-			#myBtn:hover {
-  				background-color: black;
-			}
+            #myBtn:hover {
+                background-color: black;
+            }
         </style>
     </head>
+
     <body>
-		<button onclick="topFunction()" id="myBtn">Jump to Top of Page</button>
-		
-		<script>
-			function initComparisons() {
-  				var x, i;
-  				/*find all elements with an "overlay" class:*/
-  				x = document.getElementsByClassName("img-comp-overlay");
-  				for (i = 0; i < x.length; i++) {
-    			/*once for each "overlay" element:
-    			pass the "overlay" element as a parameter when executing the compareImages function:*/
-    				compareImages(x[i]);
-  				}
-  				function compareImages(img) {
-    				var slider, img, clicked = 0, w, h;
-    				/*get the width and height of the img element*/
-	    			w = img.offsetWidth;
-    				h = img.offsetHeight;
-    				/*set the width of the img element to 50%:*/
-    				img.style.width = (w / 2) + "px";
-    				/*create slider:*/
-	    			slider = document.createElement("DIV");
-    				slider.setAttribute("class", "img-comp-slider");
-    				/*insert slider*/
-    				img.parentElement.insertBefore(slider, img);
-    				/*position the slider in the middle:*/
-	    			slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
-    				slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
-    				/*execute a function when the mouse button is pressed:*/
-    				slider.addEventListener("mousedown", slideReady);
-    				/*and another function when the mouse button is released:*/
-	    			window.addEventListener("mouseup", slideFinish);
-    				/*or touched (for touch screens:*/
-    				slider.addEventListener("touchstart", slideReady);
-    				/*and released (for touch screens:*/
-    				window.addEventListener("touchend", slideFinish);
-	    			function slideReady(e) {
-    	  				/*prevent any other actions that may occur when moving over the image:*/
-      					e.preventDefault();
-      					/*the slider is now clicked and ready to move:*/
-      					clicked = 1;
-      					/*execute a function when the slider is moved:*/
-	      				window.addEventListener("mousemove", slideMove);
-    	  				window.addEventListener("touchmove", slideMove);
-    				}
-    				function slideFinish() {
-      					/*the slider is no longer clicked:*/
-      					clicked = 0;
-	    			}
-    				function slideMove(e) {
-      					var pos;
-      					/*if the slider is no longer clicked, exit this function:*/
-      					if (clicked == 0) return false;
-      					/*get the cursor's x position:*/
-	      				pos = getCursorPos(e)
-    	  				/*prevent the slider from being positioned outside the image:*/
-      					if (pos < 0) pos = 0;
-      					if (pos > w) pos = w;
-   						/*execute a function that will resize the overlay image according to the cursor:*/
-  						slide(pos);
-    				}
-	    			function getCursorPos(e) {
-    	  				var a, x = 0;
-      					e = (e.changedTouches) ? e.changedTouches[0] : e;
-      					/*get the x positions of the image:*/
-      					a = img.getBoundingClientRect();
-      					/*calculate the cursor's x coordinate, relative to the image:*/
-      					x = e.pageX - a.left;
-      					/*consider any page scrolling:*/
-      					x = x - window.pageXOffset;
-	      				return x;
-    				}
-    				function slide(x) {
-      					/*resize the image:*/
-      					img.style.width = x + "px";
-      					/*position the slider:*/
-      					slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
-    				}
-  				}
-			}
-		</script>
-		
-		<div style="padding:20px;margin-top:0px;background-color:#02060C;overflow:hidden;background-image: url('/images/background.png');">
-			<center>
-				<img src="https://cdn.modrinth.com/data/6e2SlzR4/images/6c6a60c205ed08d04b4bbed6a7048670daa21000.png" width=700px;>
-				<br>
-				<p style="font-size:16px;"><i>Create: Garnished adds many new foods and items, expanding on the Create mod!</i></p>
-			</center>
-		</div>
-		<div class="navbar">
-			<a href="/index.html" style="float:left;">Home</a>
-			<a href="/integrations.html" style="float:left;">Integrations</a>
+        <button onclick="topFunction()" id="myBtn">Jump to Top of Page</button>
+
+        <script>
+            function initComparisons() {
+                var x, i;
+                /*find all elements with an "overlay" class:*/
+                x = document.getElementsByClassName("img-comp-overlay");
+                for (i = 0; i < x.length; i++) {
+                    /*once for each "overlay" element:
+                    pass the "overlay" element as a parameter when executing the compareImages function:*/
+                    compareImages(x[i]);
+                }
+                function compareImages(img) {
+                    var slider, img, clicked = 0, w, h;
+                    /*get the width and height of the img element*/
+                    w = img.offsetWidth;
+                    h = img.offsetHeight;
+                    /*set the width of the img element to 50%:*/
+                    img.style.width = (w / 2) + "px";
+                    /*create slider:*/
+                    slider = document.createElement("DIV");
+                    slider.setAttribute("class", "img-comp-slider");
+                    /*insert slider*/
+                    img.parentElement.insertBefore(slider, img);
+                    /*position the slider in the middle:*/
+                    slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+                    slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+                    /*execute a function when the mouse button is pressed:*/
+                    slider.addEventListener("mousedown", slideReady);
+                    /*and another function when the mouse button is released:*/
+                    window.addEventListener("mouseup", slideFinish);
+                    /*or touched (for touch screens:*/
+                    slider.addEventListener("touchstart", slideReady);
+                    /*and released (for touch screens:*/
+                    window.addEventListener("touchend", slideFinish);
+                    function slideReady(e) {
+                        /*prevent any other actions that may occur when moving over the image:*/
+                        e.preventDefault();
+                        /*the slider is now clicked and ready to move:*/
+                        clicked = 1;
+                        /*execute a function when the slider is moved:*/
+                        window.addEventListener("mousemove", slideMove);
+                        window.addEventListener("touchmove", slideMove);
+                    }
+                    function slideFinish() {
+                        /*the slider is no longer clicked:*/
+                        clicked = 0;
+                    }
+                    function slideMove(e) {
+                        var pos;
+                        /*if the slider is no longer clicked, exit this function:*/
+                        if (clicked == 0) return false;
+                        /*get the cursor's x position:*/
+                        pos = getCursorPos(e)
+                        /*prevent the slider from being positioned outside the image:*/
+                        if (pos < 0) pos = 0;
+                        if (pos > w) pos = w;
+                        /*execute a function that will resize the overlay image according to the cursor:*/
+                        slide(pos);
+                    }
+                    function getCursorPos(e) {
+                        var a, x = 0;
+                        e = (e.changedTouches) ? e.changedTouches[0] : e;
+                        /*get the x positions of the image:*/
+                        a = img.getBoundingClientRect();
+                        /*calculate the cursor's x coordinate, relative to the image:*/
+                        x = e.pageX - a.left;
+                        /*consider any page scrolling:*/
+                        x = x - window.pageXOffset;
+                        return x;
+                    }
+                    function slide(x) {
+                        /*resize the image:*/
+                        img.style.width = x + "px";
+                        /*position the slider:*/
+                        slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+                    }
+                }
+            }
+        </script>
+
+        <div
+            style="padding:20px;margin-top:0px;background-color:#02060C;overflow:hidden;background-image: url('/images/background.png');">
+            <center>
+                <img src="https://cdn.modrinth.com/data/6e2SlzR4/images/6c6a60c205ed08d04b4bbed6a7048670daa21000.png"
+                    width=700px;>
+                <br>
+                <p style="font-size:16px;"><i>Create: Garnished adds many new foods and items, expanding on the Create
+                        mod!</i></p>
+            </center>
+        </div>
+        <div class="navbar">
+            <a href="/index.html" style="float:left;">Home</a>
+            <a href="/integrations.html" style="float:left;">Integrations</a>
             <a href="/hatchets.html" style="float:left;">Hatchet Interactions</a>
             <a href="/fluid_interactions.html" style="float:left;">Fluid Interactions</a>
             <a href="/foods.html" style="float:left;">Cookbook</a>
-			<div class="dropdown" style="float:left;">
-				<button class="dropbtn" onclick="myFunction()">Recipe Types
-					<i class="fa fa-caret-down"></i>
-				</button>
-				<div class="dropdown-content" id="myDropdown">
-					<a href="/recipe_types/bulk_dyeing.html">Bulk Dyeing</a>
-					<a href="/recipe_types/bulk_freezing.html">Bulk Freezing</a>
-				</div>
-			</div>
-			<a href="/blog.html" style="float:left;">Blog Posts</a>
-			<a href="https://modrinth.com/mod/create-garnished" style="float:right;" target="_blank">Modrinth</a>
-			<a href="https://www.curseforge.com/minecraft/mc-mods/garnished" style="float:right;" target="_blank">Curseforge</a>
-			<a href="https://www.ko-fi.com/dakotapride" style="float:right;" target="_blank">Ko-fi</a>
-		</div>
-		<div style="padding:20px;margin-top:30px;">
-			<center>
-				<img src="/images/blog/anniversary_update.png" width="70%" style="border-radius:5%;">
-				<div class="blog">
-					<h5 style="margin:0px;font-size:16px;"><span style="color:#00FFEE;">Update</span> | Unknown Date | Released at an Unknown Date</h5><br>
-					<p style="text-align:left;font-size:16px;width:800px;font-size:20px;padding-bottom:0px;"><span style="color:#F42718;"><strong>Developer Comment</span> | Made on April 19th, 2024</strong></p>
-					<p style="text-align:left;width:800px;font-size:16px;padding-top:0px" id="dev-comment">
-						Welcome to the v1.8 update page! This page has been cleared for the time being, but do not worry! The majority of the features listed previously will be re-added to this page with time.
-					</p><br>
-					<p style="text-align:left;width:800px;font-size:20px;padding-top:0px;">Version 1.8 aims to bring new features relating to previous updates, ranging from the fiery depths of the Nether to the wastelands of the End, you can find new items and blocks, or even some improved features that may have already existed in previous updates!</p>
-					<h4 class="segment-title" id="nether-additions"><span style="color:#965BD6;">Nether Additions</span> | Return to Sender</h4>
-					<p class="segment">Added in this update, new vegetation to the other Nether biomes aside from the Soul Sand Valley!</p>
-					<p class="segment">Pansophical Daisies can generate commonly in Warped Forests. This mysterious flower can be used to make certain foods and can even be made into petals to be made into cyan dye or more foods!</p>
-					<img src="/images/blog/pansophical_daisy.png" alt="Pansophical Daisy">
-					<p class="img-desc"><i>Pansophical Daisy in Warped Forest</i></p>
-					<p class="segment"">Incandescent Lilies can generate commonly in Crimson Forests. This wondrous flower can be used to make certain foods and can even be made into petals to be made into red dye or more foods!</p>
-					<img src="/images/blog/incandescent_lily.png" alt="Incandescent Lily">
-					<p class="img-desc"><i>Incandescent Lily in Crimson Forest</i></p>
-					<p class="segment">Sorrwoful Lichen can generate somewhat rarely in Basalt Deltas. This saddened flora can be used to make certain foods or can be made into white or black dyes.</p>
-					<p class="segment">Sorrowful Lichen can also generate rarely in both Warped and Crimson Forests.</p>
-					<img src="/images/blog/sorrowful_lichen.png" alt="Sorrowful Lichen"">
-					<p class="img-desc"><i>Sorrowful Lichen in Basalt Delta</i></p>
-					<p class="segment">Sepia Fungus is also receiving a small change, now gaining the ability to generate fully grown in Soul Sand Valleys.</p>
-					<p class="segment">This change was made to hopefully make the process of manually obtaining the Sepia wood type a lot easier. But, it was also made to hopefully make the biome just a little more lively.</p>
-					<p class="segment">Though, don't worry, the standard Sepia Fungus and Soul Roots generation will not be changing alongside this.</p>
-					<img src="/images/blog/sepia_tree_generation.png" alt="Sepia Fungus Generation">
-					<p class="img-desc"><i>Grown Sepia Fungus in Soul Sand Valley</i></p>
-					<p class="segment">Meet some of the foods that you may encounter in version 1.8!</p>
-					<p class="segment">The <a href="/foods.html#omniscient-stew" title="Cookbook -> Omniscient Stew" style="text-decoration:underline;">Omniscient Stew</a> can be made by combining <strong>a Bowl, 2 Pansophical Petals, a Fiendish Spore, and a Senile bone</strong> in a crafting grid.</p>
-					<p class="segment">The <a href="/foods.html#warped-brew" title="Cookbook -> Warped Brew" style="text-decoration:underline;">Warped Brew</a> can be made by combining <strong>a Bowl, a Pansophical Daisy, a Pansophical Petal, 2 Crushed Warped Fungus, and a Warped Fungus</strong> in a crafting grid.</p>
-					<p class="segment">The <a href="/foods.html#iniquitous-brew" title="Cookbook -> Iniquitous Brew" style="text-decoration:underline;">Iniquitous Brew</a> can be made by combining <strong>a Bowl, an Incandescent Petal, 2 Incandescent Lilies, and 2 Crimson Roots</strong> in a crafting grid.</p>
-					<p class="segment">The <a href="/foods.html#piquant-pretzel" title="Cookbook -> Piquant Pretzel" style="text-decoration:underline;">Piquant Pretzel</a> can be made by combining <strong>a piece of Powdered Garnish, an Incandescent Petal, 2 pieces of Torrid Blend, 2 pieces of Malodorous Mixture, and a Salt Compound</strong> in a heated mixing basin.</p>
-					<img src="/images/blog/nether_foods_18.png" alt="v1.8 Nether Foods">
-					<p class="img-desc"><i>Omniscient Stew, Warped Brew, Iniquitous Brew, and Piquant Pretzel</i></p>
-					<p class="segment">The <a href="/foods.html#bottled-malodorous-mixture" title="Cookbook -> Bottled Malodorus Mixture" style="text-decoration:underline;">Bottled Malodorous Mixture</a> can be made by combining <strong>a Glass Bottle and 2 pieces of Malodorous Mixture</strong> in a crafting grid.</p>
-					<p class="segment">The <a href="/foods.html#bottled-crestfallen-flora" title="Cookbook -> Bottle of Crestfallen Flora" style="text-decoration:underline;">Bottle of Crestfallen Flora</a> can be made by combining <strong>a Glass bottle, 2 pieces of Torrid Blend, 2 Incandescent Petals, and a Sorrowful Lichen</strong> in a crafting grid.</p>
-					<img src="/images/blog/bottled_nether_foods_18.png" alt="v1.8 Bottled Nether Foods">
-					<p class="img-desc"><i>Bottled Malodorous Mixture and Bottle of Crestfallen Flora</i></p>
-					<p class="segment">Of course, as you may have noticed throughout, some items in these recipes are new!</p>
-					<p class="segment">Senile Dust and some related features have received a slight rework! First, Senile Dust and Brittle Dust have gained a texture redesign to look more unique to other dusts both in the mod and even to other mods.</p>
-					<p class="segment">Torrid Blend can be made by combining <strong>a piece of Brittle Dust and a piece of Senile Dust</strong> in a heated mixing basin. Torrid Blend has a few different uses, involving foods and even as a renewable source of Cinder Flour.</p>
-					<p class="segment">Malodorous Mixture can be made by combining <strong>a piece of Torrid Blend, a piece of Cinder Flour, a Molten Remnant, and a Bone</strong> in a crafting grid.</p>
-					<p class="segment">Incandescent Petals and Pansophical Petals can be made by putting <strong>a flower of the correct type (Incandescent Lily or Pansophical Petal)</strong> into a pair of crushing wheels or grinding it in a millstone.</p>
-					<p class="segment">Fiendish Spore can be made by combining <strong>a piece of Brittle Dust, a Sorrowful Lichen, and an Incandescent Petal</strong> in a compacting basin.</p>
-					<img src="/images/blog/nether_ingredients_18.png" alt="v1.8 Nether Ingredients">
-					<p class="img-desc"><i>Fiendish Spore, Brittle Dust, Senile Dust, Torrid Blend, Malodorous Mixture, Senile Bone, Incandescent Petal, and Pansophical Petal</i></p>
-					<p class="segment">Another change that is coming is related to Senile Spread - which will no longer be obtainable by simply applying a piece of Senile Dust to Bone meal.</p>
-					<p class="segment">Instead, you'll have to obtain Senile Bones, which can be obtained by putting <strong>either a Tusk or an Irate Tusk</strong> into a pair of crushing wheels. This will also have a small chance of producing Senile Dust, but not reliably enough to utilize in an efficient manner.</p>
-					<p class="segment">Tusks and Irate Tusks can be dropped by Hoglins when using the Ravaging enchantment on your Hatchet. However, Tusks can also rarely be dropped from Pigs when using the Salvaging enchantment on your Hatchet.</p>
-					<img src="/images/blog/hoglin_features.png" alt="v1.8 Hoglin Features">
-					<p class="img-desc"><i>Irate Tusk, Senile Bone, and Tusk</i></p>
-					<br>
-					<h4 class="segment-title" id="end-additions"><span style="color:#965BD6;">End Additions</span> | Desolate Gateway</h4>
-					<p class="segment">The Nether isn't the only dimension that received some changes, as the End did as well!</p>
-					<p class="segment">Aureate Shrubs can generate commonly throughout the End dimension - you may even come across some on the central End Island!</p>
-					<img src="/images/blog/aureate_shrub.png" alt="Aureate Shrub">
-					<p class="img-desc"><i>Aureate Shrub in End Dimension (End Barrens)</i></p>
-					<p class="segment">The fabled Ender Dragon has also received some somewhat minor additions!</p>
-					<p class="segment">The Dimmed Scale is one of these changes, which has a guaranteed chance to drop from the Ender Dragon when using the Ravaging enchantment on your Hatchet.</p>
-					<p class="segment">Additionally, they can also be dropped by Endermen and Endermites (at a heavily decreased rate) when using the Ravaging enchantment on your Hatchet.</p>
-					<img src="/images/blog/ender_dragon.png" alt="Ender Dragon">
-					<p class="img-desc"><i>Ender Dragon in the End Dimension (End Island)</i></p>
-					<p class="segment">The Dragon Egg can also be crushed into a Dragon Egg Shell and a Frail Dragon Egg Shell. These items have their own unique uses, intended for the late-game.</p>
-					<p class="segment">To start, the Dragon Egg Shell can be used to make certain foods.</p>
-					<p class="segment">The Frail Dragon Egg Shell is a little bit of a different story, as it can be used to recreate your Dragon Egg at a high cost.</p>
-					<p class="segment">The assembly required to do this requires you to deploy <strong>a piece of Ender Dust and then spout 250mb of Dragon's Breath onto a Frail Dragon Egg Shell</strong>. This assembly line will need to be repeated a total of 10 times.</p>
-					<img src="/images/blog/ender_dragon_egg_18.png" alt="v1.8 Ender Dragon Egg Features">
-					<p class="img-desc"><i>Dragon Egg, Dragon Egg Shell, and Frail Dragon Egg Shell</i></p>
-					<p class="segment">Dragon's Breath can also now be obtained as a fluid-like substance, gaining the ability to be stored in fluid tanks.</p>
-					<p class="segment">While most other fluids can interact with Lava in order to create stone types, Dragon's Breath is a little bit different.</p>
-					<p class="segment">Instead, you can spout 250mb Dragon's Breath onto Unstable Stone to create Wyvern Stone.</p>
-					<img src="/images/blog/wyvern_stone.png" alt="Wyvern Stone Set">
-					<p class="img-desc"><i>Wyvern Stone, Chiseled Wyvern Stone, Wyvern Stone Bricks, Polished Wyvern Stone, and Smooth Wyvern Stone</i></p>
-					<p class="segment">There are also some new food items that have been added related to your ender endeavors.</p>
-					<p class="segment">The <a href="/foods.html#champions-omelette" title="Cookbook -> Champion's Omelette" style="text-decoration:underline;">Champion's Omelette</a> can be made by putting <strong>a Dragon Egg Shell through a sequenced assembly, first pressing the item, then deploying a piece of Ender Dust, then deploying a Dimmed Scale, then deploying a Pansophical Petal, then spouting 250mb Dragon's Breath</strong>. This process needs to be done a total of two times to be completed.</p>
-					<p class="segment">The <a href="/foods.html#shelled-dumpling" title="Cookbook -> Shelled Dumpling" style="text-decoration:underline;">Shelled Dumpling</a> can be made by combining <strong>a Dragon Egg Shell, 2 pieces of Void Dust, 2 Ender Jelly, and a Preliminary Nucleus</strong> in a heated mixing basin.</p>
-					<p class="segment">The <a href="/foods.html#farseer-brew" title="Cookbook -> Farseer Brew" style="text-decoration:underline;">Farseer Brew</a> can be made by combining <strong>a Bowl, a Bottle of Dragon's Breath, a Preliminary Nucleus, an Aureate Shrub, and a Vex Wing</strong> in a crafting grid.</p>
-					<img src="/images/blog/ender_foods_18.png" alt="v1.8 End Foods">
-					<p class="img-desc"><i>Farseer Brew, Shelled Dumpling, and Champion's Omelette</i></p>
-					<br>
-					<h4 class="segment-title" id="hatchet-additions"><span style="color:#965BD6;">Hatchet Additions</span> | Cut Down</h4>
-					<p class="segment">While hatchets did receive quite a substantial change in a previous version - some more enchantments other related changes have been made.</p>
-					<p class="segment">The Striking enchantment functionally replaces the Sharpness, Bane of Arthropods, and Smite enchantments. Alongside this, you are no longer able to apply these enchantments to your hatchet. This enchantment has four total levels, each increasing the amount of damage that the player does while using this hatchet.</p>
-					<p class="segment">The Quick Step enchantment provides the player with Speed while under half health. This enchantment has a total of three levels, each increasing the level of Speed while using this hatchet. The Quick Step enchantment cannot be applied alongside Ravaging, and vice versa.</p>
-					<p class="segment">The Rejuvenate enchantment heals the player a portion of health. This enchantment has two total levels, each increasing the amount of health regenerated. The Rejuvenate enchantment cannot be applied alongside Quick Step, and vice versa.</p>
-					<p class="segment">The Curse of the Leech enchantment acts similar to the Rejuvenate enchantment, but the opposite. Instead, the user will be damaged a small amount with each hit. This enchantment only has one level.</p>
-					<p class="segment">Another minor change is that you can no longer apply the Looting enchantment to your hatchet.</p>
-					<img src="/images/blog/hatchet_and_book.png" alt="Hatchet & Enchanted Book">
-					<p class="img-desc"><i>Enchanted Netherite Hatchet and an Enchanted Book (with ravaging)</i></p>
-					<br>
-					<h4 class="segment-title" id="nut-additions"><span style="color:#965BD6;">Nut Additions</span> | Cut Down</h4>
-					<p class="segment">While there aren't many changes to nuts, individually, there are some minor changes.</p>
-					<p class="segment">Any nut covered in melted cinder flour that has an effect has received a minor change on the backend. Previously, the effects were applied outside of the foods registration class. However, the downside of this, is that it wouldn't show as providing the given effect in JEED (Just Enough Effect Descriptions) and other mods that showed effects inside of the item viewer menu. This has been changed to have individual food registration, allowing it to function properly and in a more logical manner.</p>
-					<img src="/images/blog/melted_cinder_flour_nuts.png" alt="Melted Cinder Flour Nuts">
-					<p class="img-desc"><i>Nuts Covered in Melted Cinder Flour (with effects)</i></p>
-					<br>
-					<h4 class="segment-title" id="anniversary-cake"><span style="color:#965BD6;">Happy Anniversary!</span> | Cut Down</h4>
-					<p class="segment">Ah, yes, the 1-year anniversary of Create: Garnished! It's been an incredible journey thus far, starting as a joke that originated in a Create: Above and Beyond stream by <a href="https://www.youtube.com/@dejojotheawsome">DejojoTheAwsome</a>, then becoming possibly the most joyous project I've worked on!</p>
-					<p class="segment">While this update aims to improve upon already existing updates, there are some other things that are entirely new content to further celebrate!</p>
-					<p class="segment">Let them have cake, I say! A three-layer, 6-slice cake with questionable ingredients, specifically! Each bite provides double the nutrition and saturation from that of a normal cake.</p>
-					<img src="/images/blog/happy_anniversary_18.png" alt="v1.8 Anniversary Cake">
-					<p class="img-desc"><i>Anniversary Cake with Fireworks in the background</i></p>
-					<p class="segment">This cake can be crafted by using a set of 18 Mechanical Crafters in the below array!</p>
-					<img src="/images/blog/anniversary_cake_mechanical_crafting_recipe.png" alt="Anniversary Cake Recipe">
-					<p class="img-desc"><i>Anniversary Cake recipe in a set of 18 Mechanical Crafters</i></p>
-					<p class="segment">Now, listen... It was funny-</p>
-					<p class="segment">You can now make Bok Choy farms! Bok Choy Leaves (seeds) can be obtained from certain village chests, while regular Bok Choy Bulbs can rarely be found in Jungle Temples.</p>
-					<img src="/images/blog/bok_choy_farm.png" alt="Bok Choy Farm">
-					<p class="img-desc"><i>Bok Choy farm with DeChoyo advancement being unlocked (pick up a Bok Choy Bulb)</i></p>
-					<p class="segment">Additionally, you can crush regular Bok Choy Bulbs back into Bok Choy Leaves to expand your farm remotely.</p>
-					<p class="segment">If you couldn't figure it out by now, this is a reference to a joke within the DejojoTheAwsome community, of which started during a Stardew Valley stream on his Twitch channel.</p>
-					<br>
-					<h4 class="segment-title" id="sweet-additions"><span style="color:#965BD6;">Sweet Additions</span> | Sweet Teeth</h4>
-					<p class="segment">There has mostly been retextures and general improvements to some features in this section. However, some content has still been added related to this.</p>
-					<p class="segment">The first thing that you may notice are the texture improvements to the Mastic Resin blocks, items, and fluids. They are now more vibrant and have a more unique look and feel.</p>
-					<img src="/images/blog/mastic_resin_18.png" alt="New Mastic Resin Textures (Fluids & Blocks)">
-					<p class="img-desc"><i>Improved Mastic Resin fluid and block textures</i></p>
-					<img src="/images/blog/mastic_resin_items_18.png" alt="New Mastic Resin Textures (Items)">
-					<p class="img-desc"><i>Improved Mastic Resin item textures</i></p>
-					<p class="segment">Builder's Tea not giving you that kick that you need to satisfy your sweet tooth? Well then, here's a southern special - Sweet Tea!</p>
-					<p class="segment">Sweet Tea can be made by combining <strong>a Bok Choy Bulb, a Sugar Cube, and 250mb Builder's Tea</strong> inside of a heated mixing basin.</p>
-					<p class="segment">Consuming Sweet Tea will result in the Austral effect being applied to the user for 3 minutes. This effect increases your movement speed at the cost of attack damage.</p>
-					<p class="segment">Another new addition, Sugar Cubes, can be made by compacting <strong>4 pieces of Sugar</strong> inside of a basin.</p>
-					<img src="/images/blog/sweet_tea.png" alt="Sweet Tea Additions">
-					<p class="img-desc"><i>Sweet Tea (fluid), Sweet Tea in a Fluid Tank, Bottled Sweet Tea</i></p>
-					<br>
-					<h4 class="segment-title" id="other-changes-and-additions"><span style="color:#965BD6;">Sugary Batch</span> | Other Changes & Additions</h4>
-					<p class="segment">A nice aesthetic change that relates to the many liquids in Create: Garnished, there is now properly coloured fog!</p>
-					<p class="segment">Some examples can be found below.</p>
-					<img src="/images/blog/purple_fluid_fog.png" alt="Properly Coloured Fog for Fluids - Purple Mastic Resin">
-					<p class="img-desc"><i>Purple Fog for Purple Mastic Resin</i></p>
-					<img src="/images/blog/sweet_tea_fluid_fog.png" alt="Properly Coloured Fog for Fluids - Sweet Tea">
-					<p class="img-desc"><i>Orange-ish Fog for Sweet Tea</i></p>
-					<img src="/images/blog/green_fluid_fog.png" alt="Properly Coloured Fog for Fluids - Green Mastic Resin">
-					<p class="img-desc"><i>Green Fog for Green Mastic Resin</i></p>
-					<p class="segment">Regular Mastic Resin variants now require a piece of Sugar as a part of their recipe. While minor, this is the start of a series of technical/functional changes to Mastic Resin that I'd like to push out within the next couple of updates.</p>
-					<p class="segment">While minor, some of the locations that referenced the word "Chocolate" instead contained the word "Chocholate." This doesn't affect actual gameplay, so no need to worry.</p>
-					<br>
-					<h4 class="segment-title" id="crushing-milling-changes"><span style="color:#965BD6;">Crushing It</span> | Other Changes & Additions</h4>
-					<p class="segment">All of the milling and crushing recipes that allow you to obtain cracked nuts have had their processing time decreased from 150 ticks (7.5 seconds) to 50 ticks (2.5 seconds).</p>
-					<p class="segment">Both the milling and crushing recipes for Crushed Salt Compound have been changed, as well. The processing time has been increased from 150 ticks (7.5 seconds) to 200 ticks (10 seconds). The chance to produce Zinc Nuggets has been decreased from 10% to 5% when crushing Limestone. However, the chance to produce Zinc Nuggets from milling has been entirely removed. Another change regarding the milling recipe is that the maximum amount of Iron Nuggets obtainable from it is only one with a 10% chance of being produced.</p>
-					<p class="segment">An additional recipe for Brittle Dust has also been added, allowing players to use Basalt, Smooth Basalt, or Polished Basalt instead of Scorchia. This will produce a small amount of Brittle Dust almost 100% of the time. It has an 85% chance to produce 1 piece with a 45% chance to produce an additional piece.</p>
-					<br>
-					<h4 class="segment-title" id="quality-of-life-improvements"><span style="color:#965BD6;">QOL</span> | Other Changes & Additions</h4>
-					<p class="segment">A somewhat major addition is that you can now view information regarding specific items utilizing the Item Ingredient Information feature from JEI. Of course, this requires JEI to be installed on the client to function properly.</p>
-					<p class="segment">These items are exclusive to the Ravaging and Salvaging enchantments currently, but more items that can be obtained via these methods, but not exclusive to such, may receive information tabs as well.</p>
-					<img src="/images/blog/jei_information_tab.png" alt="JEI Item Ingredient Info Example">
-					<p class="img-desc"><i>JEI Ingredient Information Info for Enflamed Mandible</i></p>
-					<p class="segment">EMI is also receiving support for Item Ingredient Information on the Fabric side of things.</p>
-					<img src="/images/blog/emi_information_tab.png" alt="EMI Item Ingredient Info Example">
-					<p class="img-desc"><i>EMI Ingredient Information Info for Enflamed Mandible</i></p>
-					<br>
-					<h4 class="segment-title" id="integration-compatibility-updates"><span style="color:#965BD6;">Integrated Chefs</span> | Other Changes & Additions</h4>
-					<p class="segment">The Anniversary Cake has the capability to be cut into 6 Slices of Anniversary Cake, which provides the same amount of nutrition and saturation as a standard bite from the Anniversary Cake block.</p>
-					<img src="/images/blog/anniversary_cake_slice.png" alt="Slice of Anniversary Cake">
-					<p class="img-desc"><i>Slice(s) of Anniversary Cake</i></p>
-					<p class="segment">Tusks and Irate Tusks can also be cut into either 6 Senile Bones or 10 Senile Bones depending on the type of tusk used. However, these recipes require you to utilize a Hatchet rather than a Knife.</p>
-					<p class="segment">Additionally, compatibility between Create: Garnished and the <a href="https://www.curseforge.com/minecraft/mc-mods/create-mechanical-extruder">Create Mechanical Extruder mod</a> has been added.</p>
-					<br>
-					<h4 class="segment-title" id="adjusted-recipes"><span style="color:#965BD6;">Renewed Craftsmanship</span> | Other Changes & Additions</h4>
-					<p class="segment">Cinder Shroom Roll now requires Malodorous Mixture instead of Netherrack as the main component. Alongside this change, the assembly line now calls for Torrid Blend as an additional step.</p>
-					<p class="segment">Ghandercken now requires Torrid Blend as a part of its mechanical crafting recipe.</p>
-					<p class="segment">Crimson Tusk now requires an <strong>actual</strong> Tusk as the main component rather than a piece of Senile Dust. Replace the first step (Pressing) with a step to deploy a piece of Crushed Crimson Fungus. Replace the final step of the process (Deploying Crushed Crimson Fungus) with deploying an Incandescent Petal.</p>
-					<p class="segment">Add an additional step to each of the wrapped tangles. The Wrapped Warped Tangle now requires a Pansophical Petal as an additional step. The Wrapped Crimson Tangle now requires an Incandescent Petal. The Wrapped Sepia Tangle now requires Soul Roots.</p>
-					<p class="segment">Chorus Bowl now requires a Dimmed Scale as a part of its recipe.</p>
-					<p class="segment">Explorer's Concoction now requires a Torrid Blend as a part of its recipe.</p>
-					<p class="segment">Molten Stew now requires a Torrid Blend as a part of its recipe.</p>
-					<p class="segment">Nopalito Wrap Supreme as a replaced entry of its recipe - Remove one of the Prickly Pear entries in favour of a piece of Torrid Blend.</p>
-					<br>
-					<h4 class="segment-title" id="adjusted-configured-placed-features"><span style="color:#965BD6;">Tweaked Dimensions</span> | Other Changes & Additions</h4>
-					<p class="segment">Using Desolate Spread on End Stone now has a chance to produce Aureate Shrubs. Functionally, it doesn't act any different other than to behave similarly to Bone Meal.</p>
-					<p class="segment">However, Senile Spread has received some more major changes. To start off, you now obtain Senile Spread with Senile Bones in a crafting grid, similar to how you would craft Bone Meal.</p>
-					<p class="segment">Additionally, there are three "variants" for Senile Spread. Not as separate items, and you might not even notice it, at first. Utilizing Senile Spread on Soul Sand or Soul Soil will yield different results from utilizing it on Warped Nylium. Utilizing Senile Spread on Crimson Nylium will yield different results from utilizing it on Soul Sand or Soul Soil. So on and so forth, you can now target certain block types if you need certain vegetal blocks more than others.</p>
-					<img src="/images/blog/garnished_gardens.png" alt="Modded Gardens">
-					<p class="img-desc"><i>End Stone Garden, Crimson Garden, Warped Garden, Soul Soil Garden</i></p>
-					<p class="segment">A vegetal block that you may notice is missing from this list is Sorrowful Lichen - where is it? Well, you can only find this block naturally generating and it cannot be produced in the same way as these other blocks.</p>
-					<p class="segment">It can be replenished similarly to Glow Lichen, by using Bone Meal on the block. This will spread the block to surrounding blocks.</p>
-				</div>
-			</div>
-		</center>
-		<hr style="clear:both;visibility:hidden;height:40px;">
-		<p><center>The Create: Garnished mod and Create: Garnished wiki have been developed and designed by DakotaPrideModding</center></p>
-		<p><center><a href="https://github.com/DakotaPride/create-garnished" target="_blank">Create: Garnished Fabric Source Code</a></center></p>
-		<p><center><a href="https://github.com/DakotaPride/create-garnished/issues" target="_blank">Create: Garnished Issues Page</a></center></p>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn" onclick="myFunction()">Recipe Types
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="/recipe_types/bulk_dyeing.html">Bulk Dyeing</a>
+                    <a href="/recipe_types/bulk_freezing.html">Bulk Freezing</a>
+                </div>
+            </div>
+            <a href="/blog.html" style="float:left;">Blog Posts</a>
+            <a href="https://modrinth.com/mod/create-garnished" style="float:right;" target="_blank">Modrinth</a>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/garnished" style="float:right;"
+                target="_blank">Curseforge</a>
+            <a href="https://www.ko-fi.com/dakotapride" style="float:right;" target="_blank">Ko-fi</a>
+        </div>
+        <div style="padding:20px;margin-top:30px;">
+            <center>
+                <img src="/images/blog/anniversary_update.png" width="70%" style="border-radius:5%;">
+                <div class="blog">
+                    <h5 style="margin:0px;font-size:16px;"><span style="color:#00FFEE;">Update</span> | Unknown Date |
+                        Released at an Unknown Date</h5><br>
+                    <p style="text-align:left;font-size:16px;width:800px;font-size:20px;padding-bottom:0px;"><span
+                            style="color:#F42718;"><strong>Developer Comment</span> | Made on April 19th, 2024</strong>
+                    </p>
+                    <p style="text-align:left;width:800px;font-size:16px;padding-top:0px" id="dev-comment">
+                        Welcome to the v1.8 update page! This page has been cleared for the time being, but do not
+                        worry! The majority of the features listed previously will be re-added to this page with time.
+                    </p><br>
+                    <p style="text-align:left;width:800px;font-size:20px;padding-top:0px;">Version 1.8 aims to bring new
+                        features relating to previous updates, ranging from the fiery depths of the Nether to the
+                        wastelands of the End, you can find new items and blocks, or even some improved features that
+                        may have already existed in previous updates!</p>
+                    <h4 class="segment-title" id="nether-additions"><span style="color:#965BD6;">Nether Additions</span>
+                        | Return to Sender</h4>
+                    <p class="segment">Added in this update, new vegetation to the other Nether biomes aside from the
+                        Soul Sand Valley!</p>
+                    <p class="segment">Pansophical Daisies can generate commonly in Warped Forests. This mysterious
+                        flower can be used to make certain foods and can even be made into petals to be made into cyan
+                        dye or more foods!</p>
+                    <img src="/images/blog/pansophical_daisy.png" alt="Pansophical Daisy">
+                    <p class="img-desc"><i>Pansophical Daisy in Warped Forest</i></p>
+                    <p class="segment"">Incandescent Lilies can generate commonly in Crimson Forests. This wondrous flower can be used to make certain foods and can even be made into petals to be made into red dye or more foods!</p>
+					<img src=" /images/blog/incandescent_lily.png" alt="Incandescent Lily">
+                    <p class="img-desc"><i>Incandescent Lily in Crimson Forest</i></p>
+                    <p class="segment">Sorrwoful Lichen can generate somewhat rarely in Basalt Deltas. This saddened
+                        flora can be used to make certain foods or can be made into white or black dyes.</p>
+                    <p class="segment">Sorrowful Lichen can also generate rarely in both Warped and Crimson Forests.</p>
+                    <img src="/images/blog/sorrowful_lichen.png" alt="Sorrowful Lichen"">
+					<p class=" img-desc"><i>Sorrowful Lichen in Basalt Delta</i></p>
+                    <p class="segment">Sepia Fungus is also receiving a small change, now gaining the ability to
+                        generate fully grown in Soul Sand Valleys.</p>
+                    <p class="segment">This change was made to hopefully make the process of manually obtaining the
+                        Sepia wood type a lot easier. But, it was also made to hopefully make the biome just a little
+                        more lively.</p>
+                    <p class="segment">Though, don't worry, the standard Sepia Fungus and Soul Roots generation will not
+                        be changing alongside this.</p>
+                    <img src="/images/blog/sepia_tree_generation.png" alt="Sepia Fungus Generation">
+                    <p class="img-desc"><i>Grown Sepia Fungus in Soul Sand Valley</i></p>
+                    <p class="segment">Meet some of the foods that you may encounter in version 1.8!</p>
+                    <p class="segment">The <a href="/foods.html#omniscient-stew" title="Cookbook -> Omniscient Stew"
+                            style="text-decoration:underline;">Omniscient Stew</a> can be made by combining <strong>a
+                            Bowl, 2 Pansophical Petals, a Fiendish Spore, and a Senile bone</strong> in a crafting grid.
+                    </p>
+                    <p class="segment">The <a href="/foods.html#warped-brew" title="Cookbook -> Warped Brew"
+                            style="text-decoration:underline;">Warped Brew</a> can be made by combining <strong>a Bowl,
+                            a Pansophical Daisy, a Pansophical Petal, 2 Crushed Warped Fungus, and a Warped
+                            Fungus</strong> in a crafting grid.</p>
+                    <p class="segment">The <a href="/foods.html#iniquitous-brew" title="Cookbook -> Iniquitous Brew"
+                            style="text-decoration:underline;">Iniquitous Brew</a> can be made by combining <strong>a
+                            Bowl, an Incandescent Petal, 2 Incandescent Lilies, and 2 Crimson Roots</strong> in a
+                        crafting grid.</p>
+                    <p class="segment">The <a href="/foods.html#piquant-pretzel" title="Cookbook -> Piquant Pretzel"
+                            style="text-decoration:underline;">Piquant Pretzel</a> can be made by combining <strong>a
+                            piece of Powdered Garnish, an Incandescent Petal, 2 pieces of Torrid Blend, 2 pieces of
+                            Malodorous Mixture, and a Salt Compound</strong> in a heated mixing basin.</p>
+                    <img src="/images/blog/nether_foods_18.png" alt="v1.8 Nether Foods">
+                    <p class="img-desc"><i>Omniscient Stew, Warped Brew, Iniquitous Brew, and Piquant Pretzel</i></p>
+                    <p class="segment">The <a href="/foods.html#bottled-malodorous-mixture"
+                            title="Cookbook -> Bottled Malodorus Mixture" style="text-decoration:underline;">Bottled
+                            Malodorous Mixture</a> can be made by combining <strong>a Glass Bottle and 2 pieces of
+                            Malodorous Mixture</strong> in a crafting grid.</p>
+                    <p class="segment">The <a href="/foods.html#bottled-crestfallen-flora"
+                            title="Cookbook -> Bottle of Crestfallen Flora" style="text-decoration:underline;">Bottle of
+                            Crestfallen Flora</a> can be made by combining <strong>a Glass bottle, 2 pieces of Torrid
+                            Blend, 2 Incandescent Petals, and a Sorrowful Lichen</strong> in a crafting grid.</p>
+                    <img src="/images/blog/bottled_nether_foods_18.png" alt="v1.8 Bottled Nether Foods">
+                    <p class="img-desc"><i>Bottled Malodorous Mixture and Bottle of Crestfallen Flora</i></p>
+                    <p class="segment">Of course, as you may have noticed throughout, some items in these recipes are
+                        new!</p>
+                    <p class="segment">Senile Dust and some related features have received a slight rework! First,
+                        Senile Dust and Brittle Dust have gained a texture redesign to look more unique to other dusts
+                        both in the mod and even to other mods.</p>
+                    <p class="segment">Torrid Blend can be made by combining <strong>a piece of Brittle Dust and a piece
+                            of Senile Dust</strong> in a heated mixing basin. Torrid Blend has a few different uses,
+                        involving foods and even as a renewable source of Cinder Flour.</p>
+                    <p class="segment">Malodorous Mixture can be made by combining <strong>a piece of Torrid Blend, a
+                            piece of Cinder Flour, a Molten Remnant, and a Bone</strong> in a crafting grid.</p>
+                    <p class="segment">Incandescent Petals and Pansophical Petals can be made by putting <strong>a
+                            flower of the correct type (Incandescent Lily or Pansophical Petal)</strong> into a pair of
+                        crushing wheels or grinding it in a millstone.</p>
+                    <p class="segment">Fiendish Spore can be made by combining <strong>a piece of Brittle Dust, a
+                            Sorrowful Lichen, and an Incandescent Petal</strong> in a compacting basin.</p>
+                    <img src="/images/blog/nether_ingredients_18.png" alt="v1.8 Nether Ingredients">
+                    <p class="img-desc"><i>Fiendish Spore, Brittle Dust, Senile Dust, Torrid Blend, Malodorous Mixture,
+                            Senile Bone, Incandescent Petal, and Pansophical Petal</i></p>
+                    <p class="segment">Another change that is coming is related to Senile Spread - which will no longer
+                        be obtainable by simply applying a piece of Senile Dust to Bone meal.</p>
+                    <p class="segment">Instead, you'll have to obtain Senile Bones, which can be obtained by putting
+                        <strong>either a Tusk or an Irate Tusk</strong> into a pair of crushing wheels. This will also
+                        have a small chance of producing Senile Dust, but not reliably enough to utilize in an efficient
+                        manner.</p>
+                    <p class="segment">Tusks and Irate Tusks can be dropped by Hoglins when using the Ravaging
+                        enchantment on your Hatchet. However, Tusks can also rarely be dropped from Pigs when using the
+                        Salvaging enchantment on your Hatchet.</p>
+                    <img src="/images/blog/hoglin_features.png" alt="v1.8 Hoglin Features">
+                    <p class="img-desc"><i>Irate Tusk, Senile Bone, and Tusk</i></p>
+                    <br>
+                    <h4 class="segment-title" id="end-additions"><span style="color:#965BD6;">End Additions</span> |
+                        Desolate Gateway</h4>
+                    <p class="segment">The Nether isn't the only dimension that received some changes, as the End did as
+                        well!</p>
+                    <p class="segment">Aureate Shrubs can generate commonly throughout the End dimension - you may even
+                        come across some on the central End Island!</p>
+                    <img src="/images/blog/aureate_shrub.png" alt="Aureate Shrub">
+                    <p class="img-desc"><i>Aureate Shrub in End Dimension (End Barrens)</i></p>
+                    <p class="segment">The fabled Ender Dragon has also received some somewhat minor additions!</p>
+                    <p class="segment">The Dimmed Scale is one of these changes, which has a guaranteed chance to drop
+                        from the Ender Dragon when using the Ravaging enchantment on your Hatchet.</p>
+                    <p class="segment">Additionally, they can also be dropped by Endermen and Endermites (at a heavily
+                        decreased rate) when using the Ravaging enchantment on your Hatchet.</p>
+                    <img src="/images/blog/ender_dragon.png" alt="Ender Dragon">
+                    <p class="img-desc"><i>Ender Dragon in the End Dimension (End Island)</i></p>
+                    <p class="segment">The Dragon Egg can also be crushed into a Dragon Egg Shell and a Frail Dragon Egg
+                        Shell. These items have their own unique uses, intended for the late-game.</p>
+                    <p class="segment">To start, the Dragon Egg Shell can be used to make certain foods.</p>
+                    <p class="segment">The Frail Dragon Egg Shell is a little bit of a different story, as it can be
+                        used to recreate your Dragon Egg at a high cost.</p>
+                    <p class="segment">The assembly required to do this requires you to deploy <strong>a piece of Ender
+                            Dust and then spout 250mb of Dragon's Breath onto a Frail Dragon Egg Shell</strong>. This
+                        assembly line will need to be repeated a total of 10 times.</p>
+                    <img src="/images/blog/ender_dragon_egg_18.png" alt="v1.8 Ender Dragon Egg Features">
+                    <p class="img-desc"><i>Dragon Egg, Dragon Egg Shell, and Frail Dragon Egg Shell</i></p>
+                    <p class="segment">Dragon's Breath can also now be obtained as a fluid-like substance, gaining the
+                        ability to be stored in fluid tanks.</p>
+                    <p class="segment">While most other fluids can interact with Lava in order to create stone types,
+                        Dragon's Breath is a little bit different.</p>
+                    <p class="segment">Instead, you can spout 250mb Dragon's Breath onto Unstable Stone to create Wyvern
+                        Stone.</p>
+                    <img src="/images/blog/wyvern_stone.png" alt="Wyvern Stone Set">
+                    <p class="img-desc"><i>Wyvern Stone, Chiseled Wyvern Stone, Wyvern Stone Bricks, Polished Wyvern
+                            Stone, and Smooth Wyvern Stone</i></p>
+                    <p class="segment">There are also some new food items that have been added related to your ender
+                        endeavors.</p>
+                    <p class="segment">The <a href="/foods.html#champions-omelette"
+                            title="Cookbook -> Champion's Omelette" style="text-decoration:underline;">Champion's
+                            Omelette</a> can be made by putting <strong>a Dragon Egg Shell through a sequenced assembly,
+                            first pressing the item, then deploying a piece of Ender Dust, then deploying a Dimmed
+                            Scale, then deploying a Pansophical Petal, then spouting 250mb Dragon's Breath</strong>.
+                        This process needs to be done a total of two times to be completed.</p>
+                    <p class="segment">The <a href="/foods.html#shelled-dumpling" title="Cookbook -> Shelled Dumpling"
+                            style="text-decoration:underline;">Shelled Dumpling</a> can be made by combining <strong>a
+                            Dragon Egg Shell, 2 pieces of Void Dust, 2 Ender Jelly, and a Preliminary Nucleus</strong>
+                        in a heated mixing basin.</p>
+                    <p class="segment">The <a href="/foods.html#farseer-brew" title="Cookbook -> Farseer Brew"
+                            style="text-decoration:underline;">Farseer Brew</a> can be made by combining <strong>a Bowl,
+                            a Bottle of Dragon's Breath, a Preliminary Nucleus, an Aureate Shrub, and a Vex
+                            Wing</strong> in a crafting grid.</p>
+                    <img src="/images/blog/ender_foods_18.png" alt="v1.8 End Foods">
+                    <p class="img-desc"><i>Farseer Brew, Shelled Dumpling, and Champion's Omelette</i></p>
+                    <br>
+                    <h4 class="segment-title" id="hatchet-additions"><span style="color:#965BD6;">Hatchet
+                            Additions</span> | Cut Down</h4>
+                    <p class="segment">While hatchets did receive quite a substantial change in a previous version -
+                        some more enchantments other related changes have been made.</p>
+                    <p class="segment">The Striking enchantment functionally replaces the Sharpness, Bane of Arthropods,
+                        and Smite enchantments. Alongside this, you are no longer able to apply these enchantments to
+                        your hatchet. This enchantment has four total levels, each increasing the amount of damage that
+                        the player does while using this hatchet.</p>
+                    <p class="segment">The Quick Step enchantment provides the player with Speed while under half
+                        health. This enchantment has a total of three levels, each increasing the level of Speed while
+                        using this hatchet. The Quick Step enchantment cannot be applied alongside Ravaging, and vice
+                        versa.</p>
+                    <p class="segment">The Rejuvenate enchantment heals the player a portion of health. This enchantment
+                        has two total levels, each increasing the amount of health regenerated. The Rejuvenate
+                        enchantment cannot be applied alongside Quick Step, and vice versa.</p>
+                    <p class="segment">The Curse of the Leech enchantment acts similar to the Rejuvenate enchantment,
+                        but the opposite. Instead, the user will be damaged a small amount with each hit. This
+                        enchantment only has one level.</p>
+                    <p class="segment">Another minor change is that you can no longer apply the Looting enchantment to
+                        your hatchet.</p>
+                    <img src="/images/blog/hatchet_and_book.png" alt="Hatchet & Enchanted Book">
+                    <p class="img-desc"><i>Enchanted Netherite Hatchet and an Enchanted Book (with ravaging)</i></p>
+                    <br>
+                    <h4 class="segment-title" id="nut-additions"><span style="color:#965BD6;">Nut Additions</span> | Cut
+                        Down</h4>
+                    <p class="segment">While there aren't many changes to nuts, individually, there are some minor
+                        changes.</p>
+                    <p class="segment">Any nut covered in melted cinder flour that has an effect has received a minor
+                        change on the backend. Previously, the effects were applied outside of the foods registration
+                        class. However, the downside of this, is that it wouldn't show as providing the given effect in
+                        JEED (Just Enough Effect Descriptions) and other mods that showed effects inside of the item
+                        viewer menu. This has been changed to have individual food registration, allowing it to function
+                        properly and in a more logical manner.</p>
+                    <img src="/images/blog/melted_cinder_flour_nuts.png" alt="Melted Cinder Flour Nuts">
+                    <p class="img-desc"><i>Nuts Covered in Melted Cinder Flour (with effects)</i></p>
+                    <br>
+                    <h4 class="segment-title" id="anniversary-cake"><span style="color:#965BD6;">Happy
+                            Anniversary!</span> | Cut Down</h4>
+                    <p class="segment">Ah, yes, the 1-year anniversary of Create: Garnished! It's been an incredible
+                        journey thus far, starting as a joke that originated in a Create: Above and Beyond stream by <a
+                            href="https://www.youtube.com/@dejojotheawsome">DejojoTheAwsome</a>, then becoming possibly
+                        the most joyous project I've worked on!</p>
+                    <p class="segment">While this update aims to improve upon already existing updates, there are some
+                        other things that are entirely new content to further celebrate!</p>
+                    <p class="segment">Let them have cake, I say! A three-layer, 6-slice cake with questionable
+                        ingredients, specifically! Each bite provides double the nutrition and saturation from that of a
+                        normal cake.</p>
+                    <img src="/images/blog/happy_anniversary_18.png" alt="v1.8 Anniversary Cake">
+                    <p class="img-desc"><i>Anniversary Cake with Fireworks in the background</i></p>
+                    <p class="segment">This cake can be crafted by using a set of 18 Mechanical Crafters in the below
+                        array!</p>
+                    <img src="/images/blog/anniversary_cake_mechanical_crafting_recipe.png"
+                        alt="Anniversary Cake Recipe">
+                    <p class="img-desc"><i>Anniversary Cake recipe in a set of 18 Mechanical Crafters</i></p>
+                    <p class="segment">Now, listen... It was funny-</p>
+                    <p class="segment">You can now make Bok Choy farms! Bok Choy Leaves (seeds) can be obtained from
+                        certain village chests, while regular Bok Choy Bulbs can rarely be found in Jungle Temples.</p>
+                    <img src="/images/blog/bok_choy_farm.png" alt="Bok Choy Farm">
+                    <p class="img-desc"><i>Bok Choy farm with DeChoyo advancement being unlocked (pick up a Bok Choy
+                            Bulb)</i></p>
+                    <p class="segment">Additionally, you can crush regular Bok Choy Bulbs back into Bok Choy Leaves to
+                        expand your farm remotely.</p>
+                    <p class="segment">If you couldn't figure it out by now, this is a reference to a joke within the
+                        DejojoTheAwsome community, of which started during a Stardew Valley stream on his Twitch
+                        channel.</p>
+                    <br>
+                    <h4 class="segment-title" id="sweet-additions"><span style="color:#965BD6;">Sweet Additions</span> |
+                        Sweet Teeth</h4>
+                    <p class="segment">There has mostly been retextures and general improvements to some features in
+                        this section. However, some content has still been added related to this.</p>
+                    <p class="segment">The first thing that you may notice are the texture improvements to the Mastic
+                        Resin blocks, items, and fluids. They are now more vibrant and have a more unique look and feel.
+                    </p>
+                    <img src="/images/blog/mastic_resin_18.png" alt="New Mastic Resin Textures (Fluids & Blocks)">
+                    <p class="img-desc"><i>Improved Mastic Resin fluid and block textures</i></p>
+                    <img src="/images/blog/mastic_resin_items_18.png" alt="New Mastic Resin Textures (Items)">
+                    <p class="img-desc"><i>Improved Mastic Resin item textures</i></p>
+                    <p class="segment">Builder's Tea not giving you that kick that you need to satisfy your sweet tooth?
+                        Well then, here's a southern special - Sweet Tea!</p>
+                    <p class="segment">Sweet Tea can be made by combining <strong>a Bok Choy Bulb, a Sugar Cube, and
+                            250mb Builder's Tea</strong> inside of a heated mixing basin.</p>
+                    <p class="segment">Consuming Sweet Tea will result in the Austral effect being applied to the user
+                        for 3 minutes. This effect increases your movement speed at the cost of attack damage.</p>
+                    <p class="segment">Another new addition, Sugar Cubes, can be made by compacting <strong>4 pieces of
+                            Sugar</strong> inside of a basin.</p>
+                    <img src="/images/blog/sweet_tea.png" alt="Sweet Tea Additions">
+                    <p class="img-desc"><i>Sweet Tea (fluid), Sweet Tea in a Fluid Tank, Bottled Sweet Tea</i></p>
+                    <br>
+                    <h4 class="segment-title" id="other-changes-and-additions"><span style="color:#965BD6;">Sugary
+                            Batch</span> | Other Changes & Additions</h4>
+                    <p class="segment">A nice aesthetic change that relates to the many liquids in Create: Garnished,
+                        there is now properly coloured fog!</p>
+                    <p class="segment">Some examples can be found below.</p>
+                    <img src="/images/blog/purple_fluid_fog.png"
+                        alt="Properly Coloured Fog for Fluids - Purple Mastic Resin">
+                    <p class="img-desc"><i>Purple Fog for Purple Mastic Resin</i></p>
+                    <img src="/images/blog/sweet_tea_fluid_fog.png" alt="Properly Coloured Fog for Fluids - Sweet Tea">
+                    <p class="img-desc"><i>Orange-ish Fog for Sweet Tea</i></p>
+                    <img src="/images/blog/green_fluid_fog.png"
+                        alt="Properly Coloured Fog for Fluids - Green Mastic Resin">
+                    <p class="img-desc"><i>Green Fog for Green Mastic Resin</i></p>
+                    <p class="segment">Regular Mastic Resin variants now require a piece of Sugar as a part of their
+                        recipe. While minor, this is the start of a series of technical/functional changes to Mastic
+                        Resin that I'd like to push out within the next couple of updates.</p>
+                    <p class="segment">While minor, some of the locations that referenced the word "Chocolate" instead
+                        contained the word "Chocholate." This doesn't affect actual gameplay, so no need to worry.</p>
+                    <br>
+                    <h4 class="segment-title" id="crushing-milling-changes"><span style="color:#965BD6;">Crushing
+                            It</span> | Other Changes & Additions</h4>
+                    <p class="segment">All of the milling and crushing recipes that allow you to obtain cracked nuts
+                        have had their processing time decreased from 150 ticks (7.5 seconds) to 50 ticks (2.5 seconds).
+                    </p>
+                    <p class="segment">Both the milling and crushing recipes for Crushed Salt Compound have been
+                        changed, as well. The processing time has been increased from 150 ticks (7.5 seconds) to 200
+                        ticks (10 seconds). The chance to produce Zinc Nuggets has been decreased from 10% to 5% when
+                        crushing Limestone. However, the chance to produce Zinc Nuggets from milling has been entirely
+                        removed. Another change regarding the milling recipe is that the maximum amount of Iron Nuggets
+                        obtainable from it is only one with a 10% chance of being produced.</p>
+                    <p class="segment">An additional recipe for Brittle Dust has also been added, allowing players to
+                        use Basalt, Smooth Basalt, or Polished Basalt instead of Scorchia. This will produce a small
+                        amount of Brittle Dust almost 100% of the time. It has an 85% chance to produce 1 piece with a
+                        45% chance to produce an additional piece.</p>
+                    <br>
+                    <h4 class="segment-title" id="quality-of-life-improvements"><span style="color:#965BD6;">QOL</span>
+                        | Other Changes & Additions</h4>
+                    <p class="segment">A somewhat major addition is that you can now view information regarding specific
+                        items utilizing the Item Ingredient Information feature from JEI. Of course, this requires JEI
+                        to be installed on the client to function properly.</p>
+                    <p class="segment">These items are exclusive to the Ravaging and Salvaging enchantments currently,
+                        but more items that can be obtained via these methods, but not exclusive to such, may receive
+                        information tabs as well.</p>
+                    <img src="/images/blog/jei_information_tab.png" alt="JEI Item Ingredient Info Example">
+                    <p class="img-desc"><i>JEI Ingredient Information Info for Enflamed Mandible</i></p>
+                    <p class="segment">EMI is also receiving support for Item Ingredient Information on the Fabric side
+                        of things.</p>
+                    <img src="/images/blog/emi_information_tab.png" alt="EMI Item Ingredient Info Example">
+                    <p class="img-desc"><i>EMI Ingredient Information Info for Enflamed Mandible</i></p>
+                    <br>
+                    <h4 class="segment-title" id="integration-compatibility-updates"><span
+                            style="color:#965BD6;">Integrated Chefs</span> | Other Changes & Additions</h4>
+                    <p class="segment">The Anniversary Cake has the capability to be cut into 6 Slices of Anniversary
+                        Cake, which provides the same amount of nutrition and saturation as a standard bite from the
+                        Anniversary Cake block.</p>
+                    <img src="/images/blog/anniversary_cake_slice.png" alt="Slice of Anniversary Cake">
+                    <p class="img-desc"><i>Slice(s) of Anniversary Cake</i></p>
+                    <p class="segment">Tusks and Irate Tusks can also be cut into either 6 Senile Bones or 10 Senile
+                        Bones depending on the type of tusk used. However, these recipes require you to utilize a
+                        Hatchet rather than a Knife.</p>
+                    <p class="segment">Additionally, compatibility between Create: Garnished and the <a
+                            href="https://www.curseforge.com/minecraft/mc-mods/create-mechanical-extruder">Create
+                            Mechanical Extruder mod</a> has been added.</p>
+                    <br>
+                    <h4 class="segment-title" id="adjusted-recipes"><span style="color:#965BD6;">Renewed
+                            Craftsmanship</span> | Other Changes & Additions</h4>
+                    <p class="segment">Cinder Shroom Roll now requires Malodorous Mixture instead of Netherrack as the
+                        main component. Alongside this change, the assembly line now calls for Torrid Blend as an
+                        additional step.</p>
+                    <p class="segment">Ghandercken now requires Torrid Blend as a part of its mechanical crafting
+                        recipe.</p>
+                    <p class="segment">Crimson Tusk now requires an <strong>actual</strong> Tusk as the main component
+                        rather than a piece of Senile Dust. Replace the first step (Pressing) with a step to deploy a
+                        piece of Crushed Crimson Fungus. Replace the final step of the process (Deploying Crushed
+                        Crimson Fungus) with deploying an Incandescent Petal.</p>
+                    <p class="segment">Add an additional step to each of the wrapped tangles. The Wrapped Warped Tangle
+                        now requires a Pansophical Petal as an additional step. The Wrapped Crimson Tangle now requires
+                        an Incandescent Petal. The Wrapped Sepia Tangle now requires Soul Roots.</p>
+                    <p class="segment">Chorus Bowl now requires a Dimmed Scale as a part of its recipe.</p>
+                    <p class="segment">Explorer's Concoction now requires a Torrid Blend as a part of its recipe.</p>
+                    <p class="segment">Molten Stew now requires a Torrid Blend as a part of its recipe.</p>
+                    <p class="segment">Nopalito Wrap Supreme as a replaced entry of its recipe - Remove one of the
+                        Prickly Pear entries in favour of a piece of Torrid Blend.</p>
+                    <br>
+                    <h4 class="segment-title" id="adjusted-configured-placed-features"><span
+                            style="color:#965BD6;">Tweaked Dimensions</span> | Other Changes & Additions</h4>
+                    <p class="segment">Using Desolate Spread on End Stone now has a chance to produce Aureate Shrubs.
+                        Functionally, it doesn't act any different other than to behave similarly to Bone Meal.</p>
+                    <p class="segment">However, Senile Spread has received some more major changes. To start off, you
+                        now obtain Senile Spread with Senile Bones in a crafting grid, similar to how you would craft
+                        Bone Meal.</p>
+                    <p class="segment">Additionally, there are three "variants" for Senile Spread. Not as separate
+                        items, and you might not even notice it, at first. Utilizing Senile Spread on Soul Sand or Soul
+                        Soil will yield different results from utilizing it on Warped Nylium. Utilizing Senile Spread on
+                        Crimson Nylium will yield different results from utilizing it on Soul Sand or Soul Soil. So on
+                        and so forth, you can now target certain block types if you need certain vegetal blocks more
+                        than others.</p>
+                    <img src="/images/blog/garnished_gardens.png" alt="Modded Gardens">
+                    <p class="img-desc"><i>End Stone Garden, Crimson Garden, Warped Garden, Soul Soil Garden</i></p>
+                    <p class="segment">A vegetal block that you may notice is missing from this list is Sorrowful Lichen
+                        - where is it? Well, you can only find this block naturally generating and it cannot be produced
+                        in the same way as these other blocks.</p>
+                    <p class="segment">It can be replenished similarly to Glow Lichen, by using Bone Meal on the block.
+                        This will spread the block to surrounding blocks.</p>
+                </div>
+        </div>
+        </center>
+        <hr style="clear:both;visibility:hidden;height:40px;">
+        <p>
+            <center>The Create: Garnished mod and Create: Garnished wiki have been developed and designed by
+                DakotaPrideModding</center>
+        </p>
+        <p>
+            <center><a href="https://github.com/DakotaPride/create-garnished" target="_blank">Create: Garnished Fabric
+                    Source Code</a></center>
+        </p>
+        <p>
+            <center><a href="https://github.com/DakotaPride/create-garnished/issues" target="_blank">Create: Garnished
+                    Issues Page</a></center>
+        </p>
 
         <script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-			function myFunction() {
-				document.getElementById("myDropdown").classList.toggle("show");
-			}
+            /* When the user clicks on the button, 
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
 
-// Close the dropdown if the user clicks outside of it
-			window.onclick = function(e) {
-				if (!e.target.matches('.dropbtn')) {
-					var myDropdown = document.getElementById("myDropdown");
-					if (myDropdown.classList.contains('show')) {
-						myDropdown.classList.remove('show');
-					}
-				}
-			}
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function (e) {
+                if (!e.target.matches('.dropbtn')) {
+                    var myDropdown = document.getElementById("myDropdown");
+                    if (myDropdown.classList.contains('show')) {
+                        myDropdown.classList.remove('show');
+                    }
+                }
+            }
 
-			var coll = document.getElementsByClassName("collapsible");
-			var i;
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
 
-			for (i = 0; i < coll.length; i++) {
-				coll[i].addEventListener("click", function() {
-					this.classList.toggle("active");
-    				var content = this.nextElementSibling;
-    				if (content.style.maxHeight){
-      					content.style.maxHeight = null;
-    				} else {
-      					content.style.maxHeight = content.scrollHeight + "px";
-    				} 
-  				});
-			}
-			
-			// Get the button
-			let mybutton = document.getElementById("myBtn");
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            }
 
-			// When the user scrolls down 20px from the top of the document, show the button
-			window.onscroll = function() {scrollFunction()};
+            // Get the button
+            let mybutton = document.getElementById("myBtn");
 
-			function scrollFunction() {
-  				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    				mybutton.style.display = "block";
-  				} else {
-    				mybutton.style.display = "none";
-  				}
-			}
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function () { scrollFunction() };
 
-			// When the user clicks on the button, scroll to the top of the document
-			function topFunction() {
-  				document.body.scrollTop = 0;
-  				document.documentElement.scrollTop = 0;
-			}
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
 
-			initComparisons();
-		</script>
-	</body>
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+
+            initComparisons();
+        </script>
+    </body>
+
 </html>
