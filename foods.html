@@ -2199,15 +2199,25 @@
                 });
             }
 
-            function sortList(ul) {
-                var ul = document.getElementById(ul);
+            var list = document.getElementById('myUL');
 
-                Array.from(ul.getElementsByTagName("LI"))
-                    .sort((a, b) => a.textContent.localeCompare(b.textContent))
-                    .forEach(li => ul.appendChild(li));
+            var items = list.childNodes;
+            var itemsArr = [];
+            for (var i in items) {
+                if (items[i].nodeType == 1) { // get rid of the whitespace text nodes
+                    itemsArr.push(items[i]);
+                }
             }
 
-            sortList("myUL");
+            itemsArr.sort(function (a, b) {
+                return a.innerHTML == b.innerHTML
+                    ? 0
+                    : (a.innerHTML > b.innerHTML ? 1 : -1);
+            });
+
+            for (i = 0; i < itemsArr.length; ++i) {
+                list.appendChild(itemsArr[i]);
+            }
 
             // Get the button
             let mybutton = document.getElementById("myBtn");
