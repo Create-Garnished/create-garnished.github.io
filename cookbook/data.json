@@ -29,6 +29,6 @@
         "nutrition_modifier": 10,
         "obtain_methods": "Cashew Apples can be obtained from destroying Cashew Leaves",
         "id": "cashew-apple",
-        "icon": "cashew_apple.png"
+        "icon": "cashew_fruit.png"
     }
 ]
