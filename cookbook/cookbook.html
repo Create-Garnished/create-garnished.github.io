@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <script src="data.json" type="application/json"></script>
+        <script src="food.json" type="application/json"></script>
         <title>Create: Garnished Wiki - Cookbook</title>
         <link rel="icon" type="image/x-icon" href="/icon.ico">
 
@@ -266,7 +266,7 @@
             <script>
             async function fetchJsonData() {
                 try {
-                    const response = await fetch('./data.json');
+                    const response = await fetch('./food.json');
                     if (!response.ok) {
                         throw new Error('Failed to fetch JSON');
                     }
