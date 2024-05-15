@@ -14,5 +14,21 @@
         "obtain_methods": "Phantom Steak can be obtained by utilizing a sequenced assembly line.",
         "id": "phantom-steak",
         "icon": "phantom_steak.png"
+    },
+    {
+        "food_name": "Almond Cheese",
+        "saturation_modifier": 0.9,
+        "nutrition_modifier": 10,
+        "obtain_methods": "Almond Cheese can be made by a compacting recipe.",
+        "id": "almond-cheese",
+        "icon": "almond_cheese.png"
+    },
+    {
+        "food_name": "Cashew Apple",
+        "saturation_modifier": 0.9,
+        "nutrition_modifier": 10,
+        "obtain_methods": "Cashew Apples can be obtained from destroying Cashew Leaves",
+        "id": "cashew-apple",
+        "icon": "cashew_apple.png"
     }
 ]
