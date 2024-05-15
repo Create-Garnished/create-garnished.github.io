@@ -1,0 +1,18 @@
+[
+    {
+        "food_name": "Ungarnished Cashew",
+        "saturation_modifier": 100,
+        "nutrition_modifier": 100,
+        "obtain_methods": "Nut Mix can be made by combining 2 Garnished Nuts and 1 of (mostly) any berry in a crafting grid. This recipe is shapeless.",
+        "id": "ungarnished-cashew",
+        "icon": "ungarnished/cashew.png"
+    },
+    {
+        "food_name": "Phantom Steak",
+        "saturation_modifier": 100,
+        "nutrition_modifier": 100,
+        "obtain_methods": "Phantom Steak can be obtained by utilizing a sequenced assembly line.",
+        "id": "phantom-steak",
+        "icon": "phantom-steak.png"
+    }
+]
