@@ -2,8 +2,6 @@
 <html>
 
     <head>
-        <meta charset="utf-8">
-        <script src="food.json" type="application/json"></script>
         <title>Create: Garnished Wiki - Cookbook</title>
         <link rel="icon" type="image/x-icon" href="/icon.ico">
 
@@ -263,48 +261,12 @@
             <a href="https://www.ko-fi.com/dakotapride" style="float:right;" target="_blank">Ko-fi</a>
         </div>
         <center>
-            <script>
-            async function fetchJsonData() {
-                try {
-                    const response = await fetch('./food.json');
-                    if (!response.ok) {
-                        throw new Error('Failed to fetch JSON');
-                    }
-                    return await response.json();
-                } catch (error) {
-                    console.error(error);
-                }
-            }
-
-            async function processData() {
-                let versionsArray = []
-                const jsonData = await fetchJsonData();
-                if (jsonData) {
-                    const outputDiv = document.getElementById('output');
-                    for (const key in jsonData) {
-                        const food = jsonData[key];
-
-                        const addonElement = document.createElement('div');
-                        addonElement.innerHTML = `
-                    <h4 id="${food.id}"><img src="/images/item_icons/${food.icon}">${food.food_name}</h4>
-                    <ul class="food-information">
-                        <li class="saturation">The saturation modifier for this food is ${food.saturation_modifier}</li>
-                        <li class="nutrition">The nutrition value for this food is ${food.nutrition_modifier}</li>    
-                    </ul>
-                    <p class="obtain-methods">${food.obtain_methods}</p>
-                    `;
-                        outputDiv.appendChild(addonElement);
-                    }
-                }
-            }
-
-            // Call the processData function when the page loads
-            window.onload = processData;
-        </script>
             <div style="padding:20px;margin-top:30px;width:800px;text-align:left;">
                 <input type="text" id="myInput" onkeyup="searchBarSecondary()" placeholder="Search for a food..."
                     title="Please enter the name of a food.">
-                <div id="output" class="food-list"></div>
+                <ul id="myUL">
+                    <div id="output" class="food-list"></div>
+                </ul>
             </div>
         </center>
         <hr style="clear:both;visibility:hidden;height:40px;">
@@ -322,6 +284,42 @@
         </p>
 
         <script>
+
+            async function fetchJsonData() {
+                try {
+                    const response = await fetch('./data.json');
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch JSON');
+                    }
+                    return await response.json();
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+
+            async function processData() {
+                let versionsArray = []
+                const jsonData = await fetchJsonData();
+                if (jsonData) {
+                    const outputDiv = document.getElementById('output');
+                    for (const key in jsonData) {
+                        const food = jsonData[key];
+
+                        const foodElement = document.createElement('li');
+                        foodElement.innerHTML = `
+                        <h4 id="${food.id}"><img src="/images/item_icons/${food.icon}"> ${food.food_name}</h4>
+                        <p><br>
+                            - Nutrition: ${food.nutrition_modifier}<br>
+                            - Saturation: ${food.saturation_modifier}<br><br>
+                        </p>
+                    `;
+                        outputDiv.appendChild(foodElement);
+                    }
+                }
+            }
+
+            // Call the processData function when the page loads
+            window.onload = processData;
 
             /* When the user clicks on the button, 
             toggle between hiding and showing the dropdown content */
