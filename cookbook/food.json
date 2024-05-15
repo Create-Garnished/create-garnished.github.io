@@ -13,6 +13,6 @@
         "nutrition_modifier": 100,
         "obtain_methods": "Phantom Steak can be obtained by utilizing a sequenced assembly line.",
         "id": "phantom-steak",
-        "icon": "phantom-steak.png"
+        "icon": "phantom_steak.png"
     }
 ]
