@@ -310,7 +310,9 @@
                         <h4 id="${food.id}"><img src="/images/item_icons/${food.icon}"> ${food.food_name}</h4>
                         <p><br>
                             - Nutrition: ${food.nutrition_modifier}<br>
-                            - Saturation: ${food.saturation_modifier}<br><br>
+                            - Saturation Modifier: ${food.saturation_modifier}<br>
+                            - Saturation Value: ${food.sat_value}<br><br>
+                            <a href="./README.md" style="text-decoration:underline;">Interested in what these values mean or how they're determined? Read me!</a>
                         </p>
                     `;
                         outputDiv.appendChild(foodElement);
