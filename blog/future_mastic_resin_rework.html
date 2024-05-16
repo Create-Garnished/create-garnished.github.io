@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Create: Garnished Wiki - Blog Posts - Update v1.8</title>
-        <link rel="icon" type="image/x-icon" href="/icon.ico">
+<head>
+    <title>Create: Garnished Wiki - Future Mastic Resin Update</title>
+    <link rel="icon" type="image/x-icon" href="/icon.ico">
 
-        <style>
+    <style>
             :root {
                 color-scheme: dark;
             }
@@ -247,13 +247,15 @@
             #myBtn:hover {
                 background-color: black;
             }
-        </style>
-    </head>
+        
+    
+    </style>
+</head>
 
-    <body>
-        <button onclick="topFunction()" id="myBtn">Jump to Top of Page</button>
+<body>
+<button onclick="topFunction()" id="myBtn">Jump to Top of Page</button>
 
-        <script>
+<script>
             function initComparisons() {
                 var x, i;
                 /*find all elements with an "overlay" class:*/
@@ -330,193 +332,131 @@
                     }
                 }
             }
-        </script>
+        
 
-        <div
-            style="padding:20px;margin-top:0px;background-color:#02060C;overflow:hidden;background-image: url('/images/background.png');">
-            <center>
-                <img src="https://cdn.modrinth.com/data/6e2SlzR4/images/6c6a60c205ed08d04b4bbed6a7048670daa21000.png"
-                    width=700px;>
-                <br>
-                <p style="font-size:16px;"><i>Create: Garnished adds many new foods and items, expanding on the Create
-                        mod!</i></p>
-            </center>
-        </div>
-        <div class="navbar">
-            <a href="/index.html" style="float:left;">Home</a>
-            <a href="/integrations.html" style="float:left;">Integrations</a>
-            <a href="/hatchets.html" style="float:left;">Hatchet Interactions</a>
-            <a href="/fluid_interactions.html" style="float:left;">Fluid Interactions</a>
-            <a href="/foods.html" style="float:left;">Cookbook</a>
-            <div class="dropdown" style="float:left;">
-                <button class="dropbtn" onclick="myFunction()">Recipe Types
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content" id="myDropdown">
-                    <a href="/recipe_types/bulk_dyeing.html">Bulk Dyeing</a>
-                    <a href="/recipe_types/bulk_freezing.html">Bulk Freezing</a>
-                </div>
-            </div>
-            <a href="/blog.html" style="float:left;">Blog Posts</a>
-            <a href="https://modrinth.com/mod/create-garnished" style="float:right;" target="_blank">Modrinth</a>
-            <a href="https://www.curseforge.com/minecraft/mc-mods/garnished" style="float:right;"
-                target="_blank">Curseforge</a>
-            <a href="https://www.ko-fi.com/dakotapride" style="float:right;" target="_blank">Ko-fi</a>
-        </div>
-        <div style="padding:20px;margin-top:30px;">
-            <center>
-                <img src="/images/blog/mastic_resin_rework.png" width="70%" style="border-radius:5%;">
-                <div class="blog">
-                    <h5 style="margin:0px;font-size:16px;"><span style="color:#F2320C;">Developer Update</span> | May
-                        4th, 2024</h5><br>
-                    <p style="text-align:left;width:800px;font-size:20px;padding-top:0px;">Ever since Mastic Resin was
-                        added back in v1.3 - Sugarcoated, there has always been the issue of the liquid interactions
-                        being a bit overpowered. I've been wanting to address this for some time now, of which I have
-                        finally found the time to workshop some changes and additions that I believe would fit quite
-                        well as a replacement.</p>
-                    <h4 class="segment-title" id="more-colour-variants"><span style="color:#965BD6;">Completing The
-                            Rainbow</span> | Colourful Additions</h4>
-                    <p class="segment">Recently, I received a suggestion to add more colours for Mastic Resin. At first,
-                        I dismissed this suggestion and didn't believe that it was a good idea, as it would require a
-                        lot of backend work (such as removing a lot of the current items or adding a lot more items,
-                        creating inventory clutter alongside having unnecessary items).</p>
-                    <p class="segment">However, when I finally decided to begin reworking Mastic Resin, I returned to
-                        the suggestion. With the ideas that I've come up with, I believe that this would work fantastic
-                        in the new atmosphere that I've been workshopping.</p>
-                    <p class="segment">So, starting at an undesignated point in time, you can expect a full palette of
-                        Mastic Resin for your Minecraft worlds. A list of new colours can be found below.</p>
-                    <ul class="segment">
-                        <li>White</li>
-                        <li>Brown</li>
-                        <li>Black</li>
-                        <li>Light Gray</li>
-                        <li>Gray</li>
-                        <li>Cyan</li>
-                        <li>Light Blue</li>
-                        <li>Magenta</li>
-                        <li>Lime</li>
-                        <li>Pink</li>
-                    </ul>
-                    <img src="/images/blog/mastic_stones.png" alt="Mastic Stones">
-                    <p class="img-desc"><i>Initial Textures for Mastic Stones [Old & New Colouring]</i></p>
-                    <p class="segment">Additionally, Mastic Resin will no longer generate any of the Create mod stones -
-                        Asurine, Crimsite, Ochrum, and Veridium. Instead, as you can somewhat see above, a new stone
-                        type of 16-coloured variants will be generated. The name of the stone type is still being
-                        decided, but some in-dev names are - Mastic Stone, Candied Stone, Zultanite, or Sugar Stone. Of
-                        course, feedback and suggestions on the name are appreciated.</p>
-                    <p class="segment">These stones can be crushed to obtain certain materials - though, the rates of
-                        which are extremely rare for balancing purposes. While the exact materials gathered and rates
-                        are being decided, the current list is as follows:</p>
-                    <ul class="segment">
-                        <li>Iron Nuggets</li>
-                        <ul>
-                            <li>2% chance for 1-3 nuggets</li>
-                            <li>Obtained from crushing (not milling) the Red, Cyan, Black, and Light Gray stone variants
-                            </li>
-                        </ul>
-                        <li>Gold Nuggets</li>
-                        <ul>
-                            <li>2% chance for 1-3 nuggets</li>
-                            <li>Obtained from crushing (not milling) the Orange, Yellow, Purple, and Pink stone variants
-                            </li>
-                        </ul>
-                        <li>Copper Nuggets</li>
-                        <ul>
-                            <li>4% chance for 1-3 nuggets</li>
-                            <li>Obtained from crushing (not milling) the Green, Lime, Magenta, and Brown stone variants
-                            </li>
-                        </ul>
-                        <li>Zinc Nuggets</li>
-                        <ul>
-                            <li>2% chance for 1-2 nuggets</li>
-                            <li>Obtained from crushing (not milling) the Blue, Light Blue, Gray, and White stone
-                                variants</li>
-                        </ul>
-                    </ul>
-                    <p style="text-align:left;font-size:16px;width:800px;font-size:20px;padding-bottom:0px;"><span
-                            style="color:#F42718;"><strong>Developer Comment</span> | Made on May 7th, 2024</strong></p>
-                    <p style="text-align:left;width:800px;font-size:16px;padding-top:0px" id="dev-comment">
-                        This below section has been added, as it was neglected upon the initial creation of this post.
-                        Apologies for the inconvenience!
-                    </p><hr>
-                    <p class="segment">There's also the "uncoloured" (default) variants of Mastic Resin that needs
-                        addressing.</p>
-                    <p class="segment">There will be stone block, similar to the other 16, to match this variant. The
-                        block generated will act similarly to Tuff, which it currently generates, just at a slightly
-                        decreased rate.</p>
-                    <p class="segment">This rate will not be substantial enough to break any existing generators, so no
-                        worries there.</p><hr>
-                    <h4 class="segment-title" id="more-recipe-types"><span style="color:#965BD6;">Rework, Redesign,
-                            Redye!</span> | Colourful Additions</h4>
-                    <p class="segment">Alongside these new colour variants of Mastic Resin, also comes with 10 more ways
-                        of dyeing your items.</p>
-                    <p class="segment">Did you mean to make Blue Candles, but perhaps you now want Black or Cyan
-                        Candles? Well, you will now be able to with this addition/adjustment.</p>
-                    <h4 class="segment-title" id="reworked-mastic-foods"><span style="color:#965BD6;">Delightful
-                            Sweets</span> | Colourful Additions</h4>
-                    <p class="segment">Now, of course, there's the issue of inventory clutter. This is one of the main
-                        reasons why I haven't already added the remaining colours.</p>
-                    <p class="segment">Logically, since there are coloured variants of the Venerable Delicacies, Slime
-                        Drops, and other items - that would mean that 10 more items per set of items would be added.
-                        This would result in a lot more items and could also result in some people becoming overwhelmed.
-                        I'm not currently sure exactly how this problem could be resolved, seeing as there are not many
-                        other options aside from straight-up removing several items and potentially breaking
-                        pre-existing worlds.</p>
-                    <p class="segment">Something that I could do to help justify this is to have benefits depending on
-                        the variant that is consumed.</p>
-                    <p class="segment">For example, consuming a Light Blue Venerable Delicacy could result in the player
-                        gaining temporary Speed for a minute. Another example, consuming an Orange Slime Drop could
-                        result in the player gaining temporary Fire Resistance for 30 seconds.</p>
-                    <p class="segment">This system does have some flaws and even some conflictions with other systems in
-                        the mod, such as the Melted Cinder Flour nuts with an Effect - which creates an entirely
-                        different issue of spamming "effect items" to the player. While that issue isn't as bad as
-                        inventory clutter, it is something that could confuse new players, no matter how simple it may
-                        seem.</p>
-                    <h4 class="segment-title" id="apple-cider-adjustment"><span style="color:#965BD6;">Cider
-                            Conundrum</span> | Related Changes</h4>
-                    <p class="segment">While this post mainly talks about Mastic Resin and how lots of changes are going
-                        to occur to make sure that it's balanced - there's an elephant in the room, Apple Cider.</p>
-                    <p class="segment">Apple Cider generates Ochrum, which has surprisingly never really been talked
-                        about. This will also be receiving a slight adjustment, no longer generating Ochrum and instead
-                        generating Carnotite.</p>
-                    <h4 class="segment-title" id="old-mastic-stone-adjustments"><span style="color:#965BD6;">Old Stones,
-                            New Groove</span> | Related Changes</h4>
-                    <p class="segment">You may be wondering what'll happen to Abyssal Stone, Unstable Stone, and
-                        Ritualistic Stone. Since these stones can no longer be obtained by Mastic Resin, they either
-                        become non-renewable or are flat-out not obtainable anymore with the base rework.</p>
-                    <p class="segment">Though, luckily, I've thought about this a little bit.</p>
-                    <p class="segment">While Carnotite will be obtainable and renewable from Apple Cider, you will also
-                        be able to haunt the Yellow stone variant to obtain this stone type.</p>
-                    <p class="segment">Abyssal Stone will also be obtainable from bulk haunting, just from utilizing the
-                        Purple and/or Magenta stone variants instead.</p>
-                    <p class="segment">Ritualistic Stone, while still can be found naturally generating in desert
-                        biomes, will also be obtainable by haunting the Brown stone variant. Additionally, milling the
-                        Orange stone variant is an alternative method, but will only have a percent chance to provide
-                        Ritualistic Stone.</p>
-                    <h4 class="segment-title" id="sweet-tea"><span style="color:#965BD5;">Spill The Tea</span> | Related
-                        Changes</h4>
-                    <p class="segment">A feature that hasn't even been released fully yet - Sweet Tea.</p>
-                    <p class="segment">Currently, this fluid is not planned to have any fluid interactions. This could
-                        change in the future, but is unlikely.</p>
-                </div>
-        </div>
-        </center>
-        <hr style="clear:both;visibility:hidden;height:40px;">
-        <p>
-            <center>The Create: Garnished mod and Create: Garnished wiki have been developed and designed by
-                DakotaPrideModding</center>
-        </p>
-        <p>
-            <center><a href="https://github.com/DakotaPride/create-garnished" target="_blank">Create: Garnished Fabric
-                    Source Code</a></center>
-        </p>
-        <p>
-            <center><a href="https://github.com/DakotaPride/create-garnished/issues" target="_blank">Create: Garnished
-                    Issues Page</a></center>
-        </p>
+</script>
 
-        <script>
-            /* When the user clicks on the button, 
+<div style="padding:20px;margin-top:0px;background-color:#02060C;overflow:hidden;background-image: url('/images/background.png');">
+    <center>
+        <img src="https://cdn.modrinth.com/data/6e2SlzR4/images/6c6a60c205ed08d04b4bbed6a7048670daa21000.png" width=700px;>
+        <br>
+        <p style="font-size:16px;"><i>Create: Garnished adds many new foods and items, expanding on the Create mod!</i></p>
+    </center>
+</div>
+<div class="navbar">
+    <a href="/index.html" style="float:left;">Home</a>
+    <a href="/integrations.html" style="float:left;">Integrations</a>
+    <a href="/hatchets.html" style="float:left;">Hatchet Interactions</a>
+    <a href="/fluid_interactions.html" style="float:left;">Fluid Interactions</a>
+    <a href="/foods.html" style="float:left;">Cookbook</a>
+    <div class="dropdown" style="float:left;">
+        <button class="dropbtn" onclick="myFunction()">Recipe Types
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="myDropdown">
+            <a href="/recipe_types/bulk_dyeing.html">Bulk Dyeing</a>
+            <a href="/recipe_types/bulk_freezing.html">Bulk Freezing</a>
+        </div>
+    </div>
+    <a href="/blog.html" style="float:left;">Blog Posts</a>
+    <a href="https://modrinth.com/mod/create-garnished" style="float:right;" target="_blank">Modrinth</a>
+    <a href="https://www.curseforge.com/minecraft/mc-mods/garnished" style="float:right;"
+       target="_blank">Curseforge</a>
+    <a href="https://www.ko-fi.com/dakotapride" style="float:right;" target="_blank">Ko-fi</a>
+</div>
+<div style="padding:20px;margin-top:30px;">
+    <center>
+        <img src="/images/blog/mastic_resin_rework.png" width="70%" style="border-radius:5%;">
+        <div class="blog">
+            <h5 style="margin:0px;font-size:16px;"><span style="color:#F2320C;">Developer Update</span> | May 4th, 2024</h5><br>
+            <p style="text-align:left;width:800px;font-size:20px;padding-top:0px;">Ever since Mastic Resin was added back in v1.3 - Sugarcoated, there has always been the issue of the liquid interactions being a bit overpowered. I've been wanting to address this for some time now, of which I have finally found the time to workshop some changes and additions that I believe would fit quite well as a replacement.</p>
+            <h4 class="segment-title" id="more-colour-variants"><span style="color:#965BD6;">Completing The Rainbow</span> | Colourful Additions</h4>
+            <p class="segment">Recently, I received a suggestion to add more colours for Mastic Resin. At first, I dismissed this suggestion and didn't believe that it was a good idea, as it would require a lot of backend work (such as removing a lot of the current items or adding a lot more items, creating inventory clutter alongside having unnecessary items).</p>
+            <p class="segment">However, when I finally decided to begin reworking Mastic Resin, I returned to the suggestion. With the ideas that I've come up with, I believe that this would work fantastic in the new atmosphere that I've been workshopping.</p>
+            <p class="segment">So, starting at an undesignated point in time, you can expect a full palette of Mastic Resin for your Minecraft worlds. A list of new colours can be found below.</p>
+            <ul class="segment">
+                <li>White</li>
+                <li>Brown</li>
+                <li>Black</li>
+                <li>Light Gray</li>
+                <li>Gray</li>
+                <li>Cyan</li>
+                <li>Light Blue</li>
+                <li>Magenta</li>
+                <li>Lime</li>
+                <li>Pink</li>
+            </ul>
+            <img src="/images/blog/mastic_stones.png" alt="Mastic Stones">
+            <p class="img-desc"><i>Initial Textures for Mastic Stones [Old & New Colouring]</i></p>
+            <p class="segment">Additionally, Mastic Resin will no longer generate any of the Create mod stones - Asurine, Crimsite, Ochrum, and Veridium. Instead, as you can somewhat see above, a new stone type of 16-coloured variants will be generated. The name of the stone type is still being decided, but some in-dev names are - Mastic Stone, Candied Stone, Zultanite, or Sugar Stone. Of course, feedback and suggestions on the name are appreciated.</p>
+            <p class="segment">These stones can be crushed to obtain certain materials - though, the rates of which are extremely rare for balancing purposes. While the exact materials gathered and rates are being decided, the current list is as follows:</p>
+            <ul class="segment">
+                <li>Iron Nuggets</li>
+                <ul>
+                    <li>2% chance for 1-3 nuggets</li>
+                    <li>Obtained from crushing (not milling) the Red, Cyan, Black, and Light Gray stone variants</li>
+                </ul>
+                <li>Gold Nuggets</li>
+                <ul>
+                    <li>2% chance for 1-3 nuggets</li>
+                    <li>Obtained from crushing (not milling) the Orange, Yellow, Purple, and Pink stone variants</li>
+                </ul>
+                <li>Copper Nuggets</li>
+                <ul>
+                    <li>4% chance for 1-3 nuggets</li>
+                    <li>Obtained from crushing (not milling) the Green, Lime, Magenta, and Brown stone variants</li>
+                </ul>
+                <li>Zinc Nuggets</li>
+                <ul>
+                    <li>2% chance for 1-2 nuggets</li>
+                    <li>Obtained from crushing (not milling) the Blue, Light Blue, Gray, and White stone variants</li>
+                </ul>
+            </ul>
+            <p style="text-align:left;font-size:16px;width:800px;font-size:20px;padding-bottom:0px;"><span style="color:#F42718;"><strong>Developer Comment</strong></span> | Made on May 7th, 2024</strong></p>
+            <p style="text-align:left;width:800px;font-size:16px;padding-top:0px" id="dev-comment">This below section has been added, as it was neglected upon the initial creation of this post. Apologies for the inconvenience!</p>
+            <hr>
+            <p class="segment">There's also the "uncoloured" (default) variants of Mastic Resin that needs addressing.</p>
+            <p class="segment">There will be stone block, similar to the other 16, to match this variant. The block generated will act similarly to Tuff, which it currently generates, just at a slightly decreased rate.</p>
+            <p class="segment">This rate will not be substantial enough to break any existing generators, so no worries there.</p>
+            <hr>
+            <h4 class="segment-title" id="more-recipe-types"><span style="color:#965BD6;">Rework, Redesign, Redye!</span> | Colourful Additions</h4>
+            <p class="segment">Alongside these new colour variants of Mastic Resin, also comes with 10 more ways of dyeing your items.</p>
+            <p class="segment">Did you mean to make Blue Candles, but perhaps you now want Black or Cyan Candles? Well, you will now be able to with this addition/adjustment.</p>
+            <h4 class="segment-title" id="reworked-mastic-foods"><span style="color:#965BD6;">Delightful Sweets</span> | Colourful Additions</h4>
+            <p class="segment">Now, of course, there's the issue of inventory clutter. This is one of the main reasons why I haven't already added the remaining colours.</p>
+            <p class="segment">Logically, since there are coloured variants of the Venerable Delicacies, Slime Drops, and other items - that would mean that 10 more items per set of items would be added. This would result in a lot more items and could also result in some people becoming overwhelmed. I'm not currently sure exactly how this problem could be resolved, seeing as there are not many other options aside from straight-up removing several items and potentially breaking pre-existing worlds.</p>
+            <p class="segment">Something that I could do to help justify this is to have benefits depending on the variant that is consumed.</p>
+            <p class="segment">For example, consuming a Light Blue Venerable Delicacy could result in the player gaining temporary Speed for a minute. Another example, consuming an Orange Slime Drop could result in the player gaining temporary Fire Resistance for 30 seconds.</p>
+            <p class="segment">This system does have some flaws and even some conflictions with other systems in the mod, such as the Melted Cinder Flour nuts with an Effect - which creates an entirely different issue of spamming "effect items" to the player. While that issue isn't as bad as inventory clutter, it is something that could confuse new players, no matter how simple it may seem.</p>
+            <h4 class="segment-title" id="apple-cider-adjustment"><span style="color:#965BD6;">Cider     Conundrum</span> | Related Changes</h4>
+            <p class="segment">While this post mainly talks about Mastic Resin and how lots of changes are going to occur to make sure that it's balanced - there's an elephant in the room, Apple Cider.</p>
+            <p class="segment">Apple Cider generates Ochrum, which has surprisingly never really been talked about. This will also be receiving a slight adjustment, no longer generating Ochrum and instead generating Carnotite.</p>
+            <h4 class="segment-title" id="old-mastic-stone-adjustments"><span style="color:#965BD6;">Old Stones,     New Groove</span> | Related Changes</h4>
+            <p class="segment">You may be wondering what'll happen to Abyssal Stone, Unstable Stone, and Ritualistic Stone. Since these stones can no longer be obtained by Mastic Resin, they either become non-renewable or are flat-out not obtainable anymore with the base rework.</p>
+            <p class="segment">Though, luckily, I've thought about this a little bit.</p>
+            <p class="segment">While Carnotite will be obtainable and renewable from Apple Cider, you will also be able to haunt the Yellow stone variant to obtain this stone type.</p>
+            <p class="segment">Abyssal Stone will also be obtainable from bulk haunting, just from utilizing the Purple and/or Magenta stone variants instead.</p>
+            <p class="segment">Ritualistic Stone, while still can be found naturally generating in desert biomes, will also be obtainable by haunting the Brown stone variant. Additionally, milling the Orange stone variant is an alternative method, but will only have a percent chance to provide Ritualistic Stone.</p>
+            <h4 class="segment-title" id="sweet-tea"><span style="color:#965BD5;">Spill The Tea</span> | Related Changes</h4>
+            <p class="segment">A feature that hasn't even been released fully yet - Sweet Tea.</p>
+            <p class="segment">Currently, this fluid is not planned to have any fluid interactions. This could change in the future, but is unlikely.</p>
+        </div>
+    </center>
+</div>
+</center>
+<hr style="clear:both;visibility:hidden;height:40px;">
+<p>
+<center>The Create: Garnished mod and Create: Garnished wiki have been developed and designed by DakotaPrideModding</center>
+</p>
+<p>
+<center><a href="https://github.com/DakotaPride/create-garnished" target="_blank">Create: Garnished Fabric Source Code</a></center>
+</p>
+<p>
+<center><a href="https://github.com/DakotaPride/create-garnished/issues" target="_blank">Create: Garnished Issues Page</a></center>
+</p>
+
+<script>
+            /* When the user clicks on the button,
             toggle between hiding and showing the dropdown content */
             function myFunction() {
                 document.getElementById("myDropdown").classList.toggle("show");
@@ -568,7 +508,9 @@
             }
 
             initComparisons();
-        </script>
-    </body>
+        
+
+</script>
+</body>
 
 </html>
