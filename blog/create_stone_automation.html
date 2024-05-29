@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Create: Garnished Wiki - Ore Stone Automation</title>
+        <link rel="icon" type="image/x-icon" href="/icon.ico">
+
+        <style>
+            :root {
+                color-scheme: dark;
+            }
+
+            body {
+                margin: 0px;
+                background-image: url('/images/background1.png');
+                font-family: "Cabin", sans-serif;
+                color: white;
+            }
+
+            p {
+                font-size: 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            h3 {
+                font-size: 28px;
+            }
+
+            h4 {
+                font-size: 24px;
+            }
+
+            h5 {
+                font-size: 20px;
+            }
+
+            h6 {
+                margin: 10px 10px;
+                font-size: 16px;
+            }
+
+            li {
+                font-size: 20px;
+            }
+
+            a:link {
+                color: white;
+                text-decoration: none;
+            }
+
+            a:visited {
+                color: white;
+                text-decoration: none;
+            }
+
+            a:hover {
+                color: white;
+                text-decoration: none;
+            }
+
+            .navbar {
+                overflow: hidden;
+                background-color: #02060C;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .navbar a {
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            .dropdown {
+                float: left;
+                overflow: hidden;
+            }
+
+            .dropdown .dropbtn {
+                cursor: pointer;
+                font-size: 16px;
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .navbar a:hover,
+            .dropdown:hover .dropbtn,
+            .dropbtn:focus {
+                background-color: black;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #161b22;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                float: none;
+                color: white;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #1D232B;
+            }
+
+            .show {
+                display: block;
+            }
+
+            .collapsible {
+                background: rgba(2, 6, 12, 0.3);
+                color: white;
+                cursor: pointer;
+                padding: 18px;
+                width: 400px;
+                border: none;
+                text-align: center;
+                outline: none;
+                font-size: 15px;
+            }
+
+            .active,
+            .collapsible:hover {
+                background: rgba(2, 6, 12, 0.5);
+            }
+
+            .content {
+                padding: 0 18px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+                background: rgba(29, 35, 43, 0.5);
+            }
+
+            div.gallery {
+                margin: 5px;
+                border: 1px solid #ccc;
+                float: left;
+                width: 180px;
+            }
+
+            div.gallery:hover {
+                border: 1px solid #777;
+            }
+
+            div.gallery img {
+                width: 100%;
+                height: auto;
+            }
+
+            div.desc {
+                padding: 15px;
+                text-align: center;
+            }
+
+            .img-comp-container {
+                position: relative;
+                height: 360px;
+                /*should be the same height as the images*/
+            }
+
+            .img-comp-img {
+                position: absolute;
+                width: auto;
+                height: auto;
+                overflow: hidden;
+            }
+
+            .img-comp-img img {
+                display: block;
+                vertical-align: middle;
+            }
+
+            .img-comp-slider {
+                position: absolute;
+                z-index: 9;
+                cursor: ew-resize;
+                /*set the appearance of the slider:*/
+                width: 40px;
+                height: 40px;
+                background-color: white;
+                opacity: 0.7;
+                border-radius: 50%;
+            }
+
+            .blog {
+                width: 800px;
+                padding-top: 0px;
+            }
+
+            .blog .segment-title {
+                text-align: left;
+            }
+
+            .blog .segment {
+                text-align: left;
+                font-size: 20px;
+            }
+
+            .blog .img-desc {
+                font-size: 16px;
+            }
+
+            .blog img {
+                border-radius: 5%;
+                width: 90%
+            }
+
+            #myBtn {
+                display: none;
+                position: fixed;
+                bottom: 20px;
+                right: 30px;
+                z-index: 99;
+                font-size: 18px;
+                border: none;
+                outline: none;
+                background-color: #02060C;
+                color: white;
+                cursor: pointer;
+                padding: 15px;
+                border-radius: 4px;
+            }
+
+            #myBtn:hover {
+                background-color: black;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button onclick="topFunction()" id="myBtn">Jump to Top of Page</button>
+
+        <script>
+            function initComparisons() {
+                var x, i;
+                /*find all elements with an "overlay" class:*/
+                x = document.getElementsByClassName("img-comp-overlay");
+                for (i = 0; i < x.length; i++) {
+                    /*once for each "overlay" element:
+                    pass the "overlay" element as a parameter when executing the compareImages function:*/
+                    compareImages(x[i]);
+                }
+                function compareImages(img) {
+                    var slider, img, clicked = 0, w, h;
+                    /*get the width and height of the img element*/
+                    w = img.offsetWidth;
+                    h = img.offsetHeight;
+                    /*set the width of the img element to 50%:*/
+                    img.style.width = (w / 2) + "px";
+                    /*create slider:*/
+                    slider = document.createElement("DIV");
+                    slider.setAttribute("class", "img-comp-slider");
+                    /*insert slider*/
+                    img.parentElement.insertBefore(slider, img);
+                    /*position the slider in the middle:*/
+                    slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+                    slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+                    /*execute a function when the mouse button is pressed:*/
+                    slider.addEventListener("mousedown", slideReady);
+                    /*and another function when the mouse button is released:*/
+                    window.addEventListener("mouseup", slideFinish);
+                    /*or touched (for touch screens:*/
+                    slider.addEventListener("touchstart", slideReady);
+                    /*and released (for touch screens:*/
+                    window.addEventListener("touchend", slideFinish);
+                    function slideReady(e) {
+                        /*prevent any other actions that may occur when moving over the image:*/
+                        e.preventDefault();
+                        /*the slider is now clicked and ready to move:*/
+                        clicked = 1;
+                        /*execute a function when the slider is moved:*/
+                        window.addEventListener("mousemove", slideMove);
+                        window.addEventListener("touchmove", slideMove);
+                    }
+                    function slideFinish() {
+                        /*the slider is no longer clicked:*/
+                        clicked = 0;
+                    }
+                    function slideMove(e) {
+                        var pos;
+                        /*if the slider is no longer clicked, exit this function:*/
+                        if (clicked == 0) return false;
+                        /*get the cursor's x position:*/
+                        pos = getCursorPos(e)
+                        /*prevent the slider from being positioned outside the image:*/
+                        if (pos < 0) pos = 0;
+                        if (pos > w) pos = w;
+                        /*execute a function that will resize the overlay image according to the cursor:*/
+                        slide(pos);
+                    }
+                    function getCursorPos(e) {
+                        var a, x = 0;
+                        e = (e.changedTouches) ? e.changedTouches[0] : e;
+                        /*get the x positions of the image:*/
+                        a = img.getBoundingClientRect();
+                        /*calculate the cursor's x coordinate, relative to the image:*/
+                        x = e.pageX - a.left;
+                        /*consider any page scrolling:*/
+                        x = x - window.pageXOffset;
+                        return x;
+                    }
+                    function slide(x) {
+                        /*resize the image:*/
+                        img.style.width = x + "px";
+                        /*position the slider:*/
+                        slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+                    }
+                }
+            }
+        </script>
+
+        <div
+            style="padding:20px;margin-top:0px;background-color:#02060C;overflow:hidden;background-image: url('/images/background.png');">
+            <center>
+                <img src="https://cdn.modrinth.com/data/6e2SlzR4/images/79c79f8ac4ed318d12d5e50c62534db7cdf03904.png"
+                    width=700px;>
+                <br>
+                <p style="font-size:16px;"><i>Create: Garnished adds many new foods and items, expanding on the Create
+                        mod!</i></p>
+            </center>
+        </div>
+        <div class="navbar">
+            <a href="/index.html" style="float:left;">Home</a>
+            <a href="/integrations.html" style="float:left;">Integrations</a>
+            <a href="/hatchets.html" style="float:left;">Hatchet Interactions</a>
+            <a href="/fluid_interactions.html" style="float:left;">Fluid Interactions</a>
+            <a href="/foods.html" style="float:left;">Cookbook</a>
+            <div class="dropdown" style="float:left;">
+                <button class="dropbtn" onclick="myFunction()">Recipe Types
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href="/recipe_types/bulk_dyeing.html">Bulk Dyeing</a>
+                    <a href="/recipe_types/bulk_freezing.html">Bulk Freezing</a>
+                </div>
+            </div>
+            <a href="/blog.html" style="float:left;">Blog Posts</a>
+            <a href="https://modrinth.com/mod/create-garnished" style="float:right;" target="_blank">Modrinth</a>
+            <a href="https://www.curseforge.com/minecraft/mc-mods/garnished" style="float:right;"
+                target="_blank">Curseforge</a>
+            <a href="https://www.ko-fi.com/dakotapride" style="float:right;" target="_blank">Ko-fi</a>
+        </div>
+        <div style="padding:20px;margin-top:30px;">
+            <center>
+                <img src="/images/blog/other_mods/garnished_stone_automation/garnished_stone_automation_blog.png" width="70%" style="border-radius:5%;">
+                <div class="blog">
+                    <h5 style="margin:0px;font-size:16px;"><span style="color:#00FFEE;">Update</span> | May 28th, 2024 | Released</h5><br>
+                    <p style="text-align:left;font-size:16px;width:800px;font-size:20px;padding-bottom:0px;"><span
+                            style="color:#F42718;"><strong>Developer Comment</span> | Made on April 29th, 2024</strong>
+                    </p>
+                    <p style="text-align:left;width:800px;font-size:16px;padding-top:0px" id="dev-comment">
+                        This page discusses content that is not a part of the base Create: Garnished mod - nothing in the Create: Garnished 
+                        mod is changing as a result of this mod.
+                    </p><br>
+                    <p style="text-align:left;width:800px;font-size:20px;padding-top:0px;">Garnished Stone Automation adds a new machine to allow you to 
+                        process certain Zultanite variants into the Create mod ore stones - Asurine, Crimsite, Ochrum, and Veridium!</p>
+                    <h4 class="segment-title" id="mechanical-extractor"><span style="color:#965BD6;">Processing</span>
+                        | Extracting Minerals</h4>
+                    <p class="segment">The Mechanical Extractor provides Vehement Clusters - the specific variant obtained from the machine is dependent on
+                        the item(s) provided to it - which can be used in a sequenced assembly to produce certain stones.
+                    </p>
+                    <p class="segment">For example, providing it with Blue Zultanite will provide you with varying amounts of Asurine Vehement Clusters, which
+                        can then be used to create Asurine.
+                    </p>
+                    <img src="/images/blog/other_mods/garnished_stone_automation/mechanical_extractor.png" alt="Mechanical Extractor">
+                    <p class="img-desc"><i>[WIP] Mechanical Extractor Setup</i></p>
+                    <img src="/images/blog/other_mods/garnished_stone_automation/asurine_processing.png" alt="Asurine Processing">
+                    <p class="/img-desc"><i>Asurine Assembly Line</i></p>
+                </div>
+        </div>
+        </center>
+        <hr style="clear:both;visibility:hidden;height:40px;">
+        <p>
+            <center>The Create: Garnished mod and Create: Garnished wiki have been developed and designed by
+                DakotaPrideModding</center>
+        </p>
+        <p>
+            <center><a href="https://github.com/DakotaPride/create-garnished" target="_blank">Create: Garnished Fabric
+                    Source Code</a></center>
+        </p>
+        <p>
+            <center><a href="https://github.com/DakotaPride/create-garnished/issues" target="_blank">Create: Garnished
+                    Issues Page</a></center>
+        </p>
+
+        <script>
+            /* When the user clicks on the button, 
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function (e) {
+                if (!e.target.matches('.dropbtn')) {
+                    var myDropdown = document.getElementById("myDropdown");
+                    if (myDropdown.classList.contains('show')) {
+                        myDropdown.classList.remove('show');
+                    }
+                }
+            }
+
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            }
+
+            // Get the button
+            let mybutton = document.getElementById("myBtn");
+
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function () { scrollFunction() };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+
+            initComparisons();
+        </script>
+    </body>
+
+</html>
