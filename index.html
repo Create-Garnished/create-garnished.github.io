@@ -300,6 +300,44 @@
                 <div class="content" style="text-align:left;">
                     <div style="width:80%;">
                         <br>
+                        <h4 id="1.8.5">v1.8.5</h4>
+                        <ul>
+                            <li>Add Sorrowful Lichen to creative mode tab</li>
+                            <li>Move several vegetation blocks to the Building Blocks tab</li>
+                            <li>Fix 'incomplete' items not having a durability/progress bar</li>
+                            <li>Fix Incomplete Weeping Tangle</li>
+                            <ul>
+                                <li>Lang was not present</li>
+                                <li>Was not utilized in the Weeping Tangle recipe</li>
+                                <li>Model was missing</li>
+                            </ul>
+                            <li>Adjust 'spreads'</li>
+                            <ul>
+                                <li>Add ISenileSpread interface</li>
+                                <ul>
+                                    <li>Inherits methods from extended class, ISpreadableBlock</li>
+                                </ul>
+                                <li>Add IDesolateSpread interface</li>
+                                <ul>
+                                    <li>Inherits methods from extended class, ISpreadableBlock</li>
+                                </ul>
+                                <li>Make behaviours non-dependant on Bone Meal's behaviour</li>
+                            </ul>
+                            <li>Make Sorrowful Lichen 'grown' (right-click) with Senile Spread instead of Bone Meal</li>
+                            <li>Fix Wooden Doors not being tagged properly</li>
+                            <li>Fix Wooden Trapdoors not being tagged properly</li>
+                            <li>Fix Wooden Buttons not being tagged properly</li>
+                            <li>Fix Wooden Slabs not being tagged properly</li>
+                            <li>Fix Wooden Stairs not being tagged properly</li>
+                            <li>Fix Nuts not being tagged properly</li>
+                            <ul>
+                                <li>forge:crops/'nut' | c:crops/'nut'</li>
+                                <li>forge:nuts | c:nuts</li>
+                                <li>forge:nuts/'nut' | c:nuts'nut'</li>
+                                <li>forge:vegetables | c:vegetables</li>
+                                <li>forge:vegetables/'nut' | c:vegetables/'nut'</li>
+                            </ul>
+                        </ul>
                         <h4 id="1.8.4">v1.8.4</h4>
                         <ul>
                             <li>Fix missing Sorrowful Lichen loot table</li>
