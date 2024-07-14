@@ -1,540 +1,542 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Create: Garnished Wiki - Integrations</title>
-        <link rel="icon" type="image/x-icon" href="/icon.ico">
+<head>
+    <title>Create: Garnished Wiki - Integrations</title>
+    <link rel="icon" type="image/x-icon" href="/icon.ico">
 
-        <style>
-            :root {
-                color-scheme: dark;
-            }
+    <style>
+        :root {
+            color-scheme: dark;
+        }
 
-            body {
-                margin: 0px;
-                background-image: url('images/background1.png');
-                font-family: "Cabin", sans-serif;
-                color: white;
-            }
+        body {
+            margin: 0px;
+            background-image: url('images/background1.png');
+            font-family: "Cabin", sans-serif;
+            color: white;
+        }
 
-            p {
-                font-size: 20px;
-            }
+        p {
+            font-size: 20px;
+        }
 
-            h1 {
-                font-size: 36px;
-            }
+        h1 {
+            font-size: 36px;
+        }
 
-            h2 {
-                font-size: 32px;
-            }
+        h2 {
+            font-size: 32px;
+        }
 
-            h3 {
-                font-size: 28px;
-            }
+        h3 {
+            font-size: 28px;
+        }
 
-            h4 {
-                font-size: 24px;
-            }
+        h4 {
+            font-size: 24px;
+        }
 
-            h5 {
-                font-size: 20px;
-            }
+        h5 {
+            font-size: 20px;
+        }
 
-            h6 {
-                font-size: 16px;
-            }
+        h6 {
+            font-size: 16px;
+        }
 
-            li {
-                font-size: 20px;
-            }
+        li {
+            font-size: 20px;
+        }
 
-            a:link {
-                color: white;
-                text-decoration: none;
-            }
+        a:link {
+            color: white;
+            text-decoration: none;
+        }
 
-            a:visited {
-                color: white;
-                text-decoration: none;
-            }
+        a:visited {
+            color: white;
+            text-decoration: none;
+        }
 
-            a:hover {
-                color: white;
-                text-decoration: none;
-            }
+        a:hover {
+            color: white;
+            text-decoration: none;
+        }
 
-            .navbar {
-                overflow: hidden;
-                background-color: #02060C;
-                font-family: Arial, Helvetica, sans-serif;
-            }
+        .navbar {
+            overflow: hidden;
+            background-color: #02060C;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-            .navbar a {
-                font-size: 16px;
-                color: white;
-                text-align: center;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
+        .navbar a {
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
 
-            .dropdown {
-                float: left;
-                overflow: hidden;
-            }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
 
-            .dropdown .dropbtn {
-                cursor: pointer;
-                font-size: 16px;
-                border: none;
-                outline: none;
-                color: white;
-                padding: 14px 16px;
-                background-color: inherit;
-                font-family: inherit;
-                margin: 0;
-            }
+        .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
 
-            .navbar a:hover,
-            .dropdown:hover .dropbtn,
-            .dropbtn:focus {
-                background-color: black;
-            }
+        .navbar a:hover,
+        .dropdown:hover .dropbtn,
+        .dropbtn:focus {
+            background-color: black;
+        }
 
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #161b22;
-                min-width: 160px;
-                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-                z-index: 1;
-            }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #161b22;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
 
-            .dropdown-content a {
-                float: none;
-                color: white;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-                text-align: left;
-            }
+        .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
 
-            .dropdown-content a:hover {
-                background-color: #1D232B;
-            }
+        .dropdown-content a:hover {
+            background-color: #1D232B;
+        }
 
-            .show {
-                display: block;
-            }
+        .show {
+            display: block;
+        }
 
-            .collapsible {
-                background: rgba(2, 6, 12, 0.3);
-                color: white;
-                cursor: pointer;
-                padding: 18px;
-                width: 400px;
-                border: none;
-                text-align: center;
-                outline: none;
-                font-size: 15px;
-            }
+        .collapsible {
+            background: rgba(2, 6, 12, 0.3);
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 400px;
+            border: none;
+            text-align: center;
+            outline: none;
+            font-size: 15px;
+        }
 
-            .active,
-            .collapsible:hover {
-                background: rgba(2, 6, 12, 0.5);
-            }
+        .active,
+        .collapsible:hover {
+            background: rgba(2, 6, 12, 0.5);
+        }
 
-            .content {
-                padding: 0 64px;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.2s ease-out;
-                width: 800px;
-            }
+        .content {
+            padding: 0 64px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            width: 800px;
+        }
 
-            #myBtn {
-                display: none;
-                position: fixed;
-                bottom: 20px;
-                right: 30px;
-                z-index: 99;
-                font-size: 18px;
-                border: none;
-                outline: none;
-                background-color: #02060C;
-                color: white;
-                cursor: pointer;
-                padding: 15px;
-                border-radius: 4px;
-            }
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #02060C;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
 
-            #myBtn:hover {
-                background-color: black;
-            }
+        #myBtn:hover {
+            background-color: black;
+        }
 
-            .rounded-image-25 {
-                border-radius: 25px;
-            }
-        </style>
-    </head>
-    </head>
+        .rounded-image-25 {
+            border-radius: 25px;
+        }
+    </style>
+</head>
+</head>
 
-    <body>
-        <button onclick="topFunction()" id="myBtn">Jump to Top of Page</button>
+<body>
+    <button onclick="topFunction()" id="myBtn">Jump to Top of Page</button>
 
-        <div
-            style="padding:20px;margin-top:0px;background-color:#02060C;overflow:hidden;background-image: url('/images/background.png');">
-            <center>
-                <img src="https://cdn.modrinth.com/data/6e2SlzR4/images/79c79f8ac4ed318d12d5e50c62534db7cdf03904.png"
-                    width=700px;>
-                <br>
-                <p style="font-size:16px;"><i>Create: Garnished adds many new foods and items, expanding on the Create
-                        mod!</i></p>
-            </center>
+    <div
+        style="padding:20px;margin-top:0px;background-color:#02060C;overflow:hidden;background-image: url('/images/background.png');">
+        <center>
+            <img src="https://cdn.modrinth.com/data/6e2SlzR4/images/79c79f8ac4ed318d12d5e50c62534db7cdf03904.png"
+                width=700px;>
+            <br>
+            <p style="font-size:16px;"><i>Create: Garnished adds many new foods and items, expanding on the Create
+                    mod!</i></p>
+        </center>
+    </div>
+    <div class="navbar">
+        <a href="/index.html" style="float:left;">Home</a>
+        <a href="/integrations.html" style="float:left;">Integrations</a>
+        <a href="/hatchets.html" style="float:left;">Hatchet Interactions</a>
+        <a href="/fluid_interactions.html" style="float:left;">Fluid Interactions</a>
+        <a href="/foods.html" style="float:left;">Cookbook</a>
+        <div class="dropdown" style="float:left;">
+            <button class="dropbtn" onclick="myFunction()">Recipe Types
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="/recipe_types/bulk_dyeing.html">Bulk Dyeing</a>
+                <a href="/recipe_types/bulk_freezing.html">Bulk Freezing</a>
+            </div>
         </div>
-        <div class="navbar">
-            <a href="/index.html" style="float:left;">Home</a>
-            <a href="/integrations.html" style="float:left;">Integrations</a>
-            <a href="/hatchets.html" style="float:left;">Hatchet Interactions</a>
-            <a href="/fluid_interactions.html" style="float:left;">Fluid Interactions</a>
-            <a href="/foods.html" style="float:left;">Cookbook</a>
-            <div class="dropdown" style="float:left;">
-                <button class="dropbtn" onclick="myFunction()">Recipe Types
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content" id="myDropdown">
-                    <a href="/recipe_types/bulk_dyeing.html">Bulk Dyeing</a>
-                    <a href="/recipe_types/bulk_freezing.html">Bulk Freezing</a>
+        <a href="/blog.html" style="float:left;">Blog Posts</a>
+        <a href="https://mmcreviews.com/all/mods/create-garnished/" style="float:right;" target="_blank"
+            title="MMC Reviews">Leave a Review!</a>
+        <a href="https://modrinth.com/mod/create-garnished" style="float:right;" target="_blank"
+            title="Modrinth">Modrinth</a>
+        <a href="https://www.curseforge.com/minecraft/mc-mods/garnished" style="float:right;" target="_blank"
+            title="Curseforge">Curseforge</a>
+        <a href="https://www.ko-fi.com/dakotapride" style="float:right;" target="_blank" title="Ko-fi">Ko-fi</a>
+    </div>
+
+    <div style="padding:20px;margin-top:30px;height:1500px;">
+        <center>
+            <div style="float:left;width:1100px;">
+                <img class="rounded-image-25" src="/images/farmers_delight_integration.png" style="width:80%;">
+                <div style="width:800px;">
+                    <p style="text-align:left;">Even though Create: Garnished is a food mod itself, there has been
+                        an
+                        effort
+                        in adding integration and compatibility between it and <a
+                            href="https://www.curseforge.com/minecraft/mc-mods/farmers-delight">Farmer's
+                            Delight</a>.
+                    </p>
+                    <p style="text-align:left;">These integrational items range from expanded meats to slices of
+                        your
+                        favourite desserts.</p>
+                    <ul style="text-align:left;">
+                        <li>Phantom Patty</li>
+                        <li>Phantom Burger</li>
+                        <li>Glow Ink Roll</li>
+                        <li>Glow Ink Roll Slice</li>
+                        <li>Slice of Pecan Pie</li>
+                    </ul>
+                </div>
+                <br>
+                <img class="rounded-image-25" src="/images/integrated_hatchets.png" style="width:80%;">
+                <div style="width:800px;">
+                    <p style="text-align:left;">Farmer's Delight isn't the only mod that has some integration and
+                        compatibility - as certain materials from other mods have also recieved a unique hatchet
+                        that
+                        you
+                        can utilize in your world.</p>
+                    <h4 style="text-align:left;">Deeper & Darker | Fabric/Forge | 1.20.1+</h4>
+                    <ul style="text-align:left;">
+                        <li>Warden Hatchet</li>
+                    </ul>
+                    <h4 style="text-align:left;">Create: Stuff & Additions | Forge | 1.20.1+</h4>
+                    <ul style="text-align:left;">
+                        <li>Zinc Hatchet</li>
+                        <li>Gilded Quartz Hatchet</li>
+                        <li>Experience Hatchet</li>
+                        <li>Copper Hatchet</li>
+                        <li>Brass Hatchet</li>
+                        <li>Blazing Hatchet</li>
+                    </ul>
+                    <h4 style="text-align:left;">Additional Additions | Fabric/Forge | 1.20.1+</h4>
+                    <ul style="text-align:left;">
+                        <li>Rose Gold Hatchet</li>
+                        <li>Gilded Netherite Hatchet</li>
+                    </ul>
+                    <h4 style="text-align:left;">Mythic Upgrades | Fabric | 1.20.1+</h4>
+                    <ul style="text-align:left;">
+                        <li>Topaz Hatchet</li>
+                        <li>Sapphire Hatchet</li>
+                        <li>Jade Hatchet</li>
+                        <li>Ruby Hatchet</li>
+                        <li>Ametrime Hatchet</li>
+                        <li>Aquamarine Hatchet</li>
+                    </ul>
                 </div>
             </div>
-            <a href="/blog.html" style="float:left;">Blog Posts</a>
-            <a href="https://mmcreviews.com/all/mods/create-garnished/" style="float:right;" target="_blank" title="MMC Reviews">Leave a Review!</a>
-            <a href="https://modrinth.com/mod/create-garnished" style="float:right;" target="_blank" title="Modrinth">Modrinth</a>
-            <a href="https://www.curseforge.com/minecraft/mc-mods/garnished" style="float:right;"
-                target="_blank" title="Curseforge">Curseforge</a>
-            <a href="https://www.ko-fi.com/dakotapride" style="float:right;" target="_blank" title="Ko-fi">Ko-fi</a>
-        </div>
-
-        <div style="padding:20px;margin-top:30px;height:1500px;">
-            <center>
-                <div style="float:left;width:1100px;">
-                    <img class="rounded-image-25" src="/images/farmers_delight_integration.png" style="width:80%;">
-                    <div style="width:800px;">
-                        <p style="text-align:left;">Even though Create: Garnished is a food mod itself, there has been
-                            an
-                            effort
-                            in adding integration and compatibility between it and <a
-                                href="https://www.curseforge.com/minecraft/mc-mods/farmers-delight">Farmer's
-                                Delight</a>.
-                        </p>
-                        <p style="text-align:left;">These integrational items range from expanded meats to slices of
-                            your
-                            favourite desserts.</p>
-                        <ul style="text-align:left;">
-                            <li>Phantom Patty</li>
-                            <li>Phantom Burger</li>
-                            <li>Glow Ink Roll</li>
-                            <li>Glow Ink Roll Slice</li>
-                            <li>Slice of Pecan Pie</li>
-                        </ul>
-                    </div>
-                    <br>
-                    <img class="rounded-image-25" src="/images/integrated_hatchets.png" style="width:80%;">
-                    <div style="width:800px;">
-                        <p style="text-align:left;">Farmer's Delight isn't the only mod that has some integration and
-                            compatibility - as certain materials from other mods have also recieved a unique hatchet
-                            that
-                            you
-                            can utilize in your world.</p>
-                        <h4 style="text-align:left;">Deeper & Darker | Fabric/Forge | 1.20.1+</h4>
-                        <ul style="text-align:left;">
-                            <li>Warden Hatchet</li>
-                        </ul>
-                        <h4 style="text-align:left;">Create: Stuff & Additions | Forge | 1.20.1+</h4>
-                        <ul style="text-align:left;">
-                            <li>Zinc Hatchet</li>
-                            <li>Gilded Quartz Hatchet</li>
-                            <li>Experience Hatchet</li>
-                            <li>Copper Hatchet</li>
-                            <li>Brass Hatchet</li>
-                            <li>Blazing Hatchet</li>
-                        </ul>
-                        <h4 style="text-align:left;">Additional Additions | Fabric/Forge | 1.20.1+</h4>
-                        <ul style="text-align:left;">
-                            <li>Rose Gold Hatchet</li>
-                            <li>Gilded Netherite Hatchet</li>
-                        </ul>
-                        <h4 style="text-align:left;">Mythic Upgrades | Fabric | 1.20.1+</h4>
-                        <ul style="text-align:left;">
-                            <li>Topaz Hatchet</li>
-                            <li>Sapphire Hatchet</li>
-                            <li>Jade Hatchet</li>
-                            <li>Ruby Hatchet</li>
-                            <li>Ametrime Hatchet</li>
-                            <li>Aquamarine Hatchet</li>
-                        </ul>
-                    </div>
-                </div>
-            </center>
-        </div>
-        <hr style="clear:both;visibility:hidden;height:40px;">
-        <div>
-            <center>
-                <button class="collapsible">History of Changes & Additions - Changelog</button>
-                <div class="content" style="text-align:left;">
-                    <div style="width:80%;">
-                        <h4>v1.8.4</h4>
+        </center>
+    </div>
+    <hr style="clear:both;visibility:hidden;height:40px;">
+    <div>
+        <center>
+            <button class="collapsible">History of Changes & Additions - Changelog</button>
+            <div class="content" style="text-align:left;">
+                <div style="width:80%;">
+                    <h4>v1.8.4</h4>
+                    <ul>
+                        <li>Fix Mechanical Extruding Recipe</li>
                         <ul>
-                            <li>Fix Mechanical Extruding Recipe</li>
+                            <li>Peanut Oil + Lava -> Dripstone <strong>Block</strong>, "minecraft:dripstone_block"</li>
+                        </ul>
+                    </ul>
+                    <h4>v1.8.1</h4>
+                    <ul>
+                        <li>Add more Extruding recipes for integration with "Create Mechanical Extruder"</li>
+                        <li>Fix certain Extruding recipes not being accessible</li>
+                        <li>Fix integrated hatchet attack, speed, and mining tier values</li>
+                        <li>Change "Striking 1" to "Ravaging" for the Fluix Hatchet</li>
+                    </ul>
+                    <h4>v1.8</h4>
+                    <ul>
+                        <li>Slice of Anniversary Cake</li>
+                        <li>Add cutting recipes</li>
+                        <ul>
+                            <li>Senile Bones from Tusks</li>
+                            <li>Senile Bones from Irate Tusks</li>
+                            <li>Slices of Anniversary Cake from Anniversary Cake</li>
+                        </ul>
+                        <li>Add Dye Blowing recipes for certain mods</li>
+                        <ul>
+                            <li>Create</li>
                             <ul>
-                                <li>Peanut Oil + Lava -> Dripstone <strong>Block</strong>, "minecraft:dripstone_block"</li>
+                                <li>Seats</li>
+                            </ul>
+                            <li>Applied Energistics 2</li>
+                            <ul>
+                                <li>Paint Balls</li>
+                            </ul>
+                            <li>Farmer's Delight</li>
+                            <ul>
+                                <li>Canvas Signs</li>
+                            </ul>
+                            <li>Quark</li>
+                            <ul>
+                                <li>Shingles</li>
+                                <li>Corundum Clusters</li>
+                                <li>Corundum</li>
+                                <li>Corundum Panes</li>
+                                <li>Corundum Lamps</li>
+                                <li>Glass Shards</li>
+                                <li>Stools</li>
+                                <li>Waxed Corundum</li>
+                                <li>Framed Glass</li>
+                            </ul>
+                            <li>Create: Framed</li>
+                            <ul>
+                                <li>Stained Framed Glass Doors</li>
+                                <li>Stained Framed Glass Trapdoors</li>
+                                <li>Stained Framed Glass</li>
+                                <li>Stained Framed Glass Panes</li>
+                                <li>Stained Horizontal Framed Glass</li>
+                                <li>Stained Vertical Framed Glass</li>
+                                <li>Stained Horizontal Framed Glass Panes</li>
+                                <li>Stained Vertical Framed Glass Panes</li>
+                                <li>Stained Tiled Glass</li>
+                                <li>Stained Tiled Glass Panes</li>
                             </ul>
                         </ul>
-                        <h4>v1.8.1</h4>
+                        <li>Add Hatchet Integration for certain mods</li>
                         <ul>
-                            <li>Add more Extruding recipes for integration with "Create Mechanical Extruder"</li>
-                            <li>Fix certain Extruding recipes not being accessible</li>
-                            <li>Fix integrated hatchet attack, speed, and mining tier values</li>
-                            <li>Change "Striking 1" to "Ravaging" for the Fluix Hatchet</li>
-                        </ul>
-                        <h4>v1.8</h4>
-                        <ul>
-                            <li>Slice of Anniversary Cake</li>
-                            <li>Add cutting recipes</li>
+                            <li>AE2 (Applied Energistics 2)</li>
                             <ul>
-                                <li>Senile Bones from Tusks</li>
-                                <li>Senile Bones from Irate Tusks</li>
-                                <li>Slices of Anniversary Cake from Anniversary Cake</li>
+                                <li>Nether Quartz</li>
+                                <li>Certus Quartz</li>
+                                <li>Fluix</li>
                             </ul>
-                            <li>Add Dye Blowing recipes for certain mods</li>
+                            <li>Better End</li>
                             <ul>
-                                <li>Create</li>
-                                <ul>
-                                    <li>Seats</li>
-                                </ul>
-                                <li>Applied Energistics 2</li>
-                                <ul>
-                                    <li>Paint Balls</li>
-                                </ul>
-                                <li>Farmer's Delight</li>
-                                <ul>
-                                    <li>Canvas Signs</li>
-                                </ul>
-                                <li>Quark</li>
-                                <ul>
-                                    <li>Shingles</li>
-                                    <li>Corundum Clusters</li>
-                                    <li>Corundum</li>
-                                    <li>Corundum Panes</li>
-                                    <li>Corundum Lamps</li>
-                                    <li>Glass Shards</li>
-                                    <li>Stools</li>
-                                    <li>Waxed Corundum</li>
-                                    <li>Framed Glass</li>
-                                </ul>
-                                <li>Create: Framed</li>
-                                <ul>
-                                    <li>Stained Framed Glass Doors</li>
-                                    <li>Stained Framed Glass Trapdoors</li>
-                                    <li>Stained Framed Glass</li>
-                                    <li>Stained Framed Glass Panes</li>
-                                    <li>Stained Horizontal Framed Glass</li>
-                                    <li>Stained Vertical Framed Glass</li>
-                                    <li>Stained Horizontal Framed Glass Panes</li>
-                                    <li>Stained Vertical Framed Glass Panes</li>
-                                    <li>Stained Tiled Glass</li>
-                                    <li>Stained Tiled Glass Panes</li>
-                                </ul>
+                                <li>Thallasium</li>
+                                <li>Terminite</li>
+                                <li>Aeternium</li>
                             </ul>
-                            <li>Add Hatchet Integration for certain mods</li>
+                            <li>Better Nether</li>
                             <ul>
-                                <li>AE2 (Applied Energistics 2)</li>
-                                <ul>
-                                    <li>Nether Quartz</li>
-                                    <li>Certus Quartz</li>
-                                    <li>Fluix</li>
-                                </ul>
-                                <li>Better End</li>
-                                <ul>
-                                    <li>Thallasium</li>
-                                    <li>Terminite</li>
-                                    <li>Aeternium</li>
-                                </ul>
-                                <li>Better Nether</li>
-                                <ul>
-                                    <li>Nether Ruby</li>
-                                    <li>Fireruby</li>
-                                    <li>Cincinnasite</li>
-                                    <li>Cincinnasite-Diamond</li>
-                                </ul>
+                                <li>Nether Ruby</li>
+                                <li>Fireruby</li>
+                                <li>Cincinnasite</li>
+                                <li>Cincinnasite-Diamond</li>
                             </ul>
                         </ul>
-                        <h4>v1.6</h4>
+                    </ul>
+                    <h4>v1.6</h4>
+                    <ul>
+                        <li>Add integration for Create: Crafts & Additions</li>
                         <ul>
-                            <li>Add integration for Create: Crafts & Additions</li>
-                            <ul>
-                                <li>Allow for Peanut Oil to be inserted into Blaze Burners with certain attributes</li>
-                            </ul>
+                            <li>Allow for Peanut Oil to be inserted into Blaze Burners with certain attributes</li>
                         </ul>
-                        <h4>v1.5.1-hotfix-1</h4>
+                    </ul>
+                    <h4>v1.5.1-hotfix-1</h4>
+                    <ul>
+                        <li>Add cutting recipes</li>
                         <ul>
-                            <li>Add cutting recipes</li>
-                            <ul>
-                                <li>Crushed Crimson Fungus</li>
-                                <li>Crushed Warped Fungus</li>
-                            </ul>
-                            <li>Fix certain cutting recipes</li>
-                            <ul>
-                                <li>Phantom Patty recipe would yield Minced Meat instead of Phantom Patties</li>
-                                <li>Crushed Sepia Fungus recipe had wrong id</li>
-                            </ul>
-                            <li>Fix certain cooking recipes</li>
-                            <ul>
-                                <li>Nut Nacho Bowl recipe had wrong id</li>
-                            </ul>
+                            <li>Crushed Crimson Fungus</li>
+                            <li>Crushed Warped Fungus</li>
                         </ul>
-                        <h4>v1.3</h4>
+                        <li>Fix certain cutting recipes</li>
                         <ul>
-                            <li>Add replacement textures for Every Compat (Wood Good) items/blocks</li>
-                            <ul>
-                                <li>Nut Chest + Trapped variant</li>
-                                <li>Sepia Chest + Trapped variant</li>
-                            </ul>
-                            <li>Add integrated hatchets</li>
-                            <ul>
-                                <li>Only for 1.20.x versions</li>
-                                <br>
-                                <li>Deeper & Darker</li>
-                                <li>Additional Additions</li>
-                                <li>Create: Stuff and Additions</li>
-                                <li>Mythic Upgrades</li>
-                            </ul>
+                            <li>Phantom Patty recipe would yield Minced Meat instead of Phantom Patties</li>
+                            <li>Crushed Sepia Fungus recipe had wrong id</li>
                         </ul>
-                        <h4>v1.0</h4>
+                        <li>Fix certain cooking recipes</li>
                         <ul>
-                            <li>Add Glow Ink Roll</li>
-                            <li>Add Glow Ink Roll Slice</li>
-                            <li>Remove certain Farmer's Delight recipes</li>
-                            <ul>
-                                <li>Cooking</li>
-                                <ul>
-                                    <li>Bottled Bitter Apple Cider</li>
-                                    <li>Bottled Cryptic Apple Cider</li>
-                                    <li>Bottled Apple Cider</li>
-                                    <li>Bottled Peanut Oil</li>
-                                    <li>Bottled Fermented Cashew Mixture</li>
-                                    <li>Blazing Delight</li>
-                                    <li>Pecan Pie</li>
-                                    <li>Phantom Steak</li>
-                                </ul>
-                            </ul>
+                            <li>Nut Nacho Bowl recipe had wrong id</li>
                         </ul>
-                        <h4>v0.9</h4>
+                    </ul>
+                    <h4>v1.3</h4>
+                    <ul>
+                        <li>Add replacement textures for Every Compat (Wood Good) items/blocks</li>
                         <ul>
-                            <li>Add Phantom Patty</li>
-                            <li>Add Phantom Burger</li>
-                            <li>Add Slice of Pecan Pie</li>
-                            <li>Cooking Recipes</li>
+                            <li>Nut Chest + Trapped variant</li>
+                            <li>Sepia Chest + Trapped variant</li>
+                        </ul>
+                        <li>Add integrated hatchets</li>
+                        <ul>
+                            <li>Only for 1.20.x versions</li>
+                            <br>
+                            <li>Deeper & Darker</li>
+                            <li>Additional Additions</li>
+                            <li>Create: Stuff and Additions</li>
+                            <li>Mythic Upgrades</li>
+                        </ul>
+                    </ul>
+                    <h4>v1.0</h4>
+                    <ul>
+                        <li>Add Glow Ink Roll</li>
+                        <li>Add Glow Ink Roll Slice</li>
+                        <li>Remove certain Farmer's Delight recipes</li>
+                        <ul>
+                            <li>Cooking</li>
                             <ul>
+                                <li>Bottled Bitter Apple Cider</li>
+                                <li>Bottled Cryptic Apple Cider</li>
                                 <li>Bottled Apple Cider</li>
-                                <li>Bitter Bottled Apple Cider</li>
-                                <li>Cryptic Bottled Apple Cider</li>
-                                <li>Blazing Delight</li>
+                                <li>Bottled Peanut Oil</li>
                                 <li>Bottled Fermented Cashew Mixture</li>
-                                <li>Garnished Meal</li>
-                                <li>Grim Stew</li>
-                                <li>Nut Nacho Bowl</li>
+                                <li>Blazing Delight</li>
                                 <li>Pecan Pie</li>
                                 <li>Phantom Steak</li>
-                                <li>Putrid Stew</li>
-                                <li>Salad</li>
-                                <li>Senile Sweet</li>
-                                <ul>
-                                    <li>Basalt</li>
-                                    <li>Blackstone</li>
-                                    <li>Scoria</li>
-                                    <li>Scorchia</li>
-                                </ul>
-                                <li>Soul Khana</li>
-                                <li>Spirited Concoction</li>
-                            </ul>
-                            <li>Cutting Recipes</li>
-                            <ul>
-                                <li>Slice of Pecan Pie</li>
-                                <li>Phantom Patty</li>
                             </ul>
                         </ul>
-                    </div>
+                    </ul>
+                    <h4>v0.9</h4>
+                    <ul>
+                        <li>Add Phantom Patty</li>
+                        <li>Add Phantom Burger</li>
+                        <li>Add Slice of Pecan Pie</li>
+                        <li>Cooking Recipes</li>
+                        <ul>
+                            <li>Bottled Apple Cider</li>
+                            <li>Bitter Bottled Apple Cider</li>
+                            <li>Cryptic Bottled Apple Cider</li>
+                            <li>Blazing Delight</li>
+                            <li>Bottled Fermented Cashew Mixture</li>
+                            <li>Garnished Meal</li>
+                            <li>Grim Stew</li>
+                            <li>Nut Nacho Bowl</li>
+                            <li>Pecan Pie</li>
+                            <li>Phantom Steak</li>
+                            <li>Putrid Stew</li>
+                            <li>Salad</li>
+                            <li>Senile Sweet</li>
+                            <ul>
+                                <li>Basalt</li>
+                                <li>Blackstone</li>
+                                <li>Scoria</li>
+                                <li>Scorchia</li>
+                            </ul>
+                            <li>Soul Khana</li>
+                            <li>Spirited Concoction</li>
+                        </ul>
+                        <li>Cutting Recipes</li>
+                        <ul>
+                            <li>Slice of Pecan Pie</li>
+                            <li>Phantom Patty</li>
+                        </ul>
+                    </ul>
                 </div>
-            </center>
-        </div>
-        <hr style="clear:both;visibility:hidden;height:40px;">
-        <p>
-            <center>The Create: Garnished mod and Create: Garnished wiki have been developed and designed by
-                DakotaPrideModding</center>
-        </p>
-        <p>
-            <center><a href="https://github.com/DakotaPride/create-garnished" target="_blank">Create: Garnished Fabric
-                    Source Code</a></center>
-        </p>
-        <p>
-            <center><a href="https://github.com/DakotaPride/create-garnished/issues" target="_blank">Create: Garnished
-                    Issues Page</a></center>
-        </p>
+            </div>
+        </center>
+    </div>
+    <hr style="clear:both;visibility:hidden;height:40px;">
+    <p>
+        <center>The Create: Garnished mod and Create: Garnished wiki have been developed and designed by
+            DakotaPrideModding</center>
+    </p>
+    <p>
+        <center><a href="https://github.com/DakotaPride/create-garnished" target="_blank">Create: Garnished Fabric
+                Source Code</a></center>
+    </p>
+    <p>
+        <center><a href="https://github.com/DakotaPride/create-garnished/issues" target="_blank">Create: Garnished
+                Issues Page</a></center>
+    </p>
 
-        <script>
-            /* When the user clicks on the button, 
-            toggle between hiding and showing the dropdown content */
-            function myFunction() {
-                document.getElementById("myDropdown").classList.toggle("show");
-            }
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
 
-            // Close the dropdown if the user clicks outside of it
-            window.onclick = function (e) {
-                if (!e.target.matches('.dropbtn')) {
-                    var myDropdown = document.getElementById("myDropdown");
-                    if (myDropdown.classList.contains('show')) {
-                        myDropdown.classList.remove('show');
-                    }
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("myDropdown");
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
                 }
             }
+        }
 
-            var coll = document.getElementsByClassName("collapsible");
-            var i;
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
 
-            for (i = 0; i < coll.length; i++) {
-                coll[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
-                    var content = this.nextElementSibling;
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + "px";
-                    }
-                });
-            }
-
-            // Get the button
-            let mybutton = document.getElementById("myBtn");
-
-            // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function () { scrollFunction() };
-
-            function scrollFunction() {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    mybutton.style.display = "block";
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
                 } else {
-                    mybutton.style.display = "none";
+                    content.style.maxHeight = content.scrollHeight + "px";
                 }
-            }
+            });
+        }
 
-            // When the user clicks on the button, scroll to the top of the document
-            function topFunction() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
             }
-        </script>
-    </body>
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
 
 </html>

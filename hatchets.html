@@ -1,571 +1,573 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Create: Garnished Wiki - Hatchet Interactions</title>
-        <link rel="icon" type="image/x-icon" href="/icon.ico">
+<head>
+    <title>Create: Garnished Wiki - Hatchet Interactions</title>
+    <link rel="icon" type="image/x-icon" href="/icon.ico">
 
-        <style>
-            :root {
-                color-scheme: dark;
-            }
+    <style>
+        :root {
+            color-scheme: dark;
+        }
 
-            body {
-                margin: 0px;
-                background-image: url('images/background1.png');
-                font-family: "Cabin", sans-serif;
-                color: white;
-            }
+        body {
+            margin: 0px;
+            background-image: url('images/background1.png');
+            font-family: "Cabin", sans-serif;
+            color: white;
+        }
 
-            p {
-                font-size: 20px;
-            }
+        p {
+            font-size: 20px;
+        }
 
-            h1 {
-                font-size: 36px;
-            }
+        h1 {
+            font-size: 36px;
+        }
 
-            h2 {
-                font-size: 32px;
-            }
+        h2 {
+            font-size: 32px;
+        }
 
-            h3 {
-                font-size: 28px;
-            }
+        h3 {
+            font-size: 28px;
+        }
 
-            h4 {
-                font-size: 24px;
-            }
+        h4 {
+            font-size: 24px;
+        }
 
-            h5 {
-                font-size: 20px;
-            }
+        h5 {
+            font-size: 20px;
+        }
 
-            h6 {
-                font-size: 16px;
-            }
+        h6 {
+            font-size: 16px;
+        }
 
-            li {
-                font-size: 20px;
-            }
+        li {
+            font-size: 20px;
+        }
 
-            a:link {
-                color: white;
-                text-decoration: none;
-            }
+        a:link {
+            color: white;
+            text-decoration: none;
+        }
 
-            a:visited {
-                color: white;
-                text-decoration: none;
-            }
+        a:visited {
+            color: white;
+            text-decoration: none;
+        }
 
-            a:hover {
-                color: white;
-                text-decoration: none;
-            }
+        a:hover {
+            color: white;
+            text-decoration: none;
+        }
 
-            .navbar {
-                overflow: hidden;
-                background-color: #02060C;
-                font-family: Arial, Helvetica, sans-serif;
-            }
+        .navbar {
+            overflow: hidden;
+            background-color: #02060C;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-            .navbar a {
-                font-size: 16px;
-                color: white;
-                text-align: center;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
+        .navbar a {
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
 
-            .dropdown {
-                float: left;
-                overflow: hidden;
-            }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
 
-            .dropdown .dropbtn {
-                cursor: pointer;
-                font-size: 16px;
-                border: none;
-                outline: none;
-                color: white;
-                padding: 14px 16px;
-                background-color: inherit;
-                font-family: inherit;
-                margin: 0;
-            }
+        .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
 
-            .navbar a:hover,
-            .dropdown:hover .dropbtn,
-            .dropbtn:focus {
-                background-color: black;
-            }
+        .navbar a:hover,
+        .dropdown:hover .dropbtn,
+        .dropbtn:focus {
+            background-color: black;
+        }
 
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #161b22;
-                min-width: 160px;
-                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-                z-index: 1;
-            }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #161b22;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
 
-            .dropdown-content a {
-                float: none;
-                color: white;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-                text-align: left;
-            }
+        .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
 
-            .dropdown-content a:hover {
-                background-color: #1D232B;
-            }
+        .dropdown-content a:hover {
+            background-color: #1D232B;
+        }
 
-            .show {
-                display: block;
-            }
+        .show {
+            display: block;
+        }
 
-            .collapsible {
-                background: rgba(2, 6, 12, 0.3);
-                color: white;
-                cursor: pointer;
-                padding: 18px;
-                width: 400px;
-                border: none;
-                text-align: center;
-                outline: none;
-                font-size: 15px;
-            }
+        .collapsible {
+            background: rgba(2, 6, 12, 0.3);
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 400px;
+            border: none;
+            text-align: center;
+            outline: none;
+            font-size: 15px;
+        }
 
-            .active,
-            .collapsible:hover {
-                background: rgba(2, 6, 12, 0.5);
-            }
+        .active,
+        .collapsible:hover {
+            background: rgba(2, 6, 12, 0.5);
+        }
 
-            .content {
-                padding: 0 64px;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.2s ease-out;
-                width: 800px;
-            }
+        .content {
+            padding: 0 64px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            width: 800px;
+        }
 
-            #myBtn {
-                display: none;
-                position: fixed;
-                bottom: 20px;
-                right: 30px;
-                z-index: 99;
-                font-size: 18px;
-                border: none;
-                outline: none;
-                background-color: #02060C;
-                color: white;
-                cursor: pointer;
-                padding: 15px;
-                border-radius: 4px;
-            }
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #02060C;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
 
-            #myBtn:hover {
-                background-color: black;
-            }
+        #myBtn:hover {
+            background-color: black;
+        }
 
-            .rounded-image-25 {
-                border-radius: 25px;
-            }
-        </style>
-    </head>
+        .rounded-image-25 {
+            border-radius: 25px;
+        }
+    </style>
+</head>
 
-    <body>
-        <button onclick="topFunction()" id="myBtn">Jump to Top of Page</button>
+<body>
+    <button onclick="topFunction()" id="myBtn">Jump to Top of Page</button>
 
-        <div
-            style="padding:20px;margin-top:0px;background-color:#02060C;overflow:hidden;background-image: url('/images/background.png');">
-            <center>
-                <img src="https://cdn.modrinth.com/data/6e2SlzR4/images/79c79f8ac4ed318d12d5e50c62534db7cdf03904.png"
-                    width=700px;>
-                <br>
-                <p style="font-size:16px;"><i>Create: Garnished adds many new foods and items, expanding on the Create
-                        mod!</i></p>
-            </center>
+    <div
+        style="padding:20px;margin-top:0px;background-color:#02060C;overflow:hidden;background-image: url('/images/background.png');">
+        <center>
+            <img src="https://cdn.modrinth.com/data/6e2SlzR4/images/79c79f8ac4ed318d12d5e50c62534db7cdf03904.png"
+                width=700px;>
+            <br>
+            <p style="font-size:16px;"><i>Create: Garnished adds many new foods and items, expanding on the Create
+                    mod!</i></p>
+        </center>
+    </div>
+    <div class="navbar">
+        <a href="/index.html" style="float:left;">Home</a>
+        <a href="/integrations.html" style="float:left;">Integrations</a>
+        <a href="/hatchets.html" style="float:left;">Hatchet Interactions</a>
+        <a href="/fluid_interactions.html" style="float:left;">Fluid Interactions</a>
+        <a href="/foods.html" style="float:left;">Cookbook</a>
+        <div class="dropdown" style="float:left;">
+            <button class="dropbtn" onclick="myFunction()">Recipe Types
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="/recipe_types/bulk_dyeing.html">Bulk Dyeing</a>
+                <a href="/recipe_types/bulk_freezing.html">Bulk Freezing</a>
+            </div>
         </div>
-        <div class="navbar">
-            <a href="/index.html" style="float:left;">Home</a>
-            <a href="/integrations.html" style="float:left;">Integrations</a>
-            <a href="/hatchets.html" style="float:left;">Hatchet Interactions</a>
-            <a href="/fluid_interactions.html" style="float:left;">Fluid Interactions</a>
-            <a href="/foods.html" style="float:left;">Cookbook</a>
-            <div class="dropdown" style="float:left;">
-                <button class="dropbtn" onclick="myFunction()">Recipe Types
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content" id="myDropdown">
-                    <a href="/recipe_types/bulk_dyeing.html">Bulk Dyeing</a>
-                    <a href="/recipe_types/bulk_freezing.html">Bulk Freezing</a>
+        <a href="/blog.html" style="float:left;">Blog Posts</a>
+        <a href="https://mmcreviews.com/all/mods/create-garnished/" style="float:right;" target="_blank"
+            title="MMC Reviews">Leave a Review!</a>
+        <a href="https://modrinth.com/mod/create-garnished" style="float:right;" target="_blank"
+            title="Modrinth">Modrinth</a>
+        <a href="https://www.curseforge.com/minecraft/mc-mods/garnished" style="float:right;" target="_blank"
+            title="Curseforge">Curseforge</a>
+        <a href="https://www.ko-fi.com/dakotapride" style="float:right;" target="_blank" title="Ko-fi">Ko-fi</a>
+    </div>
+    <div style="padding:20px;margin-top:30px;height:1500px;">
+        <center>
+            <div style="float:left;width:1100px;">
+                <img class="rounded-image-25" src="/images/hatchets.png" style="width:80%;">
+                <div style="width:800px;">
+                    <p style="text-align:left;">Hatchets have improved attack speed and attack damage when compared
+                        to swords, but have less attack speed and attack damage compared to axes.</p>
+                    <p style="text-align:left;">This tool can break the same blocks as axes, with the addition of
+                        Cobwebs.</p>
+                    <p style="text-align:left;">There are multiple enchantments available for Hatchets, two of which
+                        allow for special items to be dropped upon defeating certain mobs.
+                    </p><br>
+                    <p style="text-align:left;">Ravaging grants additional or increased drops from certain hostile
+                        mobs (and even certain neutral mobs). It also grants Strength when at/under half-health.
+                        Despite the pros of this enchantment, it cannot be applied alongside Quick Step.</p>
+                    <p style="text-align:left;">Salvaging grants additional or increased drops from certain passive
+                        mobs.
+                    </p><br>
+                    <p style="text-align:left;">Additionally, there are 4 other enchantments for the hatchet that
+                        might prove useful to you.</p>
+                    <p style="text-align:left;">Striking essentially replaces the damage enchantments (Sharpness,
+                        Smite, Bane of Arthropods).</p>
+                    <p style="text-align:left;">Quick Step grants the player Speed when at/under half-health.
+                        Though, this enchantment cannot be used alongside Ravaging.</p>
+                    <p style="text-align:left;">Rejuvenate heals the player when attacking a mob. This enchantment,
+                        however, cannot be applied alongside Quick Step.</p>
+                    <p style="text-align:left;">Curse of the Leech acts like the opposite of Rejuvenate, instead
+                        damaging the player when attacking a mob.</p>
                 </div>
             </div>
-            <a href="/blog.html" style="float:left;">Blog Posts</a>
-            <a href="https://mmcreviews.com/all/mods/create-garnished/" style="float:right;" target="_blank" title="MMC Reviews">Leave a Review!</a>
-            <a href="https://modrinth.com/mod/create-garnished" style="float:right;" target="_blank" title="Modrinth">Modrinth</a>
-            <a href="https://www.curseforge.com/minecraft/mc-mods/garnished" style="float:right;"
-                target="_blank" title="Curseforge">Curseforge</a>
-            <a href="https://www.ko-fi.com/dakotapride" style="float:right;" target="_blank" title="Ko-fi">Ko-fi</a>
-        </div>
-        <div style="padding:20px;margin-top:30px;height:1500px;">
-            <center>
-                <div style="float:left;width:1100px;">
-                    <img class="rounded-image-25" src="/images/hatchets.png" style="width:80%;">
-                    <div style="width:800px;">
-                        <p style="text-align:left;">Hatchets have improved attack speed and attack damage when compared
-                            to swords, but have less attack speed and attack damage compared to axes.</p>
-                        <p style="text-align:left;">This tool can break the same blocks as axes, with the addition of
-                            Cobwebs.</p>
-                        <p style="text-align:left;">There are multiple enchantments available for Hatchets, two of which
-                            allow for special items to be dropped upon defeating certain mobs.
-                        </p><br>
-                        <p style="text-align:left;">Ravaging grants additional or increased drops from certain hostile
-                            mobs (and even certain neutral mobs). It also grants Strength when at/under half-health.
-                            Despite the pros of this enchantment, it cannot be applied alongside Quick Step.</p>
-                        <p style="text-align:left;">Salvaging grants additional or increased drops from certain passive
-                            mobs.
-                        </p><br>
-                        <p style="text-align:left;">Additionally, there are 4 other enchantments for the hatchet that
-                            might prove useful to you.</p>
-                        <p style="text-align:left;">Striking essentially replaces the damage enchantments (Sharpness,
-                            Smite, Bane of Arthropods).</p>
-                        <p style="text-align:left;">Quick Step grants the player Speed when at/under half-health.
-                            Though, this enchantment cannot be used alongside Ravaging.</p>
-                        <p style="text-align:left;">Rejuvenate heals the player when attacking a mob. This enchantment,
-                            however, cannot be applied alongside Quick Step.</p>
-                        <p style="text-align:left;">Curse of the Leech acts like the opposite of Rejuvenate, instead
-                            damaging the player when attacking a mob.</p>
-                    </div>
+            <hr style="clear:both;visibility:hidden;height:40px;">
+            <div style="float:left;width:1100px;">
+                <img class="rounded-image-25" src="/images/hatchet_drops/nether.png" style="width:80%;">
+                <div style="width:800px;">
+                    <p style="text-align:left;">Enflamed Mandible can be dropped by Blazes when using the Ravaging
+                        enchantment on a hatchet.</p>
+                    <p style="text-align:left;">Ghast Tendril can be dropped by Ghasts when using the Ravaging
+                        enchantment on a hatchet.</p>
+                    <p style="text-align:left;">Molten Remnant can be dropped by Magma Cubes when using the Ravaging
+                        enchantment on a hatchet.</p>
+                    <p style="text-align:left;">Tusk can be dropped by Hoglins when using the Ravaging
+                        enchantment on a hatchet. Additionally, it can be dropped by Pigs when using the Salvaging
+                        enchantment on a hatchet.</p>
+                    <p style="text-align:left;">Irate Tusk can be dropped by Hoglins when using the Ravaging
+                        enchantment on a hatchet.
+                    </p>
                 </div>
-                <hr style="clear:both;visibility:hidden;height:40px;">
-                <div style="float:left;width:1100px;">
-                    <img class="rounded-image-25" src="/images/hatchet_drops/nether.png" style="width:80%;">
-                    <div style="width:800px;">
-                        <p style="text-align:left;">Enflamed Mandible can be dropped by Blazes when using the Ravaging
-                            enchantment on a hatchet.</p>
-                        <p style="text-align:left;">Ghast Tendril can be dropped by Ghasts when using the Ravaging
-                            enchantment on a hatchet.</p>
-                        <p style="text-align:left;">Molten Remnant can be dropped by Magma Cubes when using the Ravaging
-                            enchantment on a hatchet.</p>
-                        <p style="text-align:left;">Tusk can be dropped by Hoglins when using the Ravaging
-                            enchantment on a hatchet. Additionally, it can be dropped by Pigs when using the Salvaging
-                            enchantment on a hatchet.</p>
-                        <p style="text-align:left;">Irate Tusk can be dropped by Hoglins when using the Ravaging
-                            enchantment on a hatchet.
-                        </p>
-                    </div>
+            </div>
+            <hr style="clear:both;visibility:hidden;height:40px;">
+            <div style="float:left;width:1100px;">
+                <img class="rounded-image-25" src="/images/hatchet_drops/end.png" style="width:80%;">
+                <div style="width:800px;">
+                    <p style="text-align:left;">Dimmed Scale can be dropped by Endermen, Endermites, and the Ender
+                        Dragon
+                        when using the Ravaging enchantment on a hatchet.</p>
+                    <p style="text-align:left;">Preliminary Nucleus can be dropped by Endermites when using the
+                        Ravaging
+                        enchantment on a Hatchet.</p>
                 </div>
-                <hr style="clear:both;visibility:hidden;height:40px;">
-                <div style="float:left;width:1100px;">
-                    <img class="rounded-image-25" src="/images/hatchet_drops/end.png" style="width:80%;">
-                    <div style="width:800px;">
-                        <p style="text-align:left;">Dimmed Scale can be dropped by Endermen, Endermites, and the Ender
-                            Dragon
-                            when using the Ravaging enchantment on a hatchet.</p>
-                        <p style="text-align:left;">Preliminary Nucleus can be dropped by Endermites when using the
-                            Ravaging
-                            enchantment on a Hatchet.</p>
-                    </div>
+            </div>
+            <hr style="clear:both;visibility:hidden;height:40px;">
+            <div style="float:left;width:1100px;">
+                <img class="rounded-image-25" src="/images/hatchet_drops/raid.png" style="width:80%;">
+                <div style="width:800px;">
+                    <p style="text-align:left;">Vex Wing can be dropped by Vexes or, very rarely, Allays when using
+                        the
+                        Ravaging enchantment on a Hatchet.</p>
+                    <p style="text-align:left;">Meat Scrap can be dropped by Ravagers when using the Ravaging
+                        enchantment on a hatchet.</p>
+                    </p>
                 </div>
-                <hr style="clear:both;visibility:hidden;height:40px;">
-                <div style="float:left;width:1100px;">
-                    <img class="rounded-image-25" src="/images/hatchet_drops/raid.png" style="width:80%;">
-                    <div style="width:800px;">
-                        <p style="text-align:left;">Vex Wing can be dropped by Vexes or, very rarely, Allays when using
-                            the
-                            Ravaging enchantment on a Hatchet.</p>
-                        <p style="text-align:left;">Meat Scrap can be dropped by Ravagers when using the Ravaging
-                            enchantment on a hatchet.</p>
-                        </p>
-                    </div>
+            </div>
+            <hr style="clear:both;visibility:hidden;height:40px;">
+            <div style="float:left;width:1100px;">
+                <img class="rounded-image-25" src="/images/hatchet_drops/snow.png" style="width:80%;">
+                <div style="width:800px;">
+                    <p style="text-align:left;">Raw Polar Bear Meat can be dropped by Polar Bears when using the
+                        Ravaging enchantment on a
+                        hatchet.</p>
+                    <p style="text-align:left;">Polar Bear Hide can be dropped by Polar Bears when using the
+                        Ravaging
+                        enchantment on a hatchet.
+                    </p>
+                    <p style="text-align:left;">Numbing Parchment can be dropped by Strays when using the Ravaging
+                        enchantment on a hatchet.</p>
                 </div>
-                <hr style="clear:both;visibility:hidden;height:40px;">
-                <div style="float:left;width:1100px;">
-                    <img class="rounded-image-25" src="/images/hatchet_drops/snow.png" style="width:80%;">
-                    <div style="width:800px;">
-                        <p style="text-align:left;">Raw Polar Bear Meat can be dropped by Polar Bears when using the
-                            Ravaging enchantment on a
-                            hatchet.</p>
-                        <p style="text-align:left;">Polar Bear Hide can be dropped by Polar Bears when using the
-                            Ravaging
-                            enchantment on a hatchet.
-                        </p>
-                        <p style="text-align:left;">Numbing Parchment can be dropped by Strays when using the Ravaging
-                            enchantment on a hatchet.</p>
-                    </div>
+            </div>
+            <hr style="clear:both;visibility:hidden;height:40px;">
+            <div style="float:left;width:1100px;">
+                <img class="rounded-image-25" src="/images/hatchet_drops/deep_dark.png" style="width:80%;">
+                <div style="width:800px;">
+                    <p style="text-align:left;">Raw Tenebrous Meat can be dropped by Wardens when using the Ravaging
+                        enchantment on a hatchet.
+                    </p>
                 </div>
-                <hr style="clear:both;visibility:hidden;height:40px;">
-                <div style="float:left;width:1100px;">
-                    <img class="rounded-image-25" src="/images/hatchet_drops/deep_dark.png" style="width:80%;">
-                    <div style="width:800px;">
-                        <p style="text-align:left;">Raw Tenebrous Meat can be dropped by Wardens when using the Ravaging
-                            enchantment on a hatchet.
-                        </p>
-                    </div>
+            </div>
+        </center>
+    </div>
+    <hr style="clear:both;visibility:hidden;height:40px;">
+    <div>
+        <center>
+            <button class="collapsible">History of Changes & Additions - Changelog</button>
+            <div class="content" style="text-align:left;">
+                <div style="width:80%">
+                    <h4>v1.8</h4>
+                    <ul>
+                        <li>Add 4 new enchantments</li>
+                        <ul>
+                            <li>Striking</li>
+                            <ul>
+                                <li>Replaces Sharpness, Bane of Arthropods, and Smite</li>
+                            </ul>
+                            <li>Quick Step</li>
+                            <ul>
+                                <li>Provides Speed while under half health</li>
+                            </ul>
+                            <li>Rejuvinate</li>
+                            <ul>
+                                <li>Regenerates the player's health with every hit made against a target</li>
+                            </ul>
+                            <li>Curse of The Leech</li>
+                            <ul>
+                                <li>Damage the player with every hit made against a target</li>
+                            </ul>
+                        </ul>
+                        <li>Remove the ability to apply certain enchants</li>
+                        <ul>
+                            <li>Sharpness</li>
+                            <li>Bane of Arthropods</li>
+                            <li>Smite</li>
+                            <li>Looting</li>
+                        </ul>
+                        <li>Add more ravaging loot tables for certain mobs</li>
+                        <ul>
+                            <li>Cave Spider</li>
+                            <li>Dolphin</li>
+                            <li>Ender Dragon</li>
+                            <li>Enderman</li>
+                            <li>Endermite</li>
+                            <li>Evoker</li>
+                            <li>Hoglin</li>
+                            <li>Illusioner</li>
+                            <li>Piglin</li>
+                            <li>Pillager</li>
+                            <li>Ravager</li>
+                            <li>Shulker</li>
+                            <li>Skeleton</li>
+                            <li>Skeleton Horse</li>
+                            <li>Slime</li>
+                            <li>Sniffer</li>
+                            <li>Spider</li>
+                            <li>Vex</li>
+                            <li>Vindicator</li>
+                            <li>Zoglin</li>
+                            <li>Zombified Piglin</li>
+                        </ul>
+                        <li>Adjust ravaging loot tables for certain mobs</li>
+                        <ul>
+                            <li>Polar Bear</li>
+                            <li>Stray</li>
+                        </ul>
+                        <li>Add more salvaging loot tables for certain mobs</li>
+                        <ul>
+                            <li>Allay</li>
+                            <li>Bee</li>
+                            <li>Cat</li>
+                            <li>Cow</li>
+                            <li>Dolphin</li>
+                            <li>Donkey</li>
+                            <li>Horse</li>
+                            <li>Mule</li>
+                            <li>Ocelot</li>
+                            <li>Pig</li>
+                            <li>Rabbit</li>
+                        </ul>
+                        <li>Adjust salvaging loot tables for certain mobs</li>
+                        <ul>
+                            <li>Turtle</li>
+                        </ul>
+                        <li>Make Ravaging provide Strength while <strong>actually</strong> under half health
+                            as opposed to providing it under a hard-coded integer value (10hp or 5 hearts)</li>
+                        <li>Add Hatchet Integration for certain mods</li>
+                        <ul>
+                            <li>AE2 (Applied Energistics 2)</li>
+                            <ul>
+                                <li>Nether Quartz</li>
+                                <li>Certus Quartz</li>
+                                <li>Fluix</li>
+                            </ul>
+                            <li>Better End</li>
+                            <ul>
+                                <li>Thallasium</li>
+                                <li>Terminite</li>
+                                <li>Aeternium</li>
+                            </ul>
+                            <li>Better Nether</li>
+                            <ul>
+                                <li>Nether Ruby</li>
+                                <li>Fireruby</li>
+                                <li>Cincinnasite</li>
+                                <li>Cincinnasite-Diamond</li>
+                            </ul>
+                        </ul>
+                    </ul>
+                    <h4>v1.7.1</h4>
+                    <ul>
+                        <li>Implement <a href="https://github.com/DakotaPride/create-garnished/issues/49"
+                                target="_blank">Issue #49</a></li>
+                        <ul>
+                            <li>Convert previous loot table systems to data/json files</li>
+                        </ul>
+                    </ul>
+                    <h4>v1.5.2</h4>
+                    <ul>
+                        <li>Remove ponder entry for hatchets</li>
+                        <ul>
+                            <li>Disabled alongside other ponder entries</li>
+                        </ul>
+                    </ul>
+                    <h4>v1.5</h4>
+                    <ul>
+                        <li>Add ponder entry for hatchets</li>
+                    </ul>
+                    <h4>v1.3</h4>
+                    <ul>
+                        <li>Add integration with other mods</li>
+                        <ul>
+                            <li>Deeper & Darker</li>
+                            <li>Create: Stuff And Additions</li>
+                            <il>Additional Additions</il>
+                            <li>Mythic Upgrades</li>
+                        </ul>
+                    </ul>
+                    <h4>v1.2-hotfix-2</h4>
+                    <ul>
+                        <li>Fix "#forge:tools/hatchets" and "#c:tools/hatchets" item tags</li>
+                    </ul>
+                    <h4>v1.2</h4>
+                    <ul>
+                        <li>Fixed hatchets not being able to strip sepia-related blocks</li>
+                    </ul>
+                    <h4>v1.1</h4>
+                    <ul>
+                        <li>Add functionality to enchantments for hatchets</li>
+                        <ul>
+                            <li>Ravaging</li>
+                            <ul>
+                                <li>Defeating certain hostile (or neutral) mobs yields bonus drops</li>
+                                <li>Provides Strength 2 if under half (default) health</li>
+                                <ul>
+                                    <li>Under 10 hitpoints or 5 hearts</li>
+                                </ul>
+                            </ul>
+                            <li>Salvaging</li>
+                            <ul>
+                                <li>Defeating certain passive mobs yields bonus drops</li>
+                            </ul>
+                        </ul>
+                    </ul>
+                    <h4>v1.0</h4>
+                    <ul>
+                        <li>Add hatchets</li>
+                        <ul>
+                            <li>Netherite</li>
+                            <li>Diamond</li>
+                            <li>Iron</li>
+                            <li>Gold</li>
+                            <li>Stone</li>
+                            <li>Wooden</li>
+                        </ul>
+                        <li>Add enchantments for hatchets</li>
+                        <ul>
+                            <li>Ravaging</li>
+                            <ul>
+                                <li>1 level</li>
+                            </ul>
+                            <li>Salvaging</li>
+                            <ul>
+                                <li>2 levels</li>
+                            </ul>
+                        </ul>
+                    </ul>
                 </div>
-            </center>
-        </div>
-        <hr style="clear:both;visibility:hidden;height:40px;">
-        <div>
-            <center>
-                <button class="collapsible">History of Changes & Additions - Changelog</button>
-                <div class="content" style="text-align:left;">
-                    <div style="width:80%">
-                        <h4>v1.8</h4>
-                        <ul>
-                            <li>Add 4 new enchantments</li>
-                            <ul>
-                                <li>Striking</li>
-                                <ul>
-                                    <li>Replaces Sharpness, Bane of Arthropods, and Smite</li>
-                                </ul>
-                                <li>Quick Step</li>
-                                <ul>
-                                    <li>Provides Speed while under half health</li>
-                                </ul>
-                                <li>Rejuvinate</li>
-                                <ul>
-                                    <li>Regenerates the player's health with every hit made against a target</li>
-                                </ul>
-                                <li>Curse of The Leech</li>
-                                <ul>
-                                    <li>Damage the player with every hit made against a target</li>
-                                </ul>
-                            </ul>
-                            <li>Remove the ability to apply certain enchants</li>
-                            <ul>
-                                <li>Sharpness</li>
-                                <li>Bane of Arthropods</li>
-                                <li>Smite</li>
-                                <li>Looting</li>
-                            </ul>
-                            <li>Add more ravaging loot tables for certain mobs</li>
-                            <ul>
-                                <li>Cave Spider</li>
-                                <li>Dolphin</li>
-                                <li>Ender Dragon</li>
-                                <li>Enderman</li>
-                                <li>Endermite</li>
-                                <li>Evoker</li>
-                                <li>Hoglin</li>
-                                <li>Illusioner</li>
-                                <li>Piglin</li>
-                                <li>Pillager</li>
-                                <li>Ravager</li>
-                                <li>Shulker</li>
-                                <li>Skeleton</li>
-                                <li>Skeleton Horse</li>
-                                <li>Slime</li>
-                                <li>Sniffer</li>
-                                <li>Spider</li>
-                                <li>Vex</li>
-                                <li>Vindicator</li>
-                                <li>Zoglin</li>
-                                <li>Zombified Piglin</li>
-                            </ul>
-                            <li>Adjust ravaging loot tables for certain mobs</li>
-                            <ul>
-                                <li>Polar Bear</li>
-                                <li>Stray</li>
-                            </ul>
-                            <li>Add more salvaging loot tables for certain mobs</li>
-                            <ul>
-                                <li>Allay</li>
-                                <li>Bee</li>
-                                <li>Cat</li>
-                                <li>Cow</li>
-                                <li>Dolphin</li>
-                                <li>Donkey</li>
-                                <li>Horse</li>
-                                <li>Mule</li>
-                                <li>Ocelot</li>
-                                <li>Pig</li>
-                                <li>Rabbit</li>
-                            </ul>
-                            <li>Adjust salvaging loot tables for certain mobs</li>
-                            <ul>
-                                <li>Turtle</li>
-                            </ul>
-                            <li>Make Ravaging provide Strength while <strong>actually</strong> under half health
-                                as opposed to providing it under a hard-coded integer value (10hp or 5 hearts)</li>
-                            <li>Add Hatchet Integration for certain mods</li>
-                            <ul>
-                                <li>AE2 (Applied Energistics 2)</li>
-                                <ul>
-                                    <li>Nether Quartz</li>
-                                    <li>Certus Quartz</li>
-                                    <li>Fluix</li>
-                                </ul>
-                                <li>Better End</li>
-                                <ul>
-                                    <li>Thallasium</li>
-                                    <li>Terminite</li>
-                                    <li>Aeternium</li>
-                                </ul>
-                                <li>Better Nether</li>
-                                <ul>
-                                    <li>Nether Ruby</li>
-                                    <li>Fireruby</li>
-                                    <li>Cincinnasite</li>
-                                    <li>Cincinnasite-Diamond</li>
-                                </ul>
-                            </ul>
-                        </ul>
-                        <h4>v1.7.1</h4>
-                        <ul>
-                            <li>Implement <a href="https://github.com/DakotaPride/create-garnished/issues/49"
-                                    target="_blank">Issue #49</a></li>
-                            <ul>
-                                <li>Convert previous loot table systems to data/json files</li>
-                            </ul>
-                        </ul>
-                        <h4>v1.5.2</h4>
-                        <ul>
-                            <li>Remove ponder entry for hatchets</li>
-                            <ul>
-                                <li>Disabled alongside other ponder entries</li>
-                            </ul>
-                        </ul>
-                        <h4>v1.5</h4>
-                        <ul>
-                            <li>Add ponder entry for hatchets</li>
-                        </ul>
-                        <h4>v1.3</h4>
-                        <ul>
-                            <li>Add integration with other mods</li>
-                            <ul>
-                                <li>Deeper & Darker</li>
-                                <li>Create: Stuff And Additions</li>
-                                <il>Additional Additions</il>
-                                <li>Mythic Upgrades</li>
-                            </ul>
-                        </ul>
-                        <h4>v1.2-hotfix-2</h4>
-                        <ul>
-                            <li>Fix "#forge:tools/hatchets" and "#c:tools/hatchets" item tags</li>
-                        </ul>
-                        <h4>v1.2</h4>
-                        <ul>
-                            <li>Fixed hatchets not being able to strip sepia-related blocks</li>
-                        </ul>
-                        <h4>v1.1</h4>
-                        <ul>
-                            <li>Add functionality to enchantments for hatchets</li>
-                            <ul>
-                                <li>Ravaging</li>
-                                <ul>
-                                    <li>Defeating certain hostile (or neutral) mobs yields bonus drops</li>
-                                    <li>Provides Strength 2 if under half (default) health</li>
-                                    <ul>
-                                        <li>Under 10 hitpoints or 5 hearts</li>
-                                    </ul>
-                                </ul>
-                                <li>Salvaging</li>
-                                <ul>
-                                    <li>Defeating certain passive mobs yields bonus drops</li>
-                                </ul>
-                            </ul>
-                        </ul>
-                        <h4>v1.0</h4>
-                        <ul>
-                            <li>Add hatchets</li>
-                            <ul>
-                                <li>Netherite</li>
-                                <li>Diamond</li>
-                                <li>Iron</li>
-                                <li>Gold</li>
-                                <li>Stone</li>
-                                <li>Wooden</li>
-                            </ul>
-                            <li>Add enchantments for hatchets</li>
-                            <ul>
-                                <li>Ravaging</li>
-                                <ul>
-                                    <li>1 level</li>
-                                </ul>
-                                <li>Salvaging</li>
-                                <ul>
-                                    <li>2 levels</li>
-                                </ul>
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
-            </center>
-        </div>
-        <hr style="clear:both;visibility:hidden;height:40px;">
-        <p>
-            <center>The Create: Garnished mod and Create: Garnished wiki have been developed and designed by
-                DakotaPrideModding</center>
-        </p>
-        <p>
-            <center><a href="https://github.com/DakotaPride/create-garnished" target="_blank">Create: Garnished Fabric
-                    Source Code</a></center>
-        </p>
-        <p>
-            <center><a href="https://github.com/DakotaPride/create-garnished/issues" target="_blank">Create: Garnished
-                    Issues Page</a></center>
-        </p>
+            </div>
+        </center>
+    </div>
+    <hr style="clear:both;visibility:hidden;height:40px;">
+    <p>
+        <center>The Create: Garnished mod and Create: Garnished wiki have been developed and designed by
+            DakotaPrideModding</center>
+    </p>
+    <p>
+        <center><a href="https://github.com/DakotaPride/create-garnished" target="_blank">Create: Garnished Fabric
+                Source Code</a></center>
+    </p>
+    <p>
+        <center><a href="https://github.com/DakotaPride/create-garnished/issues" target="_blank">Create: Garnished
+                Issues Page</a></center>
+    </p>
 
-        <script>
-            /* When the user clicks on the button, 
-            toggle between hiding and showing the dropdown content */
-            function myFunction() {
-                document.getElementById("myDropdown").classList.toggle("show");
-            }
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
 
-            // Close the dropdown if the user clicks outside of it
-            window.onclick = function (e) {
-                if (!e.target.matches('.dropbtn')) {
-                    var myDropdown = document.getElementById("myDropdown");
-                    if (myDropdown.classList.contains('show')) {
-                        myDropdown.classList.remove('show');
-                    }
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("myDropdown");
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
                 }
             }
+        }
 
-            var coll = document.getElementsByClassName("collapsible");
-            var i;
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
 
-            for (i = 0; i < coll.length; i++) {
-                coll[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
-                    var content = this.nextElementSibling;
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + "px";
-                    }
-                });
-            }
-
-            // Get the button
-            let mybutton = document.getElementById("myBtn");
-
-            // When the user scrolls down 20px from the top of the document, show the button
-            window.onscroll = function () { scrollFunction() };
-
-            function scrollFunction() {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    mybutton.style.display = "block";
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
                 } else {
-                    mybutton.style.display = "none";
+                    content.style.maxHeight = content.scrollHeight + "px";
                 }
-            }
+            });
+        }
 
-            // When the user clicks on the button, scroll to the top of the document
-            function topFunction() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
             }
-        </script>
-    </body>
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
 
 </html>
