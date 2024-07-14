@@ -176,7 +176,7 @@
         .addons-body {
             padding: 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(4px, 1fr));
         }
 
         .addons-body #addons-list-item {
@@ -217,6 +217,11 @@
             display: block;
             padding-left: 4%;
             padding-right: 4%;
+        }
+
+        .addons-body .loader-icon {
+            width: 20px;
+            height: 20px;
         }
     </style>
 </head>
@@ -264,21 +269,19 @@
             <img class="mod-icon"
                 src="https://cdn.modrinth.com/data/rspAgyfe/28f26ec907f06b186c0127438a1426fc34872f7f.png"
                 alt="Garnished KubeJS Icon" width="240" height="240">
-            <p id="addons-text">KubeJS Create: Garnished Integration</p>
-            <p id="addons-subtext">Available on Forge/Neoforge</p>
-            <p id="addons-subtext">Available for Minecraft 1.20, 1.20.1</p>
-            <p id="addons-subtext">Available for Create: Garnished v1.8.8</p>
+            <!--<p id="addons-text">KubeJS Create: Garnished Integration</p>-->
+            <p id="addons-subtext"><img class="loader-icon" src="/images/addons/loader/forge.png"> | <img class="loader-icon" src="/images/addons/loader/neoforge.png"></p>
+            <p id="addons-subtext">Minecraft 1.20, 1.20.1 | Create: Garnished v1.8.8</p>
         </div>
         <div id="addons-list-item">
             <p id="addons-title">Garnished Additions</p>
             <img class="mod-icon"
                 src="https://cdn.modrinth.com/data/sNUaI7Ge/3b2ad9e2b303a8519fc550735b8d513d70d8a95e.png"
                 alt="Garnished Additions Icon" width="240" height="240">
-            <p id="addons-text">Garnished Additions is an addon mod to Create: Garnished that will soon add over 100 new
-                edible foods and a host of other items to the game!</p>
-            <p id="addons-subtext">Available on Forge and Fabric</p>
-            <p id="addons-subtext">Available for Minecraft 1.20, 1.20.1</p>
-            <p id="addons-subtext">Available for Create: Garnished v1.8.8</p>
+            <!--<p id="addons-text">Garnished Additions is an addon mod to Create: Garnished that will soon add over 100 new
+                edible foods and a host of other items to the game!</p>-->
+            <p id="addons-subtext"><img class="loader-icon" src="/images/addons/loader/forge.png"> | <img class="loader-icon" src="/images/addons/loader/fabric.png"></p>
+            <p id="addons-subtext">Minecraft 1.20, 1.20.1 | Create: Garnished v1.8.8</p>
         </div>
     </div>
     <hr style="clear:both;visibility:hidden;height:40px;">
