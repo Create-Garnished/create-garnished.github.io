@@ -173,14 +173,18 @@
             background-color: black;
         }
 
+        .separator {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
         .addons-body {
             padding: 20px;
-            display: flex;
-            grid-template-columns: repeat(auto-fit, minmax(4px, 1fr));
+            display: inline-flex;
         }
 
         .addons-body #addons-list-item {
-            border: 2px;
+            border: 3px;
             width: 240px;
             text-align: left;
             border-color: whitesmoke;
@@ -224,7 +228,7 @@
             padding-bottom: 4%;
             width: 160px;
             height: 160px;
-            border: 5px solid whitesmoke;
+            border: 3px solid whitesmoke;
         }
 
         .addons-body .loader-icon {
@@ -268,6 +272,7 @@
             </div>
         </div>
         <a href="/blog.html" style="float:left;">Blog Posts</a>
+        <a href="/addons.html" style="float:left;">Addons</a>
         <a href="https://mmcreviews.com/all/mods/create-garnished/" style="float:right;" target="_blank"
             title="MMC Reviews">Leave a Review!</a>
         <a href="https://modrinth.com/mod/create-garnished" style="float:right;" target="_blank"
@@ -293,6 +298,7 @@
                 
                 <p id="addons-subtext">Developed by <a href="https://modrinth.com/user/DakotaPrideModding">DakotaPrideModding</a></p>
             </div>
+            <div class="separator"></div>
             <div id="addons-list-item">
                 <p id="addons-title">Garnished Additions</p>
                 <img class="mod-icon"
@@ -309,6 +315,7 @@
                 
                 <p id="addons-subtext">Developed by <a href="https://modrinth.com/user/PanPanda">PanPanda</a></p>
             </div>
+            <div class="separator"></div>
             <div id="addons-list-item">
                 <p id="addons-title">Garnished Botany Pots</p>
                 <img class="mod-icon"
@@ -324,6 +331,7 @@
                 
                 <p id="addons-subtext">Developed by <a href="https://modrinth.com/user/PanPanda">PanPanda</a></p>
             </div>
+            <div class="separator"></div>
             <div id="addons-list-item">
                 <p id="addons-title">Garnished Stone Automation</p>
                 <img class="mod-icon"
