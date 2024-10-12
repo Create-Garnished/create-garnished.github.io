@@ -194,7 +194,7 @@
     <div
         style="padding:20px;margin-top:0px;background-color:#02060C;overflow:hidden;background-image: url('/images/background.png');">
         <center>
-            <img src="https://cdn.modrinth.com/data/6e2SlzR4/images/b5c40337eb1d5ba824d25c82d2cdf2f9321bf3b0.png"
+            <img src="https://cdn.modrinth.com/data/6e2SlzR4/images/2465fef6d5794b3eb71fbc101d1fdf4156c810da.png"
                 width=700px;>
             <br>
             <p style="font-size:16px;"><i>"It Eats my Nuts" -DejojoTheAwsome</i></p>
@@ -222,6 +222,12 @@
             <div style="float:right;text-align:left;width:300px;padding-right:200px;">
                 <h3 id="updates_sidebar" title="Recent Blog Posts">Recent Blog Posts</h3>
                 <ul style="list-style-type:none;text-decoration:none;">
+                    <li title="v2.0 - Refinement">
+                        <a href="/blog/version-2.0.html">v2.0 - Refinement</a><br>
+                        <p style="font-size:12px;color:gray;">Ever wanted some (potentially) obscure feature added to
+                            Create: Garnished? Well, you migh...</p>
+                    </li>
+                    <br>
                     <li title="Garnished Stone Automation">
                         <a href="/blog/create_stone_automation.html">Garnished Stone Automation</a><br>
                         <p style="font-size:12px;color:gray;">With the release of Create: Garnished v1.9, you may still
@@ -310,14 +316,98 @@
             <button class="collapsible">History of Changes & Additions - Changelog</button>
             <div class="content" style="text-align:left;">
                 <div style="width:80%;">
+                    <h4 id="2.0">v2.0</h4>
+                    <ul>
+                        <li>Make several food items and general items able to be composted inside of a Composter</li>
+                        <li>Replace Oak Leaves that generate on Nut Trees with an Unassigned variant of Nut Leaves</li>
+                        <ul>
+                            <li>Additionally, adjust the nut leaves colour to be slightly different from Oak</li>
+                        </ul>
+                        <li>Make Wyvern Stone give the entity walking atop of the given block a random effect out of a list of effects - all of them are either positive or neutral</li>
+                        <li>Add Blocks of Numbing Parchment</li>
+                        <li>Add Numbing Clothe</li>
+                        <ul>
+                            <li>Both the Block of Numbing Parchment and Numbing Clothe give the entity walking atop Slowness for the duration that they are on top of the block</li>
+                        </ul>
+                        <li>Add Amber Remnant & Amber Remnant Bricks block sets</li>
+                        <ul>
+                            <li>The base Amber Remnant block set has connected textures.</li>
+                        </ul>
+                        <li>Add Block of Polar Bear Hide</li>
+                        <li>Add Block of Packed Polar Bear Hide</li>
+                        <li>Add new blocks to the creative menu</li>
+                        <li>Rename the Austral status effect to Augmented</li>
+                        <li>Adjust several textures related to Amber Remnant</li>
+                        <ul>
+                            <li>Amber Remnant</li>
+                            <li>Shattered Amber Remnant</li>
+                            <li>Rosy Cocktail</li>
+                            <li>Stew of the Damned</li>
+                            <li>Sinopia Rock Sweet</li>
+                        </ul>
+                        <li>Adjust the Striking damage calculation slightly</li>
+                        <ul>
+                            <li>Old: 1.4F + (float)Math.max(0, level - 1) * 0.60F</li>
+                            <li>New: 1.4F + (float)Math.max(0, level - 0.50) * 0.60F</li>
+                        </ul>
+                        <li>Rename common classes in Create: Garnished to be more clear and helpful</li>
+                        <ul>
+                            <li>IGarnishedItem -> IGarnishedUtilities</li>
+                            <li>GarnishedFoods -> GarnishedFoodValues</li>
+                        </ul>
+                        <li>Increase or Decrease several nutrition values and saturation modifiers</li>
+                        <li>Add "passive effects" to certain foods to incentivise a more diverse diet</li>
+                        <ul>
+                            <li><a href="/blog/version-2.0.html">Refer to the <u>version 2.0 blog post</u> for more information on the above two topics</a></li>
+                        </ul>
+                        <li>Make Bottle of Crestfallen Flora no longer a food item</li>
+                        <li>Make Polar Hide Scratch Paper an improved Sand Paper-like item with 4x the durability as regular Sand Paper</li>
+                        <li>Add Nut Windows and Nut Window Panes</li>
+                        <li>Add Sepia Windows and Sepia Window Panes</li>
+                        <li>Improve the Sturdy Waffle item texture</li>
+                        <li>Fix certain "bricks" block loot tables</li>
+                        <li>Fix certain recipes in Fabric using the "forge" namespace</li>
+                        <li>Fix certain recipes in Forge using the "c" namespace</li>
+                        <li>Fix several nether features not generating properly, if, at all</li>
+                        <li>Fix missing mastic resin recipes for variants introduced in v1.9</li>
+                        <li>Fix certain mastic resin recipes still allowing the usage of more than one dye per variant</li>
+                        <li>Fix certain bulk dyeing recipes using the wrong bulk dyeing type</li>
+                        <li>Rework the Prickly status effect</li>
+                        <ul>
+                            <li>If the amount of damage dealt to the attacked entity is less than or equal to 4, then the damage dealt back to the attacker is automatically set to 4</li>
+                            <li>If the amount of damage dealt to the attacked entity is greater than 80% of the attacker's maximum health, then the damage dealt back to the attacker is automatically set to 80% of their maximum health.</li>
+                            <li>If both the attacked and attacker have the Prickly status effect, then nothing will occur as a result of the effect.</li>
+                        </ul>
+                        <li>Add a Brownie Piece for Farmer's Delight integration with Brownie with Walnuts</li>
+                        <li>Add several missing Farmer's Delight integration recipes for cooking and cutting</li>
+                    </ul>
+                    <h4 id="1.9.8">v1.9.8</h4>
+                    <ul>
+                        <li>Fix <a href="https://www.github.com/DakotaPride/create-garnished/issues/71">Issue #71</a></li>
+                        <li>Make Signs and Hanging Signs added by Create: Garnished efficiently mineable with an Axe or Axe-like tools such as Hatchets</li>
+                    </ul>
+                    <h4 id="1.9.7">v1.9.7</h4>
+                    <ul>
+                        <li>Fix missing crushing recipes for Zultanite stone types (again)</li>
+                        <li>Fix missing Lime Zultanite recipe for mechanical extruding compatibility</li>
+                        <li>Adjust Zultanite crushing recipe numbers</li>
+                        <li>Fix missing tag in the Fluix Hatchet integration recipe</li>
+                    </ul>
+                    <h4 id="1.9.6">v1.9.6</h4>
+                    <ul>
+                        <li>Fix Green Mastic Resin shaped recipes requiring either Green or Lime Dye as opposed to just Green Dye</li>
+                    </ul>
                     <h4 id="1.9.5">v1.9.5</h4>
                     <ul>
                         <li>Fix fluid interactions on Forge/Neoforge</li>
                         <li>Add missing crushing recipes for Zultanite stone types on Forge/Neoforge</li>
+                        <li>Fix missing recipes for Mastic Resin fluids</li>
+                        <li>Fix incorrect values for liquefied mastic resin recipes (curse you millibuckets!)</li>
                     </ul>
                     <h4 id="1.9.4">v1.9.4</h4>
                     <ul>
-                        <li>Replace zultanite haunting recipes to be exclusive to the given block type (stairs -> stairs, slab -> slab, etc.)</li>
+                        <li>Replace zultanite haunting recipes to be exclusive to the given block type (stairs ->
+                            stairs, slab -> slab, etc.)</li>
                     </ul>
                     <h4 id="1.9.3">v1.9.3</h4>
                     <ul>

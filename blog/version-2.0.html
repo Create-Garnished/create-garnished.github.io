@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Create: Garnished Wiki - Update v1.8</title>
+    <link rel="icon" type="image/x-icon" href="/icon.ico">
+
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+
+        body {
+            margin: 0px;
+            background-image: url('/images/background1.png');
+            font-family: "Cabin", sans-serif;
+            color: white;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        h3 {
+            font-size: 28px;
+        }
+
+        h4 {
+            font-size: 24px;
+        }
+
+        h5 {
+            font-size: 20px;
+        }
+
+        h6 {
+            margin: 10px 10px;
+            font-size: 16px;
+        }
+
+        li {
+            font-size: 20px;
+            line-height: 1.2;
+        }
+
+        a:link {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #02060C;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar a {
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover,
+        .dropdown:hover .dropbtn,
+        .dropbtn:focus {
+            background-color: black;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #161b22;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #1D232B;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .collapsible {
+            background: rgba(2, 6, 12, 0.3);
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 400px;
+            border: none;
+            text-align: center;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .active,
+        .collapsible:hover {
+            background: rgba(2, 6, 12, 0.5);
+        }
+
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background: rgba(29, 35, 43, 0.5);
+        }
+
+        div.gallery {
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 180px;
+        }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .img-comp-container {
+            position: relative;
+            height: 360px;
+            /*should be the same height as the images*/
+        }
+
+        .img-comp-img {
+            position: absolute;
+            width: auto;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .img-comp-img img {
+            display: block;
+            vertical-align: middle;
+        }
+
+        .img-comp-slider {
+            position: absolute;
+            z-index: 9;
+            cursor: ew-resize;
+            /*set the appearance of the slider:*/
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            opacity: 0.7;
+            border-radius: 50%;
+        }
+
+        .blog {
+            width: 800px;
+            padding-top: 0px;
+        }
+
+        .blog .segment-title {
+            text-align: left;
+        }
+
+        .blog .segment {
+            text-align: left;
+            font-size: 20px;
+        }
+
+        .blog .img-desc {
+            font-size: 16px;
+        }
+
+        .blog img {
+            border-radius: 5%;
+            width: 90%
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #02060C;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #myBtn:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="topFunction()" id="myBtn">Jump to Top of Page</button>
+
+    <script>
+        function initComparisons() {
+            var x, i;
+            /*find all elements with an "overlay" class:*/
+            x = document.getElementsByClassName("img-comp-overlay");
+            for (i = 0; i < x.length; i++) {
+                /*once for each "overlay" element:
+                pass the "overlay" element as a parameter when executing the compareImages function:*/
+                compareImages(x[i]);
+            }
+            function compareImages(img) {
+                var slider, img, clicked = 0, w, h;
+                /*get the width and height of the img element*/
+                w = img.offsetWidth;
+                h = img.offsetHeight;
+                /*set the width of the img element to 50%:*/
+                img.style.width = (w / 2) + "px";
+                /*create slider:*/
+                slider = document.createElement("DIV");
+                slider.setAttribute("class", "img-comp-slider");
+                /*insert slider*/
+                img.parentElement.insertBefore(slider, img);
+                /*position the slider in the middle:*/
+                slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+                slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+                /*execute a function when the mouse button is pressed:*/
+                slider.addEventListener("mousedown", slideReady);
+                /*and another function when the mouse button is released:*/
+                window.addEventListener("mouseup", slideFinish);
+                /*or touched (for touch screens:*/
+                slider.addEventListener("touchstart", slideReady);
+                /*and released (for touch screens:*/
+                window.addEventListener("touchend", slideFinish);
+                function slideReady(e) {
+                    /*prevent any other actions that may occur when moving over the image:*/
+                    e.preventDefault();
+                    /*the slider is now clicked and ready to move:*/
+                    clicked = 1;
+                    /*execute a function when the slider is moved:*/
+                    window.addEventListener("mousemove", slideMove);
+                    window.addEventListener("touchmove", slideMove);
+                }
+                function slideFinish() {
+                    /*the slider is no longer clicked:*/
+                    clicked = 0;
+                }
+                function slideMove(e) {
+                    var pos;
+                    /*if the slider is no longer clicked, exit this function:*/
+                    if (clicked == 0) return false;
+                    /*get the cursor's x position:*/
+                    pos = getCursorPos(e)
+                    /*prevent the slider from being positioned outside the image:*/
+                    if (pos < 0) pos = 0;
+                    if (pos > w) pos = w;
+                    /*execute a function that will resize the overlay image according to the cursor:*/
+                    slide(pos);
+                }
+                function getCursorPos(e) {
+                    var a, x = 0;
+                    e = (e.changedTouches) ? e.changedTouches[0] : e;
+                    /*get the x positions of the image:*/
+                    a = img.getBoundingClientRect();
+                    /*calculate the cursor's x coordinate, relative to the image:*/
+                    x = e.pageX - a.left;
+                    /*consider any page scrolling:*/
+                    x = x - window.pageXOffset;
+                    return x;
+                }
+                function slide(x) {
+                    /*resize the image:*/
+                    img.style.width = x + "px";
+                    /*position the slider:*/
+                    slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+                }
+            }
+        }
+    </script>
+
+    <div
+        style="padding:20px;margin-top:0px;background-color:#02060C;overflow:hidden;background-image: url('/images/background.png');">
+        <center>
+            <img src="https://cdn.modrinth.com/data/6e2SlzR4/images/2465fef6d5794b3eb71fbc101d1fdf4156c810da.png"
+                width=700px;>
+            <br>
+            <p style="font-size:16px;"><i>Create: Garnished adds many new foods and items, expanding on the Create
+                    mod!</i></p>
+        </center>
+    </div>
+    <div class="navbar">
+        <a href="/index.html" style="float:left;">Home</a>
+        <a href="/integrations.html" style="float:left;">Integrations</a>
+        <a href="/hatchets.html" style="float:left;">Hatchet Interactions</a>
+        <a href="/fluid_interactions.html" style="float:left;">Fluid Interactions</a>
+        <a href="/foods.html" style="float:left;">Cookbook</a>
+        <a href="/recipes.html" style="float:left;">Recipe Types</a>
+        <a href="/blog.html" style="float:left;">Blog Posts</a>
+        <a href="/addons.html" style="float:left;">Addons</a>
+        <a href="https://mmcreviews.com/all/mods/create-garnished/" style="float:right;" target="_blank"
+            title="MMC Reviews">Leave a Review!</a>
+        <a href="https://modrinth.com/mod/create-garnished" style="float:right;" target="_blank"
+            title="Modrinth">Modrinth</a>
+        <a href="https://www.curseforge.com/minecraft/mc-mods/garnished" style="float:right;" target="_blank"
+            title="Curseforge">Curseforge</a>
+        <a href="https://www.ko-fi.com/dakotapride" style="float:right;" target="_blank" title="Ko-fi">Ko-fi</a>
+    </div>
+    <div style="padding:20px;margin-top:30px;">
+        <center>
+            <img src="/images/blog/refinement_update/refinement_title_card.png" width="70%" style="border-radius:5%;">
+            <div class="blog">
+                <h5 style="margin:0px;font-size:16px;"><span style="color:#00FFEE;">Update</span> | August 31st, 2024 |
+                    Test Builds</h5><br>
+                <br>
+                <p style="text-align:left;width:800px;font-size:20px;padding-top:0px;">Version 2.0 doesn't necessarily
+                    focus on adding new content, but instead focuses on Quality of Life additions or adjustments.</p>
+                <h4 class="segment-title" id="wooden-windows"><span style="color:#965BD6;">Decorative Additions</span>
+                    | Through the Looking Glass</h4>
+                <p class="segment">The nut and sepia wood types have finally recieved windows and window panes! This
+                    isn't too big of an addition, so there's not really a whole lot to talk about.</p>
+                <img src="/images/blog/refinement_update/wood_windows.png" alt="Wooden Windows">
+                <p class="img-desc"><i>An example house with both Nut and Sepia Windows</i></p>
+                <h4 class="segment-title" id="numbing-parchment"><span style="color:#965BD6;">Decorative
+                        Additions</span> | Slooooow Down</h4>
+                <p class="segment">Numbing Parchment can now be used to make Blocks of Numbing Parchment, which will
+                    slow down mobs that walk over it. Additionally, Blocks of Numbing Parchment can be used to make
+                    Numbing Clothe - similar to a carpet - that also slows down mobs that walk over it.</p>
+                <img src="/images/blog/refinement_update/numbing_parchment.png" alt="Numbing Parchment Blocks">
+                <p class="img-desc"><i>Numbing Clothe and Numbing Parchment Block</i></p>
+                <h4 class="segment-title" id="nut-leaves"><span style="color:#965BD6;">Decorative Additions</span> | No
+                    More Oak For Thee</h4>
+                <p class="segment">Nut Trees will now naturally generate with 100% Nut Leaves instead of Oak Leaves.
+                    This shouldn't affect any current farm designs, the main difference being that you will no longer
+                    get Oak Saplings or Apples from these trees.</p>
+                <h4 class="segment-title" id="amber-remnant-blocks"><span style="color:#965BD6;">Decorative
+                        Additions</span> | Crystalline Activities</h4>
+                <p class="segment">Amber Remnant can now be used to make decorative blocks! The base Amber Remnant
+                    Blocks have connected textures while the brick blocks are, well, bricks.</p>
+                <img src="/images/blog/refinement_update/amber_remnant_blocks.png" alt="Amber Remnant Blocks">
+                <p class="img-desc"><i>Amber Remnant Blocks</i></p>
+                <h4 class="segment-title" id="polar-bear-hide-blocks"><span style="color:#965BD6;">Decorative
+                        Additions</span> | Straight Jacket Blocks</h4>
+                <p class="segment">Polar Bear Hide can also now be used to make docorative blocks! It can be crafted
+                    into a regular block of Polar Bear Hide or can be made into a Packed Block of Polar Bear Hide for a
+                    more brick-like look without <i>actually</i> being bricks.</p>
+                <img src="/images/blog/refinement_update/polar_bear_hide_blocks.png" alt="Polar Bear Hide Blocks">
+                <p class="img-desc"><i>Polar Bear Hide Blocks</i></p>
+                <h4 class="segment-title" id="wyvern-stone-effect"><span style="color:#965BD6;">Reworked
+                        Functions</span> | Unconventional Brewing</h4>
+                <p class="segment">Wyvern Stone blocks now can randomly apply one of eleven different status effects -
+                    Luck, Speed, Jump Boost, Resistance, Regeneration, Glowing, Strength, Haste, Fire Resistance, Night
+                    Vision, or Invisibility. These effects only last for 15 seconds, but if the given entity does not
+                    step off of the block, then the effect that wares off has a chance to be reapplied.</p>
+                <img src="/images/blog/refinement_update/wyvern_effect.png" alt="Wyvern Stone block Status Effects">
+                <p class="img-desc"><i>A Wild Developer Running Across Wyvern Stone in Their Natural Habitat</i></p>
+                <h4 class="segment-title" id="reworked-polar-hide-scratch-paper"><span style="color:#965BD6;">Reworked
+                        Functions</span> | Better! Stronger! *Not Faster!</h4>
+                <p class="segment">Polar Hide Scratch Paper has been reworked to no longer cure Freezing, but instead be
+                    a more durable version of Sand Paper, having 32 durability instead of the typical 8 durability.</p>
+                <h4 class="segment-title" id="reworked-thorns-effect"><span style="color:#965BD6;">Reworked
+                        Functions</span> | Sustainability</h4>
+                <p class="segment">The Prickly (thorns) status effect has experienced some issues with causing a crash
+                    on both the client and server. This actually caused the effect to be reworked. This not only fixed
+                    the original issue, but it also made the effect better in a few ways.</p>
+                <p class="segment">The first change to the effect is that there is now an absolute minimum amount of
+                    damage that can be dealt to the attacker. This value is 4 hitpoints, which is 2 hearts. If the
+                    amount of damage done to the attacked entity is less than 4, than the damage dealt to the attacker
+                    is automatically scaled up to 4 hitpoints.</p>
+                <p class="segment">Additionally to a minimum damage dealt back, there's also a maximum damage dealt
+                    back. This value fluctuates depending on the attacker's max health. Essentially, if the damage done
+                    to the attacked entity is more than 80% of the attacker's max health, than the value is
+                    automatically scaled down to 80% of the attacker's max health. Without any modded health values or
+                    the instant health status effect, this value is equivalent to 16 hitpoints or 8 hearts.</p>
+                <p class="segment">The last change made to this status effect is that if both the attacker and attacked
+                    entity have the Prickly status effect, than no damage is dealth back to the attacker.</p>
+                <h4 class="segment-title" id="reworked-food-values"><span style="color:#965BD6;">Reworked
+                        Functions</span> | An Effective Buffet</h4>
+                <p class="segment">Every single food in this update has gotten some buff or nerf. A full list of v2.0
+                    food values, effects, and conditions can be found <a
+                        href="/cooking_utils.html#food-values"><u>here</u></a>. Though, a more in-depth list can be
+                    found below!</p>
+                <p class="segment">As some of you may notice - if you read through all of this - some of this
+                    information is familiar, and you would be correct! Some things went unchanged, but I felt it
+                    necessary to include all food values and effects together since so many of them were changed.</p>
+                <p class="segment">
+                    <center><i>Also, <strong>ctrl + f</strong> is your friend - especially if you're looking for one
+                            piece of information in particular!</i></center>
+                </p>
+                <h5 class="segment-title" id="reworked-food-values#nutrition-saturation"><span
+                        style="color:#965BD6;">Food Rework</span> | Nutrition/Saturation Values</h5>
+                <ul class="segment">
+                    <li>Any Ungarnished nut now adhere to the overworld minimum values - a nutrition value of 1 and a
+                        saturation modifier of 0.25</li>
+                    <li>Any Garnished nut now has a nutrition value of 4 and a saturation modifier 0.20</li>
+                    <li>Any Sweetened nut now has a nutrition value of 6 and a saturation modifier of 0.20</li>
+                    <li>Any Chocolate Glazed nut now has a nutrition value of 4 and a saturation modifier of 0.40</li>
+                    <li>Any Honeyed nut now has a nutrition value of 6 and a saturation modifier of 0.40</li>
+                    <li>Nut Mix now has a nutrition value of 7 and a saturation modifier of 0.40</li>
+                    <li>Sweeteend Nut Mix now has a nutrition value of 9 and a saturation modifier of 0.40</li>
+                    <li>Chocolate Glazed Nut Mix now has a nutrition value of 7 and a saturation modifier of 0.60</li>
+                    <li>Honeyed Nut Mix now has a nutrition value of 9 and a saturation modifier of 0.60</li>
+                    <li>Garnished Sweet Berries now have a nutrition value of 5 and a saturation modifier of 0.30</li>
+                    <li>Honeyed Sweet Berries now have a nutrition value of 7 and a saturation modifier of 0.60</li>
+                    <li>Any Melted Cinder Flour nut - including Meled Cinder Fluor nuts with effects - now has a
+                        nutrition value of 7 and a saturation modifier of 0.40</li>
+                    <li>Garnished Meals now adhere to the overworld maximum values - a nutrition value of 8 and a
+                        saturation modifier of 0.65</li>
+                    <li>Salad now has a nutrition value of 8 and a saturation value of 0.40</li>
+                    <li>Cashew Apples now adhere to the overworld minimum values - a nutrition value of 1 and a
+                        saturation modifier of 0.25</li>
+                    <li>Bitter Almonds now have a nutrition value of 4 and a saturation modifier of 0.20</li>
+                    <li>Walnut Brownies now adhere to the overworld maximum values - a nutrition value of 8 and a
+                        saturation modifier of 0.65</li>
+                    <li>Pecan Pies now adhere to the overworld maximum values - a nutrition value of 8 and a saturation
+                        modifier of 0.65</li>
+                    <li>Cashew Cookies now have a nutrition value of 6 and a saturation modifier of 0.20</li>
+                    <li>Almond Cheese now has a nutrition value of 6 and a saturation modifier of 0.40</li>
+                    <li>Putrid Stew now has a nutrition value of 8 and a saturation modifier of 0.60</li>
+                    <li>Nut Nachos now adhere to the overworld minimum values - a nutrition value of 1 and a saturation
+                        modifier of 0.25</li>
+                    <li>Bowls of Nut Nachos now adhere to the overworld maximum values - a nutrition value of 8 and a
+                        saturation modifier of 0.65</li>
+                    <li>Illuminating Cocktails now have a nutrition value of 4 and a saturation modifier of 0.80</li>
+                    <li>Bitter Apple Cider now has a nutrition value of 3 and a saturation modifier of 0.20</li>
+                    <li>Cryptic Apple Cider now has a nutrition value of 3 and a saturation modifier of 0.20</li>
+                    <li>Mulch now adheres to the overworld minimum values - a nutrition value of 1 and a saturation
+                        modifier of 0.25</li>
+                    <li>Mud Pies now have a nutrition value of 8 and a saturation modifier of 0.15</li>
+                    <li>Baklava now adheres to the overworld maximum values - a nutrition value of 8 and a saturation
+                        modifier of 0.65</li>
+                    <li>Raw Tenebrous Meat now has a nutrition value of 4 and a saturation modifier of 0.65</li>
+                    <li>Cooked Tenebrous Meat now has a nutrition value of 6 and a saturation modifier of 0.65</li>
+                    <li>Gloomy Gatherings now adhere to the overworld maximum values - a nutrition value of 8 and a
+                        saturation modifier of 0.65</li>
+                    <li>Aching Tenebrous Clumps now have a nutrition value of 7 and a saturation modifier of 0.65</li>
+                    <li>Ghandercken now adheres to the overworld maximum values - a nutrition value of 8 and a
+                        saturation modifier of 0.65</li>
+                    <li>Fishy Surprise now has a nutrition value of 8 and a saturation modifier of 0.40</li>
+                    <li>Wheat Graze now has a nutrition value of 3 and a saturation modifier of 0.10</li>
+                    <li>Porkchop and Graze now adheres to the overworld maximum values - a nutrition value of 8 and a
+                        saturation modifier of 0.65</li>
+                    <li>Murky Jelly now has a nutrition value of 4 and a saturation modifier of 0.30</li>
+                    <li>Murky Macadamia Malice now has a nutrition value of 6 and a saturation modifier of 0.40</li>
+                    <li>Nutty Melodies - despite not being an end food - now adhere to the end minimum values - a
+                        nutrition value of 10 and a saturation modifier of 0.55</li>
+                    <li>Yam-o-Glow Puffs now have a nutrition value of 1 and a saturation modifier of 0.20</li>
+                    <li>Cackling Pies now adhere to the overworld maximum values - a nutrition value of 8 and a
+                        saturation modifier of 0.65</li>
+                    <li>Shining Dishes now have a nutrition value of 8 and a saturation modifier of 0.40</li>
+                    <li>Muesli now has a nutrition value of 8 and a saturation modifier of 0.60</li>
+                    <li>Dried Vermilion Kelp - and any other dried kelp added in the future, excluding Dried Dulse Kelp
+                        - now has a nutrition value of 2 and a saturation modifier of 0.30</li>
+                    <li>Dried Dulse Kelp now has a nutrition value of 4 and a saturation modifier of 0.30</li>
+                    <li>Vast Brew now has a nutrition value of 6 and a saturation modifier of 0.30</li>
+                    <li>Vermilion Stew now has a nutrition value of 7 and a saturation modifier of 0.40</li>
+                    <li>Galvanic Hauntings now adhere to the overworld maximum values - a nutrition value of 7 and a
+                        saturation modifier of 0.40</li>
+                    <li>Bewildered Pastries now have a nutrition value of 6 and a saturation modifier of 0.40</li>
+                    <li>Incendiary Stews now adhere to the overworld maximum values - a nutrition value of 8 and a
+                        saturation modifier of 0.65</li>
+                    <li>Bamboo Clods now have a nutrition value of 4 and a saturation modifier of 0.20</li>
+                    <li>Overgrown Brews now adhere to the overworld maximum values - a nutrition value of 8 and a
+                        saturation modifier of 0.65</li>
+                    <li>Meat Scraps now adhere to the overworld maximum values - a nutrition value of 8 and a saturation
+                        modifier of 0.65</li>
+                    <li>Bok Choy now adhere to the overworld minimum values - a nutrition value of 1 and a saturation
+                        modifier of 0.25</li>
+                    <li>Coal Truffles now have a nutrition value of 2 and a saturation modifier of 0.40</li>
+                    <li>All Mastic Pastes now adhere to the overworld minimum values - a nutrition value of 1 and a
+                        saturation modifier of 0.25</li>
+                    <li>All Slime Drops - exluding Slime Drops covered in Mastic Resin - now have a nutrition value of 4
+                        and a saturation value of 0.30</li>
+                    <li>All Slime Drops covered in Mastic Resin now have a nutrition value of 6 and a saturation
+                        modifier of 0.40</li>
+                    <li>All Venerable Delicacies now adhere to the overworld maximum values - a nutrition value of 8 and
+                        a saturation modifier of 0.65</li>
+                    <li>Icy Mastic Chunks now adhere to the overworld minimum values - a nutrition value of 1 and a
+                        saturation modifier of 0.25</li>
+                    <li>Cashew Sorbet Scoops now have a nutrition value of 2 and a saturation modifier of 0.10</li>
+                    <li>Cashew Sorbet Delights now have a nutrition value of 8 and a saturation modifier of 0.40</li>
+                    <li>Walnut Gorge Cream now has a nutrition value of 8 and a saturation modifier of 0.60</li>
+                    <li>Merry Treats now have a nutrition value of 6 and a saturation modifier of 0.40</li>
+                    <li>Frosted Desserts now have a nutrition value of 6 and a saturation modifier of 0.30</li>
+                    <li>Void Stroganoff now adheres to the overworld maximum values - a nutrition value of 8 and a
+                        saturation modifier of 0.65</li>
+                    <li>Chilled Apples now have a nutrition value of 5 and a saturation modifier of 0.40</li>
+                    <li>Raw Polar Bear Meat now has a nutrition value of 5 and a saturation modifier of 0.20</li>
+                    <li>Cooked Polar Bear Meat now adheres to the overworld maximum values - a nutrition value of 8 and
+                        a saturation modifier of 0.65</li>
+                    <li>Explorer's Concoction now adheres to the overworld maximum values - a nutrition value of 8 and a
+                        saturation modifier of 0.65</li>
+                    <li>Prickly Pears now have a nutrition value of 1 and a saturation modifier of 0.10</li>
+                    <li>Nopalito Wraps now have a nutrition value of 6 and a saturation modifier of 0.65</li>
+                    <li>Nopalito Wrap Supremes now have a nutrition value of 8 and a saturation modifier of 0.80</li>
+                    <li>Prickly Pear Stew now has a nutrition value of 6 and a saturation modifier of 0.35</li>
+                    <li>Sinopia Rock Sweets now have a nutrition value of 4 and a saturation modifier of 0.20</li>
+                    <li>Thorn on a Stick now has a nutrition value of 8 and a saturation modifier of 0.40</li>
+                    <li>Rosy Cocktails now adhere to the overworld maximum values - a nutrition value of 8 and a
+                        saturation modifier of 0.65</li>
+                    <li>Dusty Regales now have a nutrition value of 6 and a saturation modifier of 0.20</li>
+                    <li>Stews of the Damned now have a nutrition value of 8 and a saturation modifier of 0.40</li>
+                    <li>Peanut Oil and Cinder Sandwiches now have a nutrition value of 7 and a saturation modifier of
+                        0.70</li>
+                    <li>Tophet Brews now have a nutrition value of 7 and a saturation modifier of 0.60</li>
+                    <li>Grim Stews now have a nutrition value of 9 and a saturation modifier of 0.60</li>
+                    <li>Weeping Tangles now have a nutrition value of 8 and a saturation modifier of 0.40</li>
+                    <li>Cinder Rolls now have a nutrition value of 6 and a saturation modifier of 0.25</li>
+                    <li>Warped Brews now have a nutrition value of 8 and a saturation modifier of 0.70</li>
+                    <li>Bottles of Crestfallen Flora are no longer considered food items and are instead just a regular
+                        bottled ingredient</li>
+                    <li>Bottled Malodorous Mixture now adheres to the nether minimum values - a nutrition value of 6 and
+                        a saturation modifier of 0.40</li>
+                    <li>Piquant Pretzels now adhere to the nether minimum values - a nutrition value of 6 and a
+                        saturation modifier of 0.40</li>
+                    <li>Iniquitous Brews now have a nutrition value of 8 and a saturation modifier of 0.70</li>
+                    <li>Omniscient Stews now adhere to the nether maximum values - a nutrition value of 12 and a
+                        saturation modifier of 0.80</li>
+                    <li>Warped Tangles now adhere to the nether minimum values - a nutrition value of 6 and a saturation
+                        modifier of 0.40</li>
+                    <li>Crimson Tangles now adhere to the nether minimum values - a nutrition value of 6 and a
+                        saturation modifier of 0.40</li>
+                    <li>Sepia Tangles now adhere to the nether minimum values - a nutrition value of 6 and a saturation
+                        modifier of 0.40</li>
+                    <li>Fermented Cashew Mixture now has a nutrition value of 3 and a saturation modifier of 0.20</li>
+                    <li>Soul Khana now has a nutrition value of 8 and a saturation modifier of 0.60</li>
+                    <li>Spirited Concoctions now have a nutrition value of 8 and a saturation modifier of 0.60</li>
+                    <li>Molten Stews now adhere to the nether minimum values - a nutrition value of 6 and a saturation
+                        modifier of 0.40</li>
+                    <li>Sturdy Waffles now adhere to the nether minimum values - a nutrition value of 6 and a saturation
+                        modifier of 0.40</li>
+                    <li>Phantom Steak now adheres to the nether maximum values - a nutrition value of 12 and a
+                        saturation modifier of 0.80</li>
+                    <li>Blazing Delight now adheres to the nether maximum values - a nutrition value of 12 and a
+                        saturation modifier of 0.80</li>
+                    <li>All Senile Sweets now have a nutrition value of 4 and a saturation modifier of 0.20</li>
+                    <li>Chorus Cocktails now adhere to the end minimum values - a nutrition value of 10 and a saturation
+                        modifier of 0.55</li>
+                    <li>Champion's Omelettes now adhere to the end maximum values - a nutrition value of 16 and a
+                        saturation modifier of 1.0</li>
+                    <li>Farseer Brews now have a nutrition value of 12 and a saturation modifier of 0.80</li>
+                    <li>Shelled Dumplings now adhere to the end minimum values - a nutrition value of 10 and a
+                        saturation modifier of 0.55</li>
+                    <li>Bottled Ender Jelly now has a nutrition value of 3 and a saturation modifier of 0.20</li>
+                    <li>Cosmic Brews now adhere to the end minimum values - a nutrition value of 10 and a saturation
+                        modifier of 0.55</li>
+                    <li>Desolate Stews now adhere to the end minimum values - a nutrition value of 10 and a saturation
+                        modifier of 0.55</li>
+                    <li>Ethereal Concoctions now have a nutrition value of 12 and a saturation modifier of 0.60</li>
+                    <li>Void Mixtures now adhere to the end minimum values - a nutrition value of 10 and a saturation
+                        modifier of 0.55</li>
+                    <li>Chorus Bowls now adhere to the end maximum values - a nutrition value of 16 and a saturation
+                        modifier of 1.0</li>
+                    <li>Chorus Cookies now have a nutrition value of 4 and a saturation modifier of 0.20</li>
+                    <li>Galactic Canes now adhere to the end minimum values - a nutrition value of 10 and a saturation
+                        modifier of 0.55</li>
+                    <li>Ender Jelly Blobs now have a nutrition value of 4 and a saturation modifier of 0.30</li>
+                    <li><span style="color:aquamarine;">Farmer's Delight</span> - Pecan Pie Slices now have a nutrition
+                        value of 3 and a saturation modifier of 0.20</li>
+                    <li><span style="color:aquamarine;">Farmer's Delight</span> - Phantom Burgers now adhere to the
+                        nether maximum values - a nutrition value of 12 and a saturation modifier of 0.80</li>
+                    <li><span style="color:aquamarine;">Farmer's Delight</span> - Phantom Beef Patties now adhere to the
+                        nether minimum values - a nutrition value of 6 and a saturation modifier of 0.40</li>
+                    <li><span style="color:aquamarine;">Farmer's Delight</span> - Glow Ink Rolls now have a nutrition
+                        value of 10 and a saturation modifier of 0.40</li>
+                    <li><span style="color:aquamarine;">Farmer's Delight</span> - Glow Ink Roll Slices now have a
+                        nutrition value of 4 and a saturation modifier of 0.30</li>
+                    <li><span style="color:aquamarine;">Farmer's Delight</span> - Anniversary Cake Slices now have a
+                        nutrition value of 4 and a saturation of 0.20</li>
+                    <li><span style="color:aquamarine;">Farmer's Delight</span> - Brownie Pieces now have a nutrition
+                        value of 3 and a saturation modifier of 0.20</li>
+                </ul>
+                <h5 class="segment-title" id="reworked-food-values#effect-conditions"><span style="color:#965BD6;">Food
+                        Rework</span> | Conditional Effects</h5>
+                <p class="segment">Several of these conditions also have varying chances of occurring. For example, A
+                    Tophet Brew has a much higher chance to trigger Fire Resistance than a Peanut Oil and Cinder
+                    Sandwich!</p>
+                <ul class="segment">
+                    <li>Cryptic Apple Cider has a 50/50 chance to provide either Strength or Slowness 3 for 45 seconds.
+                    </li>
+                    <li>Meat Scraps will give the player Weakness as a punishment for consuming with the Bad Omen status
+                        effect. However, if the player is not inflicted with Bad Omen during consumption, then the
+                        player will recieve Resistance instead.</li>
+                    <li>Several sweet foods - Coal Truffle, Mastic Paste(s), Slime Drop(s), Mastic Covered Slime
+                        Drop(s), Venerable Delicacies, Cashew Sorbet Scoop, Cashew Sorbet Delight, Walnut Gorge Cream,
+                        all Senile Sweet variants, Galactic Canes, and Ender Jelly (+some farmer's delight compat foods)
+                        - will provide the player with Regeneration for a short duration if the player is inflicted with
+                        the Sugar High status effect.</li>
+                    <li>Merry Treats will provide the Sugar High status effect to the player.</li>
+                    <li>Several cold foods - Frosted Dessert, Void Stroganoff, Chilled Apples, Raw and Cooked Polar Bear
+                        Meats - will provide the player with Regeneration for a short duration if the player is
+                        inflicted with the Freezing status effect or is being affected by the freezing condition.</li>
+                    <li>Several desert foods - Prickly Pears, Nopalito Wraps, Nopalito Wrap Supreme, Prickly Pear Stew,
+                        Sinopia Rock Sweet, Thorn on a Stick, Rosy Cocktail, and Dusty Regales - will provide the player
+                        with Prickly if the player is inflicted with the Hunger status effect.</li>
+                    <li>Stew of the Damned will provide the Prickly status effect to the player.</li>
+                    <li>Several nether foods - Peanut Oil and Cinder Sandwich, Tophet Brew, Grim Stew, Weeping Tangle,
+                        Cinder Roll, Warped Brew, Bottled Malodorous Mixture, and Piquant Pretzels - will provide the
+                        player with Fire Resistance if the player is actively on fire.</li>
+                    <li>A few end foods - Chorus Cocktails, Champion's Omelettes, Farseer Brews, and Shelled Dumplings -
+                        will provide the player with Slow Falling if the player is inflicted by Levitation.</li>
+                </ul>
+                <h5 class="segment-title" id="reworked-food-values#non-conditional-circumstances"><span
+                        style="color:#965BD6;">Food Rework</span> | Non-Conditional Effects</h5>
+                <ul class="segment">
+                    <li>All Ungarnished nuts will provide the player with Nausea for a short period of time.</li>
+                    <li>Each of the variants of Melted Cinder Flour nuts with effects can - you guessed it - provide one
+                        or more special effects.</li>
+                    <ul>
+                        <li>Peanuts provide Slowness and Invisibility</li>
+                        <li>Walnuts provide Strength</li>
+                        <li>Almonds provide Haste</li>
+                        <li>Hazelnuts provide Speed</li>
+                        <li>Chestnuts provide Slow Falling</li>
+                        <li>Pistachios provide Night Vision</li>
+                        <li>Macadamias provide Fire Resistance</li>
+                        <li>Pecans provide Resistance</li>
+                        <li>Cashews provide Speed</li>
+                    </ul>
+                    <li>Bitter Almonds provide Poison.</li>
+                    <li>Putrid Stew provides the player with Nausea for a short duration.</li>
+                    <li>Illuminating Cocktails provide the player with Glowing for a short duration.</li>
+                    <li>Bitter Apple Cider provides the player with Slowness and Resistance for a moderate duration.
+                    </li>
+                    <li>Raw Tenebrous Meat provides the player with Darkness for a short duration.</li>
+                    <li>Cooked Tenebrous Meat can provide the player with Regeneration for a short duration.</li>
+                    <li>Gloomy Gatherings provide the player with Regeneration and Resistance for a short duration.</li>
+                    <li>Fishy Surprises provide the player with Nausea for a short duration with the chacne to provide
+                        Poison for a short duration.</li>
+                    <li>Shining Dishes can provide the player with Glowing for a short duration.</li>
+                    <li>Vast Brews can provide the player with Water Breathing for a short duration.</li>
+                    <li>Vermilion Stews can provide the player with Water Breathing for a short duration.</li>
+                    <li>Galvanic Hauntings can provide the player with Water Breathing for a short duration.</li>
+                    <li>Bewildered Pastries can provide the player with Dolphin's Grace for a short duration.</li>
+                    <li>Incendiary Brew go boom boom.</li>
+                    <li>Icy Mastic Chunks provide Slowness and Regeneration for a short duration.</li>
+                    <li>Iniquitous Brews provide Fire Resistance for a moderate duration.</li>
+                    <li>Omniscient Stews can provide Night Vision or Cognate for a short duration or a moderate duration
+                        respectively.</li>
+                    <li>Warped Tangles can provide Resistance for a moderate duration.</li>
+                    <li>Crimson Tangles can provide Fire Resistance for a moderate duration.</li>
+                    <li>Sepia Tangles can provide Spirited Resistance for a moderate duration.</li>
+                    <li>Fermented Cashew Mixture can - very rarely - provide the player with either Nausea or Strength
+                        for a long duration.</li>
+                    <li>Soul Khana provides the player with Invisibiity and Speed for a long duration.</li>
+                    <li>Spirited Concoctions provide the player with Spirited Resistance for a moderate duration.</li>
+                    <li>Molten Stew provides the player with Fire Resistance for a short duration.</li>
+                    <li>Sturdy Waffles provide the player with Resistance for a short duration.</li>
+                    <li>Bottled Ender Jelly can provide the player with Cognate for a short duration.</li>
+                    <li>Cosmic Brews provide the player with Night Vision for a moderate duration.</li>
+                    <li>Desolate Stews can provide the player with Cognate for a moderate duration</li>
+                    <li>Ethereal Concoctions can provide the player with Cognate for a moderate duration.</li>
+                    <li>Chorus Cookies can provide the player with Speed for a short duration.</li>
+                    <li>Galactic Canes provide the player with Cognate for a short duration.</li>
+                </ul>
+            </div>
+    </div>
+    </center>
+    <hr style="clear:both;visibility:hidden;height:40px;">
+    <p>
+        <center>The Create: Garnished mod and Create: Garnished wiki have been developed and designed by
+            DakotaPrideModding</center>
+    </p>
+    <p>
+        <center><a href="https://github.com/DakotaPride/create-garnished" target="_blank">Create: Garnished Fabric
+                Source Code</a></center>
+    </p>
+    <p>
+        <center><a href="https://github.com/DakotaPride/create-garnished/issues" target="_blank">Create: Garnished
+                Issues Page</a></center>
+    </p>
+
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("myDropdown");
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
+        }
+
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        initComparisons();
+    </script>
+</body>
+
+</html>
