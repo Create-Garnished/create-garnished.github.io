@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Create: Garnished Wiki - Happy New Year! (2025)</title>
+    <link rel="icon" type="image/x-icon" href="/icon.ico">
+
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+
+        body {
+            margin: 0px;
+            background-image: url('/images/background1.png');
+            font-family: "Cabin", sans-serif;
+            color: white;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 32px;
+        }
+
+        h3 {
+            font-size: 28px;
+        }
+
+        h4 {
+            font-size: 24px;
+        }
+
+        h5 {
+            font-size: 20px;
+        }
+
+        h6 {
+            margin: 10px 10px;
+            font-size: 16px;
+        }
+
+        li {
+            font-size: 20px;
+            line-height: 1.2;
+        }
+
+        a:link {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #02060C;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .navbar a {
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover,
+        .dropdown:hover .dropbtn,
+        .dropbtn:focus {
+            background-color: black;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #161b22;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #1D232B;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .collapsible {
+            background: rgba(2, 6, 12, 0.3);
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 400px;
+            border: none;
+            text-align: center;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .active,
+        .collapsible:hover {
+            background: rgba(2, 6, 12, 0.5);
+        }
+
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background: rgba(29, 35, 43, 0.5);
+        }
+
+        div.gallery {
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 180px;
+        }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .img-comp-container {
+            position: relative;
+            height: 360px;
+            /*should be the same height as the images*/
+        }
+
+        .img-comp-img {
+            position: absolute;
+            width: auto;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .img-comp-img img {
+            display: block;
+            vertical-align: middle;
+        }
+
+        .img-comp-slider {
+            position: absolute;
+            z-index: 9;
+            cursor: ew-resize;
+            /*set the appearance of the slider:*/
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            opacity: 0.7;
+            border-radius: 50%;
+        }
+
+        .blog {
+            width: 800px;
+            padding-top: 0px;
+        }
+
+        .blog .segment-title {
+            text-align: left;
+        }
+
+        .blog .segment {
+            text-align: left;
+            font-size: 20px;
+        }
+
+        .blog .img-desc {
+            font-size: 16px;
+        }
+
+        .blog img {
+            border-radius: 5%;
+            width: 90%
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #02060C;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #myBtn:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="topFunction()" id="myBtn">Jump to Top of Page</button>
+
+    <script>
+        function initComparisons() {
+            var x, i;
+            /*find all elements with an "overlay" class:*/
+            x = document.getElementsByClassName("img-comp-overlay");
+            for (i = 0; i < x.length; i++) {
+                /*once for each "overlay" element:
+                pass the "overlay" element as a parameter when executing the compareImages function:*/
+                compareImages(x[i]);
+            }
+            function compareImages(img) {
+                var slider, img, clicked = 0, w, h;
+                /*get the width and height of the img element*/
+                w = img.offsetWidth;
+                h = img.offsetHeight;
+                /*set the width of the img element to 50%:*/
+                img.style.width = (w / 2) + "px";
+                /*create slider:*/
+                slider = document.createElement("DIV");
+                slider.setAttribute("class", "img-comp-slider");
+                /*insert slider*/
+                img.parentElement.insertBefore(slider, img);
+                /*position the slider in the middle:*/
+                slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+                slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+                /*execute a function when the mouse button is pressed:*/
+                slider.addEventListener("mousedown", slideReady);
+                /*and another function when the mouse button is released:*/
+                window.addEventListener("mouseup", slideFinish);
+                /*or touched (for touch screens:*/
+                slider.addEventListener("touchstart", slideReady);
+                /*and released (for touch screens:*/
+                window.addEventListener("touchend", slideFinish);
+                function slideReady(e) {
+                    /*prevent any other actions that may occur when moving over the image:*/
+                    e.preventDefault();
+                    /*the slider is now clicked and ready to move:*/
+                    clicked = 1;
+                    /*execute a function when the slider is moved:*/
+                    window.addEventListener("mousemove", slideMove);
+                    window.addEventListener("touchmove", slideMove);
+                }
+                function slideFinish() {
+                    /*the slider is no longer clicked:*/
+                    clicked = 0;
+                }
+                function slideMove(e) {
+                    var pos;
+                    /*if the slider is no longer clicked, exit this function:*/
+                    if (clicked == 0) return false;
+                    /*get the cursor's x position:*/
+                    pos = getCursorPos(e)
+                    /*prevent the slider from being positioned outside the image:*/
+                    if (pos < 0) pos = 0;
+                    if (pos > w) pos = w;
+                    /*execute a function that will resize the overlay image according to the cursor:*/
+                    slide(pos);
+                }
+                function getCursorPos(e) {
+                    var a, x = 0;
+                    e = (e.changedTouches) ? e.changedTouches[0] : e;
+                    /*get the x positions of the image:*/
+                    a = img.getBoundingClientRect();
+                    /*calculate the cursor's x coordinate, relative to the image:*/
+                    x = e.pageX - a.left;
+                    /*consider any page scrolling:*/
+                    x = x - window.pageXOffset;
+                    return x;
+                }
+                function slide(x) {
+                    /*resize the image:*/
+                    img.style.width = x + "px";
+                    /*position the slider:*/
+                    slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+                }
+            }
+        }
+    </script>
+
+    <div
+        style="padding:20px;margin-top:0px;background-color:#02060C;overflow:hidden;background-image: url('/images/background.png');">
+        <center>
+            <img src="https://cdn.modrinth.com/data/6e2SlzR4/images/2465fef6d5794b3eb71fbc101d1fdf4156c810da.png"
+                width=700px;>
+            <br>
+            <p style="font-size:16px;"><i>Create: Garnished adds many new foods and items, expanding on the Create
+                    mod!</i></p>
+        </center>
+    </div>
+    <div class="navbar">
+        <a href="/index.html" style="float:left;">Home</a>
+        <a href="/integrations.html" style="float:left;">Integrations</a>
+        <a href="/hatchets.html" style="float:left;">Hatchet Interactions</a>
+        <a href="/fluid_interactions.html" style="float:left;">Fluid Interactions</a>
+        <a href="/foods.html" style="float:left;">Cookbook</a>
+        <a href="/recipes.html" style="float:left;">Recipe Types</a>
+        <a href="/blog.html" style="float:left;">Blog Posts</a>
+        <a href="/addons.html" style="float:left;">Addons</a>
+        <a href="https://mmcreviews.com/all/mods/create-garnished/" style="float:right;" target="_blank"
+            title="MMC Reviews">Leave a Review!</a>
+        <a href="https://modrinth.com/mod/create-garnished" style="float:right;" target="_blank"
+            title="Modrinth">Modrinth</a>
+        <a href="https://www.curseforge.com/minecraft/mc-mods/garnished" style="float:right;" target="_blank"
+            title="Curseforge">Curseforge</a>
+        <a href="https://www.ko-fi.com/dakotapride" style="float:right;" target="_blank" title="Ko-fi">Ko-fi</a>
+    </div>
+    <div style="padding:20px;margin-top:30px;">
+        <center>
+            <img src="/images/blog/2025/beta_title_card.png" width="70%" style="border-radius:5%;">
+            <div class="blog">
+                <h5 style="margin:0px;font-size:16px;"><span style="color:#F2320C;">Developer Update</span> | January
+                    10th, 2025</h5><br>
+                <p style="text-align:left;width:800px;font-size:20px;padding-top:0px;">The majority of this blog post is
+                    referring to the port to the 1.21 version of Minecraft. It discusses reworks, removals, additions,
+                    etc.</p>
+                <p style="text-align:left;width:800px;font-size:20px;padding-top:0px;">Any textures, models, or concepts that you see here are probably still a work in progress and may heavily change from now until the time of release.</p>
+                <h4 class="segment-title" id="the-problem"><span style="color:#965BD6;">Longstanding Issues</span> | Addressing the Elephant in the room</h4>
+                <p class="segment">Create: Garnished started as a silly mod that added nothing more than nuts and a few nut-related foods, perhaps a minor non-nut-related food here and there. For over a year, each update has had less and less nut-related foods attached with more and more inventory clutter.</p>
+                <p class="segment">To say that this was the original vision of Create: Garnished would be a discrediting the past year of improvement that I've been through considering that I initially made this mod as a joke. Of course, it might actually be a good thing that I've added so much content for so long, as it's given me time to reflect on those features, finetune them, and improve myself as a mod developer. Using what I know now, I would like to rework Create: Garnished in Minecraft 1.21 to be better at <i>several</i> things. Guiding the player, removing inventory clutter, allowing simple features to remain simple and not become overcomplicated while also having a balance of features that new players will enjoy and experienced players will enjoy, etc.</p>
+                <p class="segment">(maybe) TL;DR: Let's start from scratch and make Create: Garnished better than its past.</p>
+                <h4 class="segment-title" id="advancement-progression"><span style="color:#965BD6;">Progression Systems</span>
+                    | Advance Jarvis!</h4>
+                <p class="segment">In the 1.18.2/1.19.2/1.20.1 versions of Create: Garnished, the advancement systems seem a bit scattered with no real guidance as opposed to random and subjective points of which you obtained certain foods or did certain actions. However, the 1.21 port is not only different, but does a much better job of guiding the player through Create: Garnished.</p>
+                <p class="segment">Below, you can find the current 10 advancements that will be included in the first release of the rework.</p>
+                <ul class="segment">
+                    <li>Create: Garnished - Thar' Be Nuts!</li>
+                    <li>Wah Wah, Wah Wah - Find Wild Peanuts in a Jungle</li>
+                    <li>Jif or Gif? - Create Peanut Butter by mixing Peanuts, Sugar, and Milk together</li>
+                    <li>Just How Gram Gram Made Them - Create Peanut Butter Cookies by combining Dough, Peanut Butter, Sugar, and an Egg</li>
+                    <li>Do You Know The... Forget It - Find Wild Ginger Roots in a Jungle</li>
+                    <li>Run Forrest, Run! - Create Sprinter's Tea to Gain a Temporary Speed Boost Upon Consumption</li>
+                    <li>Grunkle Stan - Find Pine Nuts growing on a tree in a Taiga</li>
+                    <li>Berry Mush - Create Sweet Tea to Gain Regeneration Temporarily Upon Consumption</li>
+                    <li>D&D Anyone? - Find Elven Sweet Berries in a Taiga</li>
+                    <li>Sophisticated Spoils - Create Elven Tea to Gain Invisibility and Speed Temporarily Upon Consumption</li>
+                </ul>
+                <img src="/images/blog/2025/advancement_tree.png" alt="Reworked advancement tab">
+                <p class="img-desc"><i>The current advancements tab</i></p>
+                <h4 class="segment-title" id="reworked-crops"><span style="color:#965BD6;">Progression Systems</span> | Hard Day's Work</h4>
+                <p class="segment">Wild crops are one of Farmer's Delight most recognisable features, and while I want to keep Create: Garnished unique from Farmer's Delight, I do believe that some features from Farmer's Delight would work quite well in a reworked Create: Garnished mod.</p>
+                <p class="segment">Introducing, Wild Ginger Roots! Similar to Wild Cabbage or Wild Potatos in Farmer's Delight, they will drop a given crop with a flower. In this case, it'll drop 1-2 Ginger Roots alongside a Marigold flower!</p>
+                <p class="segment">As stated above, Marigold flowers are also being introduced into the mod, which can also generate alongside Wild Ginger Roots.</p>
+                <img src="/images/blog/2025/wild_ginger_roots.png" alt="Wild Ginger Roots">
+                <p class="img-desc"><i>Wild Ginger Roots in the Jungle biome</i></p>
+                <p class="segment">Any nut that doesn't grow on a tree - such as Peanuts, I've learned from my mistake - will now also be found in a similar fashion to farmer's delights crops as a wild crop.</p>
+                <img src="/images/blog/2025/wild_peanuts.png" alt="Wild Peanuts">
+                <p class="img-desc"><i>Wild Peanuts in the Jungle biome</i></p>
+                <p class="segment"><i>Most</i> crops will also be able to be compacted into block form. While I do want this to be similar to Farmer's Delights 'Crop Crates' I do also want it to be unique and different in some variety.</p>
+                <img src="/images/blog/2025/crop_storage_blocks.png" alt="Crop Storage Blocks">
+                <p class="img-desc"><i>Storage blocks for crops</i></p>
+                <h4 class="segment-title" id="elven_sweet_berries"><span style="color:#965BD6;">Progression Systems</span> | Through the Falls</h4>
+                <p class="segment">Peanuts aren't the only nuts being introduced in this rework! In fact, a whole new nut is being added to the Create: Garnished nut family - Pine Nuts!</p>
+                <p class="segment">Currently, Pine Nuts aren't used for anything in particular unfortunately. However, there are plans to add some more functionality to Pine Nuts in the future.</p>
+                <img src="/images/blog/2025/pine_nut_trees.png" alt="Pine Nuts growing on Pine Trees">
+                <p class="img-desc">Pine Nut Trees</p>
+                <img src="/images/blog/2025/pine_nuts.png" alt="Pine Nut blocks">
+                <p class="img-desc">Pine Nuts & Barrels of Pine Nuts</p>
+                <p class="segment">While I want to focus more on <i>real</i> foods, I do want to also add some minor - or major - fantasy based foods. In this release of Create: Garnished, introducing Elven Sweetberries!</p>
+                <p class="segment">Elven Sweet Berry Bushes can be found in a few different Taiga biomes - specifically the regular Taiga and both of the Old Growth Taiga biomes - and will deal damage to the player in a similar fashion to Sweet Berry Bushes. However, it will deal significantly less damage, so don't think about using these in a mob farm any time soon.</p>
+                <p class="segment">A related addition are the barrels for both the Elven Sweet Berries and regular Sweet Berries.</p>
+                <img src="/images/blog/2025/elven_sweet_berries.png" alt="Elven Sweet Berry Bushes">
+                <p class="img-desc"><i>Elven Sweet Berry Bushes and the Barrel blocks for both Taiga berries</i></p>
+                <p class="segment">The Elven Sweet Berries and regular Sweet Berries have also both recieved their own unique tea types - Elven Tea and Sweet Tea!</p>
+                <p class="segment">Elven Tea will provide the player with Invisibility and Speed for 3 minutes with no particles, adjusting and moving an aspect that some may be familiar with from the old Create: Garnished's Hadean Peanuts!</p>
+                <p class="segment">Sweet Tea - new and improved - will now provide Regeneration temporarily upon consumption as opposed to providing the Augmented status effect from the old Sweet Tea.</p>
+                <p class="segment">This is all that will be released in this initial version of the rework, as I do not want to introduce too much content as to allow further updates and potential tweaks to these presented features.</p>
+                <h4 class="segment-title" id="final-content-adjustment"><span style="color:#965BD6;">Update</span> | Create: Garnished v2.0.3</h4>
+                <p class="segment">It is now time to discuss what <i>should</i> be the final content adjustment update of this "era" of Create: Garnished. It has been a fantastic (almost) 2 years working on this mod and I hope that everyone continues to enjoy Create: Garnished - both the old and the new.</p>
+                <h4 class="segment-title" id="final-content-adjustment#effect-tooltips"><span style="color:#965BD6;">Update</span> | Helpful Effect Tooltips</h4>
+                <p class="segment">Several food items that either provide status effects, can be brewed into potions, or can even cure certain effects have recieved tooltips to help players more easily determine which foods have functionality. Holding shift on a given item can also show you any potential per cent chances that an item has to provide the given effect or condition listed.</p>
+                <img src="/images/blog/2025/effect_tooltips.png" alt="Helpful Status Effect tooltips">
+                <p class="img-desc"><i>An example effect tooltip for a food item</i></p>
+                <h4 class="segment-title" id="final-content-adjustment#nut-renaming"><span style="color:#965BD6;">Update</span> | Nut Renaming</h4>
+                <p class="segment">Every core nut item has been renamed and several tooltips have been removed as a result. Examples are provided below:</p>
+                <ul class="segment">
+                    <li>Any Cracked nut no longer has cracked in the tooltip and instead has it in the base name</li>
+                    <li>Any Ungarnished nut no longer has ungarnished in the tooltip and instead has it in the base name</li>
+                    <li>Any Garnished nut no longer has garnished in the tooltip and instead has it in the base name</li>
+                    <li>Any Cinder Flour covered nut no longer has cinder flour in the tooltip and instead has now been renamed to, for example, "Cinder Coated Cashew"</li>
+                    <li>Any Melted Cinder Flour covered nut no longer has melted cinder flour in the tooltip and instead has now been renamed to, for example, "Heated Cinder Coated Cashew"</li>
+                    <li>Any Melted Cinder Flour covered nut that provided status effects no longer has melted cinder flour in the tooltip and instead has now been renamed to, for example, "Hadean Cashew"</li>
+                    <li>Any Sweetened nut no longer has sweetened in the tooltip and instead has it in the base name</li>
+                    <li>Any Chocolate Glazed nut no longer has chocolate glazed in the tooltip and instead has it in the base name</li>
+                    <li>Any Honeyed nut no longer has honeyed in the tooltip and instead has it in the base name</li>
+                    <li>Any item with the Salted tooltip has had their tooltip removed</li>
+                    <li>Most, if not, all items that had a similar tooltip to the tooltips stated above have also had their tooltips removed</li>
+                </ul>
+                <img src="/images/blog/2025/hadean_nuts.png" alt="Renamed Nuts">
+                <p class="img-desc"><i>Melted Cinder Flour Nuts -> Hadean Nuts</i></p>
+                <h4 class="segment-title" id="final-content-adjustment#amber-retexture"><span style="color:#965BD6;">Update</span> | Retextured Amber Blocks</h4>
+                <p class="segment">While a lot of work went into the original textures for the Amber Remnant blocks, I was never truly happy with them and thought that they looked quite out of place. So, they've been retextured to more closely match with the Create Rose Quartz textures. Of course, for those who liked the old textures more, they are available through a built-in resource pack accessible through the resource packs menu.</p>
+                <img src="/images/blog/2025/new_amber_blocks.png" alt="Retextured Amber Blocks">
+                <p class="img-desc"><i>Retextured Amber Remnant Blocks</i></p>
+                <img src="/images/blog/2025/legacy_amber.png" alt="Legacy Amber Blocks">
+                <p class="img-desc"><i>Legacy Amber Remnant Blocks</i></p>
+            </div>
+    </div>
+    </center>
+    <hr style="clear:both;visibility:hidden;height:40px;">
+    <p>
+        <center>The Create: Garnished mod and Create: Garnished wiki have been developed and designed by
+            DakotaPrideModding</center>
+    </p>
+    <p>
+        <center><a href="https://github.com/DakotaPride/create-garnished" target="_blank">Create: Garnished Fabric
+                Source Code</a></center>
+    </p>
+    <p>
+        <center><a href="https://github.com/DakotaPride/create-garnished/issues" target="_blank">Create: Garnished
+                Issues Page</a></center>
+    </p>
+
+    <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("myDropdown");
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
+        }
+
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        initComparisons();
+    </script>
+</body>
+
+</html>
